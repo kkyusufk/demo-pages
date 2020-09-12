@@ -1,0 +1,15 @@
+.direction-button {
+  background-color: white;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  border: 3px solid #FFFFFF;
+  outline: none;
+  box-shadow: none;
+  transition: transform 1s ease-in-out;
+}
+
+.left {
+  transform: rotate(180deg); 
+}
+

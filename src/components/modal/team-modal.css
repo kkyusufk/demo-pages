@@ -1,0 +1,16 @@
+.team-modal {
+  width: 1170px;
+  height: 269px;
+  top: 100px;
+  background-color: blue;
+  overflow-x: hidden;
+}
+
+.team-modal-wrapper {
+  position: absolute;
+  top: 0;
+  /* left: 0; */
+  width: 100vw;
+  height: 100vh;
+  background-color: lightgrey;
+}
