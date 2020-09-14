@@ -32,10 +32,15 @@
   margin-right: 10px;
 }
 
-.tabs > * {
+.tabs > div {
   height: 5px;
   width: inherit;
+  margin-right: 5px;
   background-color: black;
+}
+
+.tabs > div:last-child {
+  margin-right: none;
 }
 
 .tabs > .active {
@@ -139,7 +144,7 @@
   }
 
   .image-title {
-    bottom: 70px;
+    bottom: 40px;
     width: 70vw;
   }
   .rightButton {

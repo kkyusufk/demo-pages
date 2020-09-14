@@ -4,6 +4,7 @@ import './carousel.css';
 import { DirectionButton } from '../button/directionButton/directionButton';
 import { DIRECTIONS } from '../../constants';
 
+let clientX = 0;
 const Carousel = () => {
   const imgRef = useRef();
   const [X, setX] = useState(0);
@@ -21,7 +22,25 @@ const Carousel = () => {
   }
 
   useEffect(() => {
-    // imgRef.current.addEventListener('pressmove',() => alert('dragged'));
+    const sliders = document.querySelectorAll('#slider');
+    sliders.forEach(slider => {
+      slider.addEventListener('touchstart', (e) => { 
+        clientX = e.touches[0].clientX 
+        console.log(clientX)
+      });
+      slider.addEventListener('touchmove', (e) => { 
+        //setX(X + (e.touches[0].clientX - clientX))
+        const lol = e.touches[0].clientX - clientX;
+        console.log(lol)
+        e.target.style.transform = `translateX(${lol}%)`
+        if(Math.abs(lol) > 50) setX(X - 100)
+        console.log(e.target.style.transform)
+      });
+      slider.addEventListener('touchend', (e) => { 
+        console.log(e.target)
+        //e.target.style.transform = `translateX(0%)`
+      })
+    });
   })
 
   return (
@@ -31,6 +50,7 @@ const Carousel = () => {
             <div
               key={index} 
               className="slider"
+              id="slider"
               style={{ transform: `translateX(${X}%)` }}
               >
               <img src={image.src} className="carousel-images"/>
