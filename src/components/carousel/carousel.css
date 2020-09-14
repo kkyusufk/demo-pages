@@ -1,3 +1,7 @@
+:root {
+  --duration: 3s;
+}
+
 .carousel {
   position: relative;
   max-width: 1170px;
@@ -43,9 +47,16 @@
   margin-right: none;
 }
 
-.tabs > .active {
+.tabs .active {
+  width: 0%;
   height: 5px;
   background-color: white;
+  animation: fill var(--duration) ease-in;
+}
+
+@keyframes fill {
+  from { width: 0%; }
+  to { width: 100%; }
 }
 
 .slider {

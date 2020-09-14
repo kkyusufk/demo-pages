@@ -1,0 +1,64 @@
+.carouselContainer {
+  position: relative;
+  border: 1px solid black;
+  display: flex;
+  overflow: hidden;
+}
+
+.imageObject {
+  object-fit: cover;
+  width: inherit;
+  height: inherit;
+}
+
+.hidden {
+  display: none;
+}
+
+/*  <---------  */
+.enterRight {
+  position: relative;
+  animation: enter-right 1s forwards;
+}
+
+@keyframes enter-right {
+  from { right: -100%; }
+  to { right: 0%; }
+}
+/*  <---------  */
+
+/*  --------->  */
+.enterLeft {
+  position: relative;
+  animation: enter-left 1s forwards;
+}
+
+@keyframes enter-left {
+  from { left: -100%; }
+  to { left: 0%; }
+}
+/*  --------->  */
+
+/*  <--------  */
+.goLeft {
+  position: relative;
+  animation: go-left 1s forwards;
+}
+
+@keyframes go-left {
+  from { left: 0%; }
+  to { left: -100%; }
+}
+/*  <--------  */
+
+/*  ------->  */
+.goRight {
+  position: relative;
+  animation: go-right 1s forwards;
+}
+
+@keyframes go-right {
+  from { right: 0%; }
+  to { right: -100%; }
+}
+/*  ------->  */

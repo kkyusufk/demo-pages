@@ -9,7 +9,7 @@ body {
   grid-template-columns: repeat(3, minmax(300px, 1fr));
   column-gap: 30px;
   row-gap: 30px;
-  padding: 10px;
+  padding: 4% 10% 4% 10%;
 }
 
 .infinite-scroll {
@@ -20,5 +20,9 @@ body {
 @media only screen and (max-width: 700px) {
   .wrapper {
     grid-template-columns: auto;
+    row-gap: 15px;
+    column-gap: 15px;
+    padding-right: 15px;
+    padding-left: 15px;
   }
 }
