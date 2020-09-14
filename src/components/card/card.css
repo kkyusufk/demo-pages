@@ -50,4 +50,15 @@ h1,h2,h3,h4,h5,h6 {
   .card {
     padding: 20px;
   }
+  .cardContainer:hover {
+    transform: translateY(0px);
+  }
+  .cardContainer:hover .description {
+    transform: translateY(0px);
+  }
+
+  .cardContainer:hover .details {
+    opacity: 0;
+    transform: translateY(0px);
+  }
  } 
