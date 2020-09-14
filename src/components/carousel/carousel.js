@@ -6,8 +6,6 @@ import { DIRECTIONS } from '../../constants';
 
 const Carousel = () => {
   const tab = useRef();
-  const [buttonClicked, setButtonClicked] = useState(false);
-  const [duration, setDuration] = useState(5000);
   const [X, setX] = useState(0);
   const [activeEl, setAcitveEl] = useState(0);
   const [imageIndex, setImageIndex] = useState(0);
@@ -22,23 +20,23 @@ const Carousel = () => {
     setImageIndex(imageIndex - 1)
   }
 
+  const reset = () => {
+    setImageIndex(0);
+    setAcitveEl(0); 
+    setX(0);
+  }
+
   useEffect(() => {
     let id;
-    if (buttonClicked) { 
-      setButtonClicked(false)
-    } else {
-      id = setTimeout(() => {
-        if(imageIndex === images.length - 1) {
-          setAcitveEl(0); 
-          setX(0);
-          setImageIndex(0)
-        } else {
-          setAcitveEl(activeEl => activeEl + 1); 
-          setImageIndex(imageIndex => imageIndex + 1)
-          setX(X => X - 100);
-        }
-      },3000)
-    }
+    id = setTimeout(() => {
+      if(imageIndex === images.length - 1) {
+        reset()
+      } else {
+        setAcitveEl(activeEl => activeEl + 1); 
+        setImageIndex(imageIndex => imageIndex + 1)
+        setX(X => X - 100);
+      }
+    },3000)
     return () => clearTimeout(id);
   }, [X])
 
