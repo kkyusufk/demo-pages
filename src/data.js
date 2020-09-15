@@ -1,13 +1,18 @@
+import sample1 from './images/sample1.jpg'
+import sample2 from './images/sample2.jpg'
+import sample3 from './images/sample3.jpg'
+import sample4 from './images/sample4.jpg'
+
 export const images = [
-  {src:"https://source.unsplash.com/random", text: "Hey there"},
-  {src:"https://source.unsplash.com/random", text: "How is it going?"},
-  {src:"https://source.unsplash.com/random", text: "What are you doing"},
-  {src:"https://source.unsplash.com/random", text: "Lets meet up"},
-  {src:"https://source.unsplash.com/random", text: "See you soon"}
+  {src:"https://source.unsplash.com/random", title: "Title", subtitle: "This is subtitle"},
+  {src: sample1, title: "Title", subtitle: "This is subtitle"},
+  {src: sample2, title: "Title", subtitle: "This is subtitle"},
+  {src: sample3, title: "Title", subtitle: "This is subtitle"},
+  {src: sample4, title: "Title", subtitle: "This is subtitle"}
 ]
 
 export const team = [
-  { name: 'Abhisek Sarda', description: 'Founder & Creative Director. Lego and Edison Buld Lover' },
+  { name: 'Abhisek Sarda', description: 'Founder & Creative Director. Lego and Edison Bulb Lover' },
   { name: 'Indranil Udupi', description: 'Project Manager. Turns up headphones way too loud' },
   { name: 'Sanjana Hegde', description: "Graphic Designer. Chef and quisher of dog's faces" },
   { name: 'Priyanka Poulose', description: 'Graphic Designer. Architect too, once upon a time. Aspiring crazy cat lady' },

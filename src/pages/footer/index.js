@@ -24,7 +24,12 @@ const BottomContent2 = () => (
   </>
 )
 
-export const TopContent3 = () => <span className="footer_reel"><Reel /></span>
+export const TopContent3 = () => ( 
+  <div className="reel_footer">
+    <span className="footer_reel"><Reel /></span>
+    <div><img className="instagram overlap" src={InstgramSvg} /></div>
+  </div>
+);
 export const BottomContent3 = () => <span className="footer_desc">@opposite.hq</span>
 
 const Footer = () => (

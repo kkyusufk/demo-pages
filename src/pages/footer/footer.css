@@ -6,6 +6,11 @@
   bottom: 30px;
 }
 
+.overlap {
+  bottom: 90px;
+  right: 50px;
+}
+
 .footer_reel {
   max-width: 310px;
   max-height: 310px;
@@ -58,5 +63,24 @@
     height: 50px;
     right: 20px;
     bottom: 20px;
+  }
+
+  .overlap {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    left: 20px;
+    top: 20px;
+  }
+
+  .reel_footer {
+    height: inherit;
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .footer_desc {
+    position: absolute;
+    display: none;
   }
 }

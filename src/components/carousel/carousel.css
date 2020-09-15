@@ -24,6 +24,13 @@
   transition: bottom 0.5s ease-in-out;
 }
 
+.imageTitle {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 32px;
+  line-height: 120%;
+}
+
 .tabs {
   display: flex;
   position: absolute;
@@ -69,8 +76,12 @@
 }
 
 #contents {
+  display: flex;
+  flex-direction: column;
   position: absolute;
-  padding: 10px 0px 0px 10px;
+  width: 100%;
+  height: 100%;
+  margin: 25px;
   transition: all 0.5s ease-in-out;
 }
 

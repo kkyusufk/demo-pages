@@ -1,14 +1,14 @@
-.carouselContainer {
+.reelContainer {
   position: relative;
   border: 1px solid black;
   display: flex;
   overflow: hidden;
+  width: 310px;
+  height: 310px;
 }
 
 .imageObject {
   object-fit: cover;
-  width: 310px;
-  height: 310px;
 }
 
 .hidden {
@@ -62,3 +62,10 @@
   to { right: -100%; }
 }
 /*  ------->  */
+
+@media only screen and (max-width: 700px) {
+  .reelContainer {
+    width: 180px;
+    height: 180px;
+  }
+}

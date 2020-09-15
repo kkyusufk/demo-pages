@@ -38,14 +38,14 @@ const Reel = () => {
   }
 
   return (
-    <div className="carouselContainer">
+    <div className="reelContainer">
       {data.map((content, index) => {
         return (
           <img
             key={index} 
             alt={content.alt || "hi this is an image"} 
             src={content.src} 
-            className={getImageClasses()}
+            className={getImageClasses(index)}
           />
         )
       })

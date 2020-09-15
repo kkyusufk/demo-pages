@@ -4,6 +4,7 @@ import './carousel.css';
 import { DirectionButton } from '../button/directionButton/directionButton';
 import { DIRECTIONS } from '../../constants';
 
+// TODO: useReducer instead
 const Carousel = () => {
   const tab = useRef();
   const [X, setX] = useState(0);
@@ -58,7 +59,8 @@ const Carousel = () => {
       {images.map((image, index) => {
         const hidden = imageIndex === index ? 'notHidden' : 'hidden'; 
         return (<div key={index} id="contents">
-          <h1 id={hidden}>{image.text}</h1>
+          <span id={hidden} className="imageTitle">{image.title}</span>
+          <span id={hidden} className="imageSubTitle">{image.subtitle}</span>
           </div>
         )
       })} 
