@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-import './blog.css';
+import "./blog.css";
 
 const Blog = ({ author, date, title, src }) => {
   return (
@@ -10,12 +10,12 @@ const Blog = ({ author, date, title, src }) => {
           <span>{author}</span> / <span>{date}</span>
         </div>
         <div className="blog_title">{title}</div>
-        <div className="imageContainer"> 
+        <div className="imageContainer">
           <img src={src} />
         </div>
       </div>
     </div>
-  )
+  );
 };
 
 export { Blog };

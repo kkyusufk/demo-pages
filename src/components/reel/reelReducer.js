@@ -1,13 +1,13 @@
 const reelReducer = (state, action) => {
   switch (action.type) {
-    case 'NEXT':
+    case "NEXT":
       return {
         ...state,
         previousSlide: state.currentSlide,
         currentSlide: state.nextSlide,
-        nextSlide: state.nextSlide + 1
+        nextSlide: state.nextSlide + 1,
       };
-    case 'RESET':
+    case "RESET":
       return {
         ...state,
         nextSlide: 0,
@@ -15,6 +15,6 @@ const reelReducer = (state, action) => {
     default:
       throw new Error();
   }
-}
+};
 
 export { reelReducer };

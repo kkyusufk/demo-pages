@@ -1,11 +1,11 @@
-import React from "react"
+import React from "react";
 
-import { Carousel } from '../../components/carousel/carousel';
+import { Carousel } from "../../components/carousel/carousel";
 
 const IndexPage = () => (
   <div className="temp">
     <Carousel />
-  </div> 
-)
+  </div>
+);
 
-export default IndexPage
+export default IndexPage;
