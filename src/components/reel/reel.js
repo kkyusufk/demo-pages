@@ -16,7 +16,6 @@ const Reel = () => {
   // handling effect of changing the slide every 3 sec
   useEffect(() => {
     const id = setTimeout(() => { 
-
       return dispatch({ type: 'NEXT' }) 
     }, 3000);
     return () => clearTimeout(id);
@@ -46,7 +45,7 @@ const Reel = () => {
             key={index} 
             alt={content.alt || "hi this is an image"} 
             src={content.src} 
-            className="imageObject"
+            className={getImageClasses()}
           />
         )
       })

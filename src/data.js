@@ -17,3 +17,18 @@ export const team = [
   { name: 'Abhsek Sarda', description: 'Founder & Creative Director. Lego and Edison Buld Lover' },
   { name: 'Abhsek Sarda', description: 'Founder & Creative Director. Lego and Edison Buld Lover' }, 
 ]
+
+export const blogs = [
+  { 
+    author: 'Abhisek Sarda', 
+    date: '14 Jan 2020', 
+    title: "Why can't you leave a good thing alone?", 
+    src:"https://source.unsplash.com/random"
+  },
+  { 
+    author: 'Abhisek Sarda', 
+    date: '15 Nov 2016', 
+    title: "Noteworthy or Not-worthy? A Design Critique of the new Rs. 2,000 note", 
+    src:"https://source.unsplash.com/random"
+  },
+]

@@ -11,11 +11,21 @@ const BottomContent1 = () => <img src={InstgramSvg} className="instagram" alt="d
 
 const TopContent2 = () => <span className="name">Quaterly updates from us via Email</span>
 const BottomContent2 = () => (
-  <span className="signUp">Sign up</span>
+  <>
+    <span className="signUp">Sign up</span>
+    <div className="hoverableSignUp">
+      <input 
+        type="email" 
+        height="60" 
+        placeholder="Your Email Address"
+        />
+        <p>Sign up</p>
+    </div>
+  </>
 )
 
-export const TopContent3 = () => <span><Reel /></span>
-export const BottomContent3 = () => <span>@opposite.hq</span>
+export const TopContent3 = () => <span className="footer_reel"><Reel /></span>
+export const BottomContent3 = () => <span className="footer_desc">@opposite.hq</span>
 
 const Footer = () => (
   <Grid>
@@ -25,4 +35,4 @@ const Footer = () => (
   </Grid>
 )
 
-export default Footer
+export default Footer;

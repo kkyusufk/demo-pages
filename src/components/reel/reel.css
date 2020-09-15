@@ -7,8 +7,8 @@
 
 .imageObject {
   object-fit: cover;
-  width: inherit;
-  height: inherit;
+  width: 310px;
+  height: 310px;
 }
 
 .hidden {
