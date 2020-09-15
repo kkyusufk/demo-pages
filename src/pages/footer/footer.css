@@ -83,4 +83,20 @@
     position: absolute;
     display: none;
   }
+
+  .cardContainer:hover .signUp {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  
+  .cardContainer:hover .hoverableSignUp {
+    display: none;
+    opacity: 0;
+    transform: translateY(0px);
+  }
+  
+  .hoverableSignUp:hover {
+    transform: translateX(0px);
+  }
+  
 }

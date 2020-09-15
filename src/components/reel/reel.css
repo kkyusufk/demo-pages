@@ -1,6 +1,5 @@
 .reelContainer {
   position: relative;
-  border: 1px solid black;
   display: flex;
   overflow: hidden;
   width: 310px;
