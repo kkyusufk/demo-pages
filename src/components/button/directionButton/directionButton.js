@@ -1,10 +1,10 @@
-import React from "react";
+import React, { memo } from "react";
 
 import "./directionButton.css";
 import { DIRECTIONS } from "../../../constants";
 import svg from "../../../../public/icons/right.svg";
 
-const DirectionButton = ({ onClick, disabled, direction, hidden }) => {
+const DirectionButton = memo(({ onClick, disabled, direction, hidden }) => {
   const directionClass = direction === DIRECTIONS.LEFT ? "left" : "";
   return (
     <button
@@ -16,6 +16,6 @@ const DirectionButton = ({ onClick, disabled, direction, hidden }) => {
       <img src={svg} alt="direction button" width="20px" height="20px" />
     </button>
   );
-};
+});
 
 export { DirectionButton };

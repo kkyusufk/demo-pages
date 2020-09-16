@@ -13,6 +13,7 @@
           { "path": "/footer/" },
           { "path": "/highlight/" },
           { "path": "/home/" },
+          { "path": "/portfolio/" },
           { "path": "/team/" },
           { "path": "/404.html" }
         ]
