@@ -1,7 +1,7 @@
 import React from "react";
 import "./card.css";
-
-const Card = ({ TopContent, BottomContent }) => {
+import "../layout.css";
+const Card = ({ TopContent, BottomContent, HiddenContent }) => {
   return (
     <div className="cardContainer">
       <div className="card">
@@ -9,6 +9,7 @@ const Card = ({ TopContent, BottomContent }) => {
           <TopContent />
           <BottomContent />
         </div>
+        {HiddenContent && <HiddenContent />}
       </div>
     </div>
   );

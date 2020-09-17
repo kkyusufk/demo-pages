@@ -3,6 +3,7 @@ h1,h2,h3,h4,h5,h6 {
   margin: 0;
 }
 .card {
+  font-family: 'Roobert';
   width: inherit;
   height: inherit;
   overflow: hidden;
@@ -32,6 +33,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .cardContainer {
+  font-family: 'Roobert-regular';
   justify-self: center;
   align-self: center;
   position: relative;
@@ -39,6 +41,7 @@ h1,h2,h3,h4,h5,h6 {
   height: 470px;
   transition: 500ms ease-in-out;
   background-color: white;
+  overflow: hidden;
 }
 
 @media only screen and (max-width: 700px) { 

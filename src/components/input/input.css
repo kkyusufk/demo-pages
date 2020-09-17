@@ -1,0 +1,44 @@
+.typeEmail {
+  width: 80%;
+  height: 60px;
+  margin-bottom: 20px;
+  transition: all 0.5s ease-in-out;
+}
+
+#confirm {
+  color: #009C06;
+  transition: transform 0.5s ease-in-out;
+}
+
+.moveUp {
+  border-color: red;
+  transform: translateY(-5px);
+}
+
+#hidden {
+  margin-top: -20px;
+  color: #D81331;
+  font-size: 20px;
+  display: hidden;
+}
+
+#goRightSignUp {
+  transition: transform 0.5s ease-in-out;
+}
+
+#goRightSignUp:hover {
+  cursor: pointer;
+  transform: translateX(20px);
+}
+
+.emailFunctionality {
+  overflow: hidden;
+}
+
+.translateOut {
+  transition: all 0.5s ease-in-out;
+}
+
+.translateUp {
+  transform: translateY(-150px);
+}

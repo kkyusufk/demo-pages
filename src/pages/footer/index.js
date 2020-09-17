@@ -5,6 +5,7 @@ import { Card } from "../../components/card/card";
 import { Grid } from "../../components/grid/grid";
 import { Reel } from "../../components/reel/reel";
 import InstgramSvg from "../../../public/icons/instagram.svg";
+import { InputEmail } from "../../components/input/input";
 
 const TopContent1 = () => <span className="name">Join the team</span>;
 const BottomContent1 = () => (
@@ -17,12 +18,14 @@ const TopContent2 = () => (
 const BottomContent2 = () => (
   <>
     <span className="signUp">Sign up</span>
-    <div className="hoverableSignUp">
-      <input type="email" height="60" placeholder="Your Email Address" />
-      <p>Sign up</p>
-    </div>
   </>
 );
+ 
+const HiddenContent = () => (
+  <div className="hoverableSignUp">
+    <InputEmail />
+  </div>
+)
 
 export const TopContent3 = () => (
   <div className="reel_footer">
@@ -42,7 +45,7 @@ const Footer = () => (
   <Grid>
     <Card BottomContent={BottomContent1} TopContent={TopContent1} />
     <Card BottomContent={BottomContent3} TopContent={TopContent3} />
-    <Card BottomContent={BottomContent2} TopContent={TopContent2} />
+    <Card BottomContent={BottomContent2} TopContent={TopContent2} HiddenContent={HiddenContent} />
   </Grid>
 );
 
