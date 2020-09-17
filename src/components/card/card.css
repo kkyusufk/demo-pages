@@ -3,13 +3,12 @@ h1,h2,h3,h4,h5,h6 {
   margin: 0;
 }
 .card {
-  font-family: 'Roobert';
+  font-family: 'Roobert-Regular';
   width: inherit;
   height: inherit;
   overflow: hidden;
   cursor: pointer;
   padding: 30px;
-  font-family: Roobert;
 }
 
 .card-content {

@@ -1,6 +1,6 @@
 :root::-webkit-scrollbar {
   display: none;
-  font-family: Roobert;
+  font-family: 'Roobert-Regular';
 }
 
 .blogContainer {
@@ -8,7 +8,7 @@
 }
 
 .blog_author {
-  font-family: Roobert;
+  font-family: 'Roobert-Regular';
   font-style: normal;
   font-weight: normal;
   font-size: 32px;
