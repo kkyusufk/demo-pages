@@ -1,0 +1,19 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.portfolioLayout {
+  margin: 135px 135px 0px 135px;
+  column-gap: 105px;
+  row-gap: 30px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+@media only screen and (max-width: 700px) {
+  .portfolioLayout {
+    margin: 30px 0px 50px 0px;
+    grid-template-columns: 1fr;
+  }  
+}
+

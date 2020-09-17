@@ -1,0 +1,44 @@
+.portfolioContainer {
+  justify-self: center;
+  width: 320px;
+  height: 320px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.portfolioImage {
+  width: 320px;
+  height: 240px;
+}
+
+.portfolioContent {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.portfolioTitle {
+  font-family: 'Roobert-regular';
+  font-size: 20px;
+  font-weight: normal;
+}
+
+.portfolioSubtitle {
+  font-family: 'Roobert-regular';
+  font-size: 20px;
+  font-weight: normal;
+  color: rgba(51, 51, 51, 0.5);
+}
+
+@media only screen and (min-width: 700px) {
+  .portfolioContainer:hover {
+    transform: translateY(-20px);
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .portfolioContainer {
+    justify-self: center;
+  }
+}
