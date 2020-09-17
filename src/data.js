@@ -76,16 +76,16 @@ export const team = [
       "UI/UX Designer. Legitimately needs OCD treatment and to chill out a bit.",
   },
   {
-    name: "Abhsek Sarda",
-    description: "Founder & Creative Director. Lego and Edison Buld Lover",
+    name: "Abhisek Sarda",
+    description: "Founder & Creative Director. Lego and Edison Bulb Lover",
   },
   {
-    name: "Abhsek Sarda",
-    description: "Founder & Creative Director. Lego and Edison Buld Lover",
+    name: "Abhisek Sarda",
+    description: "Founder & Creative Director. Lego and Edison Bulb Lover",
   },
   {
-    name: "Abhsek Sarda",
-    description: "Founder & Creative Director. Lego and Edison Buld Lover",
+    name: "Abhisek Sarda",
+    description: "Founder & Creative Director. Lego and Edison Bulb Lover",
   },
 ];
 
