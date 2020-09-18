@@ -25,10 +25,15 @@
 }
 
 .imageTitle {
+  font-family: 'Roobert-Regular';
   font-style: normal;
   font-weight: normal;
   font-size: 32px;
   line-height: 120%;
+}
+
+.imageSubtitle {
+  font-family: 'Roobert-Regular';
 }
 
 .tabs {

@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'Roobert-Regular';
+}
+#main-div {
+  position: relative;
+  display: grid;
+  row-gap: 100px;
+  overflow-y: hidden;
+  grid-template-columns: auto;
+  margin-left: 135px;
+  margin-right: 135px;
+}
+span {
+  padding-top: 5%;
+  font-weight: 500;
+  font-size: 32px;
+  cursor: pointer;
+}
+#opposite-svg-header {
+  position: absolute;
+  left: 9.3%;
+  right: 9.3%;
+  top: -121px;
+}
+.active {
+  text-decoration: underline;
+}
+#opposite-svg-footer {
+  position: absolute;
+  left: 9.3%;
+  right: 9.3%;
+  bottom: -121px;
+}
+.nav-items{
+  position: relative;
+  padding-left: 5%;
+  padding-right: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.dummy {
+  height: 700px;
+}
