@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { team } from '../../data';
 import { Card } from '../card/card';
+import { Carousel } from '../carousel/carousel';
 import { Grid } from '../grid/grid';
 import { SVG } from '../oppositeSvg';
 
@@ -18,31 +19,19 @@ const Layout = () => {
         <div className="nav-items">
           {menuItems.map(menu => {
             return <span 
-              className={active === menu ? 'active' : ''} 
+              className={active === menu ? 'nav active' : 'nav'} 
               onClick={() => setActive(menu)}>
                 {menu}
               </span>
           })}
+          <p style={{
+            position: 'absolute',
+            top: '0px'
+          }}>Hamburger</p>
         </div>
       </div>
       <div id="main-body">
-        <div><Grid>
-      {team.map((Top) => {
-        return (
-          <Card
-            BottomContent={() => {
-              return (
-                <>
-                  <span className="description">{Top.description}</span>
-                  <span className="details">See details &#x2192;</span>
-                </>
-              );
-            }}
-            TopContent={() => <span className="name">{Top.name}</span>}
-          />
-        );
-      })}
-    </Grid></div>
+        <Grid><Carousel /></Grid>
       </div>
       <div id="main-footer">
       <div id="opposite-svg-footer">

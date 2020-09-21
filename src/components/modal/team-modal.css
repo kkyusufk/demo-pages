@@ -1,16 +1,23 @@
-.team-modal {
-  width: 1170px;
-  height: 269px;
-  top: 100px;
-  background-color: blue;
-  overflow-x: hidden;
-}
-
 .team-modal-wrapper {
   position: absolute;
-  top: 0;
-  /* left: 0; */
-  width: 100vw;
-  height: 100vh;
-  background-color: lightgrey;
+  top: 10%;
+  left: 12%;
+  padding: 50px;
+  width: 1170px;
+  height: 600px;
+  background-color: white;
+  visibility: hidden;
+  transition: all 0.5s ease-in-out;
+  clip-path: polygon(0 0, 0% 0, 0% 0%, 0 0%);
+  font-family: 'Roobert Regular';
 }
+
+.team-modal {
+  display: flex;
+}
+
+.open-modal {
+  visibility: visible;
+  clip-path: polygon(100% 100%, 0% 100%, 0% 0%, 100% 0%);
+}
+

@@ -1,7 +1,7 @@
 import React, { useEffect, useReducer, memo } from "react";
 import { images } from "../../data";
 import "./carousel.css";
-import { DirectionButton } from "../button/directionButton/directionButton";
+import { Button } from "../button/Button/Button";
 import { DIRECTIONS } from "../../constants";
 import { initialState, carouselReducer } from "./carouselReducer";
 
@@ -71,16 +71,16 @@ const Carousel = memo(() => {
         })}
       </div>
       <div className="leftButton">
-        <DirectionButton
+        <Button
           onClick={goLeft}
-          direction={DIRECTIONS.LEFT}
+          className={DIRECTIONS.LEFT.toLowerCase()}
           hidden={state.imageIndex === 0 ? true : false}
         />
       </div>
       <div className="rightButton">
-        <DirectionButton
+        <Button
           onClick={goRight}
-          direction={DIRECTIONS.RIGHT}
+          className={DIRECTIONS.RIGHT.toLowerCase()}
           hidden={state.imageIndex === images.length - 1 ? true : false}
         />
       </div>

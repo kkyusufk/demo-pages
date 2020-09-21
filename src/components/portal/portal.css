@@ -1,0 +1,9 @@
+.disappear {
+  opacity: 1;
+  animation: snap 1s ease-in-out forwards;
+}
+
+@keyframes snap {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
