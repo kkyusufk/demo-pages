@@ -1,0 +1,29 @@
+@font-face {
+  font-family: 'Roobert-Regular';
+  src: url('../Assets/Roobert\ Font/Roobert-Regular.otf'); 
+}
+
+@font-face {
+  font-family: 'Roobert-Bold';
+  src: url('../Assets/Roobert\ Font/Roobert-Bold.otf'); 
+}
+
+@font-face {
+  font-family: 'Roobert-Heavy';
+  src: url('../Assets/Roobert\ Font/Roobert-Heavy.otf'); 
+}
+
+@font-face {
+  font-family: 'Roobert-Light';
+  src: url('../Assets/Roobert\ Font/Roobert-Light.otf'); 
+}
+
+@font-face {
+  font-family: 'Roobert-Medium';
+  src: url('../Assets/Roobert\ Font/Roobert-Medium.otf'); 
+}
+
+@font-face {
+  font-family: 'Roobert-SemiBold';
+  src: url('../Assets/Roobert\ Font/Roobert-SemiBold.otf'); 
+}

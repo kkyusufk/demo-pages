@@ -72,7 +72,6 @@
 }
 
 .slider {
-  border: 1px solid transparent;
   position: relative;
   min-width: 100%;
   max-width: 200%;

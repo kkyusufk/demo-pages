@@ -1,13 +1,8 @@
 .portfolioContainer {
   justify-self: center;
-  width: 320px;
-  height: 320px;
+  max-width: 1170px;
+  max-height: 700px;
   transition: transform 0.5s ease-in-out;
-}
-
-.portfolioImage {
-  width: 320px;
-  height: 240px;
 }
 
 .portfolioContent {
@@ -36,6 +31,12 @@
     transform: translateY(-20px);
   }
 }
+
+@media only screen and (max-width: 1440px) {
+  .portfolioContainer {
+    width: 100% !important;
+  }
+} 
 
 @media only screen and (max-width: 700px) {
   .portfolioContainer {
