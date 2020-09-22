@@ -5,7 +5,7 @@ import { Layout } from "../../components/layoutC/layout";
 import { Portfolio } from "../../components/portfolio/portfolio";
 import { Heading } from "../../components/typography/heading/heading";
 import { FOOTER, HOME, ALIGNMENT } from '../../constants';
-import { Footer } from "../footer";
+import { Footer } from "../../components/footer";
 
 // image imports
 import BloomHotels from '../../Assets/Highlight Images/BloomHotels.png'

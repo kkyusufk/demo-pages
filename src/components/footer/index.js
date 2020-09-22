@@ -1,11 +1,11 @@
 import React from "react";
 
 import "./footer.css";
-import { Card } from "../../components/card/card";
-import { Grid } from "../../components/grid/grid";
-import { Reel } from "../../components/reel/reel";
+import { Card } from "../card/card";
+import { Grid } from "../grid/grid";
+import { Reel } from "../reel/reel";
 import InstgramSvg from "../../../public/icons/instagram.svg";
-import { InputEmail } from "../../components/input/input";
+import { InputEmail } from "../input/input";
 
 const TopContent1 = () => <span className="name">Join the team</span>;
 const BottomContent1 = () => (
