@@ -1,12 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import './layoutCss.css';
 import '../fonts.css';
-
-const menuItems = ['Home', 'Our Work', 'About', 'Careers', 'Blog', 'Contact']
+import { Navbar } from '../navbar/navbar';
 
 const Layout = ({ MainContent }) => {
-  const [active, setActive] = useState('Home');
   return (
     <div className="container">
     <header className="header column">
@@ -23,15 +21,7 @@ const Layout = ({ MainContent }) => {
             <path d="M1085.5 127.873C1095.4 151.332 1119.99 156.821 1135.17 156.821C1147.9 157.475 1160.5 153.9 1171 146.651C1167.93 174.738 1147 196.798 1107.56 196.798C1068.93 196.798 1035.03 169.519 1035.03 125.667C1035.03 77.2422 1069.25 49.8552 1105.89 49.8552C1136.51 49.8552 1167.93 62.8223 1169.6 102.208L1085.5 127.873ZM1081.36 105.544H1120.26C1122.74 82.3538 1114.18 73.8524 1102.02 73.8524C1088.78 73.8524 1080.55 88.1648 1081.36 105.544V105.544Z" stroke="#333333" stroke-opacity="0.5" stroke-width="2" stroke-miterlimit="10"/>
           </svg>
         </div>
-        <ul className="nav-items">
-          <li><u>Home</u></li>
-          <li>Our Work</li>
-          <li>About</li>
-          <li>Careers</li>
-          <li>Blog</li>
-          <li>Contact</li>
-        </ul>
-        <span className="hamburger">hamburger</span>
+        <Navbar />
       </div>
     </header>
     <main className="content column">

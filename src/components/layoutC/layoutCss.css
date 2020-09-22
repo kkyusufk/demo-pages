@@ -31,33 +31,10 @@ body {
   gap: 100px;
 }
 
-.nav-items {
-  font-family: 'Roobert-Regular';
-  position: relative;
-  padding: 0;
-  margin: 0;
-  max-width: 1170px;
-  height: 100%;
-  grid-row-start: 1;
-  grid-column-start: 1;
-  justify-content: space-between;
-  display: flex;
-  text-decoration: none;
-  font-size: 32px;
-}
 
-.hamburger {
-  position: absolute;
-  right: 20px;
-  top: 60px;
-}
-
-li {
-  list-style-position: outside;
-  list-style-type: none;
-}
 
 .opposite-svg-header {
+  z-index: 2;
   position: relative;
   max-width: 1170px;
   top: -121px;
@@ -90,17 +67,6 @@ footer {
     --width: var(--width-tablet);
     padding: 0%;
   }
-
-  .nav-items {
-    top: 60px;
-    height: 90vh;
-    background-color: white;
-    flex-direction: column;
-  }
-
-  .hamburger {
-    display: block;
-  }
   
 }
 
@@ -109,17 +75,6 @@ footer {
     --width-desktop: var(--width-tablet);
     --width: var(--width-desktop);
     padding: 0% 9.3% 0% 9.3%;
-  }
-
-  .hamburger {
-    display: none;
-  }
-
-  .nav-items {
-    top: 42px;
-    height: 3rem;
-    background-color: transparent;
-    flex-direction: row;
   }
 }
 

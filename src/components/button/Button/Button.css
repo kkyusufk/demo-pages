@@ -9,6 +9,10 @@
   transition: transform 1s ease-in-out;
 }
 
+.button img {
+  margin-top: 5px;
+}
+
 .left {
   transform: rotate(180deg); 
 }

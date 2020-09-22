@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import "./Button.css";
 import svg from "../../../../public/icons/right.svg";
 
-const Button = memo(({ onClick, disabled, className, hidden }) => {
+const Button = memo(({ onClick, disabled, className, hidden, src = '' }) => {
   return (
     <button
       className={classNames('button', className)}
@@ -12,7 +12,7 @@ const Button = memo(({ onClick, disabled, className, hidden }) => {
       disabled={disabled}
       hidden={hidden}
     >
-      <img src={svg} alt="direction button" width="20px" height="20px" />
+      <img src={src ? src : svg} alt="direction button" width="20px" height="20px" />
     </button>
   );
 });

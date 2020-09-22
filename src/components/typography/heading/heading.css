@@ -1,12 +1,24 @@
-.heading {
+.heading-h1 {
+  margin: 0;
   font-family: 'Roobert-Regular';
   font-size: 64px;
   font-style: normal;
   font-weight: 500;
   line-height: 74px;
   letter-spacing: 0em;
-  text-align: left;
-  height: 222px;
-  max-width: 970px;
+}
+
+@media only screen and (max-width: 700px) {
+  .heading {
+    width: 100vw !important;
+    display: flex;
+    justify-content: center;
+  }
+  .heading-h1 {
+    width: 300px;
+    font-size: 30px;
+    line-height: 34px;
+    font-weight: 500;
+  }
 }
 
