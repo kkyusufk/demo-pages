@@ -4,6 +4,7 @@ import "./carousel.css";
 import { Button } from "../button/Button/Button";
 import { DIRECTIONS } from "../../constants";
 import { initialState, carouselReducer } from "./carouselReducer";
+import rightSVG from '../../../public/icons/right.svg';
 
 const Carousel = memo(() => {
   const [state, dispatch] = useReducer(carouselReducer, initialState);
@@ -75,6 +76,7 @@ const Carousel = memo(() => {
           onClick={goLeft}
           className={DIRECTIONS.LEFT.toLowerCase()}
           hidden={state.imageIndex === 0 ? true : false}
+          src={rightSVG}
         />
       </div>
       <div className="rightButton">
@@ -82,6 +84,7 @@ const Carousel = memo(() => {
           onClick={goRight}
           className={DIRECTIONS.RIGHT.toLowerCase()}
           hidden={state.imageIndex === images.length - 1 ? true : false}
+          src={rightSVG}
         />
       </div>
     </div>

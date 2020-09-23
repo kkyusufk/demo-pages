@@ -3,15 +3,14 @@ import classNames from 'classnames';
 import { NAVITEMS } from '../../constants'; 
 import './navbar.css';
 import { Button } from '../button/Button/Button';
+import hamburger from '../../../public/icons/hamburger.svg'
 
 const Navbar = () => {
   const [active, setActive] = useState(NAVITEMS.HOME)
   const [isOpen, setIsOpen] = useState(false)
   const navItems = Object.values(NAVITEMS);
 
-  const noScroll = () => {
-    window.scrollTo(0, 0);
-  }
+  const noScroll = () => window.scrollTo(0, 0);
 
   useEffect(() => {
     toggleMenu()
@@ -22,24 +21,30 @@ const Navbar = () => {
   }, [isOpen]);
 
   const toggleMenu = () => {
-    const style = isOpen ? 'flex' : 'none';
-    const navBar = document.getElementsByClassName('nav-items')[0];
-    navBar.style.display = style
+    const navBar = document.querySelector('.nav-items');
+    if (isOpen) {
+      navBar.classList.add('nav-open')
+    } else {
+      navBar.classList.remove('nav-open')
+    }
   }
   return (
     <>
       <ul className="nav-items">
-        {navItems.map(nav => {
-          return ( 
-            <li className={classNames({ 'nav-active': active === nav })} onClick={() => setActive(nav)}>{nav}</li>
-          )
-        })}
+        <div className={classNames("nav-position", { "nav-slide-in": isOpen })}> 
+          {navItems.map(nav => {
+            return (
+                <li className={classNames({ 'nav-active': active === nav })} onClick={() => setActive(nav)}>{nav}</li>
+              )
+          })}
+        </div>
       </ul> 
       <Button 
         className="hamburger"
         onClick={() => setIsOpen(isOpen => !isOpen)}
-        src="https://img.icons8.com/ios-filled/20/000000/menu.png"
+        src={hamburger}
       />
+      
     </>
   )
 };

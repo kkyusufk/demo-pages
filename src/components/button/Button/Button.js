@@ -2,9 +2,8 @@ import React, { memo } from "react";
 import classNames from 'classnames';
 
 import "./Button.css";
-import svg from "../../../../public/icons/right.svg";
 
-const Button = memo(({ onClick, disabled, className, hidden, src = '' }) => {
+const Button = memo(({ onClick, disabled, className, hidden, src }) => {
   return (
     <button
       className={classNames('button', className)}
@@ -12,7 +11,7 @@ const Button = memo(({ onClick, disabled, className, hidden, src = '' }) => {
       disabled={disabled}
       hidden={hidden}
     >
-      <img src={src ? src : svg} alt="direction button" width="20px" height="20px" />
+      <img src={src} alt="direction button" width="20px" height="20px" />
     </button>
   );
 });

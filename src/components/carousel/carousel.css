@@ -148,6 +148,14 @@
   transition: all .5s ease-in-out;
 }
 
+.right {
+  background-size: cover;
+}
+
+.left {
+  transform: rotate(180deg); 
+}
+
 @media only screen and (min-width: 700px) {
   .carousel:hover .carousel-images {
     -webkit-transform: scale(1.4);

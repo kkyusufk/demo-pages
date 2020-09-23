@@ -34,7 +34,7 @@ body {
 
 
 .opposite-svg-header {
-  z-index: 2;
+  z-index: 1;
   position: relative;
   max-width: 1170px;
   top: -121px;
@@ -61,11 +61,18 @@ footer {
   flex-basis: calc(var(--width) / var(--columns) * 100%);
 }
 
-@media only screen and (min-width: 320px) {
+@media only screen 
+  and (min-width: 320px) 
+  and (max-width: 768px) {
   .column {
     --width-tablet: var(--width-mobile);
     --width: var(--width-tablet);
     padding: 0%;
+  }
+
+  .opposite-svg-header {
+    z-index: 2;
+    height: 3rem;
   }
   
 }
