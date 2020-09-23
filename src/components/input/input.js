@@ -5,10 +5,13 @@ const InputEmail = () => {
   const inputRef = useRef();
   const confirmRef = useRef();
   const [email, setEmail] = useState('');
+  const [disabled, setDisabled] = useState(true);
   const removeTransition = () => {
-    const hidden = document.getElementById('hidden')
+    const hidden = document.querySelector('.fail')
     hidden.style.display = 'none';
     inputRef.current.classList.remove('moveUp')
+    setDisabled(true)
+    inputRef.current.value = ''
   }
   const applyTransition = () => {
     console.log('applied', inputRef.current.classList)
@@ -16,7 +19,7 @@ const InputEmail = () => {
   const confirmationMessage = () => {
     const { value } = inputRef.current;
     const emailInput = document.getElementById('emailInput')
-    const hidden = document.getElementById('hidden')
+    const hidden = document.querySelector('.fail')
     // eslint-disable-next-line
     const RegEx = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     if (RegEx.test(value)) {
@@ -38,10 +41,16 @@ const InputEmail = () => {
       setTimeout(() => {
         emailInput.classList.remove('translateOut');
         confirmRef.current.classList.remove('translateUp');
-      }, 1000)
+      }, 10000)
     })
     return () => clearTimeout()
   }, [email]);
+
+  const enableButton = () => {
+    if (inputRef.current.value.length > 0) {
+      setDisabled(false)
+    }
+  }
 
   
   return (
@@ -52,11 +61,12 @@ const InputEmail = () => {
           type="email"
           placeholder="Your Email Address"
           onFocus={removeTransition}
+          onChange={enableButton}
           onBlur={applyTransition}
           ref={inputRef}
         />
-        <div id="hidden">That's not a legit email ID :-/</div>
-        <p id="goRightSignUp" onClick={confirmationMessage}>Sign up &#x2192;</p>
+        <div className="fail" id="hidden">That's not a legit email ID :-/</div>
+        <button id="goRightSignUp" onClick={confirmationMessage} disabled={disabled}>Sign up &#x2192;</button>
       </div>
       <div ref={confirmRef} id="confirm" style={{ position: 'relative', top: '20px' }}>
         {inputRef.current && 

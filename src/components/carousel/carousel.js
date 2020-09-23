@@ -13,6 +13,15 @@ const Carousel = memo(() => {
 
   const reset = () => dispatch({ type: "RESET" });
 
+  const changeOnTap = (e) => {
+    const halfWidth = window.innerWidth / 2;
+    if (e.pageX > halfWidth && state.imageIndex < images.length - 1) {
+      dispatch({ type: 'NEXT' })
+    } else if ( e.pageX < halfWidth && state.imageIndex > 0) {
+      dispatch({ type: 'PREVIOUS' })
+    }
+  }
+
   useEffect(() => {
     let id;
     id = setTimeout(() => {
@@ -26,7 +35,7 @@ const Carousel = memo(() => {
   }, [state]);
 
   return (
-    <div className="carousel">
+    <div className="carousel" onClick={(e) => changeOnTap(e)}>
       {images.map((image, index) => {
         return (
           <div

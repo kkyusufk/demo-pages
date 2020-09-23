@@ -1,8 +1,15 @@
 .typeEmail {
-  width: 80%;
+  width: 90%;
   height: 60px;
-  margin-bottom: 20px;
   transition: all 0.5s ease-in-out;
+}
+
+#emailInput {
+  height: 114px;
+}
+
+.fail {
+  font-size: 20px;
 }
 
 #confirm {
@@ -12,7 +19,7 @@
 
 .moveUp {
   border-color: red;
-  transform: translateY(-5px);
+  transform: translateY(-15px);
 }
 
 #hidden {
@@ -23,16 +30,16 @@
 }
 
 #goRightSignUp {
+  border: none;
+  outline: none;
+  background: transparent;
+  height: 3rem;
   transition: transform 0.5s ease-in-out;
 }
 
 #goRightSignUp:hover {
   cursor: pointer;
   transform: translateX(20px);
-}
-
-.emailFunctionality {
-  overflow: hidden;
 }
 
 .translateOut {

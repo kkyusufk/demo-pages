@@ -70,9 +70,16 @@ footer {
     padding: 0%;
   }
 
+  .container {
+    gap: 75px;
+  }
+
   .opposite-svg-header {
     z-index: 2;
-    height: 3rem;
+  }
+
+  header {
+    height: 0px !important;  /* !important required so that this is not overrided */
   }
   
 }
@@ -92,7 +99,7 @@ header {
   --width-mobile: 12;
   --width-tablet: 12;
   --width-desktop: 12;
-  height: 8rem;
+  height: 120px;
   position: relative;
 }
 
