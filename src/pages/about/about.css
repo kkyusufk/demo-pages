@@ -1,0 +1,10 @@
+.example-appear {
+  opacity: 0.01;
+  margin-top: 1000px;
+}
+
+.example-appear.example-appear-active {
+  opacity: 1;
+  margin-top: 0px;
+  transition: all .5s ease-in;
+}

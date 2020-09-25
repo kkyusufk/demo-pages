@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import classNames from 'classnames';
+import { Link } from "gatsby"
+
 import { NAVITEMS } from '../../constants'; 
 import './navbar.css';
 import { Button } from '../button/Button/Button';
@@ -20,7 +22,13 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', noScroll)
   }, [isOpen]);
 
+  useEffect(() => {
+    const path = window.location.pathname.split("/")[1]
+    setActive(NAVITEMS[path.toUpperCase()]);
+  });
+
   const toggleMenu = () => {
+    // For mobile only
     const navBar = document.querySelector('.nav-items');
     if (isOpen) {
       navBar.classList.add('nav-open')
@@ -30,11 +38,16 @@ const Navbar = () => {
   }
   return (
     <>
-      <ul className="nav-items">
+      <ul className="nav-header">
         <div className={classNames("nav-position", { "nav-slide-in": isOpen })}> 
           {navItems.map(nav => {
             return (
-                <li className={classNames({ 'nav-active': active === nav })} onClick={() => setActive(nav)}>{nav}</li>
+                <Link
+                  to={`/${nav.toLowerCase()}/`} 
+                  className={classNames('nav-items', { 'nav-active': active === nav })} 
+                  onClick={() => setActive(nav)}>
+                    {nav}
+                </Link>
               )
           })}
         </div>
