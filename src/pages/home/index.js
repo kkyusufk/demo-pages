@@ -4,7 +4,8 @@ import { Carousel } from "../../components/carousel/carousel";
 import { Layout } from "../../components/layoutC/layout";
 import { Portfolio } from "../../components/portfolio/portfolio";
 import { Heading } from "../../components/typography/heading/heading";
-import { FOOTER, HOME, ALIGNMENT } from '../../constants';
+import { ALIGNMENT } from '../../constants';
+import { FOOTER, HOME } from '../../data';
 import { Footer } from "../../components/footer";
 import { Grid2 } from "../../components/grid/grid2";
 

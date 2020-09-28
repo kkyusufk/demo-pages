@@ -43,7 +43,10 @@ const InputEmail = () => {
         confirmRef.current.classList.remove('translateUp');
       }, 10000)
     })
-    return () => clearTimeout()
+    return () => { 
+      main.removeEventListener('mouseover')
+      clearTimeout() 
+    }
   }, [email]);
 
   const enableButton = () => {

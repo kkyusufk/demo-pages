@@ -29,7 +29,7 @@ const Navbar = () => {
 
   const toggleMenu = () => {
     // For mobile only
-    const navBar = document.querySelector('.nav-items');
+    const navBar = document.querySelector('.nav-header');
     if (isOpen) {
       navBar.classList.add('nav-open')
     } else {

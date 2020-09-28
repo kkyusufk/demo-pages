@@ -1,7 +1,8 @@
 .team-modal-wrapper {
   position: absolute;
-  top: 10%;
-  left: 12%;
+  margin: 0 auto;
+  top: 330%;
+  left: 16%;
   padding: 50px;
   width: 1170px;
   height: 600px;
@@ -14,6 +15,7 @@
 
 .team-modal {
   display: flex;
+  justify-content: column;
 }
 
 .open-modal {

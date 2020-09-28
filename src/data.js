@@ -76,16 +76,28 @@ export const team = [
       "UI/UX Designer. Legitimately needs OCD treatment and to chill out a bit.",
   },
   {
-    name: "Abhisek Sarda",
-    description: "Founder & Creative Director. Lego and Edison Bulb Lover",
+    name: "Jude Gonsalves",
+    description: "UI/UX Designer. Baker. You *have* to try his brookies sometime. Seriously.",
   },
   {
-    name: "Abhisek Sarda",
-    description: "Founder & Creative Director. Lego and Edison Bulb Lover",
+    name: "Ishan Nahata",
+    description: "UI/UX Designer. Enigma. Inhouse memelord. Dry humour kinda person",
   },
   {
-    name: "Abhisek Sarda",
-    description: "Founder & Creative Director. Lego and Edison Bulb Lover",
+    name: "Jitesh Gupta",
+    description: "Studio Assistant. Dejected that TikTok is now banned. Still loves his bike though.",
+  },
+  {
+    name: "Prakash Solanki",
+    description: "Studio Assistant. Kindest eyes and smile. But sounds scary when angry.",
+  },
+  {
+    name: "Bodoni",
+    description: "Chairperson. Loves his beanbag. Might secretly be a cat.",
+  },
+  {
+    name: "Gotham",
+    description: "Definitely a dog, no doubt about it.",
   },
 ];
 
@@ -104,3 +116,87 @@ export const blogs = [
     src: "https://source.unsplash.com/random",
   },
 ];
+
+export const HOME = {
+  get headingOne() {
+    return 'Opposite works with emerging companies to build brands and design experiences';
+  },
+  get headingTwo() {
+    return 'See Full Portfolio'
+  },
+  get headingThree() {
+    return 'We work with challenger brands on breaking status quo. <br /> About Us';
+  }
+}
+
+export const ABOUT = {
+  get headingOne() {
+    return 'About Opposite'
+  },
+  get headingTwo() {
+    return 'We work with challenger brands on breaking the status quo.'
+  },
+  get headingThree() {
+    return "We've built brands and experiences that you love. Brands your see everywhere,everyday, and brands that you've never heard about - but are leaders in their industry" 
+  },
+  get headingFour() {
+    return 'Focussing on projects that requires us to put our heart and soul into them'
+  },
+  get headingFive() {
+    return 'We work with small brands on big projects, not big brands on small projects.'
+  },
+  get headingSix() {
+    return "We've never been very excited about working with a large well-known brand on a small marketing project just to get them on our portfolio. We'd much rather work with founders and creators to build a new brand."
+  },
+  get headingSeven() {
+    return 'Domain-agnostic. With experience across 20+ industries'
+  },
+  get headingEight() {
+    return 'Artificial Intelligence, Automobile, Consumer Tech, Cultural, Ecommerce, Education, Enterprise, Entertainment, Events, Fashion, Financial Services, Food & Beverages, Hardware, Healthcare + Pharma, Hospitality, Media, Real Estate, Retail, SaaS, Technology, Research, Telecom, Travel, Venture Capital'
+  },
+  get headingNine() {
+    return 'Meet the Team'
+  }
+};
+
+export const CAREERS = {
+  get headingOne() {
+    return 'Careers at Opposite'
+  },
+  get headingTwo() {
+    return 'When we say we’re the best to work with, we mean it. The only thing missing is you.'
+  },
+  get headingThree() {
+    return 'Current openings, in Bombay'
+  },
+  get headingFour() {
+    return 'Show up, make incredible work, and live the life you want'
+  },
+  get headingFive() {
+    return 'We cherish the joys of creating and crafting, of seeing our work come alive.'
+  },
+  get headingSix() {
+    return 'We work with our hands. And our minds.'
+  },
+  get headingSeven() {
+    return 'We work with our hands. And our minds.'
+  },
+  get headingEight() {
+    return 'Lots of beer to drink too'
+  },
+  get headingNine() {
+    return 'We cherish the joys of creating and crafting, of seeing our work come alive.'
+  }
+}
+
+export const FOOTER = {
+  get home() {
+    return 'Ready to start a project? <br /> Get in Touch';
+  },
+  get about() {
+    return 'Want to join the team? <br /> See Career Openings'
+  },
+  get careers() {
+    return 'Get to know us better. <br /> About us'
+  }
+}

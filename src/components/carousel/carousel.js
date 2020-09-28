@@ -1,4 +1,5 @@
 import React, { useEffect, useReducer, memo } from "react";
+import classnames from 'classnames';
 import { images } from "../../data";
 import "./carousel.css";
 import { Button } from "../button/Button/Button";
@@ -6,7 +7,7 @@ import { DIRECTIONS } from "../../constants";
 import { initialState, carouselReducer } from "./carouselReducer";
 import rightSVG from '../../../public/icons/right.svg';
 
-const Carousel = memo(() => {
+const Carousel = memo(({ compact }) => {
   const [state, dispatch] = useReducer(carouselReducer, initialState);
   const goRight = () => dispatch({ type: "NEXT" });
   const goLeft = () => dispatch({ type: "PREVIOUS" });
@@ -48,7 +49,7 @@ const Carousel = memo(() => {
           </div>
         );
       })}
-      <div className="image-title">
+      <div className={classnames("image-title", { "hidden": compact })}>
         {images.map((image, index) => {
           const hidden = state.imageIndex === index ? "notHidden" : "hidden";
           return (
@@ -84,7 +85,7 @@ const Carousel = memo(() => {
         <Button
           onClick={goLeft}
           className={DIRECTIONS.LEFT.toLowerCase()}
-          hidden={state.imageIndex === 0 ? true : false}
+          hidden={(state.imageIndex === 0 ? true : false) || compact}
           src={rightSVG}
         />
       </div>
@@ -92,7 +93,7 @@ const Carousel = memo(() => {
         <Button
           onClick={goRight}
           className={DIRECTIONS.RIGHT.toLowerCase()}
-          hidden={state.imageIndex === images.length - 1 ? true : false}
+          hidden={(state.imageIndex === images.length - 1 ? true : false) || compact}
           src={rightSVG}
         />
       </div>

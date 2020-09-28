@@ -5,10 +5,10 @@ import "./team-modal.css";
 
 const TeamModal = ({ showModal, hideModal }) => {
 
-  useEffect(() => {
+  useEffect(() => { 
     let gatsby;
     if (showModal) {
-      gatsby = document.getElementsByClassName('wrapper')[0];
+      gatsby = document.getElementsByClassName('container')[0];
       gatsby.classList.add('disappear');
       const modal = document.getElementsByClassName('team-modal-wrapper')[0]
       modal.classList.add('open-modal')
@@ -18,7 +18,7 @@ const TeamModal = ({ showModal, hideModal }) => {
   const hideTheModal = () => {
     const modal = document.getElementsByClassName('team-modal-wrapper')[0]
     modal.classList.remove('open-modal')
-    const gatsby = document.getElementsByClassName('wrapper')[0];
+    const gatsby = document.getElementsByClassName('container')[0];
     gatsby.classList.remove('disappear');
     hideModal()
   }
