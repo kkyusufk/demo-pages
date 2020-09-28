@@ -32,7 +32,7 @@ const MainContent = () => (
         <Carousel compact={true} />
       </div>
     </Grid2>
-    <Heading innerHtml={ABOUT.headingSeven} align={ALIGNMENT.CENTER} />
+    <Heading innerHtml={ABOUT.headingSeven}  align={ALIGNMENT.CENTER} />
     <Grid1>
       <div className="domain-content">
         <SubHeading innerHtml={ABOUT.headingEight} width="640px"/>
