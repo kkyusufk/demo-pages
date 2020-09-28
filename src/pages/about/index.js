@@ -12,6 +12,7 @@ import { Carousel } from '../../components/carousel/carousel';
 import { Team } from '../../components/team';
 import { ALIGNMENT } from '../../constants';
 import { Grid1 } from '../../components/grid/grid1';
+import { Grid2 } from '../../components/grid/grid2';
 
 const MainContent = () => (
   <>
@@ -20,22 +21,23 @@ const MainContent = () => (
       <Heading innerHtml={ABOUT.headingTwo} width="970px" align={ALIGNMENT.LEFT} />
       <SubHeading innerHtml={ABOUT.headingThree} width="970px"/>
     </div>
-    <Scrollable />
+    <Grid1><Scrollable /></Grid1>
     <Heading innerHtml={ABOUT.headingFour} width="970px"/>
-    <Grid1><div className="content-with-carousel">
+    <Grid2 columnGap="130px">
       <div className="about-content-left-of-carousel">
         <SubHeading innerHtml={ABOUT.headingFive} width="inherit" />
         <SubHeading innerHtml={ABOUT.headingSix} width="inherit" />
       </div>
-      <div className="aboutCarousel">
+      <div className="about-carousel">
         <Carousel compact={true} />
       </div>
-    </div>
-    </Grid1>
+    </Grid2>
     <Heading innerHtml={ABOUT.headingSeven} align={ALIGNMENT.CENTER} />
-    <Grid1> <div className="domain-content">
-
-    </div></Grid1>
+    <Grid1>
+      <div className="domain-content">
+        <SubHeading innerHtml={ABOUT.headingEight} width="640px"/>
+      </div>
+    </Grid1>
     <Heading innerHtml={ABOUT.headingNine} align={ALIGNMENT.CENTER} />
     <Team />
     <Heading innerHtml={FOOTER.about} align={ALIGNMENT.CENTER} />
