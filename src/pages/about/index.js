@@ -38,9 +38,17 @@ const MainContent = () => (
         <SubHeading innerHtml={ABOUT.headingEight} width="640px"/>
       </div>
     </Grid1>
-    <Heading innerHtml={ABOUT.headingNine} align={ALIGNMENT.CENTER} />
+    <Heading 
+      innerHtml={ABOUT.headingNine} 
+      align={ALIGNMENT.CENTER} 
+      justify='center'
+      />
     <Team />
-    <Heading innerHtml={FOOTER.about} align={ALIGNMENT.CENTER} />
+    <Heading 
+      innerHtml={FOOTER.about} 
+      align={ALIGNMENT.CENTER} 
+      justify='center'
+      />
   </>
 )
 

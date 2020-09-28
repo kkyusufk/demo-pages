@@ -13,8 +13,8 @@
   .heading {
     width: 100% !important;
     display: flex;
-    /* justify-content: center; */
   }
+  
   .heading-h1 {
     width: 300px;
     font-size: 30px;
