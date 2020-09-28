@@ -20,6 +20,7 @@ const TeamModal = ({ showModal, hideModal }) => {
 
   const hideTheModal = () => {
     modalRef.current.classList.add('close-modal')
+    modalRef.current.classList.remove('open-modal')
     const gatsby = document.getElementsByClassName('container')[0];
     gatsby.classList.remove('disappear');
     hideModal()
