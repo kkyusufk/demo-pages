@@ -9,3 +9,8 @@
     grid-template-columns: auto;
   }
 }
+
+.noscroll {
+  overflow: hidden;
+  position: fixed;
+}

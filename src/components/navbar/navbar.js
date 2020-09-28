@@ -17,6 +17,7 @@ const Navbar = () => {
   useEffect(() => {
     toggleMenu()
     if (isOpen) {
+      noScroll() // TODO: maybe handle things better
       window.addEventListener('scroll', noScroll)
     }
     return () => window.removeEventListener('scroll', noScroll)

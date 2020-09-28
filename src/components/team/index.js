@@ -20,15 +20,15 @@ const Team = () => {
         return (
           <>
           <Card
+            TopContent={() => <span className="name">{Top.name}</span>}
             BottomContent={() => {
               return (
                 <>
-                  <span className="description">{Top.description}</span>
+                  <span className="description" onClick={() => displayModal()}>{Top.description}</span>
                   <span className="details" onClick={() => displayModal()}>See details &#x2192;</span>
                 </>
               );
             }}
-            TopContent={() => <span className="name">{Top.name}</span>}
           />
           </>
         );

@@ -1,31 +1,62 @@
 .team-modal-wrapper {
-  position: absolute;
-  margin: 0 auto;
-  top: 330%;
-  left: 16%;
-  padding: 50px;
-  max-width: 1170px;
-  max-height: 600px;
-  background-color: white;
   visibility: hidden;
   transition: all 0.5s ease-in-out;
-  clip-path: polygon(0 0, 0% 0, 0% 0%, 0 0%);
+  background-color: white;
   font-family: 'Roobert Regular';
 }
 
-.team-modal {
-  display: flex;
-  justify-content: column;
+@media only screen and (min-width: 700px) {
+  .team-modal-wrapper {
+    position: absolute;
+    margin: 0 auto;
+    top: 330%;
+    left: 16%;
+    padding: 50px;
+    max-width: 1170px;
+    max-height: 600px;
+    clip-path: polygon(0 0, 0% 0, 0% 0%, 0 0%);
+  }
+
+  .team-modal {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .open-modal {
+    visibility: visible;
+    clip-path: polygon(100% 100%, 0% 100%, 0% 0%, 100% 0%);
+  }
 }
 
-.open-modal {
-  visibility: visible;
-  clip-path: polygon(100% 100%, 0% 100%, 0% 0%, 100% 0%);
+.close-button {
+  font-family: 'Roobert-Regular';
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }
 
 @media only screen and (max-width: 700px) {
   .team-modal-wrapper {
+    position: fixed;
+    overflow-y: scroll;
     left: 0;
-    width: 100%;
+    top: 1000px;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: inherit;
+    padding: 10px;
+    transition: top .5s ease-in-out;
+  }
+
+  .team-modal {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+  }
+
+  .open-modal {
+    visibility: visible;
+    top: 0;
   }
 }

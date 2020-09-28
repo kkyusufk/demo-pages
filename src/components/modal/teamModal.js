@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import classNames from 'classnames';
 
 import "./team-modal.css";
+import { Grid1 } from "../grid/grid1";
+import { Carousel } from "../carousel/carousel";
 
 const TeamModal = ({ showModal, hideModal }) => {
 
@@ -28,13 +30,14 @@ const TeamModal = ({ showModal, hideModal }) => {
       <div className="team-modal">
         <span style={{ fontSize: '64px' }}>Abhisek Sarda</span>
         <span style={{ fontSize: '32px' }}>Founder {`&`} Creative Director</span>
+
+        <Carousel compact={true}/>
       </div>
       <span 
         onClick={() => hideTheModal()}
-        style={{
-          float: 'right',
-          cursor: 'pointer'
-        }}>X</span>
+        className="close-button">
+          X
+      </span>
     </div>
   );
 };
