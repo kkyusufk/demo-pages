@@ -23,7 +23,12 @@ import { Grid1 } from "../../components/grid/grid1";
 
 const MainContent = () => (
   <>
-    <Heading align={ALIGNMENT.LEFT} innerHtml={HOME.headingOne} width='970px' />
+    <Heading 
+      align={ALIGNMENT.LEFT} 
+      innerHtml={HOME.headingOne}
+      width='970px' 
+      justify='center'
+      />
     <Grid1><Carousel /></Grid1>
     <Grid2>
       <Portfolio
@@ -63,9 +68,19 @@ const MainContent = () => (
     </Grid2>
     <u style={{ cursor: 'pointer' }}><Heading align={ALIGNMENT.CENTER} innerHtml={HOME.headingTwo} /></u>
     <Grid1><img src={HomePageImage} /></Grid1>
-    <Heading align={ALIGNMENT.CENTER} innerHtml={HOME.headingThree} />
+    <Heading 
+      align={ALIGNMENT.CENTER} 
+      innerHtml={HOME.headingThree} 
+      justify='center'
+      />
     <div style={{ marginTop: '100px' }}><Footer /></div>
-    <div style={{ marginTop: '100px' }}><Heading align={ALIGNMENT.CENTER} innerHtml={FOOTER.home} /></div>
+    <div style={{ marginTop: '100px' }}>
+      <Heading 
+        align={ALIGNMENT.CENTER} 
+        innerHtml={FOOTER.home} 
+        justify='center'
+        />
+    </div>
   </>
 )
 

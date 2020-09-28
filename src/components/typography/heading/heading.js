@@ -2,10 +2,10 @@ import React from 'react';
 
 import './heading.css';
 
-const Heading = ({ innerHtml, align, width = '100%' }) => {
+const Heading = ({ innerHtml, align, justify, width = '100%' }) => {
   const textArray = innerHtml.split("<br />");
   return ( 
-    <div className="heading" style={{ textAlign: align, width }}>
+    <div className="heading" style={{ textAlign: align, justifyContent: justify, width }}>
       <h1 className="heading-h1" style={{ textAlign: align }}>
         {textArray[0]} <br/> {textArray[1]}
       </h1> 
