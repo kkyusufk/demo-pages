@@ -9,7 +9,7 @@ import { ABOUT, FOOTER } from '../../data';
 import { SubHeading } from '../../components/typography/subHeading/subHeading';
 import { Scrollable } from '../../components/scrollable/scrollable';
 import { Carousel } from '../../components/carousel/carousel';
-import { Team } from '../team';
+import { Team } from '../../components/team';
 import { ALIGNMENT } from '../../constants';
 import { Grid1 } from '../../components/grid/grid1';
 

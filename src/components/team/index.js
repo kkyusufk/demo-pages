@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
-import { Card } from "../../components/card/card";
-import { Grid } from "../../components/grid/grid";
-import { TeamModal } from "../../components/modal/teamModal";
-import { Portal } from "../../components/portal/portal";
+import { Card } from "../card/card";
+import { Grid } from "../grid/grid";
+import { TeamModal } from "../modal/teamModal";
+import { Portal } from "../portal/portal";
 import { team } from "../../data";
 import "./page3.css";
 
