@@ -22,7 +22,12 @@ const MainContent = () => (
       <SubHeading innerHtml={ABOUT.headingThree} width="970px"/>
     </div>
     <Grid1><Scrollable /></Grid1>
-    <Heading innerHtml={ABOUT.headingFour} width="970px"/>
+    <Heading 
+      innerHtml={ABOUT.headingFour} 
+      width="970px"
+      align={ALIGNMENT.LEFT}
+      justify='center'
+      />
     <Grid2 columnGap="130px">
       <div className="about-content-left-of-carousel">
         <SubHeading innerHtml={ABOUT.headingFive} width="inherit" />
@@ -32,7 +37,11 @@ const MainContent = () => (
         <Carousel compact={true} />
       </div>
     </Grid2>
-    <Heading innerHtml={ABOUT.headingSeven}  align={ALIGNMENT.CENTER} />
+    <Heading 
+      innerHtml={ABOUT.headingSeven}  
+      align={ALIGNMENT.CENTER} 
+      justify='center'
+      />
     <Grid1>
       <div className="domain-content">
         <SubHeading innerHtml={ABOUT.headingEight} width="640px"/>
