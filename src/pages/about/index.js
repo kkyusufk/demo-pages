@@ -15,10 +15,10 @@ import { Grid1 } from '../../components/grid/grid1';
 
 const MainContent = () => (
   <>
-    <div>
-      <p>About Opposite</p>
-      <Heading innerHtml={ABOUT.headingTwo} width="970px" />
-      <SubHeading innerHtml={ABOUT.headingThree} width="970px" />
+    <div className="about-top-heading">
+      <h5 className="about-opposite">About Opposite</h5>
+      <Heading innerHtml={ABOUT.headingTwo} width="970px" align={ALIGNMENT.LEFT} />
+      <SubHeading innerHtml={ABOUT.headingThree} width="970px"/>
     </div>
     <Scrollable />
     <Heading innerHtml={ABOUT.headingFour} width="970px"/>

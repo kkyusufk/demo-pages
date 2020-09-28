@@ -13,7 +13,7 @@
   .heading {
     width: 100vw !important;
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
   }
   .heading-h1 {
     width: 300px;

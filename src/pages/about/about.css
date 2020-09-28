@@ -15,6 +15,17 @@
   height: 570px;
 }
 
+.about-opposite {
+  margin: 0;
+  font-family: 'Roobert-Bold';
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 23px;
+  letter-spacing: 0em;
+  color: rgba(51, 51, 51, 0.35);;
+}
+
 .content-with-carousel {
   display: flex;
   justify-content: space-between;
@@ -30,4 +41,11 @@
 .aboutCarousel {
   width: 470px;
   height: 600px;
+}
+
+@media only screen and (max-width: 700px) {
+  .about-top-heading {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
 }
