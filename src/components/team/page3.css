@@ -2,6 +2,7 @@
   font-size: 32px;
   font-style: Regular;
   transition: transform 0.5s ease-in-out;
+  color: rgba(51, 51, 51, 0.5);
 }
 
 .details {
@@ -14,6 +15,7 @@
 }
 
 .name {
+  font-family: 'Roobert-Regular';
   display: inline-block;
   line-height: 1;
   word-wrap: none;
