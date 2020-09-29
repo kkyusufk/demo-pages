@@ -15,7 +15,7 @@
   .heading-h2 {
     margin: 0;
     width: 300px !important;
-    height: 168px;
+    height: inherit;
     font-family: 'Roobert-Regular';
     font-size: 20px;
     font-style: normal;

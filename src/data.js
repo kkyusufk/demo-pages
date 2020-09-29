@@ -101,6 +101,29 @@ export const team = [
   },
 ];
 
+export const openings = [
+  {
+    name: 'New Business Manager',
+    description: 'Build and Manage Client Relationships'
+  },
+  {
+    name: 'UI/UX Designer',
+    description: 'Craft the next generation of Experiences and Interfaces.'
+  },
+  {
+    name: 'Project Manager',
+    description: 'Get things done!'
+  },
+  {
+    name: 'Senior Graphic Designer',
+    description: 'Build and Manage Bold Brands'
+  },
+  {
+    name: 'HR and Studio Manager',
+    description: 'Manage our studio space and help build our team.'
+  }
+]
+
 export const blogs = [
   {
     author: "Abhisek Sarda",
@@ -179,7 +202,7 @@ export const CAREERS = {
     return 'We work with our hands. And our minds.'
   },
   get headingSeven() {
-    return 'We work with our hands. And our minds.'
+    return 'We cherish the joys of creating and crafting, of seeing our work come alive.'
   },
   get headingEight() {
     return 'Lots of beer to drink too'
