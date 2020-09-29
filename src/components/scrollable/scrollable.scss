@@ -1,0 +1,34 @@
+@import '../../css/mixins.scss';
+
+.marquee {
+  width: 100%;
+  height: 20vh;
+}
+
+.marquee-content {
+  @include marquee-content(marquee-scroll)
+}
+
+.marquee-content-reverse {
+  @include marquee-content(marquee-scroll, reverse)
+}
+
+.marquee-content-li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 448px;
+  height: 120px;
+  flex-shrink: 0;
+  font-size: 5rem;
+  white-space: nowrap;
+    div {
+      font-size: 64px;
+    }
+}
+
+@keyframes marquee-scroll {
+  0% { transform: translateX(-90px); }
+  100% { transform: translateX(-1882px); }
+}
+
