@@ -20,5 +20,11 @@
   line-height: 34px;
   letter-spacing: 0em;
   text-align: left;
+}
 
+@mixin marquee-content($animation-name, $direction: normal) {
+  height: 100%;
+  display: flex;
+  column-gap: 150px;
+  animation: $animation-name 15s linear infinite $direction;
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 
-const CareerDetail = ({ location }) => {
-  return `${location.state.name}`
+const CareerDetail = () => {
+  return 'career Detail'
 }
 
 export default CareerDetail;
