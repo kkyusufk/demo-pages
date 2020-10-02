@@ -23,7 +23,7 @@ export const portfolioData = [
   {
     src: portfolioImage1,
     title: "Kapiva",
-    subtitle: "Brand Creation & Packag",
+    subtitle: "Brand Creation & Packaging",
   },
   {
     src: portfolioImage2,
@@ -39,7 +39,7 @@ export const portfolioData = [
   {
     src: portfolioImage5,
     title: "Canarim",
-    subtitle: "Branding for Konkani Rest",
+    subtitle: "Branding for Konkani Restaurant",
   },
   {
     src: portfolioImage6,
@@ -152,6 +152,15 @@ export const HOME = {
   }
 }
 
+export const OURWORK = {
+  get headingOne() {
+    return 'Opposite’s Portfolio of Work'
+  },
+  get headingTwo() {
+    return 'From billion dollar behemoths to emerging brands.'
+  }
+}
+
 export const ABOUT = {
   get headingOne() {
     return 'About Opposite'
@@ -212,14 +221,32 @@ export const CAREERS = {
   }
 }
 
+export const CONTACT = {
+  get headingOne() {
+    return 'Contact Opposite'
+  },
+  get headingTwo() {
+    return 'We love working with innovative, challenger brands and products'
+  },
+  get headingThree() {
+    return 'To start a project, write to us at <u>911@oppositehq.com</u>. Tell us about your company and how you’d like us to help.'
+  }
+}
+
 export const FOOTER = {
   get home() {
+    return 'Ready to start a project? <br /> Get in Touch';
+  },
+  get ourwork() {
     return 'Ready to start a project? <br /> Get in Touch';
   },
   get about() {
     return 'Want to join the team? <br /> See Career Openings'
   },
   get careers() {
+    return 'Get to know us better. <br /> About us'
+  },
+  get blog() {
     return 'Get to know us better. <br /> About us'
   }
 }
