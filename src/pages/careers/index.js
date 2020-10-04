@@ -1,9 +1,9 @@
 import React from 'react';
 
 import './careers.scss';
-import { CSSTransitionGroup } from 'react-transition-group';
 import { Layout } from '../../components/layoutC/layout';
 import { CAREERS, FOOTER } from '../../data';
+import { SemiBoldHeading } from '../../components/typography/semiBoldHeading/semiBoldHeading';
 import { Heading } from '../../components/typography/heading/heading';
 import { Carousel } from '../../components/carousel/carousel';
 import { Grid1 } from '../../components/grid/grid1';
@@ -14,7 +14,7 @@ import { SubHeading } from '../../components/typography/subHeading/subHeading';
 const MainContent = () => (
   <>
     <div className="careers-top-heading">
-      <h5 className="careers-at-opposite">{CAREERS.headingOne}</h5>
+      <SemiBoldHeading innerHtml={CAREERS.headingOne} />
       <Heading innerHtml={CAREERS.headingTwo} width="970px" />
     </div>
     <Grid1><Carousel /></Grid1>
@@ -50,18 +50,7 @@ const MainContent = () => (
 )
 
 const Career = () => {
-  return (
-    <CSSTransitionGroup
-    transitionName="careers"
-    transitionAppear={true}
-    transitionAppearTimeout={500}
-    transitionEnter={true}
-    transitionLeaveTimeout={1000}
-    transitionLeave={true}
-    >
-      <Layout MainContent={MainContent} />
-    </CSSTransitionGroup>
-  )
+  return <Layout MainContent={MainContent} backgroundColor="#F1F1F1" />
 };
 
 export default Career;

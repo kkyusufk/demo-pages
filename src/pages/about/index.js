@@ -1,11 +1,11 @@
 import React from 'react';
 
 import { Layout } from '../../components/layoutC/layout';
-import { CSSTransitionGroup } from 'react-transition-group'
 
 import './about.css';
 import { Heading } from '../../components/typography/heading/heading';
 import { ABOUT, FOOTER } from '../../data';
+import { SemiBoldHeading } from '../../components/typography/semiBoldHeading/semiBoldHeading';
 import { SubHeading } from '../../components/typography/subHeading/subHeading';
 import { Scrollable } from '../../components/scrollable/scrollable';
 import { Carousel } from '../../components/carousel/carousel';
@@ -17,7 +17,7 @@ import { Grid2 } from '../../components/grid/grid2';
 const MainContent = () => (
   <>
     <div className="about-top-heading">
-      <h5 className="about-opposite">About Opposite</h5>
+      <SemiBoldHeading innerHtml={'About Opposite'} />
       <Heading innerHtml={ABOUT.headingTwo} width="970px" align={ALIGNMENT.LEFT} />
       <SubHeading innerHtml={ABOUT.headingThree} width="970px"/>
     </div>
@@ -62,16 +62,7 @@ const MainContent = () => (
 )
 
 const About = () => {
-  return (
-    <CSSTransitionGroup
-      transitionName="example"
-      transitionAppear={true}
-      transitionAppearTimeout={500}
-      transitionEnter={false}
-      transitionLeave={false}>
-      <Layout MainContent={MainContent} />
-    </CSSTransitionGroup> 
-  )
+  return <Layout MainContent={MainContent} backgroundColor="#F1F1F1" /> 
 }
 
 export default About;

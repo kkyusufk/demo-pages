@@ -32,19 +32,20 @@ const InputEmail = () => {
       hidden.style.display = 'block';
     }
   }
-  const getRef = () => inputRef.current.value;
+  
+  const handleMouseOver = () => {
+    const emailInput = document.getElementById('emailInput');
+    setTimeout(() => {
+      emailInput.classList.remove('translateOut');
+      confirmRef.current.classList.remove('translateUp');
+    }, 10000)
+  }
 
   useEffect(() => {
-    const emailInput = document.getElementById('emailInput');
     const main = document.getElementsByClassName('cardContainer')[2];
-    main.addEventListener('mouseover', () => {
-      setTimeout(() => {
-        emailInput.classList.remove('translateOut');
-        confirmRef.current.classList.remove('translateUp');
-      }, 10000)
-    })
+    main.addEventListener('mouseover', handleMouseOver);
     return () => { 
-      main.removeEventListener('mouseover')
+      main.removeEventListener('mouseover', handleMouseOver);
       clearTimeout() 
     }
   }, [email]);

@@ -23,7 +23,7 @@ export const portfolioData = [
   {
     src: portfolioImage1,
     title: "Kapiva",
-    subtitle: "Brand Creation & Packag",
+    subtitle: "Brand Creation & Packaging",
   },
   {
     src: portfolioImage2,
@@ -39,7 +39,7 @@ export const portfolioData = [
   {
     src: portfolioImage5,
     title: "Canarim",
-    subtitle: "Branding for Konkani Rest",
+    subtitle: "Branding for Konkani Restaurant",
   },
   {
     src: portfolioImage6,
@@ -101,6 +101,36 @@ export const team = [
   },
 ];
 
+
+const jobDetails = {
+  'UI/UX Designer': {
+    get headingOne() {
+      return 'What we’re looking for'
+    },
+    get headingTwo() {
+      return 'Someone who’s articulate, organised, T-Shaped, conscientious, hardworking and innovative – A designer with an engineer’s mind'
+    },
+    get criteriaOne() {
+      return 'You need to have at least 2-4 years of work experience in designing User Experiences, Interfaces and Websites.'
+    },
+    get criteriaTwo() {
+      return 'Passion for user-centric critical analysis and problem-solving. Experience with User Research methods - user personas, journey mapping, and competitor analysis.'
+    },
+    get criteriaThree() {
+      return "Intermediate to Advanced knowledge of Sketch or Figma, Illustrator, Invision, Protopie, After Effects or other prototyping tools. Knowledge about web and app development as we as experience in doing development handovers."
+    },
+    get criteriaFour() {
+      return 'Digital usability best practices knowledge.'
+    },
+    get headingThree() {
+      return 'Your key responsibilities'
+    },
+    get headingFour() {
+      return 'Work on projects end-to-end; right from research, UX design, UI implementation to handovers. Websites, mobile apps and web apps; B2B & B2C.'
+    } 
+  }
+}
+
 export const openings = [
   {
     name: 'New Business Manager',
@@ -108,7 +138,8 @@ export const openings = [
   },
   {
     name: 'UI/UX Designer',
-    description: 'Craft the next generation of Experiences and Interfaces.'
+    description: 'Craft the next generation of Experiences and Interfaces.',
+    details: jobDetails['UI/UX Designer']
   },
   {
     name: 'Project Manager',
@@ -149,6 +180,15 @@ export const HOME = {
   },
   get headingThree() {
     return 'We work with challenger brands on breaking status quo. <br /> About Us';
+  }
+}
+
+export const OURWORK = {
+  get headingOne() {
+    return 'Opposite’s Portfolio of Work'
+  },
+  get headingTwo() {
+    return 'From billion dollar behemoths to emerging brands.'
   }
 }
 
@@ -212,14 +252,32 @@ export const CAREERS = {
   }
 }
 
+export const CONTACT = {
+  get headingOne() {
+    return 'Contact Opposite'
+  },
+  get headingTwo() {
+    return 'We love working with innovative, challenger brands and products'
+  },
+  get headingThree() {
+    return 'To start a project, write to us at <u>911@oppositehq.com</u>. Tell us about your company and how you’d like us to help.'
+  }
+}
+
 export const FOOTER = {
   get home() {
+    return 'Ready to start a project? <br /> Get in Touch';
+  },
+  get ourwork() {
     return 'Ready to start a project? <br /> Get in Touch';
   },
   get about() {
     return 'Want to join the team? <br /> See Career Openings'
   },
   get careers() {
+    return 'Get to know us better. <br /> About us'
+  },
+  get blog() {
     return 'Get to know us better. <br /> About us'
   }
 }

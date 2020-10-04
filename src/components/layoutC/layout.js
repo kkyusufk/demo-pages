@@ -4,9 +4,9 @@ import './layoutCss.css';
 import '../fonts.css';
 import { Navbar } from '../navbar/navbar';
 
-const Layout = ({ MainContent }) => {
+const Layout = ({ MainContent, backgroundColor }) => {
   return (
-    <div className="container">
+    <div className="container" style={{ backgroundColor }}>
       <header className="header column">
         <div className="header__wrapper">
           <div className="opposite-svg-header">
