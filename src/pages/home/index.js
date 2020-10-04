@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from "react";
-import { CSSTransition } from 'react-transition-group';
 
 import { Carousel } from "../../components/carousel/carousel";
 import { Layout } from "../../components/layoutC/layout";

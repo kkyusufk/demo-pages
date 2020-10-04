@@ -4,7 +4,7 @@ import "./footer.css";
 import { Card } from "../card/card";
 import { Grid } from "../grid/grid";
 import { Reel } from "../reel/reel";
-import InstgramSvg from "../../../public/icons/instagram.svg";
+import InstgramSvg from "../../Assets/icons/instagram.svg";
 import { InputEmail } from "../input/input";
 
 const TopContent1 = () => <span className="name">Join the team</span>;

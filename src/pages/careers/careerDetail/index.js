@@ -82,16 +82,21 @@ const MainContent = ({ name, description, details }) => (
   </>
 )
 
+// FIXME
 const CareerDetail = ({ location }) => {
-  const { name, description, details } = location.state
-  return <Layout 
-          MainContent={() => 
-          <MainContent 
-            name={name} 
-            description={description}
-            details={details}
-            />} 
-        />;
+  if(location.state) {
+    const { name, description, details } = location.state;
+    return <Layout 
+            MainContent={() => 
+            <MainContent 
+              name={name} 
+              description={description}
+              details={details}
+              />} 
+          />;
+  } else {
+    return null;
+  }
 }
 
 export default CareerDetail;

@@ -5,7 +5,7 @@ import './openings.scss';
 import { openings } from '../../data';
 import { Card } from '../card/card';
 import { Button } from '../button/Button/Button';
-import rightSVG from '../../../public/icons/right.svg';
+import rightSVG from '../../Assets/icons/right.svg';
 
 
 const OpeningCards = () => {

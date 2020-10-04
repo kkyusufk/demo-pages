@@ -5,7 +5,7 @@ import "./carousel.css";
 import { Button } from "../button/Button/Button";
 import { DIRECTIONS } from "../../constants";
 import { initialState, carouselReducer } from "./carouselReducer";
-import rightSVG from '../../../public/icons/right.svg';
+import rightSVG from '../../Assets/icons/right.svg';
 
 const Carousel = memo(({ compact }) => {
   const [state, dispatch] = useReducer(carouselReducer, initialState);

@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import classNames from 'classnames';
-import { Link } from "gatsby"
 import TransitionLink from 'gatsby-plugin-transition-link'
 
 import { NAVITEMS } from '../../constants'; 
 import './navbar.css';
 import { Button } from '../button/Button/Button';
-import hamburger from '../../../public/icons/hamburger.svg'
+import hamburger from '../../Assets/icons/hamburger.svg'
 
 const Navbar = () => {
   const [active, setActive] = useState(NAVITEMS.HOME)

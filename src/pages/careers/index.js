@@ -1,7 +1,6 @@
 import React from 'react';
 
 import './careers.scss';
-import { CSSTransitionGroup } from 'react-transition-group';
 import { Layout } from '../../components/layoutC/layout';
 import { CAREERS, FOOTER } from '../../data';
 import { SemiBoldHeading } from '../../components/typography/semiBoldHeading/semiBoldHeading';
