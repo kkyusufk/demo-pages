@@ -11,18 +11,33 @@
   display: flex;
   flex-direction: column;
   row-gap: 30px;
+
+  @media only screen and (min-width: 768px) {
+    max-width: 1170px;
+    flex-direction: row;
+  }
 }
 
 .careers-content-left-of-image {
   margin-left: 30px;
   display: flex;
   flex-direction: column;
-  row-gap: 15px;  
+  row-gap: 15px;
+  
+  @media only screen and (min-width: 768px) {
+    align-self: center;
+  }
 }
 
 .careers-image-right-of-content {
   padding-left: 15px;
   padding-right: 15px;
+  
+  @media only screen and (min-width: 768px) {
+    max-width: 570px;
+    height: 720px;
+    flex-direction: row;
+  }
 }
 
 .careers-top-heading {
@@ -43,4 +58,11 @@
 
 .careers-leave {
   position: fixed;
+}
+
+/* alternate divs */
+@media only screen and (min-width: 768px) { 
+  section.main-content > div.careers-image-with-content:nth-of-type(even) {
+    flex-direction: row-reverse;
+  }
 }

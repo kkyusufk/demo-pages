@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import { CSSTransition } from 'react-transition-group';
 
 import { Carousel } from "../../components/carousel/carousel";
 import { Layout } from "../../components/layoutC/layout";
@@ -85,7 +86,7 @@ const MainContent = () => (
 )
 
 const IndexPage = () => {
-  return <Layout MainContent={MainContent} />
+  return <Layout MainContent={MainContent} backgroundColor="#F1F1F1" />;
 };
 
 export default IndexPage;

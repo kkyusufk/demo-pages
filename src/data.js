@@ -101,6 +101,36 @@ export const team = [
   },
 ];
 
+
+const jobDetails = {
+  'UI/UX Designer': {
+    get headingOne() {
+      return 'What we’re looking for'
+    },
+    get headingTwo() {
+      return 'Someone who’s articulate, organised, T-Shaped, conscientious, hardworking and innovative – A designer with an engineer’s mind'
+    },
+    get criteriaOne() {
+      return 'You need to have at least 2-4 years of work experience in designing User Experiences, Interfaces and Websites.'
+    },
+    get criteriaTwo() {
+      return 'Passion for user-centric critical analysis and problem-solving. Experience with User Research methods - user personas, journey mapping, and competitor analysis.'
+    },
+    get criteriaThree() {
+      return "Intermediate to Advanced knowledge of Sketch or Figma, Illustrator, Invision, Protopie, After Effects or other prototyping tools. Knowledge about web and app development as we as experience in doing development handovers."
+    },
+    get criteriaFour() {
+      return 'Digital usability best practices knowledge.'
+    },
+    get headingThree() {
+      return 'Your key responsibilities'
+    },
+    get headingFour() {
+      return 'Work on projects end-to-end; right from research, UX design, UI implementation to handovers. Websites, mobile apps and web apps; B2B & B2C.'
+    } 
+  }
+}
+
 export const openings = [
   {
     name: 'New Business Manager',
@@ -108,7 +138,8 @@ export const openings = [
   },
   {
     name: 'UI/UX Designer',
-    description: 'Craft the next generation of Experiences and Interfaces.'
+    description: 'Craft the next generation of Experiences and Interfaces.',
+    details: jobDetails['UI/UX Designer']
   },
   {
     name: 'Project Manager',

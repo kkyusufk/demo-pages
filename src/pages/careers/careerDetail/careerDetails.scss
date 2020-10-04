@@ -1,0 +1,73 @@
+.career-details-heading-container {
+  width: 100vw;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.career-details-heading-card {
+  width: 100%;
+  position: relative;
+  background-color: #FFFFFF;
+  height: 464px;
+  overflow: hidden;
+}
+
+.career-details-heading {
+  position: relative;
+  padding-top: 20px;
+  padding-left: 20px;
+}
+
+.careers-criteria-container {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.careers-criteria-detail {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.career-details-downarrow {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+  font-family: 'Roobert-Regular';
+  font-size: 50px;
+}
+
+.crteria-heading {
+  width: 290px;
+  margin: 0;
+  font-family: 'Merriweather';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 25px;
+}
+
+.career-details-criteria-heading {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-family: 'Roobert-Regular';
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 28px;
+  letter-spacing: 0em;
+  text-align: center;
+
+}
+
+.footer-details {
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 100vw;
+  height: 253px;
+}

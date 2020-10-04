@@ -27,3 +27,8 @@
   font-family: 'Roobert-SemiBold';
   src: url('../Assets/Roobert\ Font/Roobert-SemiBold.otf'); 
 }
+
+@font-face {
+  font-family: 'Merriweather';
+  src: url('../Assets/Merriweather/Merriweather-Regular.ttf');
+}

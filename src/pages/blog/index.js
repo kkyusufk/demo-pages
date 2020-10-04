@@ -32,7 +32,7 @@ const MainContent = () => {
 };
 
 const BlogPage = () => {
-  return <Layout MainContent={MainContent} />;
+  return <Layout MainContent={MainContent} backgroundColor="#F1F1F1" />;
 }
 
 export default BlogPage;

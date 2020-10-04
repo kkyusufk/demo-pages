@@ -34,7 +34,7 @@ const MainContent = () => (
 
 const Ourwork = () => {
   return (
-    <Layout MainContent={MainContent} />
+    <Layout MainContent={MainContent} backgroundColor="#FFFFFF" />
   )
 };
 
