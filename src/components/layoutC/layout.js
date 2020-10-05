@@ -5,6 +5,7 @@ import '../fonts.css';
 import { Navbar } from '../navbar/navbar';
 
 const Layout = ({ MainContent, backgroundColor }) => {
+  document.getElementsByTagName('body')[0].style.backgroundColor = backgroundColor; 
   return (
     <div className="container" style={{ backgroundColor }}>
       <header className="header column">

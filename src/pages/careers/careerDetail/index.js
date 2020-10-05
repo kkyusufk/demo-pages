@@ -20,26 +20,28 @@ const MainContent = ({ name, description, details }) => (
   </div>
   <div className="about-top-heading">
     <SemiBoldHeading innerHtml={details.headingOne} justify='center' />
-    <h1 className="career-details-criteria-heading">{details.headingTwo}</h1> 
+    <div style={{ width:'1170px', display: 'flex', justifyContent: 'center' }}>
+      <h1 className="career-details-criteria-heading">{details.headingTwo}</h1>
+    </div> 
   </div>
   <div className="careers-criteria-container">
     <div className="careers-criteria-detail">
-      <div style={{ width: '25px', height: '25px' }}></div>
+      <div className="criteria-icon"></div>
       <p className="crteria-heading">{details.criteriaOne}</p>
     </div>
     <hr />
     <div className="careers-criteria-detail">
-      <div style={{ width: '25px', height: '25px' }}></div>
+      <div className="criteria-icon"></div>
       <p className="crteria-heading">{details.criteriaTwo}</p>
     </div>
     <hr />
     <div className="careers-criteria-detail">
-      <div style={{ width: '25px', height: '25px' }}></div>
+      <div className="criteria-icon"></div>
       <p className="crteria-heading">{details.criteriaThree}</p>
     </div>
     <hr />
     <div className="careers-criteria-detail">
-      <div style={{ width: '25px', height: '25px' }}></div>
+      <div className="criteria-icon"></div>
       <p className="crteria-heading">{details.criteriaFour}</p>
     </div>
   </div> 
@@ -49,30 +51,28 @@ const MainContent = ({ name, description, details }) => (
   }}/>
   <div className="about-top-heading">
   <SemiBoldHeading innerHtml={details.headingThree} justify='center' />
-  <Heading 
-      innerHtml={details.headingFour} 
-      align={ALIGNMENT.CENTER}
-      justify='center'
-      /> 
+  <div style={{ width:'1170px', display: 'flex', justifyContent: 'center' }}>
+      <h1 className="career-details-criteria-heading">{details.headingFour}</h1>
+    </div>
   </div>
   <div className="careers-criteria-container">
     <div className="careers-criteria-detail">
-      <div style={{ width: '25px', height: '25px' }}></div>
+      <div className="criteria-icon"></div>
       <p className="crteria-heading">{details.criteriaOne}</p>
     </div>
     <hr />
     <div className="careers-criteria-detail">
-      <div style={{ width: '25px', height: '25px' }}></div>
+      <div className="criteria-icon"></div>
       <p className="crteria-heading">{details.criteriaTwo}</p>
     </div>
     <hr />
     <div className="careers-criteria-detail">
-      <div style={{ width: '25px', height: '25px' }}></div>
+      <div className="criteria-icon"></div>
       <p className="crteria-heading">{details.criteriaThree}</p>
     </div>
     <hr />
     <div className="careers-criteria-detail">
-      <div style={{ width: '25px', height: '25px' }}></div>
+      <div className="criteria-icon"></div>
       <p className="crteria-heading">{details.criteriaFour}</p>
     </div>
   </div>
@@ -92,7 +92,8 @@ const CareerDetail = ({ location }) => {
               name={name} 
               description={description}
               details={details}
-              />} 
+              />}
+              backgroundColor="#F1F1F1" 
           />;
   } else {
     return null;
