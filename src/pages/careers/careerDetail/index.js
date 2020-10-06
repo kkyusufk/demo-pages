@@ -6,6 +6,7 @@ import { SemiBoldHeading } from '../../../components/typography/semiBoldHeading/
 import { Heading } from '../../../components/typography/heading/heading';
 import { SubHeading } from '../../../components/typography/subHeading/subHeading';
 import { ALIGNMENT } from '../../../constants';
+import { ContentAndImages } from '../../../components/contentAndImages/contentAndImages';
 
 const MainContent = ({ name, description, details }) => (
   <>
@@ -76,8 +77,12 @@ const MainContent = ({ name, description, details }) => (
       <p className="crteria-heading">{details.criteriaFour}</p>
     </div>
   </div>
+  <ContentAndImages />
   <div className="footer-details">
-    
+    <div className="contact-us-card">
+      <h3 className="contact-us-heading">Send your application to <br/> careers@oppositehq.com</h3>
+      <p className="contact-us-sub-heading">Don’t forget to send your Resume/CV, our portfolio and tell us why you want to work with us. Shortlisted profiles hear from us within one week.</p>
+    </div>
   </div> 
   </>
 )

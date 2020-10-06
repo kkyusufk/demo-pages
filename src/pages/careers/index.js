@@ -9,7 +9,7 @@ import { Carousel } from '../../components/carousel/carousel';
 import { Grid1 } from '../../components/grid/grid1';
 import { ALIGNMENT } from '../../constants';
 import { OpeningCards } from '../../components/openings/openings';
-import { SubHeading } from '../../components/typography/subHeading/subHeading';
+import { ContentAndImages } from '../../components/contentAndImages/contentAndImages';
 
 const MainContent = () => (
   <>
@@ -20,27 +20,7 @@ const MainContent = () => (
     <Grid1><Carousel /></Grid1>
     <Grid1><Heading innerHtml={CAREERS.headingThree} align={ALIGNMENT.LEFT} /></Grid1>
     <OpeningCards />
-    <div className="careers-image-with-content">
-      <div className="careers-content-left-of-image">
-        <Heading innerHtml={CAREERS.headingFour} width="inherit" />
-        <SubHeading innerHtml={CAREERS.headingFive} width="inherit" justify='center' />
-      </div>
-      <img src="https://source.unsplash.com/random" className="careers-image-right-of-content" />
-    </div>
-    <div className="careers-image-with-content">
-      <div className="careers-content-left-of-image">
-        <Heading innerHtml={CAREERS.headingSix} width="inherit" />
-        <SubHeading innerHtml={CAREERS.headingSeven} width="inherit" justify='center' />
-      </div>
-      <img src="https://source.unsplash.com/random" className="careers-image-right-of-content" />
-    </div>
-    <div className="careers-image-with-content">
-      <div className="careers-content-left-of-image">
-        <Heading innerHtml={CAREERS.headingEight} width="inherit" />
-        <SubHeading innerHtml={CAREERS.headingNine} width="inherit" justify='center' />
-      </div>
-      <img src="https://source.unsplash.com/random" className="careers-image-right-of-content" />
-    </div>
+    <ContentAndImages />
     <Heading 
         align={ALIGNMENT.CENTER} 
         innerHtml={FOOTER.careers} 
