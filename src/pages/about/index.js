@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { Layout } from '../../components/layoutC/layout';
-
 import './about.css';
 import { Heading } from '../../components/typography/heading/heading';
 import { ABOUT, FOOTER } from '../../data';
@@ -10,11 +8,12 @@ import { SubHeading } from '../../components/typography/subHeading/subHeading';
 import { Scrollable } from '../../components/scrollable/scrollable';
 import { Carousel } from '../../components/carousel/carousel';
 import { Team } from '../../components/team';
-import { ALIGNMENT } from '../../constants';
+import { ALIGNMENT, PAGES } from '../../constants';
 import { Grid1 } from '../../components/grid/grid1';
 import { Grid2 } from '../../components/grid/grid2';
+import { FooterLinks } from '../../components/footer/footerLinks';
 
-const MainContent = () => (
+const About = () => (
   <>
     <div className="about-top-heading">
       <SemiBoldHeading innerHtml={'About Opposite'} />
@@ -53,16 +52,10 @@ const MainContent = () => (
       justify='center'
       />
     <Team />
-    <Heading 
-      innerHtml={FOOTER.about} 
-      align={ALIGNMENT.CENTER} 
-      justify='center'
-      />
+    <div>
+      <FooterLinks page={PAGES.ABOUT} to={PAGES.CAREERS} />
+    </div>
   </>
 )
-
-const About = () => {
-  return <Layout MainContent={MainContent} backgroundColor="#F1F1F1" /> 
-}
 
 export default About;

@@ -1,30 +1,57 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import './contact.scss';
-import { Layout } from '../../components/layoutC/layout';
 import { Heading } from '../../components/typography/heading/heading';
-import { CONTACT } from '../../data';
-import { ALIGNMENT } from '../../constants';
 import { SubHeading } from '../../components/typography/subHeading/subHeading';
-
-const MainContent = () => (
-  <>
-   <div className="about-top-heading">
-      <h5 className="about-opposite">{CONTACT.headingOne}</h5>
-      <Heading 
-        innerHtml={CONTACT.headingTwo} 
-        width="970px" 
-        align={ALIGNMENT.LEFT} />
-      <SubHeading 
-        innerHtml={CONTACT.headingThree} 
-        width="970px"
-        />
-    </div>
-  </>
-)
+import { SemiBoldHeading } from '../../components/typography/semiBoldHeading/semiBoldHeading';
+import { CONTACT, HOME, portfolioData } from '../../data';
+import { ALIGNMENT, NAVITEMS, PAGES } from '../../constants';
+import { Portfolio } from '../../components/portfolio/portfolio';
+import { Footer } from '../../components/footer/footerCards';
+import { FooterLinks } from '../../components/footer/footerLinks';
+import { Link } from 'gatsby';
+import { GlobalContext } from '../../context/navContext';
 
 const Contact = () => {
-  return <Layout MainContent={MainContent} backgroundColor="#F1F1F1" />
+  const { setCurrentPage } = useContext(GlobalContext);
+  return (
+    <>
+    <div className="about-top-heading">
+        <SemiBoldHeading innerHtml={CONTACT.headingOne}/>
+        <Heading 
+          innerHtml={CONTACT.headingTwo} 
+          width="970px" 
+          align={ALIGNMENT.LEFT} />
+        <h2 className="heading-h2">
+          To start a project, write to us at <u className="opposite-email">911@oppositehq.com</u>
+          </h2>
+        <SubHeading 
+          innerHtml={CONTACT.headingThree} 
+          width="970px"
+          />
+      </div>
+      <div className="portfolio-grid">
+      {portfolioData.map((portfolio) => {
+          return (
+            <Portfolio
+              src={portfolio.src}
+              title={portfolio.title}
+              subtitle={portfolio.subtitle}
+            />
+          );
+        })}
+      </div>
+      <Link 
+        to='/ourwork/'
+        className="nav-items"
+        onClick={() => setCurrentPage(NAVITEMS.OURWORK)}
+      >
+        <u><Heading align={ALIGNMENT.CENTER} innerHtml={HOME.headingTwo} /></u>
+      </Link>
+      <div style={{ marginTop: '100px' }}><Footer /></div>
+      <div><FooterLinks page={PAGES.CONTACT} to={PAGES.ABOUT} /></div>
+    </>
+  );
 }
 
 export default Contact;

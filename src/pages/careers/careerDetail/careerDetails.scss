@@ -8,6 +8,8 @@
   width: 100%;
   position: relative;
   background-color: #FFFFFF;
+  max-height: 570px;
+  max-width: 1170px;
   height: 464px;
   overflow: hidden;
 }
@@ -16,6 +18,11 @@
   position: relative;
   padding-top: 20px;
   padding-left: 20px;
+
+  @media only screen and (min-width: 1100px) {
+    padding-top: 50px;
+    padding-left: 50px;
+  }
 }
 
 .careers-criteria-container {
@@ -25,12 +32,23 @@
   row-gap: 30px;
   padding-left: 15px;
   padding-right: 15px;
+
+  @media only screen and (min-width: '1100px') {
+    max-width: 1170px;
+  }
 }
 
 .careers-criteria-detail {
   display: flex;
   flex-direction: row;
   width: 100%;
+
+  @media only screen and (min-width: '1100px') {
+    width: 670px;
+    justify-content: space-between;
+    align-self: center;
+  }
+
 }
 
 .career-details-downarrow {
@@ -39,21 +57,40 @@
   bottom: 30px;
   font-family: 'Roobert-Regular';
   font-size: 50px;
+
+  @media only screen and (min-width: 1100px) {
+    right: 50px;
+    bottom: 50px;
+    font-size: 70px;
+  }
+}
+
+.criteria-icon {
+  width: 25px;
+  height: 25px;
+
+  @media only screem and (min-width: 1100px) {
+    width: 32px;
+    height: 32px;
+  }
 }
 
 .crteria-heading {
-  width: 290px;
+  min-width: 290px;
   margin: 0;
   font-family: 'Merriweather';
   font-size: 14px;
   font-style: normal;
   font-weight: 300;
   line-height: 25px;
+  
+  @media only screen and (min-width: 1100px) {
+    font-size: 18px;
+    line-height: 32px;
+  }
 }
 
 .career-details-criteria-heading {
-  display: flex;
-  justify-content: center;
   text-align: center;
   font-family: 'Roobert-Regular';
   font-size: 20px;
@@ -61,13 +98,52 @@
   font-weight: 500;
   line-height: 28px;
   letter-spacing: 0em;
-  text-align: center;
 
+  @media only screen and (min-width: 1100px) {
+    max-width: 770px;
+    font-size: 32px;
+    line-height: 45px;
+  }
 }
 
 .footer-details {
-  padding-left: 15px;
-  padding-right: 15px;
-  width: 100vw;
-  height: 253px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1170px;
+  height: 464px;
+  background-color: #EAEAEA;
+}
+
+.contact-us-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  justify-content: center;
+  width: 970px;
+  height: 214px;
+}
+
+.contact-us-heading {
+  font-family: 'Roobert-Regular';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 125%;
+  text-align: center;
+  color: #333333;
+}
+
+.contact-us-sub-heading {
+  width: 570px;
+  font-family: 'Roobert-Regular';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 140%;
+  text-align: center;
+  color: rgba(51, 51, 51, 0.5);
 }

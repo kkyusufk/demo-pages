@@ -4,10 +4,10 @@ import "./blogPage.css";
 import { Blog } from "../../components/blog/blog";
 import { blogs, FOOTER } from "../../data";
 import { Layout } from "../../components/layoutC/layout";
-import { Heading } from "../../components/typography/heading/heading";
-import { ALIGNMENT } from "../../constants";
+import { FooterLinks } from "../../components/footer/footerLinks";
+import { PAGES } from "../../constants";
 
-const MainContent = () => {
+const BlogPage = () => {
   return (
     <>
       <div className="blogLayout">
@@ -22,17 +22,11 @@ const MainContent = () => {
           );
         })}
       </div>
-      <Heading 
-        innerHtml={FOOTER.blog}
-        align={ALIGNMENT.CENTER}
-        justify='center'
-      />
+      <div>
+        <FooterLinks page={PAGES.BLOG} to={PAGES.ABOUT} />
+      </div>
     </>
   );
 };
-
-const BlogPage = () => {
-  return <Layout MainContent={MainContent} backgroundColor="#F1F1F1" />;
-}
 
 export default BlogPage;
