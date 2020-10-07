@@ -6,10 +6,8 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-preload-fonts`,
-    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-postcss`,
     `gatsby-plugin-sass`,
-    `gatsby-plugin-transition-link`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

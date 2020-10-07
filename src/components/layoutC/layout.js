@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navbar } from '../navbar/navbar';
-import { GloablContext, GlobalContext } from '../../context/navContext';
+import { GlobalContext } from '../../context/navContext';
 
 import './layoutCss.css';
 
