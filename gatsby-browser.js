@@ -1,14 +1,17 @@
-import React from "react";
-import { Layout } from './src/components/layoutC/layout';
-import { Provider } from './src/context/navContext';
+const React = require("react")
+const { Layout } = require('./src/components/layoutC/layout');
+const { Provider } = require('./src/context/navContext');
 
-export function wrapPageElement({ element }) {
+exports.wrapPageElement = ({ element, props }) => {
+  console.log(element)
   // TODO: maybe make this a little pretty
   return ( 
-    <Provider>
-      <Layout>
-        {element.props.children.props.children}
-      </Layout>
-    </Provider>
+    <Layout {...props}>
+      {element}
+    </Layout>
   )
+}
+
+exports.wrapRootElement = ({ element }) => {
+  return <Provider>{element}</Provider>
 }

@@ -1,7 +1,6 @@
 import React from 'react';
 
 import './careerDetails.scss';
-import { Layout } from '../../../components/layoutC/layout';
 import { SemiBoldHeading } from '../../../components/typography/semiBoldHeading/semiBoldHeading';
 import { Heading } from '../../../components/typography/heading/heading';
 import { SubHeading } from '../../../components/typography/subHeading/subHeading';

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 import './careers.scss';
 import { CAREERS, FOOTER } from '../../data';
@@ -12,7 +12,7 @@ import { ContentAndImages } from '../../components/contentAndImages/contentAndIm
 import { FooterLinks } from '../../components/footer/footerLinks';
 
 const Career = () => (
-  <>
+  <Fragment>
     <div className="careers-top-heading">
       <SemiBoldHeading innerHtml={CAREERS.headingOne} />
       <Heading innerHtml={CAREERS.headingTwo} width="970px" />
@@ -24,7 +24,7 @@ const Career = () => (
     <div>
       <FooterLinks page={PAGES.CAREERS} to={PAGES.ABOUT} />
     </div>
-  </>
+  </Fragment>
 )
 
 export default Career;
