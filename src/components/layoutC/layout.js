@@ -28,9 +28,7 @@ const Layout = ({ children }) => {
       </header>
       <main className="content column">
       <section className="main-content">
-      <GlobalContext.Consumer>
-        {() => children}
-      </GlobalContext.Consumer>
+        {children}
       </section>
     </main>
       <footer className="column">
