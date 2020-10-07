@@ -1,17 +1,20 @@
 import React from 'react';
 
 import './ourwork.scss';
-import { Layout } from '../../components/layoutC/layout';
 import { Portfolio } from '../../components/portfolio/portfolio';
 import { Heading } from '../../components/typography/heading/heading';
-import { ALIGNMENT } from '../../constants';
-import { FOOTER, OURWORK, portfolioData } from '../../data';
+import { SemiBoldHeading } from '../../components/typography/semiBoldHeading/semiBoldHeading';
+import { ALIGNMENT, PAGES } from '../../constants';
+import { OURWORK, portfolioData } from '../../data';
+import { Filter } from '../../components/filter/filter';
+import { FooterLinks } from '../../components/footer/footerLinks';
 
-const MainContent = () => (
+const Ourwork = () => (
   <>
     <div className="about-top-heading">
-      <h5 className="about-opposite">{OURWORK.headingOne}</h5>
+      <SemiBoldHeading innerHtml={OURWORK.headingOne}/>
       <Heading innerHtml={OURWORK.headingTwo} width="970px" align={ALIGNMENT.LEFT} />
+      <div style={{ marginTop: '50px' }}><Filter /></div>
     </div>
     <div className="portfolio-grid">
     {portfolioData.map((portfolio) => {
@@ -24,18 +27,10 @@ const MainContent = () => (
         );
       })}
     </div>
-    <Heading 
-      innerHtml={FOOTER.ourwork} 
-      align={ALIGNMENT.CENTER} 
-      justify='center'
-      />
+    <div>
+      <FooterLinks page={PAGES.OURWORK} to={PAGES.CONTACT} />
+    </div>
   </>
 )
-
-const Ourwork = () => {
-  return (
-    <Layout MainContent={MainContent} backgroundColor="#FFFFFF" />
-  )
-};
 
 export default Ourwork;

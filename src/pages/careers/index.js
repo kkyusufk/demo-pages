@@ -1,17 +1,17 @@
 import React from 'react';
 
 import './careers.scss';
-import { Layout } from '../../components/layoutC/layout';
 import { CAREERS, FOOTER } from '../../data';
 import { SemiBoldHeading } from '../../components/typography/semiBoldHeading/semiBoldHeading';
 import { Heading } from '../../components/typography/heading/heading';
 import { Carousel } from '../../components/carousel/carousel';
 import { Grid1 } from '../../components/grid/grid1';
-import { ALIGNMENT } from '../../constants';
+import { ALIGNMENT, PAGES } from '../../constants';
 import { OpeningCards } from '../../components/openings/openings';
 import { ContentAndImages } from '../../components/contentAndImages/contentAndImages';
+import { FooterLinks } from '../../components/footer/footerLinks';
 
-const MainContent = () => (
+const Career = () => (
   <>
     <div className="careers-top-heading">
       <SemiBoldHeading innerHtml={CAREERS.headingOne} />
@@ -21,16 +21,10 @@ const MainContent = () => (
     <Grid1><Heading innerHtml={CAREERS.headingThree} align={ALIGNMENT.LEFT} /></Grid1>
     <OpeningCards />
     <ContentAndImages />
-    <Heading 
-        align={ALIGNMENT.CENTER} 
-        innerHtml={FOOTER.careers} 
-        justify='center'
-        />
+    <div>
+      <FooterLinks page={PAGES.CAREERS} to={PAGES.ABOUT} />
+    </div>
   </>
 )
-
-const Career = () => {
-  return <Layout MainContent={MainContent} backgroundColor="#F1F1F1" />
-};
 
 export default Career;

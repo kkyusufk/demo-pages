@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import './input.css'
 
 const InputEmail = () => {
+  let timer;
+  let timerArray = [];
   const inputRef = useRef();
   const confirmRef = useRef();
   const [email, setEmail] = useState('');
@@ -35,20 +37,29 @@ const InputEmail = () => {
   
   const handleMouseOver = () => {
     const emailInput = document.getElementById('emailInput');
-    setTimeout(() => {
+    timer = setTimeout(() => {
       emailInput.classList.remove('translateOut');
       confirmRef.current.classList.remove('translateUp');
     }, 10000)
+    timerArray.push(timer)
   }
 
   useEffect(() => {
     const main = document.getElementsByClassName('cardContainer')[2];
     main.addEventListener('mouseover', handleMouseOver);
     return () => { 
-      main.removeEventListener('mouseover', handleMouseOver);
-      clearTimeout() 
+      console.log('effet 1')
+      main.removeEventListener('mouseover', () => {});
     }
   }, [email]);
+
+  useEffect(() => {
+    return () => {
+      timerArray.forEach(timer => {
+        clearTimeout(timer)
+      })
+    }; 
+  },[])
 
   const enableButton = () => {
     if (inputRef.current.value.length > 0) {

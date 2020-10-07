@@ -179,7 +179,10 @@ export const HOME = {
     return 'See Full Portfolio'
   },
   get headingThree() {
-    return 'We work with challenger brands on breaking status quo. <br /> About Us';
+    return 'We work with challenger brands on breaking status quo.';
+  },
+  get headingFour() {
+    return 'About Us';
   }
 }
 
@@ -260,24 +263,57 @@ export const CONTACT = {
     return 'We love working with innovative, challenger brands and products'
   },
   get headingThree() {
-    return 'To start a project, write to us at <u>911@oppositehq.com</u>. Tell us about your company and how you’d like us to help.'
+    return 'Tell us about your company and how you’d like us to help.'
   }
 }
 
 export const FOOTER = {
-  get home() {
-    return 'Ready to start a project? <br /> Get in Touch';
+  HOME: {
+    get headingOne() {
+      return 'Ready to start a project?';
+    },
+    get headingTwo() {
+      return 'Get in Touch';
+    }
   },
-  get ourwork() {
-    return 'Ready to start a project? <br /> Get in Touch';
+  OURWORK: {
+    get headingOne() {
+      return 'Ready to start a project?';
+    },
+    get headingTwo() {
+      return 'Get in Touch'; 
+    }
   },
-  get about() {
-    return 'Want to join the team? <br /> See Career Openings'
+  ABOUT: {
+    get headingOne() {
+      return 'Want to join the team?';
+    },
+    get headingTwo() {
+      return 'See Career Openings';
+    }
   },
-  get careers() {
-    return 'Get to know us better. <br /> About us'
+  CAREERS: {
+    get headingOne() {
+      return 'Get to know us better.';
+    },
+    get headingTwo() {
+      return 'About us';
+    }
   },
-  get blog() {
-    return 'Get to know us better. <br /> About us'
-  }
+  BLOG: {
+    get headingOne() {
+      return 'Get to know us better.';
+    },
+    get headingTwo() {
+      return 'About us';
+    }
+  },
+  CONTACT: {
+    get headingOne() {
+      return 'Get to know us better.';
+    },
+    get headingTwo() {
+      return 'About us';
+    }
+  },
 }

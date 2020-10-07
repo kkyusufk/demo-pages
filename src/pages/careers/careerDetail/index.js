@@ -5,11 +5,14 @@ import { Layout } from '../../../components/layoutC/layout';
 import { SemiBoldHeading } from '../../../components/typography/semiBoldHeading/semiBoldHeading';
 import { Heading } from '../../../components/typography/heading/heading';
 import { SubHeading } from '../../../components/typography/subHeading/subHeading';
-import { ALIGNMENT } from '../../../constants';
+import { ALIGNMENT, PAGES } from '../../../constants';
 import { ContentAndImages } from '../../../components/contentAndImages/contentAndImages';
+import { FooterLinks } from '../../../components/footer/footerLinks';
 
-const MainContent = ({ name, description, details }) => (
-  <>
+const CareerDetail = ({ location }) => {
+  const { name, description, details } = location.state;
+  return (
+    <>
   <div className="career-details-heading-container">
     <div className="career-details-heading-card">
       <div className="career-details-heading">
@@ -51,8 +54,8 @@ const MainContent = ({ name, description, details }) => (
     paddingRight: '15px'
   }}/>
   <div className="about-top-heading">
-  <SemiBoldHeading innerHtml={details.headingThree} justify='center' />
-  <div style={{ width:'1170px', display: 'flex', justifyContent: 'center' }}>
+    <SemiBoldHeading innerHtml={details.headingThree} justify='center' />
+    <div style={{ width:'1170px', display: 'flex', justifyContent: 'center' }}>
       <h1 className="career-details-criteria-heading">{details.headingFour}</h1>
     </div>
   </div>
@@ -83,26 +86,11 @@ const MainContent = ({ name, description, details }) => (
       <h3 className="contact-us-heading">Send your application to <br/> careers@oppositehq.com</h3>
       <p className="contact-us-sub-heading">Don’t forget to send your Resume/CV, our portfolio and tell us why you want to work with us. Shortlisted profiles hear from us within one week.</p>
     </div>
-  </div> 
+  </div>
+  <FooterLinks page={PAGES.CAREERS} to={PAGES.ABOUT} /> 
   </>
-)
-
-// FIXME
-const CareerDetail = ({ location }) => {
-  if(location.state) {
-    const { name, description, details } = location.state;
-    return <Layout 
-            MainContent={() => 
-            <MainContent 
-              name={name} 
-              description={description}
-              details={details}
-              />}
-              backgroundColor="#F1F1F1" 
-          />;
-  } else {
-    return null;
-  }
+  )
 }
+
 
 export default CareerDetail;

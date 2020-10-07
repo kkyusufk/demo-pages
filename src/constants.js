@@ -19,3 +19,12 @@ export const NAVITEMS = {
   BLOG: 'Blog',
   CONTACT: 'Contact'
 }
+
+export const PAGES = {
+  HOME: 'HOME',
+  OURWORK: 'OURWORK',
+  ABOUT: 'ABOUT',
+  CAREERS: 'CAREERS',
+  BLOG: 'BLOG',
+  CONTACT: 'CONTACT'
+}

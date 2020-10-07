@@ -24,6 +24,7 @@
 
 .nav-active {
   text-decoration: underline;
+  text-decoration-skip-ink: none;
 }
 
 .hamburger {
@@ -102,18 +103,29 @@ li {
     background-color: transparent;
     flex-direction: row;
   }
-
 }
+
+.nav-bar-and-underline {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-bar-underline {
+  font-family: 'Roobert-Regular';
+  position: relative;
+  border: 2px solid #333333;
+  transition: all .5s linear;  
+}
+
 
 /* page enter and leave animations */
 #root-div-active {
-  margin-top: 1000px;
+  margin-top: 5000px;
   animation: bot-top .5s linear forwards;
 }
 
 #root-div-leave {
-  z-index: 100;
-  background-color: black;
+  touch-action: none;
   animation: stay-there .5s linear forwards 2s;
 }
 
@@ -123,6 +135,6 @@ li {
 }
 
 @keyframes bot-top {
-  0% { margin-top: 1000px; }
+  0% { margin-top: 2000px; }
   100% { margin-top: 0px; }
 }

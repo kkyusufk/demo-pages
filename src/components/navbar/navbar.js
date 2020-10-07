@@ -1,19 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import classNames from 'classnames';
-import TransitionLink from 'gatsby-plugin-transition-link'
+import { Link } from 'gatsby';
+import { GlobalContext } from '../../context/navContext';
 
-import { NAVITEMS } from '../../constants'; 
 import './navbar.css';
+import { NAVITEMS } from '../../constants'; 
 import { Button } from '../button/Button/Button';
 import hamburger from '../../Assets/icons/hamburger.svg'
 
 const Navbar = () => {
-  const [active, setActive] = useState(NAVITEMS.HOME)
   const [isOpen, setIsOpen] = useState(false)
+  const [style, setStyle] = useState({})
+  const { currentPage, setCurrentPage } = useContext(GlobalContext);
   const navItems = Object.values(NAVITEMS);
 
   const noScroll = () => window.scrollTo(0, 0);
 
+  // handling mobile effects
   useEffect(() => {
     toggleMenu()
     if (isOpen) {
@@ -23,10 +26,23 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', noScroll)
   }, [isOpen]);
 
-  useEffect(() => {
-    const path = window.location.pathname.split("/")[1]
-    setActive(NAVITEMS[path.toUpperCase()]);
-  });
+  // handling desktop effects
+  useEffect(() => { 
+    let activeElement;
+    const menuElements = document.querySelectorAll('a') || [];
+    const homeElementLeft = menuElements[0].getBoundingClientRect().left;
+    menuElements.forEach(menu => {
+      if(menu.innerText === (currentPage ? currentPage : 'Home')) {
+        activeElement = menu
+        return;
+      }
+    });
+    console.log(activeElement.getBoundingClientRect())
+    setStyle({
+      width: `${activeElement.getBoundingClientRect().width}px`,
+      left: activeElement.getBoundingClientRect().left - homeElementLeft
+    })
+  }, [currentPage]);
 
   const toggleMenu = () => {
     // For mobile only
@@ -45,24 +61,18 @@ const Navbar = () => {
           {navItems.map(nav => {
             const newNav = nav.split(' ').join('');
             return (
-                <TransitionLink
-                  exit={{
-                    trigger: ({ node }) => { 
-                      node.style.position = 'relative'
-                      node.style['z-index'] = -100 
-                    },
-                    length: 1
-                  }}
-                  entry={{
-                    trigger: ({ node }) => node.id = 'root-div-active'
-                  }}
-                  to={`/${newNav.toLowerCase()}/`} 
-                  className={classNames('nav-items', { 'nav-active': active === nav })} 
-                  onClick={() => setActive(nav)}>
-                    {nav}
-                </TransitionLink>
+              <Link
+                to={`/${newNav.toLowerCase()}/`} 
+                className='nav-items' 
+                onClick={() => setCurrentPage(nav)}
+              >
+                {nav}
+              </Link>
               )
           })}
+        </div>
+        <div style={{ width: '1170px' }}>
+          <div className="nav-bar-underline" style={style}></div>
         </div>
       </ul> 
       <Button 
@@ -70,7 +80,6 @@ const Navbar = () => {
         onClick={() => setIsOpen(isOpen => !isOpen)}
         src={hamburger}
       />
-      
     </>
   )
 };
