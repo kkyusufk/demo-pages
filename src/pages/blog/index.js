@@ -3,7 +3,6 @@ import "./blogPage.css";
 
 import { Blog } from "../../components/blog/blog";
 import { blogs, FOOTER } from "../../data";
-import { Layout } from "../../components/layoutC/layout";
 import { FooterLinks } from "../../components/footer/footerLinks";
 import { PAGES } from "../../constants";
 
