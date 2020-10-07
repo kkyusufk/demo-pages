@@ -26,8 +26,8 @@ const Layout = ({ children }) => {
     </header>
       <main className="content column">
         <section className="main-content">
-      {children}
-    </section>
+          {children}
+        </section>
       </main>
       <footer className="column">
     <div className="opposite-svg-footer">
