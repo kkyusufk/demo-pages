@@ -9,9 +9,10 @@ import { ALIGNMENT, PAGES } from '../../../constants';
 import { ContentAndImages } from '../../../components/contentAndImages/contentAndImages';
 import { FooterLinks } from '../../../components/footer/footerLinks';
 
+
 const CareerDetail = ({ location }) => {
-  if(location.state) {
-    const { name, description, details } = location.state;
+  const { state = {} } = location
+  const { name = '', description = '', details = {} } = state
     return (
       <>
     <div className="career-details-heading-container">
@@ -91,7 +92,6 @@ const CareerDetail = ({ location }) => {
     <FooterLinks page={PAGES.CAREERS} to={PAGES.ABOUT} /> 
     </>
     )
-  }
 }
 
 
