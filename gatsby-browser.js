@@ -7,7 +7,7 @@ export function wrapPageElement({ element }) {
   return ( 
     <Provider>
       <Layout>
-        {element.props.children.props.children}
+        {element}
       </Layout>
     </Provider>
   )
