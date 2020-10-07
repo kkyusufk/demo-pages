@@ -21,7 +21,8 @@ const FooterLinks = ({ page, to = '' }) => {
         >
           <u><Heading 
           align={ALIGNMENT.CENTER} 
-          innerHtml={DATA.FOOTER[page].headingTwo} 
+          innerHtml={DATA.FOOTER[page].headingTwo}
+          justify='center' 
           /></u>
         </Link>
     </>
