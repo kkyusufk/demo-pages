@@ -88,7 +88,7 @@ const CareerDetail = ({ location }) => {
         <p className="contact-us-sub-heading">Don’t forget to send your Resume/CV, our portfolio and tell us why you want to work with us. Shortlisted profiles hear from us within one week.</p>
       </div>
     </div>
-    <FooterLinks page={PAGES.CAREERS} to={PAGES.ABOUT} /> 
+    <div><FooterLinks page={PAGES.CAREERS} to={PAGES.ABOUT} /> </div>
     </>
     )
 }

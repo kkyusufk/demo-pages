@@ -28,3 +28,10 @@ export const PAGES = {
   BLOG: 'BLOG',
   CONTACT: 'CONTACT'
 }
+
+export const BREAKPOINTS = {
+  WIDESCREEN: '1200px',
+  DESKTOP: '992px',
+  TABLET: '768px',
+  MOBILE: '576px'
+}

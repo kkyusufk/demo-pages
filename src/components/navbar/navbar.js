@@ -20,7 +20,6 @@ const Navbar = () => {
   useEffect(() => {
     toggleMenu()
     if (isOpen) {
-      noScroll() // TODO: maybe handle things better
       window.addEventListener('scroll', noScroll)
     }
     return () => window.removeEventListener('scroll', noScroll)
@@ -37,7 +36,6 @@ const Navbar = () => {
         return;
       }
     });
-    console.log(activeElement.getBoundingClientRect())
     setStyle({
       width: `${activeElement.getBoundingClientRect().width}px`,
       left: activeElement.getBoundingClientRect().left - homeElementLeft
@@ -51,6 +49,7 @@ const Navbar = () => {
       navBar.classList.add('nav-open')
     } else {
       navBar.classList.remove('nav-open')
+
     }
   }
 
@@ -64,14 +63,17 @@ const Navbar = () => {
               <Link
                 to={`/${newNav.toLowerCase()}/`} 
                 className='nav-items' 
-                onClick={() => setCurrentPage(nav)}
+                onClick={() => {
+                  setCurrentPage(nav)
+                  setIsOpen(false) 
+                }}
               >
                 {nav}
               </Link>
               )
           })}
         </div>
-        <div style={{ width: '1170px' }}>
+       <div style={{ width: '1170px' }}>
           <div className="nav-bar-underline" style={style}></div>
         </div>
       </ul> 
