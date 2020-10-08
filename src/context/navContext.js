@@ -6,7 +6,7 @@ const GlobalContext = createContext();
 const Provider = ({ children }) => {
   const [uiState, setState] = useState({
     currentPage: NAVITEMS.HOME,
-    browserWidth: window.innerWidth
+    browserWidth: (typeof window !== `undefined`) ? window.innerWidth : '1000px'
   });
   const setCurrentPage = currentPage => setState({ ...uiState, currentPage });
 
