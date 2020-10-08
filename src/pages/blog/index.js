@@ -21,9 +21,7 @@ const BlogPage = () => {
           );
         })}
       </div>
-      <div>
-        <FooterLinks page={PAGES.BLOG} to={PAGES.ABOUT} />
-      </div>
+      <FooterLinks page={PAGES.BLOG} to={PAGES.ABOUT} marginTop="50px" />
     </>
   );
 };
