@@ -3,7 +3,10 @@
 body {
   font-family: 'Roobert Regular';
   margin: 0;
-  background-color: #F1F1F1;
+}
+
+.gatsby-focus-wrapper {
+  background-color: #F1F1F1
 }
 
 *, ::after, ::before {

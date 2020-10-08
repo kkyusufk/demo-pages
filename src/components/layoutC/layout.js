@@ -9,7 +9,6 @@ const Layout = ({ children }) => {
     <GlobalContext.Consumer>
       {(value) => (
         <div className="container">
-          {console.log(value)}
           <header className="header column">
         <div className="header__wrapper">
           <div className="opposite-svg-header">

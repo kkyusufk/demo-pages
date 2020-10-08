@@ -27,6 +27,12 @@ const Navbar = () => {
 
   // handling desktop effects
   useEffect(() => { 
+    const gatsby = document.getElementById('gatsby-focus-wrapper');
+    if (currentPage === 'Our Work') {
+      gatsby.style.backgroundColor = '#FFFFFF'
+    } else {
+      gatsby.style.backgroundColor = '#F1F1F1'
+    }
     let activeElement;
     const menuElements = document.querySelectorAll('a') || [];
     const homeElementLeft = menuElements[0].getBoundingClientRect().left;
