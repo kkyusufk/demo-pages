@@ -18,12 +18,10 @@ const Career = () => (
       <Heading innerHtml={CAREERS.headingTwo} width="970px" />
     </div>
     <Grid1><Carousel /></Grid1>
-    <Grid1><Heading innerHtml={CAREERS.headingThree} align={ALIGNMENT.LEFT} /></Grid1>
-    <OpeningCards />
+    <div style={{ marginTop: '50px' }}><Heading innerHtml={CAREERS.headingThree} align={ALIGNMENT.LEFT} /></div>
+    <OpeningCards marginTop="-25px" />
     <ContentAndImages />
-    <div>
-      <FooterLinks page={PAGES.CAREERS} to={PAGES.ABOUT} />
-    </div>
+    <FooterLinks page={PAGES.CAREERS} to={PAGES.ABOUT} marginTop="100px" />
   </Fragment>
 )
 

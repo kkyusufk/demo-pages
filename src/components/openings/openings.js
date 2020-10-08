@@ -8,13 +8,14 @@ import { Button } from '../button/Button/Button';
 import rightSVG from '../../Assets/icons/right.svg';
 
 
-const OpeningCards = () => {
+const OpeningCards = ({ marginTop }) => {
   const [X, setX] = useState(0);
   
   const goRight = () => setX(X => X - 400)
+  const goLeft = () => setX(X => X + 400)
 
   return (
-    <div className="opening-cards-container">
+    <div className="opening-cards-container" style={{ marginTop }}>
       {openings.map(data => {
         return (
           <div style={{
@@ -45,6 +46,13 @@ const OpeningCards = () => {
         className='shaded-right-button' 
         src={rightSVG}
         onClick={goRight}
+        hidden={X === -800}
+        />
+        <Button 
+          className='shaded-left-button' 
+          src={rightSVG}
+          onClick={goLeft}
+          hidden={X === 0}
         />
     </div>
   )
