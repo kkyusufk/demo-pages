@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'gatsby';
-import AniLink from "gatsby-plugin-transition-link/AniLink";
 import { ALIGNMENT, NAVITEMS } from '../../constants';
 import { GlobalContext } from '../../context/navContext';
 import * as DATA from '../../data';
