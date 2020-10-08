@@ -20,7 +20,6 @@ const Navbar = () => {
   useEffect(() => {
     toggleMenu()
     if (isOpen) {
-      noScroll() // TODO: maybe handle things better
       window.addEventListener('scroll', noScroll)
     }
     return () => window.removeEventListener('scroll', noScroll)
@@ -28,6 +27,12 @@ const Navbar = () => {
 
   // handling desktop effects
   useEffect(() => { 
+    const gatsby = document.getElementById('gatsby-focus-wrapper');
+    if (currentPage === 'Our Work') {
+      gatsby.style.backgroundColor = '#FFFFFF'
+    } else {
+      gatsby.style.backgroundColor = '#F1F1F1'
+    }
     let activeElement;
     const menuElements = document.querySelectorAll('a') || [];
     const homeElementLeft = menuElements[0].getBoundingClientRect().left;
@@ -37,7 +42,6 @@ const Navbar = () => {
         return;
       }
     });
-    console.log(activeElement.getBoundingClientRect())
     setStyle({
       width: `${activeElement.getBoundingClientRect().width}px`,
       left: activeElement.getBoundingClientRect().left - homeElementLeft
@@ -51,6 +55,7 @@ const Navbar = () => {
       navBar.classList.add('nav-open')
     } else {
       navBar.classList.remove('nav-open')
+
     }
   }
 
@@ -64,14 +69,17 @@ const Navbar = () => {
               <Link
                 to={`/${newNav.toLowerCase()}/`} 
                 className='nav-items' 
-                onClick={() => setCurrentPage(nav)}
+                onClick={() => {
+                  setCurrentPage(nav)
+                  setIsOpen(false) 
+                }}
               >
                 {nav}
               </Link>
               )
           })}
         </div>
-        <div style={{ width: '1170px' }}>
+       <div style={{ width: '1170px' }}>
           <div className="nav-bar-underline" style={style}></div>
         </div>
       </ul> 

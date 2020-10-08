@@ -75,7 +75,7 @@ const IndexPage = () => {
         onClick={() => setCurrentPage(NAVITEMS.OURWORK)}
         className="nav-items"
       >
-        <u><Heading align={ALIGNMENT.CENTER} innerHtml={HOME.headingTwo} /></u>
+        <u><Heading align={ALIGNMENT.CENTER} innerHtml={HOME.headingTwo} justify="center"/></u>
       </Link>
       <Grid1><img src={HomePageImage} /></Grid1>
       <div>

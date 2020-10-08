@@ -13,6 +13,7 @@
 
  .nav-items {
   text-decoration: none;
+  text-decoration-skip-ink: none;
   color: black;
 }
 
@@ -103,6 +104,13 @@ li {
     background-color: transparent;
     flex-direction: row;
   }
+
+  .nav-bar-underline {
+    font-family: 'Roobert-Regular';
+    position: relative;
+    border: 2px solid #333333;
+    transition: all .5s linear;  
+  }
 }
 
 .nav-bar-and-underline {
@@ -110,12 +118,7 @@ li {
   flex-direction: column;
 }
 
-.nav-bar-underline {
-  font-family: 'Roobert-Regular';
-  position: relative;
-  border: 2px solid #333333;
-  transition: all .5s linear;  
-}
+
 
 
 /* page enter and leave animations */

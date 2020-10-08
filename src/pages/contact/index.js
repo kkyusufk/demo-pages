@@ -46,7 +46,7 @@ const Contact = () => {
         className="nav-items"
         onClick={() => setCurrentPage(NAVITEMS.OURWORK)}
       >
-        <u><Heading align={ALIGNMENT.CENTER} innerHtml={HOME.headingTwo} /></u>
+        <u><Heading align={ALIGNMENT.CENTER} innerHtml={HOME.headingTwo} justify="center" /></u>
       </Link>
       <div style={{ marginTop: '100px' }}><Footer /></div>
       <div><FooterLinks page={PAGES.CONTACT} to={PAGES.ABOUT} /></div>
