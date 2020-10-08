@@ -1,4 +1,5 @@
 .portfolio-grid {
+  margin-top: 50px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   column-gap: 105px;

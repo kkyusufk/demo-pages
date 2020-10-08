@@ -30,8 +30,8 @@ export const PAGES = {
 }
 
 export const BREAKPOINTS = {
-  WIDESCREEN: '1200px',
-  DESKTOP: '992px',
-  TABLET: '768px',
-  MOBILE: '576px'
+  WIDESCREEN: 1200,
+  DESKTOP: 992,
+  TABLET: 768,
+  MOBILE: 576
 }

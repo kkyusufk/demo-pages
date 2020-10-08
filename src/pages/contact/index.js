@@ -37,6 +37,8 @@ const Contact = () => {
               src={portfolio.src}
               title={portfolio.title}
               subtitle={portfolio.subtitle}
+              height="320px"
+              justify="space-between"
             />
           );
         })}
@@ -49,7 +51,7 @@ const Contact = () => {
         <u><Heading align={ALIGNMENT.CENTER} innerHtml={HOME.headingTwo} justify="center" /></u>
       </Link>
       <div style={{ marginTop: '100px' }}><Footer /></div>
-      <div><FooterLinks page={PAGES.CONTACT} to={PAGES.ABOUT} /></div>
+      <FooterLinks page={PAGES.CONTACT} to={PAGES.ABOUT} marginTop="100px" />
     </>
   );
 }

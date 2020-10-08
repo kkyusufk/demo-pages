@@ -5,7 +5,7 @@ import { GlobalContext } from '../../context/navContext';
 import * as DATA from '../../data';
 import { Heading } from '../typography/heading/heading';
 
-const FooterLinks = ({ page, to = '' }) => {
+const FooterLinks = ({ page, to = '', marginTop }) => {
   const [nextPage, setNextPage] = useState('');
   const { setCurrentPage } = useContext(GlobalContext);
   useEffect(() => {
@@ -15,7 +15,7 @@ const FooterLinks = ({ page, to = '' }) => {
 
   }
   return (
-    <>
+    <div style={{ marginTop }}>
       <Heading 
         align={ALIGNMENT.CENTER} 
         innerHtml={DATA.FOOTER[page].headingOne} 
@@ -32,7 +32,7 @@ const FooterLinks = ({ page, to = '' }) => {
           justify='center' 
           /></u>
         </Link>
-    </>
+    </div>
   )
 }
 
