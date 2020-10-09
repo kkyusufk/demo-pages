@@ -113,7 +113,12 @@
   justify-content: center;
   max-width: 1170px;
   height: 464px;
+  overflow: hidden;
   background-color: #EAEAEA;
+
+  @media only screen and (max-width: 767px) {
+    height: 253px;
+  }
 }
 
 .contact-us-card {
@@ -127,6 +132,14 @@
   height: 214px;
 }
 
+.career-details-email {
+  text-decoration-skip-ink: none;
+  
+  @media only screen and (max-width: 767px) {
+    color: #0E0EFE;
+  }
+}
+
 .contact-us-heading {
   font-family: 'Roobert-Regular';
   font-style: normal;
@@ -135,10 +148,18 @@
   line-height: 125%;
   text-align: center;
   color: #333333;
+  margin: 0;
+
+  @media only screen and (max-width: 767px) {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 140%;
+  }
 }
 
 .contact-us-sub-heading {
-  width: 570px;
+  margin-top: 50px;
+  max-width: 570px;
   font-family: 'Roobert-Regular';
   font-style: normal;
   font-weight: normal;
@@ -146,4 +167,14 @@
   line-height: 140%;
   text-align: center;
   color: rgba(51, 51, 51, 0.5);
+  margin-bottom: 0;
+
+
+  @media only screen and (max-width: 767px) {
+    margin-top: 25px;
+    width: 270px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+  }
 }

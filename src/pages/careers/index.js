@@ -23,7 +23,11 @@ const Career = () => (
     <Div type={SIZES.XL}>
       <Grid1><Carousel /></Grid1>
     </Div>
-    <Div type={SIZES.XL}><Heading innerHtml={CAREERS.headingThree} align={ALIGNMENT.LEFT} /></Div>
+    <Div type={SIZES.XL}>
+      <Grid1>
+        <Heading innerHtml={CAREERS.headingThree} align={ALIGNMENT.LEFT} />
+      </Grid1>
+    </Div>
     <Div type={SIZES.ML}><OpeningCards /></Div>
     <Div type={SIZES.XL}><ContentAndImages /></Div>
     <Div type={SIZES.XXL}><FooterLinks page={PAGES.CAREERS} to={PAGES.ABOUT} /></Div>
