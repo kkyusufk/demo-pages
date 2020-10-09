@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import classNames from 'classnames';
 
-import "./team-modal.css";
+import "./team-modal.scss";
 import { Grid1 } from "../grid/grid1";
 import { Carousel } from "../carousel/carousel";
 

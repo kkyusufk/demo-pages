@@ -4,7 +4,8 @@ import './careerDetails.scss';
 import { SemiBoldHeading } from '../../../components/typography/semiBoldHeading/semiBoldHeading';
 import { Heading } from '../../../components/typography/heading/heading';
 import { SubHeading } from '../../../components/typography/subHeading/subHeading';
-import { ALIGNMENT, PAGES } from '../../../constants';
+import { Div } from '../../../components/Div/Div';
+import { PAGES, SIZES } from '../../../constants';
 import { ContentAndImages } from '../../../components/contentAndImages/contentAndImages';
 import { FooterLinks } from '../../../components/footer/footerLinks';
 
@@ -23,12 +24,13 @@ const CareerDetail = ({ location }) => {
         <div className="career-details-downarrow">&#x2193;</div>
       </div>
     </div>
-    <div className="about-top-heading">
-      <SemiBoldHeading innerHtml={details.headingOne} justify='center' />
-      <div style={{ width:'1170px', display: 'flex', justifyContent: 'center' }}>
-        <h1 className="career-details-criteria-heading">{details.headingTwo}</h1>
-      </div> 
-    </div>
+    <Div type={SIZES.L}>
+      <div className="about-top-heading">
+        <SemiBoldHeading innerHtml={details.headingOne} justify='center' />
+        <div style={{ width:'1170px', display: 'flex', justifyContent: 'center' }}>
+          <h1 className="career-details-criteria-heading">{details.headingTwo}</h1>
+        </div> 
+      </div>
     <div className="careers-criteria-container">
       <div className="careers-criteria-detail">
         <div className="criteria-icon"></div>
@@ -49,11 +51,15 @@ const CareerDetail = ({ location }) => {
         <div className="criteria-icon"></div>
         <p className="crteria-heading">{details.criteriaFour}</p>
       </div>
-    </div> 
-    <img src="https://source.unsplash.com/random" style={{
-      paddingLeft: '15px',
-      paddingRight: '15px'
-    }}/>
+    </div>
+    </Div>
+    <Div type={SIZES.XL}> 
+      <img src="https://source.unsplash.com/random" style={{
+        paddingLeft: '15px',
+        paddingRight: '15px'
+      }}/>
+    </Div>
+    <Div type={SIZES.XL}>
     <div className="about-top-heading">
       <SemiBoldHeading innerHtml={details.headingThree} justify='center' />
       <div style={{ width:'1170px', display: 'flex', justifyContent: 'center' }}>
@@ -81,14 +87,17 @@ const CareerDetail = ({ location }) => {
         <p className="crteria-heading">{details.criteriaFour}</p>
       </div>
     </div>
-    <ContentAndImages />
-    <div className="footer-details">
-      <div className="contact-us-card">
-        <h3 className="contact-us-heading">Send your application to <br/> careers@oppositehq.com</h3>
-        <p className="contact-us-sub-heading">Don’t forget to send your Resume/CV, our portfolio and tell us why you want to work with us. Shortlisted profiles hear from us within one week.</p>
+    </Div>
+    <Div type={SIZES.XXL}><ContentAndImages /></Div>
+    <Div type={SIZES.XXL}>
+      <div className="footer-details">
+        <div className="contact-us-card">
+          <h3 className="contact-us-heading">Send your application to <br/> careers@oppositehq.com</h3>
+          <p className="contact-us-sub-heading">Don’t forget to send your Resume/CV, our portfolio and tell us why you want to work with us. Shortlisted profiles hear from us within one week.</p>
+        </div>
       </div>
-    </div>
-    <div><FooterLinks page={PAGES.CAREERS} to={PAGES.ABOUT} /> </div>
+    </Div>
+    <Div type={SIZES.XL}><FooterLinks page={PAGES.CAREERS} to={PAGES.ABOUT} /> </Div>
     </>
     )
 }

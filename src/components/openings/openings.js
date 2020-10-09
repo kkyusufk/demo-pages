@@ -8,14 +8,14 @@ import { Button } from '../button/Button/Button';
 import rightSVG from '../../Assets/icons/right.svg';
 
 
-const OpeningCards = ({ marginTop }) => {
+const OpeningCards = () => {
   const [X, setX] = useState(0);
   
   const goRight = () => setX(X => X - 400)
   const goLeft = () => setX(X => X + 400)
 
   return (
-    <div className="opening-cards-container" style={{ marginTop }}>
+    <div className="opening-cards-container">
       {openings.map(data => {
         return (
           <div style={{
