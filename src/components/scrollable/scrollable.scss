@@ -5,6 +5,13 @@
   height: 20vh;
 }
 
+.scrollable-container {
+  @media only screen and (max-width: 568px) {
+    width: 100%;
+    overflow: hidden;
+  }
+}
+
 .marquee-content {
   @include marquee-content(marquee-scroll)
 }

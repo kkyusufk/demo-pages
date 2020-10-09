@@ -37,3 +37,22 @@
     display: none;
   }
 }
+
+.shaded-left-button {
+  position: absolute;
+  left: 50px;
+  top: 185px;
+  background-color: black;
+
+  &:hover {
+    transform: translateX(-20px);
+  }
+
+  & img {
+    color: white;    
+  }
+
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
+}

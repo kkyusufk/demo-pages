@@ -41,4 +41,7 @@
   .portfolioContainer {
     justify-self: center;
   }
+  .portfolioImage {
+    min-height: 255px;
+  }
 }

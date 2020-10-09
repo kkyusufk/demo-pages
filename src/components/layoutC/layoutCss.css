@@ -16,12 +16,12 @@ body {
 .header__wrapper {
   display: grid;
   grid-template-columns: 1fr;
+  height: 120px;
 }
 
 .main-content {
   display: flex;
   flex-direction: column;
-  gap: 100px;
 }
 
 /* grid styles */
@@ -31,13 +31,11 @@ body {
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  gap: 100px;
 }
 
 
 
 .opposite-svg-header {
-  z-index: 1;
   position: relative;
   max-width: 1170px;
   top: -121px;
@@ -73,16 +71,17 @@ footer {
     padding: 0%;
   }
 
-  .container {
-    gap: 75px;
-  }
-
   .opposite-svg-header {
     z-index: 2;
   }
 
-  header {
-    height: 0px !important;  /* !important required so that this is not overrided */
+  .opposite-svg-footer {
+    top: -78px;
+  }
+
+  .footer {
+    margin-top: 30px;
+    height: 45px;
   }
   
 }
@@ -103,7 +102,6 @@ header {
   --width-tablet: 12;
   --width-desktop: 12;
   height: 120px;
-  position: relative;
 }
 
 .content {
@@ -116,7 +114,8 @@ footer {
   --width-mobile: 12;
    --width-tablet: 12;
   --width-desktop: 12;
-  height: 8rem;
+  height: 120px;
+  margin-top: 50px;
 }
 
 

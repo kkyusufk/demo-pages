@@ -45,12 +45,12 @@ const InputEmail = () => {
   }
 
   useEffect(() => {
-    const main = document.getElementsByClassName('cardContainer')[2];
-    main.addEventListener('mouseover', handleMouseOver);
-    return () => { 
-      console.log('effet 1')
-      main.removeEventListener('mouseover', () => {});
-    }
+    // const main = document.getElementsByClassName('cardContainer')[2];
+    // main.addEventListener('mouseover', handleMouseOver);
+    // return () => { 
+    //   console.log('effet 1')
+    //   main.removeEventListener('mouseover', () => {});
+    // }
   }, [email]);
 
   useEffect(() => {

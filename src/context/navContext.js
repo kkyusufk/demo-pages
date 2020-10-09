@@ -1,15 +1,20 @@
 import React, { createContext, useState, useEffect } from 'react';
 import { NAVITEMS } from '../constants';
 
-const defaultState = {
-  currentPage: NAVITEMS.HOME,
-}
-
-const GlobalContext = createContext(defaultState);
+const GlobalContext = createContext();
 
 const Provider = ({ children }) => {
-  const [uiState, setState] = useState(GlobalContext);
+  const [uiState, setState] = useState({
+    currentPage: NAVITEMS.HOME,
+    browserWidth: (typeof window !== `undefined`) ? window.innerWidth : '1000px'
+  });
   const setCurrentPage = currentPage => setState({ ...uiState, currentPage });
+
+  const updateBrowserWidth = () => setState(prevState => ({ ...prevState , browserWidth: window.innerWidth }))
+
+  useEffect(() => {
+    window.addEventListener('resize', updateBrowserWidth)
+  }, [])
 
   return (
     <GlobalContext.Provider
@@ -18,6 +23,7 @@ const Provider = ({ children }) => {
         setCurrentPage
       }}
     >
+      {console.log(uiState)}
       {children}
     </GlobalContext.Provider>
   )
