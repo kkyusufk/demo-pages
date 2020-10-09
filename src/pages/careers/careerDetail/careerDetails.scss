@@ -132,6 +132,14 @@
   height: 214px;
 }
 
+.career-details-email {
+  text-decoration-skip-ink: none;
+  
+  @media only screen and (max-width: 767px) {
+    color: #0E0EFE;
+  }
+}
+
 .contact-us-heading {
   font-family: 'Roobert-Regular';
   font-style: normal;

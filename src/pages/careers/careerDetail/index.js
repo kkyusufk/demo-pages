@@ -96,7 +96,7 @@ const CareerDetail = ({ location }) => {
       <Grid1>
       <div className="footer-details">
         <div className="contact-us-card">
-          <h3 className="contact-us-heading">Send your application to <br/> careers@oppositehq.com</h3>
+          <h3 className="contact-us-heading">Send your application to <br/> <u className="career-details-email">careers@oppositehq.com</u></h3>
           <p className="contact-us-sub-heading">Don’t forget to send your Resume/CV, our portfolio and tell us why you want to work with us. Shortlisted profiles hear from us within one week.</p>
         </div>
       </div>
