@@ -106,7 +106,7 @@ const IndexPage = () => {
           onClick={() => setCurrentPage(NAVITEMS.ABOUT)}
           className="nav-items"
           >
-            <u><Heading align={ALIGNMENT.CENTER} innerHtml={HOME.headingFour} /></u>
+            <u><Heading align={ALIGNMENT.CENTER} innerHtml={HOME.headingFour} justify="center" /></u>
           </Link>
       </Div>
       <Div type={SIZES.XXL}><Footer /></Div>
