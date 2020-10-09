@@ -2,6 +2,8 @@
   max-width: 1170px;
   display: flex;
   column-gap: 10px;
+  row-gap: 10px;
+  flex-wrap: wrap;
 }
 
 .filter-buttons {
