@@ -5,9 +5,9 @@ import { isWindowDefined } from '../utils/windowUtil';
 const GlobalContext = createContext();
 
 const Provider = ({ children }) => {
-  const currentPage = window.location.pathname.split('/')[1]
+  const currentPage = isWindowDefined() ? window.location.pathname.split('/')[1] : 'home';
   const [uiState, setState] = useState({
-    currentPage: isWindowDefined() ? NAVITEMS[currentPage.toUpperCase()] : NAVITEMS.HOME,
+    currentPage: NAVITEMS[currentPage.toUpperCase()],
     browserWidth: isWindowDefined() ? window.innerWidth : '1000px'
   });
   const setCurrentPage = currentPage => setState({ ...uiState, currentPage });
