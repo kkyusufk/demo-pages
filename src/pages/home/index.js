@@ -113,7 +113,7 @@ const IndexPage = () => {
       <Div type={SIZES.XXL}>
         <FooterLinks 
           page={PAGES.HOME}
-          to={PAGES.CONTACT}
+          to={NAVITEMS.CONTACT}
           />
        </Div>
     </>

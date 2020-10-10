@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'gatsby';
 import { ALIGNMENT, NAVITEMS } from '../../constants';
 import { GlobalContext } from '../../context/navContext';
@@ -6,13 +6,9 @@ import * as DATA from '../../data';
 import { Heading } from '../typography/heading/heading';
 
 const FooterLinks = ({ page, to = '' }) => {
-  const [nextPage, setNextPage] = useState('');
   const { setCurrentPage } = useContext(GlobalContext);
-  useEffect(() => {
-    setNextPage(to.toLowerCase());
-  })
   const handleAnimation = () => {
-
+    setCurrentPage(to);
   }
   return (
     <div>
