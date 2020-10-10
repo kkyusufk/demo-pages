@@ -50,9 +50,19 @@ body:hover .alwaysHover {
   transition: all 0.3s ease-in-out;
 }
 
-.cardContainer:hover .signUp {
+.cardContainer:hover .hover-signUp {
   transform: translateY(-100px);
   opacity: 0;
+}
+
+.hover-signUp-stay {
+  transform: translateY(-100px);
+  opacity: 0;
+}
+
+.hoverableSignUp-stay {
+  opacity: 1;
+  transform: translateY(-100px);
 }
 
 .cardContainer:hover .hoverableSignUp {

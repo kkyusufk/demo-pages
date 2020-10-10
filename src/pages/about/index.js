@@ -8,7 +8,7 @@ import { SubHeading } from '../../components/typography/subHeading/subHeading';
 import { Scrollable } from '../../components/scrollable/scrollable';
 import { Carousel } from '../../components/carousel/carousel';
 import { Team } from '../../components/team';
-import { ALIGNMENT, PAGES, SIZES } from '../../constants';
+import { ALIGNMENT, NAVITEMS, PAGES, SIZES } from '../../constants';
 import { Div } from '../../components/Div/Div';
 import { Grid1 } from '../../components/grid/grid1';
 import { Grid2 } from '../../components/grid/grid2';
@@ -67,7 +67,7 @@ const About = () => (
         />
     </Div>
     <Div type={SIZES.L}><Team /></Div>
-    <Div type={SIZES.XXL}><FooterLinks page={PAGES.ABOUT} to={PAGES.CAREERS} /></Div>
+    <Div type={SIZES.XXL}><FooterLinks page={PAGES.ABOUT} to={NAVITEMS.CAREERS} /></Div>
   </>
 )
 

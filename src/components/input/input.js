@@ -1,23 +1,35 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import './input.css'
 
 const InputEmail = () => {
-  let timer;
-  let timerArray = [];
   const inputRef = useRef();
   const confirmRef = useRef();
   const [email, setEmail] = useState('');
   const [disabled, setDisabled] = useState(true);
-  const removeTransition = () => {
+  
+  const disableHover = type => {
+    const inputClass = document.getElementsByClassName('hoverableSignUp')[0];
+    const hoverableSignUp = document.getElementsByClassName('hover-signUp')[0]
+    if (type === 'focus' || type === 'invalidEmail') {
+      inputClass.classList.add('hoverableSignUp-stay');
+      hoverableSignUp.classList.add('hover-signUp-stay'); 
+    } else if (type === 'blur') {
+      inputClass.classList.remove('hoverableSignUp-stay');
+      hoverableSignUp.classList.remove('hover-signUp-stay'); 
+    }  
+  }
+
+  const handleOnFocus = () => {
+    disableHover('focus');
     const hidden = document.querySelector('.fail')
     hidden.style.display = 'none';
     inputRef.current.classList.remove('moveUp')
     setDisabled(true)
     inputRef.current.value = ''
   }
-  const applyTransition = () => {
-    console.log('applied', inputRef.current.classList)
-  }
+
+  const handleOnBlur = () => disableHover('blur');
+
   const confirmationMessage = () => {
     const { value } = inputRef.current;
     const emailInput = document.getElementById('emailInput')
@@ -32,35 +44,10 @@ const InputEmail = () => {
     } else {
       inputRef.current.classList.add('moveUp');
       hidden.style.display = 'block';
+      disableHover('invalidEmail')
     }
   }
   
-  const handleMouseOver = () => {
-    const emailInput = document.getElementById('emailInput');
-    timer = setTimeout(() => {
-      emailInput.classList.remove('translateOut');
-      confirmRef.current.classList.remove('translateUp');
-    }, 10000)
-    timerArray.push(timer)
-  }
-
-  useEffect(() => {
-    // const main = document.getElementsByClassName('cardContainer')[2];
-    // main.addEventListener('mouseover', handleMouseOver);
-    // return () => { 
-    //   console.log('effet 1')
-    //   main.removeEventListener('mouseover', () => {});
-    // }
-  }, [email]);
-
-  useEffect(() => {
-    return () => {
-      timerArray.forEach(timer => {
-        clearTimeout(timer)
-      })
-    }; 
-  },[])
-
   const enableButton = () => {
     if (inputRef.current.value.length > 0) {
       setDisabled(false)
@@ -75,9 +62,9 @@ const InputEmail = () => {
           className="typeEmail" 
           type="email"
           placeholder="Your Email Address"
-          onFocus={removeTransition}
+          onFocus={handleOnFocus}
           onChange={enableButton}
-          onBlur={applyTransition}
+          onBlur={handleOnBlur}
           ref={inputRef}
         />
         <div className="fail" id="hidden">That's not a legit email ID :-/</div>

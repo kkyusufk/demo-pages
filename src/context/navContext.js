@@ -1,12 +1,14 @@
 import React, { createContext, useState, useEffect } from 'react';
 import { NAVITEMS } from '../constants';
+import { isWindowDefined } from '../utils/windowUtil';
 
 const GlobalContext = createContext();
 
 const Provider = ({ children }) => {
+  const currentPage = window.location.pathname.split('/')[1]
   const [uiState, setState] = useState({
-    currentPage: NAVITEMS.HOME,
-    browserWidth: (typeof window !== `undefined`) ? window.innerWidth : '1000px'
+    currentPage: isWindowDefined() ? NAVITEMS[currentPage.toUpperCase()] : NAVITEMS.HOME,
+    browserWidth: isWindowDefined() ? window.innerWidth : '1000px'
   });
   const setCurrentPage = currentPage => setState({ ...uiState, currentPage });
 
