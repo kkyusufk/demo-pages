@@ -6,9 +6,9 @@ import * as DATA from '../../data';
 import { Heading } from '../typography/heading/heading';
 
 const FooterLinks = ({ page, to = '' }) => {
-  const { setCurrentPage } = useContext(GlobalContext);
+  const { setScrollY } = useContext(GlobalContext);
   const handleAnimation = () => {
-    setCurrentPage(to);
+    setScrollY(window.scrollY)
   }
   return (
     <div>

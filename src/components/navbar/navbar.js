@@ -11,7 +11,7 @@ import hamburger from '../../Assets/icons/hamburger.svg'
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [style, setStyle] = useState({})
-  const { currentPage, setCurrentPage } = useContext(GlobalContext);
+  const { currentPage, setCurrentPage, setScrollY } = useContext(GlobalContext);
   const navItems = Object.values(NAVITEMS);
 
   const noScroll = () => window.scrollTo(0, 0);
@@ -71,7 +71,8 @@ const Navbar = () => {
                 className='nav-items' 
                 onClick={() => {
                   setCurrentPage(nav)
-                  setIsOpen(false) 
+                  setIsOpen(false)
+                  setScrollY(window.scrollY) 
                 }}
               >
                 {nav}

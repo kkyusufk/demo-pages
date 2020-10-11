@@ -1,3 +1,4 @@
+import { navigate } from 'gatsby';
 import React, { createContext, useState, useEffect } from 'react';
 import { NAVITEMS } from '../constants';
 import { isWindowDefined } from '../utils/windowUtil';
@@ -8,9 +9,18 @@ const Provider = ({ children }) => {
   const currentPage = isWindowDefined() ? window.location.pathname.split('/')[1] : 'home';
   const [uiState, setState] = useState({
     currentPage: NAVITEMS[currentPage.toUpperCase()],
-    browserWidth: isWindowDefined() ? window.innerWidth : '1000px'
+    browserWidth: isWindowDefined() ? window.innerWidth : '1000px',
+    scrollY: window.scrollY
   });
   const setCurrentPage = currentPage => setState({ ...uiState, currentPage });
+
+  const setScrollY = y => setState(prevState => ({ ...prevState , scrollY: y }));
+
+  const setContextStates = (state) => setState(prevState => ({ 
+    ...prevState, 
+    currentPage: state.currentPage,
+    scrollY: state.scrollY
+  }))
 
   const updateBrowserWidth = () => setState(prevState => ({ ...prevState , browserWidth: window.innerWidth }))
 
@@ -22,10 +32,11 @@ const Provider = ({ children }) => {
     <GlobalContext.Provider
       value={{
         ...uiState,
-        setCurrentPage
+        setCurrentPage,
+        setScrollY,
+        setContextStates
       }}
     >
-      {console.log(uiState)}
       {children}
     </GlobalContext.Provider>
   )

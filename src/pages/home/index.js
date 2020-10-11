@@ -25,7 +25,11 @@ import { FooterLinks } from "../../components/footer/footerLinks";
 import { Div } from "../../components/Div/Div";
 
 const IndexPage = () => {
-  const { setCurrentPage } = useContext(GlobalContext);
+  const { setCurrentPage, setScrollY, setContextStates } = useContext(GlobalContext);
+  const setContextState = (to) => setContextStates({
+    currentPage: to,
+    scrollY: window.scrollY
+  })
   return (
     <>
       <Div type={SIZES.L}>
@@ -82,9 +86,9 @@ const IndexPage = () => {
         </Grid2>
       </Div>
       <Div type={SIZES.L}>
-        <Link 
+        <Link
           to='/ourwork/'
-          onClick={() => setCurrentPage(NAVITEMS.OURWORK)}
+          onClick={() => setContextState(NAVITEMS.OURWORK)}
           className="nav-items"
         >
           <u><Heading align={ALIGNMENT.CENTER} innerHtml={HOME.headingTwo} justify="center"/></u>
@@ -102,9 +106,9 @@ const IndexPage = () => {
           justify='center'
           />
           <Link 
-          to='/about/'
-          onClick={() => setCurrentPage(NAVITEMS.ABOUT)}
-          className="nav-items"
+            to='/about/'
+            onClick={() => setContextState(NAVITEMS.ABOUT)}
+            className="nav-items"
           >
             <u><Heading align={ALIGNMENT.CENTER} innerHtml={HOME.headingFour} justify="center" /></u>
           </Link>

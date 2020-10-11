@@ -7,7 +7,6 @@
 
 @media only screen and (min-width: 700px) {
   .team-modal-wrapper {
-    top: 0;
     display: flex;
     position: absolute;
     left: 50%;
@@ -17,7 +16,7 @@
     height: 869px;
     clip-path: polygon(50% 50%, 0% 50%, 0% 0%, 50% 0%);
     opacity: 0;
-    transition: all 0.5s ease-in-out;
+    transition: clip-path 0.5s ease-in-out;
   }
 
   .team-modal-carousel {
@@ -76,7 +75,6 @@
 
   .open-modal {
     opacity: 1;
-    top: 3700px;
     clip-path: polygon(100% 100%, 0% 100%, 0% 0%, 100% 0%);
     transition: all 0.5s ease-in-out;
   }

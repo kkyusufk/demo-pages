@@ -3,6 +3,7 @@
 body {
   font-family: 'Roobert Regular';
   margin: 0;
+  background-color: #F1F1F1
 }
 
 .gatsby-focus-wrapper {
@@ -26,7 +27,8 @@ body {
 
 /* grid styles */
 
-.container { 
+.container {
+  position: relative; 
   max-width: 1440px;
   margin: 0 auto;
   display: flex;
