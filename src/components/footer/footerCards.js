@@ -21,12 +21,12 @@ const BottomContent2 = () => (
     <span className="signUp hover-signUp">Sign up</span>
   </>
 );
- 
+
 const HiddenContent = () => (
   <div className="hoverableSignUp">
     <InputEmail />
   </div>
-)
+);
 
 export const TopContent3 = () => (
   <div className="reel_footer">
@@ -46,7 +46,11 @@ const Footer = () => (
   <Grid>
     <Card BottomContent={BottomContent1} TopContent={TopContent1} />
     <Card BottomContent={BottomContent3} TopContent={TopContent3} />
-    <Card BottomContent={BottomContent2} TopContent={TopContent2} HiddenContent={HiddenContent} />
+    <Card
+      BottomContent={BottomContent2}
+      TopContent={TopContent2}
+      HiddenContent={HiddenContent}
+    />
   </Grid>
 );
 

@@ -11,52 +11,73 @@ const TeamModal = ({ showModal, hideModal, style }) => {
 
   const getTop = () => {
     return window.scrollY + style.top;
-  }
+  };
 
   useEffect(() => {
     let gatsby;
     if (showModal) {
-      gatsby = document.getElementsByClassName('container')[0];
-      gatsby.classList.add('disappear');
-      modalRef.current.classList.remove('close-modal');
-      modalRef.current.classList.add('open-modal');
+      gatsby = document.getElementsByClassName("container")[0];
+      gatsby.classList.add("disappear");
+      modalRef.current.classList.remove("close-modal");
+      modalRef.current.classList.add("open-modal");
       if (!environmentUtil.isMobile(browserWidth)) {
         modalRef.current.style.top = `${getTop()}px`;
         //modalRef.current.style.width = `${style.width}px`;
       }
     }
-  }, [showModal])
+  }, [showModal]);
 
   const hideTheModal = () => {
-    modalRef.current.classList.add('close-modal')
-    const gatsby = document.getElementsByClassName('container')[0];
-    gatsby.classList.remove('disappear');
-    hideModal()
-  }
-  
+    modalRef.current.classList.add("close-modal");
+    const gatsby = document.getElementsByClassName("container")[0];
+    gatsby.classList.remove("disappear");
+    hideModal();
+  };
+
   return (
     <div className="team-modal-wrapper" ref={modalRef}>
       <div className="team-modal">
         <div>
           <h1 className="team-modal-title">Abhisek Sarda</h1>
-          <h2 className="team-modal-subtitle">Founder {`&`} Creative Director</h2>
+          <h2 className="team-modal-subtitle">
+            Founder {`&`} Creative Director
+          </h2>
         </div>
         <div>
-        <p className="team-modal-content">Abhisek brings 12+ years of experience in design and managing entrepreneurial ventures. Over this period, he has led branding and web design projects, launched and grown a niche brand of handmade soaps, designed low-cost furniture, shot portraits for a football team, advised founders and CEOs and built a presentation design studio that counts Facebook, Coca-Cola, Pepsi, Unilever, L'oreal and Cisco as clients. </p>
-        <p className="team-modal-content">
-        He spends 80% of his time answering emails (if you don't hear back from us, you know who to blame!). In the other 20% he looks after Villa P (our studio), directs branding and web projects and meddles in everyone's work. He compulsively draws out ideas to make a point, not sparing any scrap of paper lying around, even cheque books!</p>
+          <p className="team-modal-content">
+            Abhisek brings 12+ years of experience in design and managing
+            entrepreneurial ventures. Over this period, he has led branding and
+            web design projects, launched and grown a niche brand of handmade
+            soaps, designed low-cost furniture, shot portraits for a football
+            team, advised founders and CEOs and built a presentation design
+            studio that counts Facebook, Coca-Cola, Pepsi, Unilever, L'oreal and
+            Cisco as clients.{" "}
+          </p>
+          <p className="team-modal-content">
+            He spends 80% of his time answering emails (if you don't hear back
+            from us, you know who to blame!). In the other 20% he looks after
+            Villa P (our studio), directs branding and web projects and meddles
+            in everyone's work. He compulsively draws out ideas to make a point,
+            not sparing any scrap of paper lying around, even cheque books!
+          </p>
         </div>
         <div className="team-modal-social">
-          <spans><u>Facebook</u></spans>
-          <spans><u>Instagram</u></spans>
-          <spans><u>Linkedin</u></spans>
+          <spans>
+            <u>Facebook</u>
+          </spans>
+          <spans>
+            <u>Instagram</u>
+          </spans>
+          <spans>
+            <u>Linkedin</u>
+          </spans>
         </div>
       </div>
-      <div className="team-modal-carousel"><Carousel compact={true}/></div>
-      <span 
-        onClick={() => hideTheModal()}
-        className="close-button">
-          X
+      <div className="team-modal-carousel">
+        <Carousel compact={true} />
+      </div>
+      <span onClick={() => hideTheModal()} className="close-button">
+        X
       </span>
     </div>
   );

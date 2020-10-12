@@ -25,7 +25,7 @@ const BlogPage = () => {
         </div>
       </Div>
       <Div type={SIZES.XXL}>
-        <FooterLinks page={PAGES.BLOG} to={NAVITEMS.ABOUT}/>
+        <FooterLinks page={PAGES.BLOG} to={NAVITEMS.ABOUT} />
       </Div>
     </>
   );

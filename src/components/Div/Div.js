@@ -1,8 +1,8 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from "react";
 
-import './div-spacing.scss';
-import { SPACING } from '../../constants';
-import { GlobalContext } from '../../context/navContext';
+import "./div-spacing.scss";
+import { SPACING } from "../../constants";
+import { GlobalContext } from "../../context/navContext";
 
 const Div = ({ children, type }) => {
   const [elSpacing, setElSpacing] = useState(SPACING[type].Desktop);
@@ -11,15 +11,19 @@ const Div = ({ children, type }) => {
   useEffect(() => {
     const spacing = SPACING[type];
     if (browserWidth >= 992) {
-      setElSpacing(spacing.Desktop)
+      setElSpacing(spacing.Desktop);
     } else if (browserWidth >= 768 && browserWidth <= 991) {
-      setElSpacing(spacing.Tablet)
+      setElSpacing(spacing.Tablet);
     } else if (browserWidth <= 767) {
-      setElSpacing(spacing.Mobile)
+      setElSpacing(spacing.Mobile);
     }
-  }, [browserWidth])
+  }, [browserWidth]);
 
-  return <div className="div-spacing" style={{ marginTop: elSpacing }}>{children}</div>
-}
+  return (
+    <div className="div-spacing" style={{ marginTop: elSpacing }}>
+      {children}
+    </div>
+  );
+};
 
-export { Div }
+export { Div };
