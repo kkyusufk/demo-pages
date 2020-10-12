@@ -1,3 +1,4 @@
+import { BREAKPOINTS } from "../constants";
 
 /**
  * @class 
@@ -8,6 +9,14 @@ class EnvironmentUtil {
    */
   isWindowDefined () { 
     return typeof window !== `undefined`;
+  }
+
+  /**
+   * returns true if browserWidth is less than 576px
+   * @param {number} browserWidth 
+   */
+  isMobile(browserWidth) {
+    return browserWidth <= BREAKPOINTS.MOBILE;
   }
 }
 
