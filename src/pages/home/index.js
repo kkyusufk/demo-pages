@@ -25,7 +25,7 @@ import { FooterLinks } from "../../components/footer/footerLinks";
 import { Div } from "../../components/Div/Div";
 
 const IndexPage = () => {
-  const { setCurrentPage, setScrollY, setContextStates } = useContext(GlobalContext);
+  const { setContextStates } = useContext(GlobalContext);
   const setContextState = (to) => setContextStates({
     currentPage: to,
     scrollY: window.scrollY

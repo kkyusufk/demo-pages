@@ -4,7 +4,7 @@ import './ourwork.scss';
 import { Portfolio } from '../../components/portfolio/portfolio';
 import { Heading } from '../../components/typography/heading/heading';
 import { SemiBoldHeading } from '../../components/typography/semiBoldHeading/semiBoldHeading';
-import { ALIGNMENT, PAGES, SIZES } from '../../constants';
+import { ALIGNMENT, NAVITEMS, PAGES, SIZES } from '../../constants';
 import { OURWORK, portfolioData } from '../../data';
 import { Filter } from '../../components/filter/filter';
 import { FooterLinks } from '../../components/footer/footerLinks';
@@ -35,7 +35,7 @@ const Ourwork = () => (
       </div>
     </Div>
     <Div type={SIZES.XXL}>
-      <FooterLinks page={PAGES.OURWORK} to={PAGES.CONTACT} />
+      <FooterLinks page={PAGES.OURWORK} to={NAVITEMS.CONTACT} />
     </Div>
   </>
 )

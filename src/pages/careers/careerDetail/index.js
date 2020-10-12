@@ -6,7 +6,7 @@ import { Heading } from '../../../components/typography/heading/heading';
 import { SubHeading } from '../../../components/typography/subHeading/subHeading';
 import { Div } from '../../../components/Div/Div';
 import { Grid1 } from '../../../components/grid/grid1'
-import { PAGES, SIZES } from '../../../constants';
+import { NAVITEMS, PAGES, SIZES } from '../../../constants';
 import { ContentAndImages } from '../../../components/contentAndImages/contentAndImages';
 import { FooterLinks } from '../../../components/footer/footerLinks';
 
@@ -102,7 +102,7 @@ const CareerDetail = ({ location }) => {
       </div>
       </Grid1>
     </Div>
-    <Div type={SIZES.XL}><FooterLinks page={PAGES.CAREERS} to={PAGES.ABOUT} /> </Div>
+    <Div type={SIZES.XL}><FooterLinks page={PAGES.CAREERS} to={NAVITEMS.ABOUT} /> </Div>
     </>
     )
 }

@@ -31,12 +31,12 @@ const Layout = ({ location, children }) => {
         <AnimatePresence>
           {console.log(value)}
         <motion.div 
-          key={location.key}
+          key={value.shouldComponentAnimate && location.key}
           custom={value.scrollY}
           className="container"
-          variants={containerVariants}
-          initial="slideUp"
-          animate="stop"
+          variants={value.shouldComponentAnimate && containerVariants}
+          initial={value.shouldComponentAnimate && "slideUp"}
+          animate={value.shouldComponentAnimate && "stop"}
           exit="exit"
           >
             <div style={{

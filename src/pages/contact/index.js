@@ -58,7 +58,7 @@ const Contact = () => {
       </Link>
     </Div>
       <Div type={SIZES.XXL}><Footer /></Div>
-      <Div type={SIZES.XXL}><FooterLinks page={PAGES.CONTACT} to={PAGES.ABOUT} /></Div>
+      <Div type={SIZES.XXL}><FooterLinks page={PAGES.CONTACT} to={NAVITEMS.ABOUT} /></Div>
     </>
   );
 }

@@ -10,15 +10,19 @@ const Provider = ({ children }) => {
     currentPage: NAVITEMS[currentPage.toUpperCase()],
     browserWidth: environmentUtil.isWindowDefined() ? window.innerWidth : '1000px',
     scrollY: environmentUtil.isWindowDefined() ? window.scrollY : 0,
+    shouldComponentAnimate: false
   });
   const setCurrentPage = currentPage => setState({ ...uiState, currentPage });
 
   const setScrollY = y => setState(prevState => ({ ...prevState , scrollY: y }));
 
+  const setAnimateFalse = () => setState(prevState => ({ ...prevState, shouldComponentAnimate: false }));
+
   const setContextStates = (state) => setState(prevState => ({ 
     ...prevState, 
     currentPage: state.currentPage,
-    scrollY: state.scrollY
+    scrollY: state.scrollY,
+    shouldComponentAnimate: true
   }))
 
   const updateBrowserWidth = () => setState(prevState => ({ ...prevState , browserWidth: window.innerWidth }))
@@ -33,7 +37,8 @@ const Provider = ({ children }) => {
         ...uiState,
         setCurrentPage,
         setScrollY,
-        setContextStates
+        setContextStates,
+        setAnimateFalse
       }}
     >
       {children}
