@@ -10,25 +10,24 @@ import hamburger from '../../Assets/icons/hamburger.svg'
 import { environmentUtil } from '../../utils/environmentUtil';
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false)
-  const [style, setStyle] = useState({})
-  const { currentPage, shouldComponentAnimate, setCurrentPage, setScrollY, setAnimateFalse } = useContext(GlobalContext);
+  const [isOpen, setIsOpen] = useState(false);
+  const [style, setStyle] = useState({});
+  const { currentPage, browserWidth, setCurrentPage, setScrollY, setAnimateFalse } = useContext(GlobalContext);
   const navItems = Object.values(NAVITEMS);
 
   const noScroll = () => window.scrollTo(0, 0);
 
   // handling mobile effects
   useEffect(() => {
+    toggleMenu()
     if (isOpen && environmentUtil.isMobile()) {
-      toggleMenu()
       window.addEventListener('scroll', noScroll)
       return () => window.removeEventListener('scroll', noScroll)
     }
   }, [isOpen]);
 
-  // handling desktop effects
+  // handling nav underline transition
   useEffect(() => { 
-    const gatsby = document.getElementById('gatsby-focus-wrapper');
     let activeElement;
     const menuElements = document.querySelectorAll('a') || [];
     const homeElementLeft = menuElements[0].getBoundingClientRect().left;
@@ -42,7 +41,7 @@ const Navbar = () => {
       width: `${activeElement.getBoundingClientRect().width}px`,
       left: activeElement.getBoundingClientRect().left - homeElementLeft
     })
-  }, [currentPage]);
+  }, [currentPage, browserWidth]);
 
   const toggleMenu = () => {
     // For mobile only

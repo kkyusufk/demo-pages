@@ -1,3 +1,4 @@
+import { navigate } from 'gatsby';
 import React, { createContext, useState, useEffect } from 'react';
 import { NAVITEMS } from '../constants';
 import { environmentUtil } from '../utils/environmentUtil';
@@ -18,12 +19,15 @@ const Provider = ({ children }) => {
 
   const setAnimateFalse = () => setState(prevState => ({ ...prevState, shouldComponentAnimate: false }));
 
-  const setContextStates = (state) => setState(prevState => ({ 
-    ...prevState, 
-    currentPage: state.currentPage,
-    scrollY: state.scrollY,
-    shouldComponentAnimate: true
-  }))
+  const setContextStates = (state) => {
+    setState(prevState => ({ 
+      ...prevState, 
+      currentPage: state.currentPage,
+      scrollY: state.scrollY,
+      shouldComponentAnimate: true
+    }))
+    navigate(`/${state.currentPage.split(' ').join('').toLowerCase()}/`)
+  }
 
   const updateBrowserWidth = () => setState(prevState => ({ ...prevState , browserWidth: window.innerWidth }))
 
