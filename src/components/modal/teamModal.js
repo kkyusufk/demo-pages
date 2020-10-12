@@ -11,11 +11,10 @@ const TeamModal = ({ showModal, hideModal, style }) => {
   const { browserWidth } = useContext(GlobalContext);
 
   const getTop = () => {
-    return window.scrollY  + style.top;
+    return window.scrollY + style.top;
   }
 
-  useEffect(() => { 
-    console.log(style)
+  useEffect(() => {
     let gatsby;
     if (showModal) {
       gatsby = document.getElementsByClassName('container')[0];
@@ -24,14 +23,13 @@ const TeamModal = ({ showModal, hideModal, style }) => {
       modalRef.current.classList.add('open-modal');
       if (!environmentUtil.isMobile(browserWidth)) {
         modalRef.current.style.top = `${getTop()}px`;
-        modalRef.current.style.left = `${style.left}px`;
+        modalRef.current.style.width = `${style.width}px`;
       }
     }
   }, [showModal])
 
   const hideTheModal = () => {
     modalRef.current.classList.add('close-modal')
-    //modalRef.current.classList.remove('open-modal')
     const gatsby = document.getElementsByClassName('container')[0];
     gatsby.classList.remove('disappear');
     hideModal()
