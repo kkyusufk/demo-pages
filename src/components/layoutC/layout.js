@@ -12,14 +12,14 @@ const containerVariants = {
   stop: {
     y: 0,
     transition: {
-      duration: 0.7 
-    }, 
+      duration: 0.5
+    },
   },
-  exit: (i) => ({
+  exit: (i = 0) => ({
     y: -i,
     transition: {
       from: -i,
-      duration: 0.7
+      duration: 0.5
     }
   })
 }
@@ -29,23 +29,22 @@ const Layout = ({ location, children }) => {
     <GlobalContext.Consumer>
       {(value) => (
         <AnimatePresence>
-          {console.log(value)}
-        <motion.div 
-          key={value.shouldComponentAnimate && location.key}
+        <motion.div
           custom={value.scrollY}
+          key={location.key} 
           className="container"
-          variants={value.shouldComponentAnimate && containerVariants}
+          variants={containerVariants}
           initial={value.shouldComponentAnimate && "slideUp"}
-          animate={value.shouldComponentAnimate && "stop"}
+          animate="stop"
           exit="exit"
           >
             <div style={{
-              backgroundColor: '#F1F1F1',
-              width: '100%', 
-              position: 'absolute' 
-              }}>
+              position: value.shouldComponentAnimate ? 'absolute' : 'relative',
+              width: '100%',
+              backgroundColor: '#F1F1F1'
+            }}>
           <header className="header column">
-        <div className="header__wrapper">
+        <div className="header-wrapper">
           <div className="opposite-svg-header">
             <svg width="100%" height="242" viewBox="0 0 1170 242" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M1 125.667C1 84.2907 33.2833 49.8552 81.7082 49.8552C124.484 49.8552 158.65 74.3906 158.65 121.255C158.65 162.363 126.69 196.583 78.4262 196.583C35.2742 196.798 1 172.532 1 125.667ZM102.477 129.003C102.477 93.1148 93.6529 74.3905 78.2108 74.3905C66.3197 74.3905 57.2268 87.8957 57.2268 117.973C57.2268 153.538 65.7817 172.263 81.2239 172.263C93.1149 172.263 102.477 158.758 102.477 129.003Z" stroke="#333333" stroke-opacity="0.5" stroke-width="2" stroke-miterlimit="10"/>

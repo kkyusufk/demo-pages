@@ -6,6 +6,7 @@ import { Button } from "../button/Button/Button";
 import { DIRECTIONS } from "../../constants";
 import { initialState, carouselReducer } from "./carouselReducer";
 import rightSVG from '../../Assets/icons/right.svg';
+import { environmentUtil } from "../../utils/environmentUtil";
 
 const Carousel = memo(({ compact }) => {
   const [state, dispatch] = useReducer(carouselReducer, initialState);
@@ -15,6 +16,7 @@ const Carousel = memo(({ compact }) => {
   const reset = () => dispatch({ type: "RESET" });
 
   const changeOnTap = (e) => {
+    if (!environmentUtil.isMobile()) return false;
     const halfWidth = window.innerWidth / 2;
     if (e.pageX > halfWidth && state.imageIndex < images.length - 1) {
       dispatch({ type: 'NEXT' })

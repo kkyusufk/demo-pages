@@ -86,13 +86,13 @@ const IndexPage = () => {
         </Grid2>
       </Div>
       <Div type={SIZES.L}>
-        <Link
-          to='/ourwork/'
+        <a
+          href="#"
           onClick={() => setContextState(NAVITEMS.OURWORK)}
           className="nav-items"
         >
           <u><Heading align={ALIGNMENT.CENTER} innerHtml={HOME.headingTwo} justify="center"/></u>
-        </Link>
+        </a>
       </Div>
       <Div type={SIZES.XL}>
         <Grid1>
