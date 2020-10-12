@@ -9,10 +9,9 @@ import { BREAKPOINTS } from "../../constants";
 
 const Portfolio = ({ src, title, subtitle, width, justify, height }) => {
   const { browserWidth } = useContext(GlobalContext);
-  console.log(browserWidth)
   if (browserWidth <= BREAKPOINTS.MOBILE) {
-    console.log(browserWidth)
-   height="290px"
+   height="325px"
+   justify="space-between"
   }
   return (
     <div className="portfolioContainer" style={{ width, height }}>

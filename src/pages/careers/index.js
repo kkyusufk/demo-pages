@@ -6,7 +6,7 @@ import { SemiBoldHeading } from '../../components/typography/semiBoldHeading/sem
 import { Heading } from '../../components/typography/heading/heading';
 import { Carousel } from '../../components/carousel/carousel';
 import { Grid1 } from '../../components/grid/grid1';
-import { ALIGNMENT, PAGES, SIZES } from '../../constants';
+import { ALIGNMENT, NAVITEMS, PAGES, SIZES } from '../../constants';
 import { OpeningCards } from '../../components/openings/openings';
 import { ContentAndImages } from '../../components/contentAndImages/contentAndImages';
 import { FooterLinks } from '../../components/footer/footerLinks';
@@ -30,7 +30,7 @@ const Career = () => (
     </Div>
     <Div type={SIZES.ML}><OpeningCards /></Div>
     <Div type={SIZES.XL}><ContentAndImages /></Div>
-    <Div type={SIZES.XXL}><FooterLinks page={PAGES.CAREERS} to={PAGES.ABOUT} /></Div>
+    <Div type={SIZES.XXL}><FooterLinks page={PAGES.CAREERS} to={NAVITEMS.ABOUT} /></Div>
   </Fragment>
 )
 

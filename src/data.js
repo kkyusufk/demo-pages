@@ -50,52 +50,64 @@ export const portfolioData = [
 
 export const team = [
   {
+    id: 1,
     name: "Abhisek Sarda",
     description: "Founder & Creative Director. Lego and Edison Bulb Lover",
   },
   {
+    id: 2,
     name: "Indranil Udupi",
     description: "Project Manager. Turns up headphones way too loud",
   },
   {
+    id: 3,
     name: "Sanjana Hegde",
     description: "Graphic Designer. Chef and quisher of dog's faces",
   },
   {
+    id: 4,
     name: "Priyanka Poulose",
     description:
       "Graphic Designer. Architect too, once upon a time. Aspiring crazy cat lady",
   },
   {
+    id: 5,
     name: "Vidit Agarwal",
     description: "Graphic Designer. Inhouse weeaboo & Dark Web enthusiast.",
   },
   {
+    id: 6,
     name: "Chris D'souza",
     description:
       "UI/UX Designer. Legitimately needs OCD treatment and to chill out a bit.",
   },
   {
+    id: 7,
     name: "Jude Gonsalves",
     description: "UI/UX Designer. Baker. You *have* to try his brookies sometime. Seriously.",
   },
   {
+    id: 8,
     name: "Ishan Nahata",
     description: "UI/UX Designer. Enigma. Inhouse memelord. Dry humour kinda person",
   },
   {
+    id: 9,
     name: "Jitesh Gupta",
     description: "Studio Assistant. Dejected that TikTok is now banned. Still loves his bike though.",
   },
   {
+    id: 10,
     name: "Prakash Solanki",
     description: "Studio Assistant. Kindest eyes and smile. But sounds scary when angry.",
   },
   {
+    id: 11,
     name: "Bodoni",
     description: "Chairperson. Loves his beanbag. Might secretly be a cat.",
   },
   {
+    id: 12,
     name: "Gotham",
     description: "Definitely a dog, no doubt about it.",
   },

@@ -1,16 +1,49 @@
 import React from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import { Navbar } from '../navbar/navbar';
 import { GlobalContext } from '../../context/navContext';
 
 import './layoutCss.css';
-import { Div } from '../Div/Div';
-import { SIZES } from '../../constants';
 
-const Layout = ({ children }) => {
+const containerVariants = {
+  slideUp: {
+    y: 1000 
+  },
+  stop: {
+    y: 0,
+    transition: {
+      duration: 0.7 
+    }, 
+  },
+  exit: (i) => ({
+    y: -i,
+    transition: {
+      from: -i,
+      duration: 0.7
+    }
+  })
+}
+
+const Layout = ({ location, children }) => {
   return (
     <GlobalContext.Consumer>
       {(value) => (
-        <div className="container">
+        <AnimatePresence>
+          {console.log(value)}
+        <motion.div 
+          key={value.shouldComponentAnimate && location.key}
+          custom={value.scrollY}
+          className="container"
+          variants={value.shouldComponentAnimate && containerVariants}
+          initial={value.shouldComponentAnimate && "slideUp"}
+          animate={value.shouldComponentAnimate && "stop"}
+          exit="exit"
+          >
+            <div style={{
+              backgroundColor: '#F1F1F1',
+              width: '100%', 
+              position: 'absolute' 
+              }}>
           <header className="header column">
         <div className="header__wrapper">
           <div className="opposite-svg-header">
@@ -47,7 +80,9 @@ const Layout = ({ children }) => {
               </svg>
             </div>
           </footer>
-      </div>
+          </div>
+      </motion.div>
+      </AnimatePresence>
       )}
     </GlobalContext.Consumer>
   );

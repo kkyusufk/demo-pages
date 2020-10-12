@@ -1,20 +1,31 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useContext } from "react";
 import classNames from 'classnames';
 
 import "./team-modal.scss";
-import { Grid1 } from "../grid/grid1";
 import { Carousel } from "../carousel/carousel";
+import { GlobalContext } from "../../context/navContext";
+import { environmentUtil } from "../../utils/environmentUtil";
 
-const TeamModal = ({ showModal, hideModal }) => {
+const TeamModal = ({ showModal, hideModal, style }) => {
   const modalRef = useRef();
+  const { browserWidth } = useContext(GlobalContext);
+
+  const getTop = () => {
+    return window.scrollY  + style.top;
+  }
 
   useEffect(() => { 
+    console.log(style)
     let gatsby;
     if (showModal) {
       gatsby = document.getElementsByClassName('container')[0];
       gatsby.classList.add('disappear');
       modalRef.current.classList.remove('close-modal');
       modalRef.current.classList.add('open-modal');
+      if (!environmentUtil.isMobile(browserWidth)) {
+        modalRef.current.style.top = `${getTop()}px`;
+        modalRef.current.style.left = `${style.left}px`;
+      }
     }
   }, [showModal])
 
