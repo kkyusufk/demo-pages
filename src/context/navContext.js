@@ -1,16 +1,15 @@
-import { navigate } from 'gatsby';
 import React, { createContext, useState, useEffect } from 'react';
 import { NAVITEMS } from '../constants';
-import { isWindowDefined } from '../utils/windowUtil';
+import { environmentUtil } from '../utils/environmentUtil';
 
 const GlobalContext = createContext();
 
 const Provider = ({ children }) => {
-  const currentPage = isWindowDefined() ? window.location.pathname.split('/')[1] : 'home';
+  const currentPage = environmentUtil.isWindowDefined() ? window.location.pathname.split('/')[1] : 'home';
   const [uiState, setState] = useState({
     currentPage: NAVITEMS[currentPage.toUpperCase()],
-    browserWidth: isWindowDefined() ? window.innerWidth : '1000px',
-    scrollY: window.scrollY
+    browserWidth: environmentUtil.isWindowDefined() ? window.innerWidth : '1000px',
+    scrollY: environmentUtil.isWindowDefined() ? window.scrollY : 0,
   });
   const setCurrentPage = currentPage => setState({ ...uiState, currentPage });
 
