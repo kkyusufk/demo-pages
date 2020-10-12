@@ -7,32 +7,28 @@ import './navbar.css';
 import { NAVITEMS } from '../../constants'; 
 import { Button } from '../button/Button/Button';
 import hamburger from '../../Assets/icons/hamburger.svg'
+import { environmentUtil } from '../../utils/environmentUtil';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [style, setStyle] = useState({})
-  const { currentPage, setCurrentPage, setScrollY, setAnimateFalse } = useContext(GlobalContext);
+  const { currentPage, shouldComponentAnimate, setCurrentPage, setScrollY, setAnimateFalse } = useContext(GlobalContext);
   const navItems = Object.values(NAVITEMS);
 
   const noScroll = () => window.scrollTo(0, 0);
 
   // handling mobile effects
   useEffect(() => {
-    toggleMenu()
-    if (isOpen) {
+    if (isOpen && environmentUtil.isMobile()) {
+      toggleMenu()
       window.addEventListener('scroll', noScroll)
+      return () => window.removeEventListener('scroll', noScroll)
     }
-    return () => window.removeEventListener('scroll', noScroll)
   }, [isOpen]);
 
   // handling desktop effects
   useEffect(() => { 
     const gatsby = document.getElementById('gatsby-focus-wrapper');
-    if (currentPage === 'Our Work') {
-      gatsby.style.backgroundColor = '#FFFFFF'
-    } else {
-      gatsby.style.backgroundColor = '#F1F1F1'
-    }
     let activeElement;
     const menuElements = document.querySelectorAll('a') || [];
     const homeElementLeft = menuElements[0].getBoundingClientRect().left;
@@ -87,7 +83,9 @@ const Navbar = () => {
       </ul> 
       <Button 
         className="hamburger"
-        onClick={() => setIsOpen(isOpen => !isOpen)}
+        onClick={() => {
+          setIsOpen(isOpen => !isOpen)
+        }}
         src={hamburger}
       />
     </>

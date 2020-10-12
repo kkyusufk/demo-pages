@@ -159,9 +159,7 @@
 
 @media only screen and (min-width: 700px) {
   .carousel:hover .carousel-images {
-    -webkit-transform: scale(1.4);
-    -ms-transform: scale(1.4);
-    transform: scale(1.4);
+    transform: scale(1.1);
   }
   
   .carousel:hover .rightButton {

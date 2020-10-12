@@ -12,14 +12,14 @@ const containerVariants = {
   stop: {
     y: 0,
     transition: {
-      duration: 0.7 
-    }, 
+      duration: 0.5
+    },
   },
-  exit: (i) => ({
+  exit: (i = 0) => ({
     y: -i,
     transition: {
       from: -i,
-      duration: 0.7
+      duration: 0.5
     }
   })
 }
@@ -29,21 +29,20 @@ const Layout = ({ location, children }) => {
     <GlobalContext.Consumer>
       {(value) => (
         <AnimatePresence>
-          {console.log(value)}
-        <motion.div 
-          key={value.shouldComponentAnimate && location.key}
+        <motion.div
           custom={value.scrollY}
+          key={location.key} 
           className="container"
-          variants={value.shouldComponentAnimate && containerVariants}
-          initial={value.shouldComponentAnimate && "slideUp"}
-          animate={value.shouldComponentAnimate && "stop"}
+          variants={containerVariants}
+          initial="slideUp"
+          animate="stop"
           exit="exit"
           >
             <div style={{
-              backgroundColor: '#F1F1F1',
-              width: '100%', 
-              position: 'absolute' 
-              }}>
+              position: value.shouldComponentAnimate ? 'absolute' : 'relative',
+              width: '100%',
+              backgroundColor: '#F1F1F1'
+            }}>
           <header className="header column">
         <div className="header__wrapper">
           <div className="opposite-svg-header">

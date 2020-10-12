@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useContext } from "react";
-import classNames from 'classnames';
 
 import "./team-modal.scss";
 import { Carousel } from "../carousel/carousel";
@@ -23,7 +22,7 @@ const TeamModal = ({ showModal, hideModal, style }) => {
       modalRef.current.classList.add('open-modal');
       if (!environmentUtil.isMobile(browserWidth)) {
         modalRef.current.style.top = `${getTop()}px`;
-        modalRef.current.style.width = `${style.width}px`;
+        //modalRef.current.style.width = `${style.width}px`;
       }
     }
   }, [showModal])
@@ -36,7 +35,7 @@ const TeamModal = ({ showModal, hideModal, style }) => {
   }
   
   return (
-    <div className={classNames("team-modal-wrapper")} ref={modalRef}>
+    <div className="team-modal-wrapper" ref={modalRef}>
       <div className="team-modal">
         <div>
           <h1 className="team-modal-title">Abhisek Sarda</h1>
