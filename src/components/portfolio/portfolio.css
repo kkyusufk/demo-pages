@@ -42,6 +42,6 @@
     justify-self: center;
   }
   .portfolioImage {
-    min-height: 255px;
+    height: 255px;
   }
 }
