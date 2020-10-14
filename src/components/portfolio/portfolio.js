@@ -1,17 +1,27 @@
 import React, { useContext } from "react";
+import classnames from "classnames";
 import { Title } from "../typography/title/title";
 import { Subtitile } from "../typography/subtitle/subtitle";
 import { GlobalContext } from "../../context/navContext";
 
 import "../fonts.css";
-import "./portfolio.css";
-import { BREAKPOINTS } from "../../constants";
+import "./portfolio.scss";
+import { environmentUtil } from "../../utils/environmentUtil";
 
-const Portfolio = ({ src, title, subtitle, width, justify, height }) => {
+const Portfolio = ({
+  src,
+  title,
+  subtitle,
+  width,
+  justify,
+  height,
+  titleClass,
+  subtitleClass,
+}) => {
   const { browserWidth } = useContext(GlobalContext);
-  if (browserWidth <= BREAKPOINTS.MOBILE) {
-   height="325px"
-   justify="space-between"
+  if (environmentUtil.isMobile(browserWidth)) {
+    height = "325px";
+    justify = "space-between";
   }
   return (
     <div className="portfolioContainer" style={{ width, height }}>
@@ -19,11 +29,13 @@ const Portfolio = ({ src, title, subtitle, width, justify, height }) => {
         <div>
           <img src={src} className="portfolioImage" width={width} />
         </div>
-        <div>
-          <div className="portfolioTitle">
+        <div
+          style={{ marginTop: !environmentUtil.isMobile(browserWidth) && 20 }}
+        >
+          <div className={classnames("portfolioTitle", `${titleClass}`)}>
             <Title content={title} />
           </div>
-          <div className="portfolioSubtitle">
+          <div className={classnames("portfolioSubtitle", `${subtitleClass}`)}>
             <Subtitile content={subtitle} />
           </div>
         </div>

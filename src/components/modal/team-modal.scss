@@ -2,6 +2,7 @@
 .team-modal-wrapper {
   transition: all 0.5s ease-in-out;
   background-color: white;
+  pointer-events: none;
   font-family: 'Roobert Regular';
 }
 
@@ -50,10 +51,14 @@
     font-style: normal;
     font-weight: 300;
     font-size: 18px;
-    line-height: 180%;
+    line-height: 32px;
     width: 520px;
     padding: 0;
     margin: 0;
+
+    &:first-child {
+      margin-bottom: 50px;
+    }
   }
 
   .team-modal-subtitle {
@@ -76,6 +81,7 @@
 
   .open-modal {
     opacity: 1;
+    pointer-events: all;
     clip-path: polygon(100% 100%, 0% 100%, 0% 0%, 100% 0%);
     transition: clip-path 0.5s ease-in-out, opacity 0.5s ease-in-out;
   }

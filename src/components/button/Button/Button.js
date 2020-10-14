@@ -1,12 +1,12 @@
 import React, { memo } from "react";
-import classNames from 'classnames';
+import classNames from "classnames";
 
 import "./Button.css";
 
 const Button = memo(({ onClick, disabled, className, hidden, src }) => {
   return (
     <button
-      className={classNames('button', className)}
+      className={classNames("button", className)}
       onClick={() => onClick()}
       disabled={disabled}
       hidden={hidden}
@@ -17,4 +17,3 @@ const Button = memo(({ onClick, disabled, className, hidden, src }) => {
 });
 
 export { Button };
-  

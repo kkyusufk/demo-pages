@@ -40,6 +40,11 @@
   background-color: white;
   max-width: 1170px;
   height: 570px;
+  padding: 50px;
+
+  @media only screen and (max-width: 700px) {
+    padding: 20px;
+  }
 }
 
 .content-with-carousel {

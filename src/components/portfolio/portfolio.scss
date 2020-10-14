@@ -1,7 +1,7 @@
 .portfolioContainer {
   justify-self: center;
   max-width: 1170px;
-  max-height: 700px;
+  max-height: 800px;
   transition: transform 0.5s ease-in-out;
 }
 
@@ -14,15 +14,10 @@
 
 .portfolioTitle {
   font-family: 'Roobert-regular';
-  font-size: 20px;
-  font-weight: normal;
 }
 
 .portfolioSubtitle {
   font-family: 'Roobert-regular';
-  font-size: 20px;
-  font-weight: normal;
-  color: rgba(51, 51, 51, 0.5);
 }
 
 @media only screen and (min-width: 700px) {

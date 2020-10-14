@@ -1,11 +1,11 @@
 import React, { useEffect, useReducer, memo } from "react";
-import classnames from 'classnames';
+import classnames from "classnames";
 import { images } from "../../data";
 import "./carousel.css";
 import { Button } from "../button/Button/Button";
 import { DIRECTIONS } from "../../constants";
 import { initialState, carouselReducer } from "./carouselReducer";
-import rightSVG from '../../Assets/icons/right.svg';
+import rightSVG from "../../Assets/icons/right.svg";
 import { environmentUtil } from "../../utils/environmentUtil";
 
 const Carousel = memo(({ compact }) => {
@@ -19,11 +19,11 @@ const Carousel = memo(({ compact }) => {
     if (!environmentUtil.isMobile()) return false;
     const halfWidth = window.innerWidth / 2;
     if (e.pageX > halfWidth && state.imageIndex < images.length - 1) {
-      dispatch({ type: 'NEXT' })
-    } else if ( e.pageX < halfWidth && state.imageIndex > 0) {
-      dispatch({ type: 'PREVIOUS' })
+      dispatch({ type: "NEXT" });
+    } else if (e.pageX < halfWidth && state.imageIndex > 0) {
+      dispatch({ type: "PREVIOUS" });
     }
-  }
+  };
 
   useEffect(() => {
     let id;
@@ -51,7 +51,7 @@ const Carousel = memo(({ compact }) => {
           </div>
         );
       })}
-      <div className={classnames("image-title", { "hidden": compact })}>
+      <div className={classnames("image-title", { hidden: compact })}>
         {images.map((image, index) => {
           const hidden = state.imageIndex === index ? "notHidden" : "hidden";
           return (
@@ -95,7 +95,9 @@ const Carousel = memo(({ compact }) => {
         <Button
           onClick={goRight}
           className={DIRECTIONS.RIGHT.toLowerCase()}
-          hidden={(state.imageIndex === images.length - 1 ? true : false) || compact}
+          hidden={
+            (state.imageIndex === images.length - 1 ? true : false) || compact
+          }
           src={rightSVG}
         />
       </div>

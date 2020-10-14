@@ -1,5 +1,6 @@
 .description {
   font-size: 32px;
+  line-height: 125%;
   font-style: Regular;
   transition: transform 0.5s ease-in-out;
   color: rgba(51, 51, 51, 0.5);
@@ -10,6 +11,7 @@
   opacity: 0;
   bottom: -28px;
   font-size: 32px;
+  font-weight: 500;
   font-style: medium;
   transition: all 0.5s ease-in-out;
 }
@@ -20,6 +22,7 @@
   line-height: 1;
   word-wrap: none;
   font-size: 64px;
+  line-height: 100%;
   font-style: medium;
 }
 

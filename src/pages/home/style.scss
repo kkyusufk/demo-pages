@@ -1,0 +1,42 @@
+.portfolio-home-page {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  column-gap: 90px;
+}
+
+.portfolio-home-title {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 32px;
+  line-height: 120%;
+  color: #333333;
+    
+  @media only screen and (max-width: 700px) {
+    font-size: 20px;
+    line-height: 120%;
+  }
+}
+
+.portfolio-home-subtitle {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 32px;
+  line-height: 120%;
+  color: rgba(51, 51, 51, 0.5);
+    
+  @media only screen and (max-width: 700px) {
+    font-size: 20px;
+    line-height: 120%;
+  }
+}
+
+@media only screen and (max-width: 700px) { 
+  .portfolio-home-page {
+    grid-template-columns: auto;
+  }
+}
+
+.noscroll {
+  overflow: hidden;
+  position: fixed;
+}
