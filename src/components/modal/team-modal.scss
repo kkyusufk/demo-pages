@@ -2,6 +2,7 @@
 .team-modal-wrapper {
   transition: all 0.5s ease-in-out;
   background-color: white;
+  pointer-events: none;
   font-family: 'Roobert Regular';
 }
 
@@ -80,6 +81,7 @@
 
   .open-modal {
     opacity: 1;
+    pointer-events: all;
     clip-path: polygon(100% 100%, 0% 100%, 0% 0%, 100% 0%);
     transition: clip-path 0.5s ease-in-out, opacity 0.5s ease-in-out;
   }
