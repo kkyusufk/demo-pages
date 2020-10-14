@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./about.css";
+import "./about.scss";
 import { Heading } from "../../components/typography/heading/heading";
 import { ABOUT } from "../../data";
 import { SemiBoldHeading } from "../../components/typography/semiBoldHeading/semiBoldHeading";
@@ -61,7 +61,7 @@ const About = () => (
     <Div type={SIZES.L}>
       <Grid1>
         <div className="domain-content">
-          <SubHeading innerHtml={ABOUT.headingEight} width="640px" />
+          <SubHeading innerHtml={ABOUT.headingEight} width="640px" color="#333333" />
         </div>
       </Grid1>
     </Div>
