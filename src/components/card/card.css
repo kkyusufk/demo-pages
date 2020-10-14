@@ -23,12 +23,12 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .cardContainer:hover .description {
-  transform: translateY(-29px);
+  transform: translateY(-40px);
 }
 
 .cardContainer:hover .details {
   opacity: 1;
-  transform: translateY(-40px);
+  transform: translateY(-55px);
 }
 
 .cardContainer {

@@ -61,7 +61,11 @@ const About = () => (
     <Div type={SIZES.L}>
       <Grid1>
         <div className="domain-content">
-          <SubHeading innerHtml={ABOUT.headingEight} width="640px" color="#333333" />
+          <SubHeading
+            innerHtml={ABOUT.headingEight}
+            width="640px"
+            color="#333333"
+          />
         </div>
       </Grid1>
     </Div>

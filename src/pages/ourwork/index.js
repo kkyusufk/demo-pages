@@ -35,6 +35,8 @@ const Ourwork = () => (
               subtitle={portfolio.subtitle}
               height="320px"
               justify="space-between"
+              titleClass="portfolio-ourwork-title"
+              subtitleClass="portfolio-ourwork-subtitle"
             />
           );
         })}

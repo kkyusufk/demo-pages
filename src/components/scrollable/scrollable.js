@@ -69,7 +69,7 @@ const Scrollable = () => (
           />
         </li>
         <li className="marquee-content-li">
-          <div>The Ken</div>
+          <div className="heading-h1">The Ken</div>
           <img src={KenImg} style={{ width: "190px", height: "100%" }} />
         </li>
         <li className="marquee-content-li">

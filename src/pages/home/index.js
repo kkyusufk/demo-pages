@@ -18,7 +18,7 @@ import AntidoteCoffee from "../../Assets/Highlight Images/AntidoteCoffee.png";
 import SugarSheetMask from "../../Assets/Highlight Images/SugarSheetMask.png";
 import HomePageImage from "../../Assets/Highlight Images/home-page-image.png";
 
-import "./style.css";
+import "./style.scss";
 import "../../components/fonts.css";
 import { Grid1 } from "../../components/grid/grid1";
 import { FooterLinks } from "../../components/footer/footerLinks";
@@ -53,12 +53,16 @@ const IndexPage = () => {
             src={BloomHotels}
             title="Bloom Hotels"
             subtitle="UX/UI Design for Hospitality"
+            titleClass="portfolio-home-title"
+            subtitleClass="portfolio-home-subtitle"
           />
           <Portfolio
             width="540px"
             src={Kapiva}
             title="Kapiva"
             subtitle="Brand Creation & Packaging Design"
+            titleClass="portfolio-home-title"
+            subtitleClass="portfolio-home-subtitle"
           />
         </Grid2>
       </Div>
@@ -69,6 +73,8 @@ const IndexPage = () => {
             src={TheKen}
             title="The Ken"
             subtitle="Brand creation & Packaging Design"
+            titleClass="portfolio-home-title"
+            subtitleClass="portfolio-home-subtitle"
           />
         </Grid1>
       </Div>
@@ -79,12 +85,16 @@ const IndexPage = () => {
             src={AntidoteCoffee}
             title="Antidote Coffee"
             subtitle="Brand and Packaging"
+            titleClass="portfolio-home-title"
+            subtitleClass="portfolio-home-subtitle"
           />
           <Portfolio
             width="540px"
             src={SugarSheetMask}
             title="Sugar Sheet Mask"
             subtitle="Packaging"
+            titleClass="portfolio-home-title"
+            subtitleClass="portfolio-home-subtitle"
           />
         </Grid2>
       </Div>
