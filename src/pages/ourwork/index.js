@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { motion, AnimateSharedLayout, AnimatePresence } from 'framer-motion'
 
 import "./ourwork.scss";
 import { Portfolio } from "../../components/portfolio/portfolio";
@@ -10,42 +11,66 @@ import { Filter } from "../../components/filter/filter";
 import { FooterLinks } from "../../components/footer/footerLinks";
 import { Div } from "../../components/Div/Div";
 
-const Ourwork = () => (
-  <>
-    <Div type={SIZES.L}>
-      <div className="about-top-heading">
-        <SemiBoldHeading innerHtml={OURWORK.headingOne} />
-        <Heading
-          innerHtml={OURWORK.headingTwo}
-          width="970px"
-          align={ALIGNMENT.LEFT}
-        />
-        <div style={{ marginTop: "50px" }}>
-          <Filter />
+const Ourwork = () => {
+  let data = portfolioData;
+  const [active, setActive] = useState('');
+
+  const toggleActive = (filter) => {
+    setActive(prevState => {
+      let nextState = ''
+      console.log(prevState)
+      if (prevState !== filter) nextState = filter;
+      return nextState
+    })
+  };
+
+  if (active !== '') {
+    data = portfolioData.filter(portfolio => portfolio.type === active)
+  }
+
+  return (
+      <>
+      <Div type={SIZES.L}>
+        <div className="about-top-heading">
+          <SemiBoldHeading innerHtml={OURWORK.headingOne} />
+          <Heading
+            innerHtml={OURWORK.headingTwo}
+            width="970px"
+            align={ALIGNMENT.LEFT}
+          />
+          <div style={{ marginTop: "50px" }}>
+            <Filter active={active} toggleActive={toggleActive} />
+          </div>
         </div>
-      </div>
-    </Div>
-    <Div type={SIZES.XL}>
-      <div className="portfolio-grid">
-        {portfolioData.map((portfolio) => {
-          return (
-            <Portfolio
-              src={portfolio.src}
-              title={portfolio.title}
-              subtitle={portfolio.subtitle}
-              height="320px"
-              justify="space-between"
-              titleClass="portfolio-ourwork-title"
-              subtitleClass="portfolio-ourwork-subtitle"
-            />
-          );
-        })}
-      </div>
-    </Div>
-    <Div type={SIZES.XXL}>
-      <FooterLinks page={PAGES.OURWORK} to={NAVITEMS.CONTACT} />
-    </Div>
-  </>
-);
+      </Div>
+      <Div type={SIZES.XL}>
+        <AnimateSharedLayout>
+          <motion.div className="portfolio-grid" animate>
+            <AnimatePresence>
+            {data.map((portfolio, index) => {
+              return (
+                  <Portfolio
+                    id={index}
+                    key={index}
+                    src={portfolio.src}
+                    title={portfolio.title}
+                    subtitle={portfolio.subtitle}
+                    height="320px"
+                    justify="space-between"
+                    titleClass="portfolio-ourwork-title"
+                    subtitleClass="portfolio-ourwork-subtitle"
+                  />
+              );
+            })}
+            </AnimatePresence>
+          </motion.div>
+        </AnimateSharedLayout>
+      </Div>
+      <Div type={SIZES.XXL}>
+        <FooterLinks page={PAGES.OURWORK} to={NAVITEMS.CONTACT} />
+      </Div>
+    </>
+  )
+};
 
 export default Ourwork;

@@ -6,8 +6,14 @@
   flex-wrap: wrap;
 }
 
+.active-filter {
+  background: #333333 !important;
+  color: #FFFFFF;
+}
+
 .filter-buttons {
   padding: 5px 10px 5px 10px;
+  cursor: pointer;
   background: #FFFFFF;
   border: none;
   border-radius: 5px;
@@ -18,4 +24,8 @@
   line-height: 26px;
   letter-spacing: 0em;
   text-align: left;
+
+  &:focus {
+    outline: none;
+  }
 }
