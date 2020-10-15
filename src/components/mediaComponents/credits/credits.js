@@ -1,7 +1,5 @@
-import React from 'react';
+import React from "react";
 
-const Credits = ({ title, name }) => {
+const Credits = ({ title, name }) => {};
 
-}
-
-export { Credits }
+export { Credits };

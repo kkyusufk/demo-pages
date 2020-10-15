@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { motion, AnimateSharedLayout, AnimatePresence } from 'framer-motion'
+import { motion, AnimateSharedLayout, AnimatePresence } from "framer-motion";
 
 import "./ourwork.scss";
 import { Portfolio } from "../../components/portfolio/portfolio";
@@ -10,26 +10,37 @@ import { OURWORK, portfolioData } from "../../data";
 import { Filter } from "../../components/filter/filter";
 import { FooterLinks } from "../../components/footer/footerLinks";
 import { Div } from "../../components/Div/Div";
+import { Link } from "gatsby";
 
+// assuming data structure will be coming in this format
+let PortfolioDetails = [
+  { id: "Side-Scrolling-Image" },
+  {
+    id: "Side-by-Side",
+    src1: "https://source.unsplash.com/WLUHO9A_xik/585x700",
+    src2: "https://source.unsplash.com/WLUHO9A_xik/585x700",
+  },
+  { id: "Image+Content" },
+];
 const Ourwork = () => {
   let data = portfolioData;
-  const [active, setActive] = useState('');
+  const [active, setActive] = useState("");
 
   const toggleActive = (filter) => {
-    setActive(prevState => {
-      let nextState = ''
-      console.log(prevState)
+    setActive((prevState) => {
+      let nextState = "";
+      console.log(prevState);
       if (prevState !== filter) nextState = filter;
-      return nextState
-    })
+      return nextState;
+    });
   };
 
-  if (active !== '') {
-    data = portfolioData.filter(portfolio => portfolio.type === active)
+  if (active !== "") {
+    data = portfolioData.filter((portfolio) => portfolio.type === active);
   }
 
   return (
-      <>
+    <>
       <Div type={SIZES.L}>
         <div className="about-top-heading">
           <SemiBoldHeading innerHtml={OURWORK.headingOne} />
@@ -47,21 +58,28 @@ const Ourwork = () => {
         <AnimateSharedLayout>
           <motion.div className="portfolio-grid" animate>
             <AnimatePresence>
-            {data.map((portfolio, index) => {
-              return (
-                  <Portfolio
-                    id={index}
+              {data.map((portfolio, index) => {
+                return (
+                  <Link
+                    to="/ourwork/portfolioDetails/"
+                    state={{ data: PortfolioDetails }}
                     key={index}
-                    src={portfolio.src}
-                    title={portfolio.title}
-                    subtitle={portfolio.subtitle}
-                    height="320px"
-                    justify="space-between"
-                    titleClass="portfolio-ourwork-title"
-                    subtitleClass="portfolio-ourwork-subtitle"
-                  />
-              );
-            })}
+                    className="nav-items"
+                  >
+                    <Portfolio
+                      id={index}
+                      key={index}
+                      src={portfolio.src}
+                      title={portfolio.title}
+                      subtitle={portfolio.subtitle}
+                      height="320px"
+                      justify="space-between"
+                      titleClass="portfolio-ourwork-title"
+                      subtitleClass="portfolio-ourwork-subtitle"
+                    />
+                  </Link>
+                );
+              })}
             </AnimatePresence>
           </motion.div>
         </AnimateSharedLayout>
@@ -70,7 +88,7 @@ const Ourwork = () => {
         <FooterLinks page={PAGES.OURWORK} to={NAVITEMS.CONTACT} />
       </Div>
     </>
-  )
+  );
 };
 
 export default Ourwork;
