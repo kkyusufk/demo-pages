@@ -9,7 +9,7 @@ import { SideScrollingImage } from "../components/mediaComponents/sideScrollingI
  * Then in 'render', i am mapping over components and displaying the children.
  * This way depending on the data which comes from backend, this page will update.
  */
-const PortfolioDetails = ({ data }) => {
+const PortfolioDetails = ({ data = [] }) => {
   /**
    * The array of all components (eg: 'Side-Scrolling-Image', 'Image+Content')
    */
