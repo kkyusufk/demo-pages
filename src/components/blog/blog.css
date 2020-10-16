@@ -3,6 +3,11 @@
   font-family: 'Roobert-Regular';
 }
 
+.blogContainer {
+  margin: 0 auto;
+  width: 970px;
+}
+
 .blog_author {
   font-family: 'Roobert-Regular';
   font-style: normal;

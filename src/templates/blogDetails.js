@@ -1,6 +1,6 @@
 import React from "react";
 import { BlogQuote } from "../components/blog/blogQuote";
-import { BlogText } from "../components/blog/blogText";
+import { BlogParagraph } from "../components/blog/blogParagraph";
 
 /**
  * The way this will work is this:
@@ -11,13 +11,13 @@ import { BlogText } from "../components/blog/blogText";
  */
 const BlogDetails = ({ data }) => {
   /**
-   * The array of all components (eg: 'Blog-Text', 'Blog-Quotesloca')
+   * The array of all components (eg: 'Blog-Text', 'Blog-Quotes')
    */
   const components = [];
   data.forEach((sections) => {
     switch (sections.id) {
       case "Blog-Text": {
-        components.push(<BlogText />);
+        components.push(<BlogParagraph />);
         break;
       }
       case "Blog-Quotes": {
