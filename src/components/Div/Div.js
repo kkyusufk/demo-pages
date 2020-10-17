@@ -4,10 +4,16 @@ import "./div-spacing.scss";
 import { SPACING } from "../../constants";
 import { GlobalContext } from "../../context/navContext";
 
+/**
+ * @TODO rename this to Spacings.js
+ */
 const Div = ({ children, type }) => {
   const [elSpacing, setElSpacing] = useState(SPACING[type].Desktop);
   const { browserWidth } = useContext(GlobalContext);
 
+  /**
+   * @Chris the other way to handle this is css media queries
+   */
   useEffect(() => {
     const spacing = SPACING[type];
     if (browserWidth >= 992) {

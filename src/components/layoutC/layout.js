@@ -4,6 +4,7 @@ import { Navbar } from "../navbar/navbar";
 import { GlobalContext } from "../../context/navContext";
 
 import "./layoutCss.css";
+import { isPortfolioDetails } from "../../utils/pagesUtil";
 
 const containerVariants = {
   slideUp: {
@@ -118,7 +119,9 @@ const Layout = ({ location, children }) => {
                   <Navbar />
                 </div>
               </header>
-              <main className="content column">
+              <main className="content column" style={{ 
+                padding: `${isPortfolioDetails(location.pathname) && 0}` 
+                }}>
                 <section className="main-content">{children}</section>
               </main>
               <footer className="footer column">

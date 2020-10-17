@@ -19,29 +19,44 @@ export const images = [
 ];
 
 export const portfolioData = [
-  { src: portfolioImage, title: "Stockal", subtitle: "Web Design for Fintech" },
   {
+    type: "Web Design",
+    src: portfolioImage,
+    title: "Stockal",
+    subtitle: "Web Design for Fintech",
+  },
+  {
+    type: "Branding",
     src: portfolioImage1,
     title: "Kapiva",
     subtitle: "Brand Creation & Packaging",
   },
   {
+    type: "User Experience",
     src: portfolioImage2,
     title: "Bloom Hotels",
     subtitle: "UX/UI for Hospitality",
   },
   {
+    type: "Packaging",
     src: portfolioImage3,
     title: "Sugar X Shirley",
     subtitle: "Limited Edition Packaging",
   },
-  { src: portfolioImage4, title: "Swiggy", subtitle: "Branding For Food Tech" },
   {
+    type: "Branding",
+    src: portfolioImage4,
+    title: "Swiggy",
+    subtitle: "Branding For Food Tech",
+  },
+  {
+    type: "Branding",
     src: portfolioImage5,
     title: "Canarim",
     subtitle: "Branding for Konkani Restaurant",
   },
   {
+    type: "Branding",
     src: portfolioImage6,
     title: "Antidote Coffee",
     subtitle: "Branding and Packaging",
@@ -172,12 +187,14 @@ export const openings = [
 
 export const blogs = [
   {
+    id: 'Blog-1',
     author: "Abhisek Sarda",
     date: "14 Jan 2020",
     title: "Why can't you leave a good thing alone?",
     src: "https://source.unsplash.com/random",
   },
   {
+    id: 'Blog-2',
     author: "Abhisek Sarda",
     date: "15 Nov 2016",
     title:
@@ -332,3 +349,15 @@ export const FOOTER = {
     },
   },
 };
+
+export const BLOGDETAILS = [
+  {
+    id: 'Blog-1',
+    text: `Design has evolved through varied cultural and art progressions. 
+    The Postmodern began with a liberalisation of ideas without any set adherence to rational order and formal organization. The movement has been an expressive and playful time for designers with a number of conspicuous trends – retro, techno, punk, grunge, beach, parody, and pastiche. There has been no singular defined design language or demi-gods; it is an anarchy of sorts. 
+    
+    The Postmodern is an ever-evolving organism, a mangled up mix of counter culture’s, aesthetics driven by nostalgic revivals, juxtaposed with advances in material technologies. Everyone and everything fits in this cacophonous bandwagon; the Postmodern is a never-ending journey we continue straddling, wandering, defining and redefining ourselves to suit its meanderings and hysterics. 
+    
+    The quote below pretty much sums it up.`
+  }
+]
