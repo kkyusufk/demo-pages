@@ -19,7 +19,7 @@ const Filter = ({ active, toggleActive }) => {
         <motion.button
           key={index}
           className={classnames("filter-buttons", {
-            "active-filter": active === filter,
+            "active-filter": active.includes(filter),
           })}
           onClick={() => toggleActive(filter)}
           variants={filterVariants}

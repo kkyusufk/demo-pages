@@ -1,10 +1,19 @@
 import React from "react";
-import { PortfolioDetails } from "../../../templates/portfolioDetails";
+import PropTypes from "prop-types";
+import { PortfolioTemplate } from "../../../templates/portfolioTemplate";
 
-const Expanded = ({ location }) => {
-  const { state = {} } = location
-  const { data = {} } = state;
-  return <PortfolioDetails data={data} />;
+const PortfolioDetails = ({ location }) => {
+  const { state = {} } = location;
+  const { data = [] } = state;
+  return <PortfolioTemplate data={data} />;
 };
 
-export default Expanded;
+PortfolioDetails.propTypes = {
+  location: PropTypes.shape({
+    state: PropTypes.shape({
+      data: PropTypes.array.isRequired
+    })
+  })
+}
+
+export default PortfolioDetails;

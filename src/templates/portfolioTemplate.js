@@ -1,4 +1,7 @@
 import React from "react";
+import PropTypes from 'prop-types';
+
+import { ContentAndImages } from "../components/contentAndImages/contentAndImages";
 import { SideBySide } from "../components/mediaComponents/sideBySide/sideBySide";
 import { SideScrollingImage } from "../components/mediaComponents/sideScrollingImage/sideScrollingImage";
 
@@ -9,7 +12,7 @@ import { SideScrollingImage } from "../components/mediaComponents/sideScrollingI
  * Then in 'render', i am mapping over components and displaying the children.
  * This way depending on the data which comes from backend, this page will update.
  */
-const PortfolioDetails = ({ data = [] }) => {
+const PortfolioTemplate = ({ data = [] }) => {
   /**
    * The array of all components (eg: 'Side-Scrolling-Image', 'Image+Content')
    */
@@ -26,12 +29,18 @@ const PortfolioDetails = ({ data = [] }) => {
         );
         break;
       }
+      case "Image+Content": {
+        components.push(
+          <ContentAndImages />
+        );
+        break;
+      }
       default:
         return null;
     }
   });
   return (
-    <div>
+    <div style={{ backgroundColor: 'blue' }}>
       {/**
        *  Mapping over the array and displaying all the components
        */}
@@ -43,4 +52,8 @@ const PortfolioDetails = ({ data = [] }) => {
   );
 };
 
-export { PortfolioDetails };
+PortfolioTemplate.propTypes = {
+  data: PropTypes.array
+}
+
+export { PortfolioTemplate };

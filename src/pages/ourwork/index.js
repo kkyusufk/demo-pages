@@ -24,19 +24,22 @@ let PortfolioDetails = [
 ];
 const Ourwork = () => {
   let data = portfolioData;
-  const [active, setActive] = useState("");
+  const [active, setActive] = useState([]);
 
   const toggleActive = (filter) => {
     setActive((prevState) => {
-      let nextState = "";
-      console.log(prevState);
-      if (prevState !== filter) nextState = filter;
+      let nextState = [...prevState];
+      if (!prevState.includes(filter)) { 
+        nextState.push(filter);
+      } else {
+        nextState = nextState.filter( state => state !== filter)
+      }
       return nextState;
     });
   };
 
-  if (active !== "") {
-    data = portfolioData.filter((portfolio) => portfolio.type === active);
+  if (active.length !== 0) {
+    data = portfolioData.filter((portfolio) => active.includes(portfolio.type));
   }
 
   return (
