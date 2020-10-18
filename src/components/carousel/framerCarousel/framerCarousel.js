@@ -9,10 +9,12 @@ import "./framerCarousel.scss";
 import "../carousel.css";
 
 /**
- * The variat for the carousel image transition.
- * @object
+ * The variant for the carousel image transition.
+ * For more information on variants go to https://www.framer.com/api/motion/animation/#variants
+ * @type {Object}
+ * 
  */
-const variants = {
+const carouselVariants = {
   enter: (direction) => {
     return {
       scale: direction > 0 ? 1 : 0.9,
@@ -38,6 +40,16 @@ const variants = {
     },
   }),
 };
+
+/**
+ * The variant for the the image title and subtitle cards
+ * @type {Object}
+ */
+const descriptionCardVariant = {
+  initial: { opacity: 0 },
+  animate: { opacity: 1 },
+  exit: { opacity: 0 }
+} 
 
 const tabs = [1, 2, 3, 4];
 
@@ -69,13 +81,16 @@ export const Example = () => {
 
   return (
     <div className="example-container">
+      {/**
+       * The carousel Images and animations
+       */}
       <AnimatePresence initial={false} custom={direction}>
         <motion.img
           className="carousel-image"
           key={page}
           src={images[imageIndex].src}
           custom={direction}
-          variants={variants}
+          variants={carouselVariants}
           initial="enter"
           animate="center"
           exit="exit"
@@ -98,12 +113,18 @@ export const Example = () => {
           }}
         />
       </AnimatePresence>
+      {/**
+       * The next and previous buttons
+       */}
       <div className="next" onClick={() => paginate(1, active + 1)}>
         {"‣"}
       </div>
       <div className="prev" onClick={() => paginate(-1, active - 1)}>
         {"‣"}
       </div>
+      {/**
+       * Image title and subtitle cards
+       */}
       <div className={classNames("image-title")}>
         {images.map((image, index) => {
           return (
@@ -112,17 +133,19 @@ export const Example = () => {
                 <div key={index} id="contents">
                   <motion.span
                     className="imageTitle"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
+                    variants={descriptionCardVariant}
+                    initial="initial"
+                    animate="animate"
+                    exit="exit"
                   >
                     {image.title}
                   </motion.span>
                   <motion.span
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
                     className="imageSubTitle"
+                    variants={descriptionCardVariant}
+                    initial="initial"
+                    animate="animate"
+                    exit="exit"
                   >
                     {image.subtitle}
                   </motion.span>
@@ -132,6 +155,9 @@ export const Example = () => {
           );
         })}
       </div>
+      {/**
+       * The animating tabs at the bottom
+       */}
       <div className="tabs">
         {tabs.map((tab, index) => {
           return (
