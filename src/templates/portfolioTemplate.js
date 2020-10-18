@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 import { ContentAndImages } from "../components/contentAndImages/contentAndImages";
 import { SideBySide } from "../components/mediaComponents/sideBySide/sideBySide";
@@ -30,9 +30,7 @@ const PortfolioTemplate = ({ data = [] }) => {
         break;
       }
       case "Image+Content": {
-        components.push(
-          <ContentAndImages />
-        );
+        components.push(<ContentAndImages />);
         break;
       }
       default:
@@ -40,7 +38,7 @@ const PortfolioTemplate = ({ data = [] }) => {
     }
   });
   return (
-    <div style={{ backgroundColor: 'blue' }}>
+    <div style={{ backgroundColor: "blue" }}>
       {/**
        *  Mapping over the array and displaying all the components
        */}
@@ -53,7 +51,7 @@ const PortfolioTemplate = ({ data = [] }) => {
 };
 
 PortfolioTemplate.propTypes = {
-  data: PropTypes.array
-}
+  data: PropTypes.array,
+};
 
 export { PortfolioTemplate };

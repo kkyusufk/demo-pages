@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import { BlogQuote } from "../components/blog/blogQuote";
 import { BlogParagraph } from "../components/blog/blogParagraph";
 import { Div } from "../components/Div/Div";
@@ -42,18 +42,15 @@ const BlogTemplate = ({ data }) => {
        */}
       {components.map((children, index) => {
         // There should be no margin top for first paragraph
-        if(index === 0) return children;
-        return <Div type={SIZES.L}>
-          {children}
-        </Div>
-        }
-      )}
+        if (index === 0) return children;
+        return <Div type={SIZES.L}>{children}</Div>;
+      })}
     </div>
   );
 };
 
 BlogTemplate.propTypes = {
-  data: PropTypes.array
-}
+  data: PropTypes.array,
+};
 
 export { BlogTemplate };

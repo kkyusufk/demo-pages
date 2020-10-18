@@ -2,14 +2,13 @@ import React from "react";
 
 const style = {
   fontFamily: "Roobert-Regular",
-  fontStyle: 'normal',
+  fontStyle: "normal",
   fontWeight: 500,
-  fontSize: '64px',
-  lineHeight: '115%',
+  fontSize: "64px",
+  lineHeight: "115%",
   /* or 74px */
-  textAlign: 'center'
-
-}
+  textAlign: "center",
+};
 
 const BlogQuote = ({ QuotedText }) => {
   return <p style={style}>{QuotedText}</p>;
