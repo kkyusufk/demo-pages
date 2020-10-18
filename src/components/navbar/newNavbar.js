@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { memo, useContext, useState } from "react";
 import PropTypes from "prop-types";
 import { AnimateSharedLayout, motion } from "framer-motion";
 import { Link } from "gatsby";
+
+import { GlobalContext } from "../../context/navContext";
 import { NAVITEMS } from "../../constants";
 import "./navbar.css";
 
@@ -59,8 +61,8 @@ NavItems.propTypes = {
   onClick: PropTypes.func.isRequired,
 };
 
-const NewNavbar = () => {
-  const [selected, setSelected] = useState("Home");
+const NewNavbar = memo(() => {
+  const { currentPage, setCurrentPage } = useContext(GlobalContext)
   const navItems = Object.values(NAVITEMS);
   return (
     <AnimateSharedLayout>
@@ -69,8 +71,8 @@ const NewNavbar = () => {
           return (
             <NavItems
               key={nav}
-              isSelected={selected === nav}
-              onClick={() => setSelected(nav)}
+              isSelected={currentPage === nav}
+              onClick={() => setCurrentPage(nav)}
               nav={nav}
             />
           );
@@ -78,6 +80,6 @@ const NewNavbar = () => {
       </ul>
     </AnimateSharedLayout>
   );
-};
+});
 
 export { NewNavbar };

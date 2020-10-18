@@ -1,11 +1,11 @@
 import { navigate } from "gatsby";
-import React, { createContext, useState, useEffect } from "react";
+import React, { createContext, useState, useEffect, memo } from "react";
 import { NAVITEMS } from "../constants";
 import { environmentUtil } from "../utils/environmentUtil";
 
 const GlobalContext = createContext();
 
-const Provider = ({ children }) => {
+const Provider = memo(({ children }) => {
   const currentPage = environmentUtil.isWindowDefined()
     ? window.location.pathname.split("/")[1]
     : "home";
@@ -15,7 +15,6 @@ const Provider = ({ children }) => {
       ? window.innerWidth
       : "1000px",
     scrollY: environmentUtil.isWindowDefined() ? window.scrollY : 0,
-    shouldComponentAnimate: false,
   });
   const setCurrentPage = (currentPage) => setState({ ...uiState, currentPage });
 
@@ -28,9 +27,7 @@ const Provider = ({ children }) => {
   const setContextStates = (state) => {
     setState((prevState) => ({
       ...prevState,
-      currentPage: state.currentPage,
       scrollY: state.scrollY,
-      shouldComponentAnimate: true,
     }));
     navigate(`/${state.currentPage.split(" ").join("").toLowerCase()}/`);
   };
@@ -41,9 +38,9 @@ const Provider = ({ children }) => {
       browserWidth: window.innerWidth,
     }));
 
-  useEffect(() => {
-    window.addEventListener("resize", updateBrowserWidth);
-  }, []);
+  // useEffect(() => {
+  //   window.addEventListener("resize", updateBrowserWidth);
+  // }, []);
 
   return (
     <GlobalContext.Provider
@@ -58,6 +55,6 @@ const Provider = ({ children }) => {
       {children}
     </GlobalContext.Provider>
   );
-};
+});
 
 export { Provider, GlobalContext };
