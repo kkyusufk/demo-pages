@@ -6,6 +6,7 @@ import { Link } from "gatsby";
 import { GlobalContext } from "../../context/navContext";
 import { NAVITEMS } from "../../constants";
 import "./navbar.css";
+import { environmentUtil } from "../../utils/environmentUtil";
 
 const spring = {
   type: "spring",
@@ -19,7 +20,7 @@ const spring = {
  * @Component
  */
 const NavItems = ({ nav, isSelected, onClick }) => {
-  const currentPage = document.querySelector("[aria-current]");
+  const currentPage = environmentUtil.isWindowDefined() && document.querySelector("[aria-current]");
   const newNav = nav.split(" ").join("");
   return (
     <Link
