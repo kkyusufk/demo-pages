@@ -97,9 +97,9 @@ const IndexPage = () => {
       <Div type={SIZES.L}>
         <a
           href="#"
-          onClick={() =>  {
-            setScrollY(window.scrollY) 
-            setCurrentPage(NAVITEMS.OURWORK)
+          onClick={() => {
+            setScrollY(window.scrollY);
+            setCurrentPage(NAVITEMS.OURWORK);
           }}
           className="nav-items"
         >
@@ -125,9 +125,9 @@ const IndexPage = () => {
         />
         <Link
           to="/about/"
-          onClick={() => { 
-            setScrollY(window.scrollY)
-            setCurrentPage(NAVITEMS.ABOUT)
+          onClick={() => {
+            setScrollY(window.scrollY);
+            setCurrentPage(NAVITEMS.ABOUT);
           }}
           className="nav-items"
         >

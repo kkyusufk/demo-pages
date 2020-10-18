@@ -19,7 +19,9 @@ const Container = ({ location, children }) => {
       <main
         className="content column"
         style={{
-          padding: `${isPortfolioDetails(location.pathname) ? 0 : ' 0% 9.3% 0% 9.3%'}`,
+          padding: `${
+            isPortfolioDetails(location.pathname) ? 0 : " 0% 9.3% 0% 9.3%"
+          }`,
         }}
       >
         <section className="main-content">{children}</section>
@@ -30,16 +32,11 @@ const Container = ({ location, children }) => {
         </div>
       </footer>
     </div>
-  )
-}
+  );
+};
 
 const Layout = ({ location, children }) => {
-  return (
-    <Container 
-      location={location}
-      children={children}
-    />
-  );
+  return <Container location={location} children={children} />;
 };
 
 export { Layout };

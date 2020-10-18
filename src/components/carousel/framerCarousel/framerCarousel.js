@@ -1,7 +1,7 @@
 import * as React from "react";
-import classNames from 'classnames';
+import classNames from "classnames";
 import { useState } from "react";
-import { motion, AnimatePresence, useMotionValue } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { wrap } from "@popmotion/popcorn";
 
 import { images } from "../../../data";
@@ -25,8 +25,8 @@ const variants = {
     scale: 1,
     opacity: 1,
     transition: {
-      duration: 0.7
-    }
+      duration: 0.7,
+    },
   },
   exit: (direction) => ({
     zIndex: direction === -1 ? 1 : 0,
@@ -34,9 +34,9 @@ const variants = {
     scale: direction == -1 ? 1 : 0.9,
     opacity: 1,
     transition: {
-      duration: 0.7
-    }
-  })
+      duration: 0.7,
+    },
+  }),
 };
 
 const tabs = [1, 2, 3, 4];
@@ -53,19 +53,19 @@ export const Example = () => {
 
   const paginate = (newDirection, index) => {
     setPage([page + newDirection, newDirection]);
-    index >= images.length ? 
-      setActive(0) : 
-      index < 0 ? 
-      setActive(images.length) :
-      setActive(index)
-    }
+    index >= images.length
+      ? setActive(0)
+      : index < 0
+      ? setActive(images.length)
+      : setActive(index);
+  };
 
   React.useEffect(() => {
-    setTimeout(() => paginate(1, active + 1), 3000)
+    setTimeout(() => paginate(1, active + 1), 3000);
     return function cleanUp() {
-      clearTimeout()
-    }
-  })
+      clearTimeout();
+    };
+  });
 
   return (
     <div className="example-container">
@@ -108,24 +108,27 @@ export const Example = () => {
         {images.map((image, index) => {
           return (
             <AnimatePresence>
-            {index === active && <div key={index} id="contents">
-            <motion.span 
-            className="imageTitle"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            >
-              {image.title}
-            </motion.span>
-            <motion.span
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }} 
-            className="imageSubTitle">
-              {image.subtitle}
-            </motion.span>
-          </div>}
-          </AnimatePresence>
+              {index === active && (
+                <div key={index} id="contents">
+                  <motion.span
+                    className="imageTitle"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                  >
+                    {image.title}
+                  </motion.span>
+                  <motion.span
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    className="imageSubTitle"
+                  >
+                    {image.subtitle}
+                  </motion.span>
+                </div>
+              )}
+            </AnimatePresence>
           );
         })}
       </div>
@@ -134,22 +137,22 @@ export const Example = () => {
           return (
             <AnimatePresence>
               <div className="tab">
-                {index === active && 
-                  <motion.div 
+                {index === active && (
+                  <motion.div
                     initial={false}
                     style={{
-                      height: '5px'
+                      height: "5px",
                     }}
                     animate={{
-                      width: ['0%', '100%'],
-                      background: 'white',
+                      width: ["0%", "100%"],
+                      background: "white",
                       transition: {
-                        duration: 3
-                      } 
+                        duration: 3,
+                      },
                     }}
                   />
-                }
-                </div>
+                )}
+              </div>
             </AnimatePresence>
           );
         })}

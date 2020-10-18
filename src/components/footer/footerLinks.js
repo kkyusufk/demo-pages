@@ -17,10 +17,9 @@ const FooterLinks = ({ page, to = "" }) => {
       <Link
         to={`/${to.toLowerCase()}/`}
         onClick={() => {
-          setScrollY(window.scrollY)
-          setCurrentPage(to)
-          }
-        }
+          setScrollY(window.scrollY);
+          setCurrentPage(to);
+        }}
         className="nav-items"
       >
         <u>

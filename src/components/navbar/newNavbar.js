@@ -20,7 +20,9 @@ const spring = {
  * @Component
  */
 const NavItems = ({ nav, isSelected, onClick }) => {
-  const currentPage = environmentUtil.isWindowDefined() && document.querySelector("[aria-current]");
+  const currentPage =
+    environmentUtil.isWindowDefined() &&
+    document.querySelector("[aria-current]");
   const newNav = nav.split(" ").join("");
   return (
     <Link
