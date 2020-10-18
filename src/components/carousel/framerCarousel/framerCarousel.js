@@ -8,28 +8,35 @@ import { images } from "../../../data";
 import "./framerCarousel.scss";
 import "../carousel.css";
 
+/**
+ * The variat for the carousel image transition.
+ * @object
+ */
 const variants = {
   enter: (direction) => {
     return {
-      x: direction > 0 ? 1000 : -1000,
+      scale: direction > 0 ? 1 : 0.9,
+      x: direction > 0 ? 1500 : 0,
     };
   },
   center: {
-    zIndex: 1,
+    zIndex: 0,
     x: 0,
+    scale: 1,
     opacity: 1,
     transition: {
-      duration: 0.5
+      duration: 0.7
     }
   },
-  exit: {
-    zIndex: 0,
-    scale: 0.9,
+  exit: (direction) => ({
+    zIndex: direction === -1 ? 1 : 0,
+    x: direction == -1 && 1500,
+    scale: direction == -1 ? 1 : 0.9,
     opacity: 1,
     transition: {
-      duration: 1
+      duration: 0.7
     }
-  }
+  })
 };
 
 const tabs = [1, 2, 3, 4];
@@ -37,7 +44,6 @@ const tabs = [1, 2, 3, 4];
 export const Example = () => {
   const [[page, direction], setPage] = useState([0, 0]);
   const [active, setActive] = useState(0);
-  const backgroundColor = useMotionValue('black');
 
   // We only have 3 images, but we paginate them absolutely (ie 1, 2, 3, 4, 5...) and
   // then wrap that within 0-2 to find our image ID in the array below. By passing an
@@ -101,14 +107,25 @@ export const Example = () => {
       <div className={classNames("image-title")}>
         {images.map((image, index) => {
           return (
-            <div key={index} id="contents">
-              <span className="imageTitle">
-                {image.title}
-              </span>
-              <span className="imageSubTitle">
-                {image.subtitle}
-              </span>
-            </div>
+            <AnimatePresence>
+            {index === active && <div key={index} id="contents">
+            <motion.span 
+            className="imageTitle"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            >
+              {image.title}
+            </motion.span>
+            <motion.span
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }} 
+            className="imageSubTitle">
+              {image.subtitle}
+            </motion.span>
+          </div>}
+          </AnimatePresence>
           );
         })}
       </div>

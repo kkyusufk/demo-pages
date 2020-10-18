@@ -58,6 +58,10 @@
     position: absolute;
     width: 100%;
   }
+
+  .carousel-image:hover .image-title {
+    bottom: 20%;
+  }
   
   .refresh {
     padding: 10px;

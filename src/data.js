@@ -12,10 +12,10 @@ import portfolioImage5 from "./Assets/Portfolio Images/Rectangle 37-5.png";
 import portfolioImage6 from "./Assets/Portfolio Images/Rectangle 37-6.png";
 
 export const images = [
-  { src: sample1, title: "Title", subtitle: "This is subtitle" },
-  { src: sample2, title: "Title", subtitle: "This is subtitle" },
-  { src: sample3, title: "Title", subtitle: "This is subtitle" },
-  { src: sample4, title: "Title", subtitle: "This is subtitle" },
+  { src: sample1, title: "Kapiva", subtitle: "Brand Creation & Packaging" },
+  { src: sample2, title: "Stockal", subtitle: "Web Design for Fintech" },
+  { src: sample3, title: "Swiggy", subtitle: "Branding For Food Tech" },
+  { src: sample4, title: "Simba", subtitle: "Branding and Beers" },
 ];
 
 export const portfolioData = [
