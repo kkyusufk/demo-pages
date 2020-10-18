@@ -1,7 +1,7 @@
 import * as React from "react";
 import classNames from 'classnames';
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useMotionValue } from "framer-motion";
 import { wrap } from "@popmotion/popcorn";
 
 import { images } from "../../../data";
@@ -34,22 +34,10 @@ const variants = {
 
 const tabs = [1, 2, 3, 4];
 
-const tabVariants = {
-  enter: {
-    backgroundColor: "white",
-  },
-  center: {
-    width: ["0px", "33px", "66px", "300px"],
-    backgroundColor: ['black']
-  },
-  exit: {
-    backgroundColor: "white",
-  },
-};
-
 export const Example = () => {
   const [[page, direction], setPage] = useState([0, 0]);
   const [active, setActive] = useState(0);
+  const backgroundColor = useMotionValue('black');
 
   // We only have 3 images, but we paginate them absolutely (ie 1, 2, 3, 4, 5...) and
   // then wrap that within 0-2 to find our image ID in the array below. By passing an
@@ -59,8 +47,19 @@ export const Example = () => {
 
   const paginate = (newDirection, index) => {
     setPage([page + newDirection, newDirection]);
-    setActive(index);
-  };
+    index >= images.length ? 
+      setActive(0) : 
+      index < 0 ? 
+      setActive(images.length) :
+      setActive(index)
+    }
+
+  React.useEffect(() => {
+    setTimeout(() => paginate(1, active + 1), 3000)
+    return function cleanUp() {
+      clearTimeout()
+    }
+  })
 
   return (
     <div className="example-container">
@@ -116,14 +115,24 @@ export const Example = () => {
       <div className="tabs">
         {tabs.map((tab, index) => {
           return (
-            <AnimatePresence key={tab}>
-              <motion.div
-                variants={tabVariants}
-                initial={false}
-                animate="center"
-              >
-                <div className="tab"></div>
-                </motion.div>
+            <AnimatePresence>
+              <div className="tab">
+                {index === active && 
+                  <motion.div 
+                    initial={false}
+                    style={{
+                      height: '5px'
+                    }}
+                    animate={{
+                      width: ['0%', '100%'],
+                      background: 'white',
+                      transition: {
+                        duration: 3
+                      } 
+                    }}
+                  />
+                }
+                </div>
             </AnimatePresence>
           );
         })}

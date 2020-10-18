@@ -43,8 +43,6 @@
   
   .tab {
     height: 5px;
-    min-width: 100px !important;
-    color: white;
   }
   
   .next {
@@ -59,10 +57,6 @@
   .carousel-image {
     position: absolute;
     width: 100%;
-  }
-
-  .carousel-image:hover {
-    transform: translateX(30p);;
   }
   
   .refresh {
