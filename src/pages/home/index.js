@@ -23,14 +23,10 @@ import "../../components/fonts.css";
 import { Grid1 } from "../../components/grid/grid1";
 import { FooterLinks } from "../../components/footer/footerLinks";
 import { Div } from "../../components/Div/Div";
+import { Example } from "../../components/carousel/framerCarousel/framerCarousel";
 
 const IndexPage = () => {
-  const { setContextStates } = useContext(GlobalContext);
-  const setContextState = (to) =>
-    setContextStates({
-      currentPage: to,
-      scrollY: window.scrollY,
-    });
+  const { setCurrentPage, setScrollY } = useContext(GlobalContext);
   return (
     <>
       <Div type={SIZES.L}>
@@ -43,7 +39,7 @@ const IndexPage = () => {
       </Div>
       <Div type={SIZES.XL}>
         <Grid1>
-          <Carousel />
+          <Example />
         </Grid1>
       </Div>
       <Div type={SIZES["X-L"]}>
@@ -101,7 +97,10 @@ const IndexPage = () => {
       <Div type={SIZES.L}>
         <a
           href="#"
-          onClick={() => setContextState(NAVITEMS.OURWORK)}
+          onClick={() =>  {
+            setScrollY(window.scrollY) 
+            setCurrentPage(NAVITEMS.OURWORK)
+          }}
           className="nav-items"
         >
           <u>
@@ -126,7 +125,10 @@ const IndexPage = () => {
         />
         <Link
           to="/about/"
-          onClick={() => setContextState(NAVITEMS.ABOUT)}
+          onClick={() => { 
+            setScrollY(window.scrollY)
+            setCurrentPage(NAVITEMS.ABOUT)
+          }}
           className="nav-items"
         >
           <u>

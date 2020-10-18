@@ -61,8 +61,8 @@ NavItems.propTypes = {
   onClick: PropTypes.func.isRequired,
 };
 
-const NewNavbar = memo(() => {
-  const { currentPage, setCurrentPage } = useContext(GlobalContext)
+const NewNavbar = () => {
+  const [selected, setSelected] = useState("Home");
   const navItems = Object.values(NAVITEMS);
   return (
     <AnimateSharedLayout>
@@ -71,8 +71,8 @@ const NewNavbar = memo(() => {
           return (
             <NavItems
               key={nav}
-              isSelected={currentPage === nav}
-              onClick={() => setCurrentPage(nav)}
+              isSelected={selected === nav}
+              onClick={() => setSelected(nav)}
               nav={nav}
             />
           );
@@ -80,6 +80,6 @@ const NewNavbar = memo(() => {
       </ul>
     </AnimateSharedLayout>
   );
-});
+};
 
 export { NewNavbar };

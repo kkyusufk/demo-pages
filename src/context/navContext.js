@@ -1,56 +1,29 @@
 import { navigate } from "gatsby";
-import React, { createContext, useState, useEffect, memo } from "react";
+import React, { createContext, useState, useEffect, memo, useMemo } from "react";
 import { NAVITEMS } from "../constants";
 import { environmentUtil } from "../utils/environmentUtil";
 
 const GlobalContext = createContext();
 
 const Provider = memo(({ children }) => {
-  const currentPage = environmentUtil.isWindowDefined()
+  const page = environmentUtil.isWindowDefined()
     ? window.location.pathname.split("/")[1]
     : "home";
-  const [uiState, setState] = useState({
-    currentPage: NAVITEMS[currentPage.toUpperCase()],
-    browserWidth: environmentUtil.isWindowDefined()
-      ? window.innerWidth
-      : "1000px",
-    scrollY: environmentUtil.isWindowDefined() ? window.scrollY : 0,
-  });
-  const setCurrentPage = (currentPage) => setState({ ...uiState, currentPage });
+  const [currentPage, setCurrentPage] = useState(NAVITEMS[page.toUpperCase()]);
+  const [scrollY, setScrollY] = useState(environmentUtil.isWindowDefined() ? window.scrollY : 0);
 
-  const setScrollY = (y) =>
-    setState((prevState) => ({ ...prevState, scrollY: y }));
-
-  const setAnimateFalse = () =>
-    setState((prevState) => ({ ...prevState, shouldComponentAnimate: false }));
-
-  const setContextStates = (state) => {
-    setState((prevState) => ({
-      ...prevState,
-      scrollY: state.scrollY,
-    }));
-    navigate(`/${state.currentPage.split(" ").join("").toLowerCase()}/`);
-  };
-
-  const updateBrowserWidth = () =>
-    setState((prevState) => ({
-      ...prevState,
-      browserWidth: window.innerWidth,
-    }));
-
-  // useEffect(() => {
-  //   window.addEventListener("resize", updateBrowserWidth);
-  // }, []);
-
+  const value = useMemo(
+    () => ({
+      currentPage,
+      scrollY,
+      setCurrentPage,
+      setScrollY,
+    }),
+    [scrollY, currentPage]
+  )
   return (
     <GlobalContext.Provider
-      value={{
-        ...uiState,
-        setCurrentPage,
-        setScrollY,
-        setContextStates,
-        setAnimateFalse,
-      }}
+      value={value}
     >
       {children}
     </GlobalContext.Provider>

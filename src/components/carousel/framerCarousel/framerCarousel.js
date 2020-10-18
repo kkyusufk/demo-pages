@@ -1,30 +1,35 @@
 import * as React from "react";
+import classNames from 'classnames';
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { wrap } from "@popmotion/popcorn";
 
-import { images } from "./image-data";
+import { images } from "../../../data";
 import "./framerCarousel.scss";
+import "../carousel.css";
 
 const variants = {
-  enter: (direction: number) => {
+  enter: (direction) => {
     return {
       x: direction > 0 ? 1000 : -1000,
-      opacity: 0,
     };
   },
   center: {
     zIndex: 1,
     x: 0,
     opacity: 1,
+    transition: {
+      duration: 0.5
+    }
   },
-  exit: (direction: number) => {
-    return {
-      zIndex: 0,
-      scale: 0.9,
-      opacity: 1,
-    };
-  },
+  exit: {
+    zIndex: 0,
+    scale: 0.9,
+    opacity: 1,
+    transition: {
+      duration: 1
+    }
+  }
 };
 
 const tabs = [1, 2, 3, 4];
@@ -34,7 +39,8 @@ const tabVariants = {
     backgroundColor: "white",
   },
   center: {
-    width: ["0px", "33px", "66px", "100px"],
+    width: ["0px", "33px", "66px", "300px"],
+    backgroundColor: ['black']
   },
   exit: {
     backgroundColor: "white",
@@ -51,17 +57,18 @@ export const Example = () => {
   // detect it as an entirely new image. So you can infinitely paginate as few as 1 images.
   const imageIndex = wrap(0, images.length, page);
 
-  const paginate = (newDirection: number, index: number) => {
+  const paginate = (newDirection, index) => {
     setPage([page + newDirection, newDirection]);
     setActive(index);
   };
 
   return (
-    <>
+    <div className="example-container">
       <AnimatePresence initial={false} custom={direction}>
         <motion.img
+          className="carousel-image"
           key={page}
-          src={images[imageIndex]}
+          src={images[imageIndex].src}
           custom={direction}
           variants={variants}
           initial="enter"
@@ -92,25 +99,36 @@ export const Example = () => {
       <div className="prev" onClick={() => paginate(-1, active - 1)}>
         {"‣"}
       </div>
+      <div className={classNames("image-title")}>
+        {images.map((image, index) => {
+          return (
+            <div key={index} id="contents">
+              <span className="imageTitle">
+                {image.title}
+              </span>
+              <span className="imageSubTitle">
+                {image.subtitle}
+              </span>
+            </div>
+          );
+        })}
+      </div>
       <div className="tabs">
         {tabs.map((tab, index) => {
           return (
             <AnimatePresence key={tab}>
               <motion.div
-                key={index}
                 variants={tabVariants}
-                initial={index === active ? "enter" : "exit"}
-                style={{ position: "relative" }}
-                animate={index === active ? "center" : "enter"}
-                exit="exit"
+                initial={false}
+                animate="center"
               >
                 <div className="tab"></div>
-              </motion.div>
+                </motion.div>
             </AnimatePresence>
           );
         })}
       </div>
-    </>
+    </div>
   );
 };
 
@@ -121,6 +139,6 @@ export const Example = () => {
  * just distance thresholds and velocity > 0.
  */
 const swipeConfidenceThreshold = 10000;
-const swipePower = (offset: number, velocity: number) => {
+const swipePower = (offset, velocity) => {
   return Math.abs(offset) * velocity;
 };
