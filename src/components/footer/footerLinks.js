@@ -1,3 +1,4 @@
+import { Link } from "gatsby";
 import React, { useContext } from "react";
 import { ALIGNMENT } from "../../constants";
 import { GlobalContext } from "../../context/navContext";
@@ -5,7 +6,7 @@ import * as DATA from "../../data";
 import { Heading } from "../typography/heading/heading";
 
 const FooterLinks = ({ page, to = "" }) => {
-  const { setContextStates } = useContext(GlobalContext);
+  const { setCurrentPage, setScrollY } = useContext(GlobalContext);
   return (
     <div>
       <Heading
@@ -13,14 +14,12 @@ const FooterLinks = ({ page, to = "" }) => {
         innerHtml={DATA.FOOTER[page].headingOne}
         justify="center"
       />
-      <a
-        href="#"
-        onClick={() =>
-          setContextStates({
-            scrollY: window.scrollY,
-            currentPage: to,
-          })
-        }
+      <Link
+        to={`/${to.toLowerCase()}/`}
+        onClick={() => {
+          setScrollY(window.scrollY);
+          setCurrentPage(to);
+        }}
         className="nav-items"
       >
         <u>
@@ -30,7 +29,7 @@ const FooterLinks = ({ page, to = "" }) => {
             justify="center"
           />
         </u>
-      </a>
+      </Link>
     </div>
   );
 };

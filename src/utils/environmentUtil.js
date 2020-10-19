@@ -17,7 +17,7 @@ class EnvironmentUtil {
    * @param {number} browserWidth
    * @returns {boolean}
    */
-  isMobile(browserWidth = window.innerWidth) {
+  isMobile(browserWidth) {
     return browserWidth <= BREAKPOINTS.MOBILE;
   }
 }

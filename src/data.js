@@ -12,10 +12,10 @@ import portfolioImage5 from "./Assets/Portfolio Images/Rectangle 37-5.png";
 import portfolioImage6 from "./Assets/Portfolio Images/Rectangle 37-6.png";
 
 export const images = [
-  { src: sample1, title: "Title", subtitle: "This is subtitle" },
-  { src: sample2, title: "Title", subtitle: "This is subtitle" },
-  { src: sample3, title: "Title", subtitle: "This is subtitle" },
-  { src: sample4, title: "Title", subtitle: "This is subtitle" },
+  { src: sample1, title: "Kapiva", subtitle: "Brand Creation & Packaging" },
+  { src: sample2, title: "Stockal", subtitle: "Web Design for Fintech" },
+  { src: sample3, title: "Swiggy", subtitle: "Branding For Food Tech" },
+  { src: sample4, title: "Simba", subtitle: "Branding and Beers" },
 ];
 
 export const portfolioData = [
@@ -187,14 +187,14 @@ export const openings = [
 
 export const blogs = [
   {
-    id: 'Blog-1',
+    id: "Blog-1",
     author: "Abhisek Sarda",
     date: "14 Jan 2020",
     title: "Why can't you leave a good thing alone?",
     src: "https://source.unsplash.com/random",
   },
   {
-    id: 'Blog-2',
+    id: "Blog-2",
     author: "Abhisek Sarda",
     date: "15 Nov 2016",
     title:
@@ -352,12 +352,12 @@ export const FOOTER = {
 
 export const BLOGDETAILS = [
   {
-    id: 'Blog-1',
+    id: "Blog-1",
     text: `Design has evolved through varied cultural and art progressions. 
     The Postmodern began with a liberalisation of ideas without any set adherence to rational order and formal organization. The movement has been an expressive and playful time for designers with a number of conspicuous trends – retro, techno, punk, grunge, beach, parody, and pastiche. There has been no singular defined design language or demi-gods; it is an anarchy of sorts. 
     
     The Postmodern is an ever-evolving organism, a mangled up mix of counter culture’s, aesthetics driven by nostalgic revivals, juxtaposed with advances in material technologies. Everyone and everything fits in this cacophonous bandwagon; the Postmodern is a never-ending journey we continue straddling, wandering, defining and redefining ourselves to suit its meanderings and hysterics. 
     
-    The quote below pretty much sums it up.`
-  }
-]
+    The quote below pretty much sums it up.`,
+  },
+];

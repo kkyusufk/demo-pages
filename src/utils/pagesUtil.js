@@ -1,18 +1,18 @@
-
 /**
- * returns the name of the page ex: 'careers' 
+ * returns the name of the page ex: 'careers'
  * @param {string} pathname
  * @returns {string} The page name.
- * @private 
+ * @private
  */
 const getPageName = (pathname) => {
-  return pathname.split('/').slice(-2, -1)[0]
-}
+  return pathname.split("/").slice(-2, -1)[0];
+};
 
 /**
  * Returns true if portfolioDetails page else false
- * @param {string} pathname 
+ * @param {string} pathname
  * @returns {boolean} True/False
  * @public
  */
-export const isPortfolioDetails = (pathname) => getPageName(pathname) === 'portfolioDetails';
+export const isPortfolioDetails = (pathname) =>
+  getPageName(pathname) === "portfolioDetails";

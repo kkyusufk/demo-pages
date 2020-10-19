@@ -29,10 +29,10 @@ const Ourwork = () => {
   const toggleActive = (filter) => {
     setActive((prevState) => {
       let nextState = [...prevState];
-      if (!prevState.includes(filter)) { 
+      if (!prevState.includes(filter)) {
         nextState.push(filter);
       } else {
-        nextState = nextState.filter( state => state !== filter)
+        nextState = nextState.filter((state) => state !== filter);
       }
       return nextState;
     });

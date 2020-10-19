@@ -11,9 +11,9 @@ const PortfolioDetails = ({ location }) => {
 PortfolioDetails.propTypes = {
   location: PropTypes.shape({
     state: PropTypes.shape({
-      data: PropTypes.array.isRequired
-    })
-  })
-}
+      data: PropTypes.array.isRequired,
+    }),
+  }),
+};
 
 export default PortfolioDetails;

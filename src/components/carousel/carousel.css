@@ -15,13 +15,14 @@
 }
 
 .image-title {
+  z-index: 2;
   position: absolute;
   bottom: 0;
   width: 590px;
   height: 126px;
   background: #FFFFFF;
   left: 50px;
-  bottom: -150px;
+  bottom: 30px;
   transition: bottom 0.5s ease-in-out;
 }
 
