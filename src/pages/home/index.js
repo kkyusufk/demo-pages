@@ -95,8 +95,8 @@ const IndexPage = () => {
         </Grid2>
       </Div>
       <Div type={SIZES.L}>
-        <a
-          href="#"
+        <Link
+          to='/ourwork/'
           onClick={() => {
             setScrollY(window.scrollY);
             setCurrentPage(NAVITEMS.OURWORK);
@@ -110,7 +110,7 @@ const IndexPage = () => {
               justify="center"
             />
           </u>
-        </a>
+        </Link>
       </Div>
       <Div type={SIZES.XL}>
         <Grid1>

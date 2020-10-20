@@ -73,11 +73,12 @@ export const Example = () => {
   };
 
   React.useEffect(() => {
-    setTimeout(() => paginate(1, active + 1), 3000);
+    let id;
+    id = setTimeout(() => paginate(1, active + 1), 3000);
     return function cleanUp() {
-      clearTimeout();
+      clearTimeout(id);
     };
-  });
+  }, [active]);
 
   return (
     <div className="example-container">
@@ -165,9 +166,10 @@ export const Example = () => {
               <div className="tab">
                 {index === active && (
                   <motion.div
-                    initial={false}
+                    initial={{ width: "0%" }}
                     style={{
                       height: "5px",
+                      width: "0%"
                     }}
                     animate={{
                       width: ["0%", "100%"],
