@@ -53,7 +53,7 @@ const descriptionCardVariant = {
 
 const tabs = [1, 2, 3, 4];
 
-export const Example = () => {
+export const Carousel = ({ compact }) => {
   const [[page, direction], setPage] = useState([0, 0]);
   const [active, setActive] = useState(0);
 
@@ -81,7 +81,7 @@ export const Example = () => {
   }, [active]);
 
   return (
-    <div className="example-container">
+    <div className="carousel-container">
       {/**
        * The carousel Images and animations
        */}

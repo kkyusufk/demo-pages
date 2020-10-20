@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { Link } from "gatsby";
 
 import { GlobalContext } from "../../context/navContext";
-import { Carousel } from "../../components/carousel/carousel";
 import { Portfolio } from "../../components/portfolio/portfolio";
 import { Heading } from "../../components/typography/heading/heading";
 import { ALIGNMENT, NAVITEMS, PAGES, SIZES } from "../../constants";
@@ -23,7 +22,7 @@ import "../../components/fonts.css";
 import { Grid1 } from "../../components/grid/grid1";
 import { FooterLinks } from "../../components/footer/footerLinks";
 import { Div } from "../../components/Div/Div";
-import { Example } from "../../components/carousel/framerCarousel/framerCarousel";
+import { Carousel } from "../../components/carousel/framerCarousel/framerCarousel";
 
 const IndexPage = () => {
   const { setCurrentPage, setScrollY } = useContext(GlobalContext);
@@ -39,7 +38,7 @@ const IndexPage = () => {
       </Div>
       <Div type={SIZES.XL}>
         <Grid1>
-          <Example />
+          <Carousel />
         </Grid1>
       </Div>
       <Div type={SIZES["X-L"]}>

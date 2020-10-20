@@ -1,4 +1,5 @@
 import React from "react";
+import { Router, Route } from "@reach/router";
 
 import "./about.scss";
 import { Heading } from "../../components/typography/heading/heading";
@@ -6,7 +7,7 @@ import { ABOUT } from "../../data";
 import { SemiBoldHeading } from "../../components/typography/semiBoldHeading/semiBoldHeading";
 import { SubHeading } from "../../components/typography/subHeading/subHeading";
 import { Scrollable } from "../../components/scrollable/scrollable";
-import { Carousel } from "../../components/carousel/carousel";
+import { Carousel } from "../../components/carousel/framerCarousel/framerCarousel";
 import { Team } from "../../components/team";
 import { ALIGNMENT, NAVITEMS, PAGES, SIZES } from "../../constants";
 import { Div } from "../../components/Div/Div";
@@ -47,7 +48,7 @@ const About = () => (
           <SubHeading innerHtml={ABOUT.headingSix} width="inherit" />
         </div>
         <div className="about-carousel">
-          <Carousel compact={true} />
+          <Carousel />
         </div>
       </Grid2>
     </Div>
@@ -77,7 +78,11 @@ const About = () => (
       />
     </Div>
     <Div type={SIZES.L}>
-      <Team />
+    <AnimateSharedLayout type="crossfade">
+      <Router>
+        <Route path={["/:id", "/"]} component={Team} />
+      </Router>
+    </AnimateSharedLayout>
     </Div>
     <Div type={SIZES.XXL}>
       <FooterLinks page={PAGES.ABOUT} to={NAVITEMS.CAREERS} />
