@@ -1,4 +1,6 @@
 import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import { AnimateSharedLayout } from 'framer-motion';
 
 import "./about.scss";
 import { Heading } from "../../components/typography/heading/heading";
@@ -6,13 +8,14 @@ import { ABOUT } from "../../data";
 import { SemiBoldHeading } from "../../components/typography/semiBoldHeading/semiBoldHeading";
 import { SubHeading } from "../../components/typography/subHeading/subHeading";
 import { Scrollable } from "../../components/scrollable/scrollable";
-import { Carousel } from "../../components/carousel/carousel";
+import { Carousel } from "../../components/carousel/framerCarousel/framerCarousel";
 import { Team } from "../../components/team";
 import { ALIGNMENT, NAVITEMS, PAGES, SIZES } from "../../constants";
 import { Div } from "../../components/Div/Div";
 import { Grid1 } from "../../components/grid/grid1";
 import { Grid2 } from "../../components/grid/grid2";
 import { FooterLinks } from "../../components/footer/footerLinks";
+import { environmentUtil } from "../../utils/environmentUtil";
 
 const About = () => (
   <>
@@ -47,7 +50,7 @@ const About = () => (
           <SubHeading innerHtml={ABOUT.headingSix} width="inherit" />
         </div>
         <div className="about-carousel">
-          <Carousel compact={true} />
+          <Carousel />
         </div>
       </Grid2>
     </Div>
@@ -77,7 +80,13 @@ const About = () => (
       />
     </Div>
     <Div type={SIZES.L}>
-      <Team />
+    <AnimateSharedLayout type="crossfade">
+    {environmentUtil.isWindowDefined() &&
+      <Router> 
+        <Route path={["/about/:id", "/"]} component={Team} />
+      </Router>
+      }
+    </AnimateSharedLayout>
     </Div>
     <Div type={SIZES.XXL}>
       <FooterLinks page={PAGES.ABOUT} to={NAVITEMS.CAREERS} />

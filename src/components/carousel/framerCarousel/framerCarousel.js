@@ -53,7 +53,7 @@ const descriptionCardVariant = {
 
 const tabs = [1, 2, 3, 4];
 
-export const Example = () => {
+export const Carousel = ({ compact }) => {
   const [[page, direction], setPage] = useState([0, 0]);
   const [active, setActive] = useState(0);
 
@@ -73,14 +73,15 @@ export const Example = () => {
   };
 
   React.useEffect(() => {
-    setTimeout(() => paginate(1, active + 1), 3000);
+    let id;
+    id = setTimeout(() => paginate(1, active + 1), 3000);
     return function cleanUp() {
-      clearTimeout();
+      clearTimeout(id);
     };
-  });
+  }, [active]);
 
   return (
-    <div className="example-container">
+    <div className="carousel-container">
       {/**
        * The carousel Images and animations
        */}
@@ -116,16 +117,19 @@ export const Example = () => {
       {/**
        * The next and previous buttons
        */}
+      {compact && <>
       <div className="next" onClick={() => paginate(1, active + 1)}>
         {"‣"}
       </div>
       <div className="prev" onClick={() => paginate(-1, active - 1)}>
         {"‣"}
-      </div>
+      </div> 
+      </> }
       {/**
        * Image title and subtitle cards
        */}
-      <div className={classNames("image-title")}>
+       {compact && <> 
+        <div className={classNames("image-title")}>
         {images.map((image, index) => {
           return (
             <AnimatePresence>
@@ -155,6 +159,7 @@ export const Example = () => {
           );
         })}
       </div>
+       </>}
       {/**
        * The animating tabs at the bottom
        */}
@@ -165,9 +170,10 @@ export const Example = () => {
               <div className="tab">
                 {index === active && (
                   <motion.div
-                    initial={false}
+                    initial={{ width: "0%" }}
                     style={{
                       height: "5px",
+                      width: "0%"
                     }}
                     animate={{
                       width: ["0%", "100%"],

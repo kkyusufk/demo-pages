@@ -14,7 +14,7 @@ import { FooterLinks } from "../../components/footer/footerLinks";
 import { GlobalContext } from "../../context/navContext";
 
 const Contact = () => {
-  const { setCurrentPage } = useContext(GlobalContext);
+  const { setCurrentPage, setShouldAnimate } = useContext(GlobalContext);
   return (
     <>
       <Div type={SIZES.L}>
@@ -53,7 +53,10 @@ const Contact = () => {
         <Link
           to="/ourwork/"
           className="nav-items"
-          onClick={() => setCurrentPage(NAVITEMS.OURWORK)}
+          onClick={() => { 
+            setShouldAnimate(true)
+            setCurrentPage(NAVITEMS.OURWORK)
+          }}
         >
           <u>
             <Heading

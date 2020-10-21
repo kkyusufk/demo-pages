@@ -1,8 +1,6 @@
-import { navigate } from "gatsby";
 import React, {
   createContext,
   useState,
-  useEffect,
   memo,
   useMemo,
 } from "react";
@@ -16,12 +14,15 @@ const Provider = memo(({ children }) => {
     ? window.location.pathname.split("/")[1]
     : "home";
   const [currentPage, setCurrentPage] = useState(NAVITEMS[page.toUpperCase()]);
+  const [shouldAnimate, setShouldAnimate] = useState(false)
   const [scrollY, setScrollY] = useState(
     environmentUtil.isWindowDefined() ? window.scrollY : 0
   );
 
   const value = useMemo(
     () => ({
+      shouldAnimate,
+      setShouldAnimate,
       currentPage,
       scrollY,
       setCurrentPage,

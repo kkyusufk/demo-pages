@@ -30,9 +30,6 @@ const Portfolio = ({
       layout
       className="portfolioContainer"
       style={{ width, height }}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
     >
       <motion.div
         className="portfolioContent"

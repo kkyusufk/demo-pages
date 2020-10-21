@@ -1,4 +1,5 @@
-import React, { memo, useContext, useState } from "react";
+/** @jsx */
+import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import { AnimateSharedLayout, motion } from "framer-motion";
 import { Link } from "gatsby";
@@ -11,12 +12,11 @@ import { environmentUtil } from "../../utils/environmentUtil";
 const spring = {
   type: "spring",
   stiffness: 500,
-  damping: 30,
+  damping: 100,
 };
 
 /**
  * Returns the nav items with the nav highlight.
- * @returns {JSX}
  * @Component
  */
 const NavItems = ({ nav, isSelected, onClick }) => {
@@ -65,7 +65,7 @@ NavItems.propTypes = {
 };
 
 const NewNavbar = () => {
-  const [selected, setSelected] = useState("Home");
+  const { currentPage, setCurrentPage, setShouldAnimate } = useContext(GlobalContext)
   const navItems = Object.values(NAVITEMS);
   return (
     <AnimateSharedLayout>
@@ -74,8 +74,11 @@ const NewNavbar = () => {
           return (
             <NavItems
               key={nav}
-              isSelected={selected === nav}
-              onClick={() => setSelected(nav)}
+              isSelected={currentPage === nav}
+              onClick={() => {
+                setShouldAnimate(false) 
+                setCurrentPage(nav)
+              }}
               nav={nav}
             />
           );

@@ -1,67 +1,42 @@
-import React, { useEffect, useRef, useContext } from "react";
-
-import "./team-modal.scss";
+import React from "react";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import { team } from "../../data";
 import { Carousel } from "../carousel/carousel";
-import { GlobalContext } from "../../context/navContext";
-import { environmentUtil } from "../../utils/environmentUtil";
+import './team-modal.scss'
 
-const TeamModal = ({ showModal, hideModal, style }) => {
-  const modalRef = useRef();
-  const { browserWidth } = useContext(GlobalContext);
+export function Modal({ id }) {
+    return (
+        <>
+            <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0, transition: { duration: 0.15 } }}
+            transition={{ duration: 0.2, delay: 0.15 }}
+            style={{ pointerEvents: "auto" }}
+            className="overlay"
+            >
+            <Link to="/about" />
+            </motion.div>
 
-  const getTop = () => {
-    return window.scrollY + style.top;
-  };
-
-  useEffect(() => {
-    let gatsby;
-    if (showModal) {
-      gatsby = document.getElementsByClassName("container")[0];
-      gatsby.classList.add("disappear");
-      modalRef.current.classList.remove("close-modal");
-      modalRef.current.classList.add("open-modal");
-      if (!environmentUtil.isMobile(browserWidth)) {
-        modalRef.current.style.top = `${getTop()}px`;
-        //modalRef.current.style.width = `${style.width}px`;
-      }
-    }
-  }, [showModal]);
-
-  const hideTheModal = () => {
-    modalRef.current.classList.add("close-modal");
-    const gatsby = document.getElementsByClassName("container")[0];
-    gatsby.classList.remove("disappear");
-    hideModal();
-  };
-
-  return (
-    <div className="team-modal-wrapper" ref={modalRef}>
-      <div className="team-modal">
-        <div>
-          <h1 className="team-modal-title">Abhisek Sarda</h1>
-          <h2 className="team-modal-subtitle">
-            Founder {`&`} Creative Director
-          </h2>
-        </div>
-        <div>
-          <p className="team-modal-content">
-            Abhisek brings 12+ years of experience in design and managing
-            entrepreneurial ventures. Over this period, he has led branding and
-            web design projects, launched and grown a niche brand of handmade
-            soaps, designed low-cost furniture, shot portraits for a football
-            team, advised founders and CEOs and built a presentation design
-            studio that counts Facebook, Coca-Cola, Pepsi, Unilever, L'oreal and
-            Cisco as clients.{" "}
-          </p>
-          <p className="team-modal-content">
-            He spends 80% of his time answering emails (if you don't hear back
-            from us, you know who to blame!). In the other 20% he looks after
-            Villa P (our studio), directs branding and web projects and meddles
-            in everyone's work. He compulsively draws out ideas to make a point,
-            not sparing any scrap of paper lying around, even cheque books!
-          </p>
-        </div>
-        <div className="team-modal-social">
+            <div className="card-content-container open">
+            <motion.div className="modal-card-content" layoutId={`card-container-${id}`}>
+                <motion.div
+                className="name-container"
+                layoutId={`name-container-${id}`}
+                >
+                <motion.span layoutId={`h2-${id}`} className="name">Abhisek Sarda</motion.span>
+                <motion.span className="about" layoutId={`about-${id}`} className="description">Founder & Creative Director</motion.span>
+                </motion.div>
+                <motion.div className="content-container" animate>
+                  <div>
+                  <p className="content-para">
+                  Abhisek brings 12+ years of experience in design and managing entrepreneurial ventures. Over this period, he has led branding and web design projects, launched and grown a niche brand of handmade soaps, designed low-cost furniture, shot portraits for a football team, advised founders and CEOs and built a presentation design studio that counts Facebook, Coca-Cola, Pepsi, Unilever, L'oreal and Cisco as clients.
+                  </p>
+                  <p className="content-para">
+                  He spends 80% of his time answering emails (if you don't hear back from us, you know who to blame!). In the other 20% he looks after Villa P (our studio), directs branding and web projects and meddles in everyone's work. He compulsively draws out ideas to make a point, not sparing any scrap of paper lying around, even cheque books!
+                  </p>
+                  <div className="team-modal-social">
           <spans>
             <u>Facebook</u>
           </spans>
@@ -72,15 +47,18 @@ const TeamModal = ({ showModal, hideModal, style }) => {
             <u>Linkedin</u>
           </spans>
         </div>
-      </div>
-      <div className="team-modal-carousel">
-        <Carousel compact={true} />
-      </div>
-      <span onClick={() => hideTheModal()} className="close-button">
-        X
-      </span>
-    </div>
-  );
-};
-
-export { TeamModal };
+                  </div>
+                  <div className="content-carousel">
+                    <div>
+                      <Carousel compact={true} />
+                    </div>
+                  </div>
+                  <button className="close-button">
+                    X
+                  </button>
+                </motion.div>
+            </motion.div>
+            </div>
+        </>
+    );
+  };

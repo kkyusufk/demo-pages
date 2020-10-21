@@ -1,5 +1,5 @@
 const React = require("react");
-const { Layout } = require("./src/components/layoutC/layout");
+const { Layout } = require("./src/components/layout/layout");
 const { Provider } = require("./src/context/navContext");
 
 exports.wrapPageElement = ({ element, props }) => {
