@@ -1,9 +1,14 @@
 import React from "react";
+import { Link } from "gatsby";
+
 import "./card.css";
 import "../layout.css";
-const Card = ({ TopContent, BottomContent, HiddenContent, uniqueKey }) => {
+import { motion } from "framer-motion";
+
+const Card = ({ id, TopContent, BottomContent, HiddenContent }) => {
   return (
-    <div className="cardContainer" key={uniqueKey}>
+    <li>
+    <motion.div className="cardContainer" layoutId={`card-container-${id}`} >
       <div className="card">
         <div className="card-content">
           <TopContent />
@@ -11,7 +16,9 @@ const Card = ({ TopContent, BottomContent, HiddenContent, uniqueKey }) => {
         </div>
         {HiddenContent && <HiddenContent />}
       </div>
-    </div>
+      <Link to={id} className={`card-open-link`} />
+    </motion.div>
+    </li>
   );
 };
 

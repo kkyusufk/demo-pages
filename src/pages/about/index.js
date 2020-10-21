@@ -1,5 +1,6 @@
 import React from "react";
-import { Router, Route } from "@reach/router";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import { AnimateSharedLayout } from 'framer-motion';
 
 import "./about.scss";
 import { Heading } from "../../components/typography/heading/heading";
