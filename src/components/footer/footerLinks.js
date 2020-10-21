@@ -6,7 +6,7 @@ import * as DATA from "../../data";
 import { Heading } from "../typography/heading/heading";
 
 const FooterLinks = ({ page, to = "" }) => {
-  const { setCurrentPage, setScrollY } = useContext(GlobalContext);
+  const { setCurrentPage, setShouldAnimate } = useContext(GlobalContext);
   return (
     <div>
       <Heading
@@ -17,7 +17,7 @@ const FooterLinks = ({ page, to = "" }) => {
       <Link
         to={`/${to.toLowerCase()}/`}
         onClick={() => {
-          setScrollY(window.scrollY);
+          setShouldAnimate(true);
           setCurrentPage(to);
         }}
         className="nav-items"

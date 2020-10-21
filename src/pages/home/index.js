@@ -126,6 +126,7 @@ const IndexPage = () => {
         <Link
           to="/about/"
           onClick={() => {
+            setShouldAnimate(true)
             setScrollY(window.scrollY);
             setCurrentPage(NAVITEMS.ABOUT);
           }}
