@@ -81,7 +81,7 @@ const About = () => (
     <Div type={SIZES.L}>
     <AnimateSharedLayout type="crossfade">
       <Router>
-        <Route path={["/:id", "/"]} component={Team} />
+        <Route path={["/about/:id", "/"]} component={Team} />
       </Router>
     </AnimateSharedLayout>
     </Div>
