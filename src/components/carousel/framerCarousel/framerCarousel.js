@@ -117,16 +117,19 @@ export const Carousel = ({ compact }) => {
       {/**
        * The next and previous buttons
        */}
+      {compact && <>
       <div className="next" onClick={() => paginate(1, active + 1)}>
         {"‣"}
       </div>
       <div className="prev" onClick={() => paginate(-1, active - 1)}>
         {"‣"}
-      </div>
+      </div> 
+      </> }
       {/**
        * Image title and subtitle cards
        */}
-      <div className={classNames("image-title")}>
+       {compact && <> 
+        <div className={classNames("image-title")}>
         {images.map((image, index) => {
           return (
             <AnimatePresence>
@@ -156,6 +159,7 @@ export const Carousel = ({ compact }) => {
           );
         })}
       </div>
+       </>}
       {/**
        * The animating tabs at the bottom
        */}

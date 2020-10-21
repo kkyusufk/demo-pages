@@ -1,191 +1,59 @@
-
-.team-modal-wrapper {
-  transition: all 0.5s ease-in-out;
-  background-color: white;
+.card-content-container {
+  max-width: 1170px;
+  height: 100%;
+  position: relative;
+  display: block;
   pointer-events: none;
-  font-family: 'Roobert Regular';
 }
-
-@media only screen and (min-width: 700px) {
-  .team-modal-wrapper {
-    display: flex;
-    position: absolute;
-    top: 3668.36px; // FIXME: Very temp change
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 50px;
-    width: 1170px;
-    height: 869px;
-    clip-path: polygon(50% 50%, 0% 50%, 0% 0%, 50% 0%);
-    opacity: 0;
-    transition: clip-path 0.5s ease-in-out;
-  }
-
-  .team-modal-carousel {
-    height: 500px;
-    width: 370px;
-    position: absolute;
-    right: 100px;
-    bottom: 100px;
-  }
-
-  .team-modal {
-    display: flex;
-    flex-direction: column;
-    row-gap: 50px;
-  }
-
-  .team-modal-title {
-    margin: 0;
-    font-family: 'Roobert-Regular';
-    font-size: 64px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 64px;
-    letter-spacing: 0em;
-    text-align: left;
-  }
-
-  .team-modal-content {
-    font-family: 'Merriweather';
-    font-style: normal;
-    font-weight: 300;
-    font-size: 18px;
-    line-height: 32px;
-    width: 520px;
-    padding: 0;
-    margin: 0;
-
-    &:first-child {
-      margin-bottom: 50px;
-    }
-  }
-
-  .team-modal-subtitle {
-    margin: 0;
-    font-family: 'Roobert-Regular';
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 40px;
-    letter-spacing: 0em;
-    text-align: left;
-    color: rgba(51, 51, 51, 0.5);
-  }
-
-  .team-modal-social {
-    width: 316px;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .open-modal {
-    opacity: 1;
-    pointer-events: all;
-    clip-path: polygon(100% 100%, 0% 100%, 0% 0%, 100% 0%);
-    transition: clip-path 0.5s ease-in-out, opacity 0.5s ease-in-out;
-  }
-
-  .close-modal {
-    opacity: 0;
-    pointer-events: none;
-    clip-path: polygon(50% 50%, 0% 50%, 0% 0%, 50% 0%);
-    transition: clip-path 0.5s ease-in-out,  opacity 0.5s ease-in-out;
-  }
-
-  .close-button {
-    top: 50px;
-    right: 50px;
-  }
-}
-
 .close-button {
-  font-family: 'Roobert-Regular';
   position: absolute;
-  cursor: pointer;
+  top: 50px;
+  right: 50px;
+  border: none;
+  background: transparent;
+}
+.modal-card-content {
+  position: relative;
+  background: white;
+  padding: 50px 100px 100px 50px;
 }
 
-@media only screen and (max-width: 700px) {
-  .team-modal-wrapper {
-    position: fixed;
-    overflow-y: scroll;
-    left: 0;
-    top: 1000px;
-    right: 0;
-    bottom: 0;
-    width: 100vw;
-    height: inherit;
-    padding: 10px;
-    transition: top .5s ease-in-out;
+.team-modal-social {
+  width: 316px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-content-container.open {
+  top: 0;
+  position: fixed;
+  z-index: 1;
+  overflow: hidden;
+  padding: 50px 0;
+}
+
+.content-container {
+  margin-top: 50px;
+  font-family: 'Merriweather';
+  display: flex;
+  justify-content: space-between;
+  column-gap: 130px;
+}
+
+.content-para {
+  font-size: 18px;
+  line-height: 32.4px;
+  font-style: normal;
+  width: 520px;
+
+  &:first-child {
+    margin-bottom: 50px;
   }
+}
 
-  .team-modal {
-    display: flex;
-    flex-direction: column;
-    row-gap: 5px;
-    padding: 30px;
-  }
-
-  .open-modal {
-    visibility: visible;
-    top: 0;
-    transition: all .5s ease-in-out;
-  }
-
-  .close-modal {
-    top: 1000px;
-  }
-
-  .close-button {
-    top: 20px;
-    right: 20px;
-  }
-
-  .team-modal-title {
-    margin: 0;
-    font-family: 'Roobert-Regular';
-    font-size: 30px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 30px;
-    letter-spacing: 0em;
-    text-align: left;
-  }
-
-  .team-modal-subtitle {
-    margin: 0;
-    font-family: 'Roobert-Regular';
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 25px;
-    letter-spacing: 0em;
-    text-align: left;
-    color: rgba(51, 51, 51, 0.5)
-  }
-
-  .team-modal-content {
-    font-family: 'Merriweather';
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 300;
-    line-height: 25px;
-    letter-spacing: 0em;
-    text-align: left;
-    margin: 20px 0px 30px 0px;
-  }
-
-  .team-modal-social {
-    display: flex;
-    justify-content: space-between;
-    width: 239px;
-    font-family: 'Roobert-Regular';
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 18px;
-    letter-spacing: 0em;
-    text-align: left;
-
+.content-carousel {
+  > div {
+    width: 370px;
+    height: 500px;
   }
 }
