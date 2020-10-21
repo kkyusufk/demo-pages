@@ -65,7 +65,7 @@ NavItems.propTypes = {
 };
 
 const NewNavbar = () => {
-  const { currentPage, setCurrentPage } = useContext(GlobalContext)
+  const { currentPage, setCurrentPage, setShouldAnimate } = useContext(GlobalContext)
   const navItems = Object.values(NAVITEMS);
   return (
     <AnimateSharedLayout>
@@ -75,7 +75,10 @@ const NewNavbar = () => {
             <NavItems
               key={nav}
               isSelected={currentPage === nav}
-              onClick={() => setCurrentPage(nav)}
+              onClick={() => {
+                setShouldAnimate(false) 
+                setCurrentPage(nav)
+              }}
               nav={nav}
             />
           );

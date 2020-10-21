@@ -15,6 +15,7 @@ import { Div } from "../../components/Div/Div";
 import { Grid1 } from "../../components/grid/grid1";
 import { Grid2 } from "../../components/grid/grid2";
 import { FooterLinks } from "../../components/footer/footerLinks";
+import { environmentUtil } from "../../utils/environmentUtil";
 
 const About = () => (
   <>
@@ -80,9 +81,11 @@ const About = () => (
     </Div>
     <Div type={SIZES.L}>
     <AnimateSharedLayout type="crossfade">
-      <Router>
+    {environmentUtil.isWindowDefined() &&
+      <Router> 
         <Route path={["/about/:id", "/"]} component={Team} />
       </Router>
+      }
     </AnimateSharedLayout>
     </Div>
     <Div type={SIZES.XXL}>

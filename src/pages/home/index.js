@@ -25,7 +25,7 @@ import { Div } from "../../components/Div/Div";
 import { Carousel } from "../../components/carousel/framerCarousel/framerCarousel";
 
 const IndexPage = () => {
-  const { setCurrentPage, setScrollY } = useContext(GlobalContext);
+  const { setCurrentPage, setScrollY, setShouldAnimate } = useContext(GlobalContext);
   return (
     <>
       <Div type={SIZES.L}>
@@ -97,6 +97,7 @@ const IndexPage = () => {
         <Link
           to='/ourwork/'
           onClick={() => {
+            setShouldAnimate(true)
             setScrollY(window.scrollY);
             setCurrentPage(NAVITEMS.OURWORK);
           }}
