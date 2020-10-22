@@ -14,7 +14,7 @@ class EnvironmentUtil {
 
   /**
    * returns true if browserWidth is less than 576px
-   * @param {number} browserWidth
+   * @param {!number} browserWidth 
    * @returns {boolean}
    */
   isMobile(browserWidth) {

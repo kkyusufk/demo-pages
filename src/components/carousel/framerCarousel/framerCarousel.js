@@ -107,9 +107,9 @@ export const Carousel = ({ compact }) => {
             const swipe = swipePower(offset.x, velocity.x);
 
             if (swipe < -swipeConfidenceThreshold) {
-              paginate(1);
+              paginate(1, active + 1);
             } else if (swipe > swipeConfidenceThreshold) {
-              paginate(-1);
+              paginate(-1, active - 1);
             }
           }}
         />

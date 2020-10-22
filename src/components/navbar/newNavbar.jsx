@@ -75,7 +75,7 @@ const NewNavbar = () => {
   const noScroll = () => window.scrollTo(0, 0)
 
   useEffect(() => {
-    if (isOpen && environmentUtil.isMobile()) {
+    if (isOpen && environmentUtil.isMobile(browserWidth)) {
       window.addEventListener("scroll", noScroll);
       return () => window.removeEventListener("scroll", noScroll);
     }
