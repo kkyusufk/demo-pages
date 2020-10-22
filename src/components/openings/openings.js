@@ -25,7 +25,10 @@ const OpeningCards = () => {
           >
             <Link
               to={"/careers/careerDetail"}
-              className="nav-items"
+              style={{
+                textDecoration: 'none',
+                color: '#000000'
+              }}
               state={data}
             >
               <Card
