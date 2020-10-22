@@ -39,7 +39,7 @@ const Layout = ({ location, children }) => {
           className="content column"
           style={{
             padding: `${
-              isPortfolioDetails(location.pathname) ? 0 : " 0% 9.3% 0% 9.3%"
+              isPortfolioDetails(location.pathname) && 0
             }`,
           }}
         >

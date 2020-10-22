@@ -1,13 +1,16 @@
 /** @jsx */
-import React, { useContext } from "react";
+import React, { useContext, useRef } from "react";
+import classnames from 'classnames';
 import PropTypes from "prop-types";
-import { AnimateSharedLayout, motion } from "framer-motion";
+import { AnimateSharedLayout, motion, useCycle } from "framer-motion";
 import { Link } from "gatsby";
 
 import { GlobalContext } from "../../context/navContext";
 import { NAVITEMS } from "../../constants";
 import "./navbar.css";
 import { environmentUtil } from "../../utils/environmentUtil";
+import { Button } from "../button/Button/Button";
+import hamburger from "../../Assets/icons/hamburger.svg";
 
 const spring = {
   type: "spring",
@@ -17,7 +20,7 @@ const spring = {
 
 /**
  * Returns the nav items with the nav highlight.
- * @Component
+ * @returns {React.FC}
  */
 const NavItems = ({ nav, isSelected, onClick }) => {
   const currentPage =
@@ -64,18 +67,25 @@ NavItems.propTypes = {
   onClick: PropTypes.func.isRequired,
 };
 
+/** @returns {React.FC} */
 const NewNavbar = () => {
+  const [isOpen, toggleOpen] = useCycle(false, true);
   const { currentPage, setCurrentPage, setShouldAnimate } = useContext(GlobalContext)
   const navItems = Object.values(NAVITEMS);
   return (
     <AnimateSharedLayout>
-      <ul className="nav-header">
+      <motion.ul 
+      className="nav-header"
+      variants={sidebar}
+      animate={isOpen ? "open" : "closed"}
+      >
         {navItems.map((nav) => {
           return (
             <NavItems
               key={nav}
               isSelected={currentPage === nav}
               onClick={() => {
+                toggleOpen()
                 setShouldAnimate(false) 
                 setCurrentPage(nav)
               }}
@@ -83,9 +93,48 @@ const NewNavbar = () => {
             />
           );
         })}
-      </ul>
+      </motion.ul>
+      <Button 
+        className="hamburger" 
+        src={hamburger} 
+        onClick={toggleOpen}
+        />
     </AnimateSharedLayout>
   );
 };
 
-export { NewNavbar };
+const sidebar = {
+  open: {
+    clipPath: "circle(1000px at 100% 100%)",
+    transition: {
+      type: "spring",
+      stiffness: 20,
+      restDelta: 2
+    }
+  },
+  closed: {
+    clipPath: "circle(0px at 89% 3%)",
+    transition: {
+      type: "spring",
+      stiffness: 400,
+      damping: 40
+    }
+  }
+};
+
+const Hamburger = () => {
+  const [isOpen, toggleOpen] = useCycle(false, true);
+  const containerRef = useRef(null);
+  return (
+    <motion.nav
+
+      initial={false}
+      animate={isOpen ? "open" : "closed"}
+      ref={containerRef}
+    >
+      <NewNavbar />
+    </motion.nav>
+  )
+}
+
+export { NewNavbar, Hamburger };
