@@ -12,21 +12,39 @@ export function Modal({ id }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0, transition: { duration: 0.15 } }}
-            transition={{ duration: 0.2, delay: 0.15 }}
+            transition={{ duration: 2, delay: 0.15 }}
             style={{ pointerEvents: "auto" }}
             className="overlay"
             >
             <Link to="/about" />
             </motion.div>
 
-            <div className="card-content-container open">
-            <motion.div className="modal-card-content" layoutId={`card-container-${id}`}>
+            <motion.div 
+              className="card-content-container open"
+              transition={{ duration: 2 }}
+              >
+            <motion.div 
+              className="modal-card-content" 
+              layoutId={`card-container-${id}`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0, transition: { duration: 0.15 } }}
+              >
                 <motion.div
                 className="name-container"
                 layoutId={`name-container-${id}`}
                 >
-                <motion.span layoutId={`h2-${id}`} className="name">Abhisek Sarda</motion.span>
-                <motion.span className="about" layoutId={`about-${id}`} className="description">Founder & Creative Director</motion.span>
+                <motion.span 
+                  className="name"
+                  layoutId={`modal-name-${id}`}
+                >Abhisek Sarda</motion.span>
+                <motion.span 
+                  className="description"
+                  layoutId={`modal-description-${id}`}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1, transition: { duration: 1 } }}
+                  exit={{ opacity: 0, transition: { duration: 0.15 } }}
+                  >Founder & Creative Director</motion.span>
                 </motion.div>
                 <motion.div className="content-container" animate>
                   <div>
@@ -58,7 +76,7 @@ export function Modal({ id }) {
                   </button>
                 </motion.div>
             </motion.div>
-            </div>
+            </motion.div>
         </>
     );
   };

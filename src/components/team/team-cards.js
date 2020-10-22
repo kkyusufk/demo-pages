@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import { team } from "../../data";
 import './team.css'
@@ -13,14 +13,23 @@ function Card({ id, name, description }) {
             className="name-container"
             layoutId={`name-container-${id}`}
           >
-            <motion.span
-                className='name'
-                layoutId={`h2-${id}`}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                >{name}</motion.span>
-            <motion.span className="description" layoutId={`about-${id}`}>{description}</motion.span>
+            <AnimatePresence exitBeforeEnter>
+              <motion.span
+                  key={`LOL-${id}`}
+                  className='name'
+                  layoutId={`card-name-${id}`}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0, transition: { duration: 2 } }}
+                  >{name}</motion.span>
+              <motion.span 
+                  className="description" 
+                  layoutId={`card-description-${id}`}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0, transition: { duration: 0.5 }  }}
+                >{description}</motion.span>
+              </AnimatePresence>
           </motion.div>
         </motion.div>
       </motion.div>
