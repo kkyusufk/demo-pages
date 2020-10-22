@@ -20,42 +20,49 @@ export const images = [
 
 export const portfolioData = [
   {
-    type: "Web Design",
+    id: 'stockal',
+    type: "Communication",
     src: portfolioImage,
     title: "Stockal",
     subtitle: "Web Design for Fintech",
   },
   {
+    id: 'kapiva',
     type: "Branding",
     src: portfolioImage1,
     title: "Kapiva",
     subtitle: "Brand Creation & Packaging",
   },
   {
+    id: 'bloom',
     type: "User Experience",
     src: portfolioImage2,
     title: "Bloom Hotels",
     subtitle: "UX/UI for Hospitality",
   },
   {
+    id: 'sugar',
     type: "Packaging",
     src: portfolioImage3,
     title: "Sugar X Shirley",
     subtitle: "Limited Edition Packaging",
   },
   {
+    id: 'swiggy',
     type: "Branding",
     src: portfolioImage4,
     title: "Swiggy",
     subtitle: "Branding For Food Tech",
   },
   {
+    id: 'canarim',
     type: "Branding",
     src: portfolioImage5,
     title: "Canarim",
     subtitle: "Branding for Konkani Restaurant",
   },
   {
+    id: 'antidote',
     type: "Branding",
     src: portfolioImage6,
     title: "Antidote Coffee",

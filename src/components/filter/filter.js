@@ -9,7 +9,7 @@ const filters = ["Branding", "Packaging", "Communication", "User Experience"];
 const filterVariants = {
   active: { y: 0, backgroundColor: "#333333" },
   inActive: { y: 0, backgroundColor: "#DDDDDD" },
-  hover: { y: -5, backgroundColor: "#DDDDDD" },
+  hover: { backgroundColor: "#DDDDDD" },
 };
 
 const Filter = ({ active, toggleActive }) => {

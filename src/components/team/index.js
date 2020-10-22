@@ -12,7 +12,7 @@ export function Team({ match }) {
   return (
     <>
       <Cards selectedId={id} />
-      <AnimatePresence>
+      <AnimatePresence exitBeforeEnter>
         {id && <Modal id={id} key="modal" />}
       </AnimatePresence>
     </>

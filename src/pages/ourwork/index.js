@@ -58,27 +58,20 @@ const Ourwork = () => {
         </div>
       </Div>
       <Div type={SIZES.XL}>
-        <AnimateSharedLayout>
           <motion.div className="portfolio-grid">
-            <AnimatePresence exitBeforeEnter>
+          <AnimatePresence>
               {data.map((portfolio, index) => {
                 return (
                   <motion.div
                     layout
-                    key={index}
-                    initial={{ opacity: 1 }}
+                    key={portfolio.id}
+                    initial={false}
                     animate={{ opacity: 1 }}
-                    exit={{ 
-                      opacity: 1,
-                      transition: {
-                        delay: .5
-                      } 
-                    }}
+                    exit={{ opacity: 0, transition: { duration: 0.2 } }}
                   >
                     <Link
                       to="/ourwork/portfolioDetails/"
                       state={{ data: PortfolioDetails }}
-                      key={index}
                       style={{
                         color: '#333333',
                         textDecoration: 'none',
@@ -86,8 +79,6 @@ const Ourwork = () => {
                       }}
                     >
                       <Portfolio
-                        id={index}
-                        key={index}
                         src={portfolio.src}
                         title={portfolio.title}
                         subtitle={portfolio.subtitle}
@@ -100,9 +91,8 @@ const Ourwork = () => {
                   </motion.div>
                 );
               })}
-            </AnimatePresence>
+              </AnimatePresence>
           </motion.div>
-        </AnimateSharedLayout>
       </Div>
       <Div type={SIZES.XXL}>
         <FooterLinks page={PAGES.OURWORK} to={NAVITEMS.CONTACT} />

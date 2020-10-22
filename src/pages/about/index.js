@@ -50,7 +50,7 @@ const About = () => (
           <SubHeading innerHtml={ABOUT.headingSix} width="inherit" />
         </div>
         <div className="about-carousel">
-          <Carousel />
+          <Carousel compact={true} />
         </div>
       </Grid2>
     </Div>
