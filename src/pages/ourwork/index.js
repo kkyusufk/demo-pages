@@ -58,41 +58,41 @@ const Ourwork = () => {
         </div>
       </Div>
       <Div type={SIZES.XL}>
-          <motion.div className="portfolio-grid">
+        <motion.div className="portfolio-grid">
           <AnimatePresence>
-              {data.map((portfolio, index) => {
-                return (
-                  <motion.div
-                    layout
-                    key={portfolio.id}
-                    initial={false}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0, transition: { duration: 0.2 } }}
+            {data.map((portfolio, index) => {
+              return (
+                <motion.div
+                  layout
+                  key={portfolio.id}
+                  initial={false}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0, transition: { duration: 0.2 } }}
+                >
+                  <Link
+                    to="/ourwork/portfolioDetails/"
+                    state={{ data: PortfolioDetails }}
+                    style={{
+                      color: "#333333",
+                      textDecoration: "none",
+                      textDecorationSkipInk: "none",
+                    }}
                   >
-                    <Link
-                      to="/ourwork/portfolioDetails/"
-                      state={{ data: PortfolioDetails }}
-                      style={{
-                        color: '#333333',
-                        textDecoration: 'none',
-                        textDecorationSkipInk: 'none'
-                      }}
-                    >
-                      <Portfolio
-                        src={portfolio.src}
-                        title={portfolio.title}
-                        subtitle={portfolio.subtitle}
-                        height="320px"
-                        justify="space-between"
-                        titleClass="portfolio-ourwork-title"
-                        subtitleClass="portfolio-ourwork-subtitle"
-                      />
-                    </Link>
-                  </motion.div>
-                );
-              })}
-              </AnimatePresence>
-          </motion.div>
+                    <Portfolio
+                      src={portfolio.src}
+                      title={portfolio.title}
+                      subtitle={portfolio.subtitle}
+                      height="320px"
+                      justify="space-between"
+                      titleClass="portfolio-ourwork-title"
+                      subtitleClass="portfolio-ourwork-subtitle"
+                    />
+                  </Link>
+                </motion.div>
+              );
+            })}
+          </AnimatePresence>
+        </motion.div>
       </Div>
       <Div type={SIZES.XXL}>
         <FooterLinks page={PAGES.OURWORK} to={NAVITEMS.CONTACT} />

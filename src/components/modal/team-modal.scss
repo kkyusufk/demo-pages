@@ -1,6 +1,6 @@
 .overlay {
   z-index: 1;
-  position: absolute;
+  position: fixed;
   background: rgba(0, 0, 0, 0.8);
   will-change: opacity;
   top: 0;

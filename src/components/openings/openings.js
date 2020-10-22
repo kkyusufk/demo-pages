@@ -15,20 +15,20 @@ const OpeningCards = () => {
   const goLeft = () => setX((X) => X + 400);
 
   const calculateDragLeft = () => {
-    /** 
-     * @todo get 400 from logic rather than hard coding 
+    /**
+     * @todo get 400 from logic rather than hard coding
      * 400 = card.width (370px) + column gap (30px)
      */
-    return 400 * (openings.length - 3)
-  }
+    return 400 * (openings.length - 3);
+  };
 
   return (
     <AnimateSharedLayout>
-      <motion.div 
+      <motion.div
         className="opening-cards-container"
         drag="x"
         dragConstraints={{ left: -calculateDragLeft(), right: 0 }}
-        >
+      >
         {openings.map((data) => {
           return (
             <div
@@ -39,8 +39,8 @@ const OpeningCards = () => {
             >
               <Link
                 style={{
-                  textDecoration: 'none',
-                  color: '#000000'
+                  textDecoration: "none",
+                  color: "#000000",
                 }}
                 state={data}
               >

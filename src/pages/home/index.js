@@ -26,10 +26,12 @@ import { Carousel } from "../../components/carousel/framerCarousel/framerCarouse
 import { environmentUtil } from "../../utils/environmentUtil";
 
 const IndexPage = () => {
-  const { setCurrentPage, setScrollY, setShouldAnimate } = useContext(GlobalContext);
+  const { setCurrentPage, setScrollY, setShouldAnimate } = useContext(
+    GlobalContext
+  );
   if (environmentUtil.isWindowDefined()) {
-    if(window.location.pathname === '/') { 
-      window.location.pathname = '/home';
+    if (window.location.pathname === "/") {
+      window.location.pathname = "/home";
     }
   }
   return (
@@ -101,9 +103,9 @@ const IndexPage = () => {
       </Div>
       <Div type={SIZES.L}>
         <Link
-          to='/ourwork/'
+          to="/ourwork/"
           onClick={() => {
-            setShouldAnimate(true)
+            setShouldAnimate(true);
             setScrollY(window.scrollY);
             setCurrentPage(NAVITEMS.OURWORK);
           }}
@@ -132,7 +134,7 @@ const IndexPage = () => {
         <Link
           to="/about/"
           onClick={() => {
-            setShouldAnimate(true)
+            setShouldAnimate(true);
             setScrollY(window.scrollY);
             setCurrentPage(NAVITEMS.ABOUT);
           }}

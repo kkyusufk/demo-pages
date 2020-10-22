@@ -17,7 +17,8 @@ const Provider = memo(({ children }) => {
   const [currentPage, setCurrentPage] = useState(NAVITEMS[page.toUpperCase()]);
   const [shouldAnimate, setShouldAnimate] = useState(false);
   const [browserWidth, setBrowserWidth] = useState(
-    environmentUtil.isWindowDefined() ? window.innerWidth : 0);
+    environmentUtil.isWindowDefined() ? window.innerWidth : 0
+  );
   const [scrollY, setScrollY] = useState(
     environmentUtil.isWindowDefined() ? window.scrollY : 0
   );

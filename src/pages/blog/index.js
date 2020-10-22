@@ -15,10 +15,14 @@ const BlogPage = () => {
         <div className="blogLayout">
           {blogs.map((blog) => {
             return (
-              <Link to="/blog/blogDetails/" style={{
-                textDecoration: 'none',
-                color: '#000000'
-              }} state={blog}>
+              <Link
+                to="/blog/blogDetails/"
+                style={{
+                  textDecoration: "none",
+                  color: "#000000",
+                }}
+                state={blog}
+              >
                 <Blog
                   author={blog.author}
                   date={blog.date}

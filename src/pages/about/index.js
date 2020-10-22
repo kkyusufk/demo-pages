@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { AnimateSharedLayout } from 'framer-motion';
+import { AnimateSharedLayout } from "framer-motion";
 
 import "./about.scss";
 import { Heading } from "../../components/typography/heading/heading";
@@ -80,13 +80,13 @@ const About = () => (
       />
     </Div>
     <Div type={SIZES.L}>
-    <AnimateSharedLayout type="crossfade">
-    {environmentUtil.isWindowDefined() &&
-      <Router> 
-        <Route path={["/about/:id", "/"]} component={Team} />
-      </Router>
-      }
-    </AnimateSharedLayout>
+      <AnimateSharedLayout type="crossfade">
+        {environmentUtil.isWindowDefined() && (
+          <Router>
+            <Route path={["/about/:id", "/"]} component={Team} />
+          </Router>
+        )}
+      </AnimateSharedLayout>
     </Div>
     <Div type={SIZES.XXL}>
       <FooterLinks page={PAGES.ABOUT} to={NAVITEMS.CAREERS} />

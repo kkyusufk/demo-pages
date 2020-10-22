@@ -53,9 +53,9 @@ const Contact = () => {
         <Link
           to="/ourwork/"
           className="nav-items"
-          onClick={() => { 
-            setShouldAnimate(true)
-            setCurrentPage(NAVITEMS.OURWORK)
+          onClick={() => {
+            setShouldAnimate(true);
+            setCurrentPage(NAVITEMS.OURWORK);
           }}
         >
           <u>
