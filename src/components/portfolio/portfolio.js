@@ -26,30 +26,29 @@ const Portfolio = ({
     justify = "space-between";
   }
   return (
-    <motion.div
-      layout
-      className="portfolioContainer"
-      style={{ width, height }}
-    >
       <motion.div
-        className="portfolioContent"
-        layoutId={`portfolio-content-${id}`}
+        className="portfolioContainer"
+        style={{ width, height }}
+        layoutId={`portfolio-container-${id}`}
       >
-        <div>
-          <img src={src} className="portfolioImage" width={width} />
-        </div>
-        <div
-          style={{ marginTop: !environmentUtil.isMobile(browserWidth) && 20 }}
+        <motion.div
+          className="portfolioContent"
         >
-          <div className={classnames("portfolioTitle", `${titleClass}`)}>
-            <Title content={title} />
+          <div>
+            <img src={src} className="portfolioImage" width={width} />
           </div>
-          <div className={classnames("portfolioSubtitle", `${subtitleClass}`)}>
-            <Subtitile content={subtitle} />
+          <div
+            style={{ marginTop: !environmentUtil.isMobile(browserWidth) && 20 }}
+          >
+            <div className={classnames("portfolioTitle", `${titleClass}`)}>
+              <Title content={title} />
+            </div>
+            <div className={classnames("portfolioSubtitle", `${subtitleClass}`)}>
+              <Subtitile content={subtitle} />
+            </div>
           </div>
-        </div>
+        </motion.div>
       </motion.div>
-    </motion.div>
   );
 };
 

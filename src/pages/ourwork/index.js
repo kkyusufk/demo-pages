@@ -59,32 +59,45 @@ const Ourwork = () => {
       </Div>
       <Div type={SIZES.XL}>
         <AnimateSharedLayout>
-          <motion.div className="portfolio-grid" animate>
-            <AnimatePresence>
+          <motion.div className="portfolio-grid">
+            <AnimatePresence exitBeforeEnter>
               {data.map((portfolio, index) => {
                 return (
-                  <Link
-                    to="/ourwork/portfolioDetails/"
-                    state={{ data: PortfolioDetails }}
+                  <motion.div
+                    layout
                     key={index}
-                    style={{
-                      color: '#333333',
-                      textDecoration: 'none',
-                      textDecorationSkipInk: 'none'
+                    initial={{ opacity: 1 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ 
+                      opacity: 1,
+                      transition: {
+                        delay: .5
+                      } 
                     }}
                   >
-                    <Portfolio
-                      id={index}
+                    <Link
+                      to="/ourwork/portfolioDetails/"
+                      state={{ data: PortfolioDetails }}
                       key={index}
-                      src={portfolio.src}
-                      title={portfolio.title}
-                      subtitle={portfolio.subtitle}
-                      height="320px"
-                      justify="space-between"
-                      titleClass="portfolio-ourwork-title"
-                      subtitleClass="portfolio-ourwork-subtitle"
-                    />
-                  </Link>
+                      style={{
+                        color: '#333333',
+                        textDecoration: 'none',
+                        textDecorationSkipInk: 'none'
+                      }}
+                    >
+                      <Portfolio
+                        id={index}
+                        key={index}
+                        src={portfolio.src}
+                        title={portfolio.title}
+                        subtitle={portfolio.subtitle}
+                        height="320px"
+                        justify="space-between"
+                        titleClass="portfolio-ourwork-title"
+                        subtitleClass="portfolio-ourwork-subtitle"
+                      />
+                    </Link>
+                  </motion.div>
                 );
               })}
             </AnimatePresence>
