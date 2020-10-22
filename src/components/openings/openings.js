@@ -6,30 +6,29 @@ import { openings } from "../../data";
 import { Card } from "../card/card";
 import { Button } from "../button/Button/Button";
 import rightSVG from "../../Assets/icons/right.svg";
-import { motion } from "framer-motion";
 
 const OpeningCards = () => {
-  const [hidden, setHidden] = useState(false)
+  const [X, setX] = useState(0);
+
+  const goRight = () => setX((X) => X - 400);
+  const goLeft = () => setX((X) => X + 400);
+
   return (
-    <>
-    <motion.div 
-      className="opening-cards-container" 
-      drag="x"
-      onDrag={
-        (event, info) => console.log(info.point.x, info.point.y)
-      }
-      dragConstraints={{ 
-        left: -800, 
-        right: 0, 
-        modifyTarget: target => Math.round(target / 50) * 50
-      }}
-      >
+    <div className="opening-cards-container">
       {openings.map((data) => {
         return (
-          <div>
+          <div
+            style={{
+              transition: "0.5s",
+              transform: `translateX(${X}px)`,
+            }}
+          >
             <Link
-              //to={"/careers/careerDetail"}
-              className="nav-items"
+              to={"/careers/careerDetail"}
+              style={{
+                textDecoration: 'none',
+                color: '#000000'
+              }}
               state={data}
             >
               <Card
@@ -52,20 +51,19 @@ const OpeningCards = () => {
           </div>
         );
       })}
-    </motion.div>
-    <Button
-    className="shaded-right-button"
-    src={rightSVG}
-    //onClick={goRight}
-    hidden={hidden}
-  />
-  <Button
-    className="shaded-left-button"
-    src={rightSVG}
-    //onClick={goLeft}
-    hidden={!hidden}
-  />
-  </>
+      <Button
+        className="shaded-right-button"
+        src={rightSVG}
+        onClick={goRight}
+        hidden={X === -800}
+      />
+      <Button
+        className="shaded-left-button"
+        src={rightSVG}
+        onClick={goLeft}
+        hidden={X === 0}
+      />
+    </div>
   );
 };
 
