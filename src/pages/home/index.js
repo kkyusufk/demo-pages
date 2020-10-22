@@ -23,9 +23,15 @@ import { Grid1 } from "../../components/grid/grid1";
 import { FooterLinks } from "../../components/footer/footerLinks";
 import { Div } from "../../components/Div/Div";
 import { Carousel } from "../../components/carousel/framerCarousel/framerCarousel";
+import { environmentUtil } from "../../utils/environmentUtil";
 
 const IndexPage = () => {
   const { setCurrentPage, setScrollY, setShouldAnimate } = useContext(GlobalContext);
+  if (environmentUtil.isWindowDefined()) {
+    if(window.location.pathname === '/') { 
+      window.location.pathname = '/home';
+    }
+  }
   return (
     <>
       <Div type={SIZES.L}>
