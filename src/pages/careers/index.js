@@ -4,7 +4,7 @@ import "./careers.scss";
 import { CAREERS, FOOTER } from "../../data";
 import { SemiBoldHeading } from "../../components/typography/semiBoldHeading/semiBoldHeading";
 import { Heading } from "../../components/typography/heading/heading";
-import { Carousel } from "../../components/carousel/carousel";
+import { Carousel } from "../../components/carousel/framerCarousel/framerCarousel";
 import { Grid1 } from "../../components/grid/grid1";
 import { ALIGNMENT, NAVITEMS, PAGES, SIZES } from "../../constants";
 import { OpeningCards } from "../../components/openings/openings";

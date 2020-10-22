@@ -67,7 +67,11 @@ const Ourwork = () => {
                     to="/ourwork/portfolioDetails/"
                     state={{ data: PortfolioDetails }}
                     key={index}
-                    className="nav-items"
+                    style={{
+                      color: '#333333',
+                      textDecoration: 'none',
+                      textDecorationSkipInk: 'none'
+                    }}
                   >
                     <Portfolio
                       id={index}

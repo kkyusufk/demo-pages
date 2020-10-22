@@ -117,7 +117,7 @@ export const Carousel = ({ compact }) => {
       {/**
        * The next and previous buttons
        */}
-      {compact && <>
+      {compact ? null : <>
       <div className="next" onClick={() => paginate(1, active + 1)}>
         {"‣"}
       </div>
@@ -128,7 +128,7 @@ export const Carousel = ({ compact }) => {
       {/**
        * Image title and subtitle cards
        */}
-       {compact && <> 
+       {compact ? null : <> 
         <div className={classNames("image-title")}>
         {images.map((image, index) => {
           return (

@@ -1,6 +1,5 @@
 /** @jsx */
-import React, { useContext, useRef } from "react";
-import classnames from 'classnames';
+import React, { useContext, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 import { AnimateSharedLayout, motion, useCycle } from "framer-motion";
 import { Link } from "gatsby";
@@ -70,13 +69,23 @@ NavItems.propTypes = {
 /** @returns {React.FC} */
 const NewNavbar = () => {
   const [isOpen, toggleOpen] = useCycle(false, true);
-  const { currentPage, setCurrentPage, setShouldAnimate } = useContext(GlobalContext)
+  const { currentPage, setCurrentPage, setShouldAnimate, browserWidth } = useContext(GlobalContext)
   const navItems = Object.values(NAVITEMS);
+
+  const noScroll = () => window.scrollTo(0, 0)
+
+  useEffect(() => {
+    if (isOpen && environmentUtil.isMobile()) {
+      window.addEventListener("scroll", noScroll);
+      return () => window.removeEventListener("scroll", noScroll);
+    }
+  }, [isOpen])
+
   return (
     <AnimateSharedLayout>
       <motion.ul 
       className="nav-header"
-      variants={sidebar}
+      variants={environmentUtil.isMobile(browserWidth) ? sidebar : {}}
       animate={isOpen ? "open" : "closed"}
       >
         {navItems.map((nav) => {
