@@ -68,7 +68,7 @@ export const Carousel = ({ compact }) => {
     index >= images.length
       ? setActive(0)
       : index < 0
-      ? setActive(images.length)
+      ? setActive(images.length - 1)
       : setActive(index);
   };
 
