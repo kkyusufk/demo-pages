@@ -7,10 +7,8 @@ import { GlobalContext } from "../../context/navContext";
 import "../fonts.css";
 import "./portfolio.scss";
 import { environmentUtil } from "../../utils/environmentUtil";
-import { AnimatePresence, motion } from "framer-motion";
 
 const Portfolio = ({
-  id,
   src,
   title,
   subtitle,
@@ -26,15 +24,8 @@ const Portfolio = ({
     justify = "space-between";
   }
   return (
-    <motion.div
-      layout
-      className="portfolioContainer"
-      style={{ width, height }}
-    >
-      <motion.div
-        className="portfolioContent"
-        layoutId={`portfolio-content-${id}`}
-      >
+    <div className="portfolioContainer" style={{ width, height }}>
+      <div className="portfolioContent" style={{ justifyContent: justify }}>
         <div>
           <img src={src} className="portfolioImage" width={width} />
         </div>
@@ -48,8 +39,8 @@ const Portfolio = ({
             <Subtitile content={subtitle} />
           </div>
         </div>
-      </motion.div>
-    </motion.div>
+      </div>
+    </div>
   );
 };
 

@@ -20,42 +20,49 @@ export const images = [
 
 export const portfolioData = [
   {
-    type: "Web Design",
+    id: "stockal",
+    type: "Communication",
     src: portfolioImage,
     title: "Stockal",
     subtitle: "Web Design for Fintech",
   },
   {
+    id: "kapiva",
     type: "Branding",
     src: portfolioImage1,
     title: "Kapiva",
     subtitle: "Brand Creation & Packaging",
   },
   {
+    id: "bloom",
     type: "User Experience",
     src: portfolioImage2,
     title: "Bloom Hotels",
     subtitle: "UX/UI for Hospitality",
   },
   {
+    id: "sugar",
     type: "Packaging",
     src: portfolioImage3,
     title: "Sugar X Shirley",
     subtitle: "Limited Edition Packaging",
   },
   {
+    id: "swiggy",
     type: "Branding",
     src: portfolioImage4,
     title: "Swiggy",
     subtitle: "Branding For Food Tech",
   },
   {
+    id: "canarim",
     type: "Branding",
     src: portfolioImage5,
     title: "Canarim",
     subtitle: "Branding for Konkani Restaurant",
   },
   {
+    id: "antidote",
     type: "Branding",
     src: portfolioImage6,
     title: "Antidote Coffee",
@@ -65,68 +72,68 @@ export const portfolioData = [
 
 export const team = [
   {
-    id: 1,
+    id: "abhisek",
     name: "Abhisek Sarda",
     description: "Founder & Creative Director. Lego and Edison Bulb Lover",
   },
   {
-    id: 2,
+    id: "indranil",
     name: "Indranil Udupi",
     description: "Project Manager. Turns up headphones way too loud",
   },
   {
-    id: 3,
+    id: "sanjana",
     name: "Sanjana Hegde",
     description: "Graphic Designer. Chef and quisher of dog's faces",
   },
   {
-    id: 4,
+    id: "priyanka",
     name: "Priyanka Poulose",
     description:
       "Graphic Designer. Architect too, once upon a time. Aspiring crazy cat lady",
   },
   {
-    id: 5,
+    id: "vidit",
     name: "Vidit Agarwal",
     description: "Graphic Designer. Inhouse weeaboo & Dark Web enthusiast.",
   },
   {
-    id: 6,
+    id: "chris",
     name: "Chris D'souza",
     description:
       "UI/UX Designer. Legitimately needs OCD treatment and to chill out a bit.",
   },
   {
-    id: 7,
+    id: "jude",
     name: "Jude Gonsalves",
     description:
       "UI/UX Designer. Baker. You *have* to try his brookies sometime. Seriously.",
   },
   {
-    id: 8,
+    id: "ishan",
     name: "Ishan Nahata",
     description:
       "UI/UX Designer. Enigma. Inhouse memelord. Dry humour kinda person",
   },
   {
-    id: 9,
+    id: "jitesh",
     name: "Jitesh Gupta",
     description:
       "Studio Assistant. Dejected that TikTok is now banned. Still loves his bike though.",
   },
   {
-    id: 10,
+    id: "prakash",
     name: "Prakash Solanki",
     description:
       "Studio Assistant. Kindest eyes and smile. But sounds scary when angry.",
   },
   {
-    id: 11,
+    id: "bodoni",
     name: "Bodoni",
     description: "Chairperson. Loves his beanbag. Might secretly be a cat.",
   },
   {
-    id: 12,
+    id: "gotham",
     name: "Gotham",
     description: "Definitely a dog, no doubt about it.",
   },

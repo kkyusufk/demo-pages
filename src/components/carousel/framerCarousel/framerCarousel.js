@@ -12,7 +12,7 @@ import "../carousel.css";
  * The variant for the carousel image transition.
  * For more information on variants go to https://www.framer.com/api/motion/animation/#variants
  * @type {Object}
- * 
+ *
  */
 const carouselVariants = {
   enter: (direction) => {
@@ -48,8 +48,8 @@ const carouselVariants = {
 const descriptionCardVariant = {
   initial: { opacity: 0 },
   animate: { opacity: 1 },
-  exit: { opacity: 0 }
-} 
+  exit: { opacity: 0 },
+};
 
 const tabs = [1, 2, 3, 4];
 
@@ -68,7 +68,7 @@ export const Carousel = ({ compact }) => {
     index >= images.length
       ? setActive(0)
       : index < 0
-      ? setActive(images.length)
+      ? setActive(images.length - 1)
       : setActive(index);
   };
 
@@ -117,49 +117,53 @@ export const Carousel = ({ compact }) => {
       {/**
        * The next and previous buttons
        */}
-      {compact ? null : <>
-      <div className="next" onClick={() => paginate(1, active + 1)}>
-        {"‣"}
-      </div>
-      <div className="prev" onClick={() => paginate(-1, active - 1)}>
-        {"‣"}
-      </div> 
-      </> }
+      {compact ? null : (
+        <>
+          <div className="next" onClick={() => paginate(1, active + 1)}>
+            {"‣"}
+          </div>
+          <div className="prev" onClick={() => paginate(-1, active - 1)}>
+            {"‣"}
+          </div>
+        </>
+      )}
       {/**
        * Image title and subtitle cards
        */}
-       {compact ? null : <> 
-        <div className={classNames("image-title")}>
-        {images.map((image, index) => {
-          return (
-            <AnimatePresence>
-              {index === active && (
-                <div key={index} id="contents">
-                  <motion.span
-                    className="imageTitle"
-                    variants={descriptionCardVariant}
-                    initial="initial"
-                    animate="animate"
-                    exit="exit"
-                  >
-                    {image.title}
-                  </motion.span>
-                  <motion.span
-                    className="imageSubTitle"
-                    variants={descriptionCardVariant}
-                    initial="initial"
-                    animate="animate"
-                    exit="exit"
-                  >
-                    {image.subtitle}
-                  </motion.span>
-                </div>
-              )}
-            </AnimatePresence>
-          );
-        })}
-      </div>
-       </>}
+      {compact ? null : (
+        <>
+          <div className={classNames("image-title")}>
+            {images.map((image, index) => {
+              return (
+                <AnimatePresence>
+                  {index === active && (
+                    <div key={index} id="contents">
+                      <motion.span
+                        className="imageTitle"
+                        variants={descriptionCardVariant}
+                        initial="initial"
+                        animate="animate"
+                        exit="exit"
+                      >
+                        {image.title}
+                      </motion.span>
+                      <motion.span
+                        className="imageSubTitle"
+                        variants={descriptionCardVariant}
+                        initial="initial"
+                        animate="animate"
+                        exit="exit"
+                      >
+                        {image.subtitle}
+                      </motion.span>
+                    </div>
+                  )}
+                </AnimatePresence>
+              );
+            })}
+          </div>
+        </>
+      )}
       {/**
        * The animating tabs at the bottom
        */}
@@ -173,7 +177,7 @@ export const Carousel = ({ compact }) => {
                     initial={{ width: "0%" }}
                     style={{
                       height: "5px",
-                      width: "0%"
+                      width: "0%",
                     }}
                     animate={{
                       width: ["0%", "100%"],

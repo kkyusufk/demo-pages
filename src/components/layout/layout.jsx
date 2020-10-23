@@ -1,7 +1,7 @@
 /** @jsx */
 import React, { useContext } from "react";
-import { AnimatePresence, motion } from 'framer-motion';
-import PropTypes from 'prop-types'
+import { AnimatePresence, motion } from "framer-motion";
+import PropTypes from "prop-types";
 
 import "./layoutCss.css";
 import { isPortfolioDetails } from "../../utils/pagesUtil";
@@ -10,23 +10,23 @@ import { Logo } from "../logo/logo";
 import { GlobalContext } from "../../context/navContext";
 
 const ContainerVariant = {
-  initial: { y: 1000, transition: { duration: .5 } },
-  animate: { y: 0, transition: { duration: .5 } },
-  exit: { y: '-50%' , transition: { duration: 4 } }
-}
+  initial: { y: 1000, transition: { duration: 0.5 } },
+  animate: { y: 0, transition: { duration: 0.5 } },
+  exit: { y: "-50%", transition: { duration: 4 } },
+};
 
 const Layout = ({ location, children }) => {
-  const { shouldAnimate } = useContext(GlobalContext )
+  const { shouldAnimate } = useContext(GlobalContext);
   return (
     <AnimatePresence exitBeforeEnter>
-      <motion.div 
+      <motion.div
         key={location.key}
         className="container"
         variants={shouldAnimate && ContainerVariant}
         initial="initial"
         animate="animate"
         exit={shouldAnimate && "exit"}
-        >
+      >
         <header className="header column">
           <div className="header-wrapper">
             <div className="opposite-svg-header">
@@ -38,9 +38,7 @@ const Layout = ({ location, children }) => {
         <main
           className="content column"
           style={{
-            padding: `${
-              isPortfolioDetails(location.pathname) && 0
-            }`,
+            padding: `${isPortfolioDetails(location.pathname) && 0}`,
           }}
         >
           <section className="main-content">{children}</section>
@@ -52,13 +50,12 @@ const Layout = ({ location, children }) => {
         </footer>
       </motion.div>
     </AnimatePresence>
-  )
+  );
 };
 
 Layout.propTypes = {
   location: PropTypes.object,
-  children: PropTypes.element
-}
-
+  children: PropTypes.element,
+};
 
 export { Layout };

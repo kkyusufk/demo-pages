@@ -11,6 +11,7 @@ import { OpeningCards } from "../../components/openings/openings";
 import { ContentAndImages } from "../../components/contentAndImages/contentAndImages";
 import { FooterLinks } from "../../components/footer/footerLinks";
 import { Div } from "../../components/Div/Div";
+import { AnimateSharedLayout } from "framer-motion";
 
 const Career = () => (
   <Fragment>
@@ -31,7 +32,9 @@ const Career = () => (
       </Grid1>
     </Div>
     <Div type={SIZES.ML}>
-      <OpeningCards />
+      <AnimateSharedLayout>
+        <OpeningCards />
+      </AnimateSharedLayout>
     </Div>
     <Div type={SIZES.XL}>
       <ContentAndImages />
