@@ -8,6 +8,7 @@ import { isPortfolioDetails } from "../../utils/pagesUtil";
 import { NewNavbar } from "../navbar/newNavbar";
 import { Logo } from "../logo/logo";
 import { GlobalContext } from "../../context/navContext";
+import { environmentUtil } from "../../utils/environmentUtil";
 
 const ContainerVariant = {
   initial: { y: 1000 },
@@ -25,9 +26,9 @@ const ContainerVariant = {
 const Layout = ({ location, children }) => {
   const { shouldAnimate } = useContext(GlobalContext);
   return (
-    <AnimatePresence exitBeforeEnter={!shouldAnimate} custom={window.scrollY}>
+    <AnimatePresence exitBeforeEnter={!shouldAnimate} custom={environmentUtil.isWindowDefined() && window.scrollY}>
       <motion.div
-        custom={window.scrollY}
+        custom={environmentUtil.isWindowDefined() && window.scrollY}
         key={location.key}
         transition={{
           x: { type: "spring", stiffness: 300, damping: 200 },
