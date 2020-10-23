@@ -10,45 +10,56 @@ import { Logo } from "../logo/logo";
 import { GlobalContext } from "../../context/navContext";
 
 const ContainerVariant = {
-  initial: { y: 1000, transition: { duration: 0.5 } },
-  animate: { y: 0, transition: { duration: 0.5 } },
-  exit: { y: "-50%", transition: { duration: 4 } },
+  initial: { y: 1000 },
+  animate: { y: 0, transition: { duration: 1 } },
+  exit:(i) => ({ 
+    y: "-100%", 
+    position: 'absolute',
+    transition: { 
+      duration: 1, 
+      from: -i
+    } 
+  }),
 };
 
 const Layout = ({ location, children }) => {
   const { shouldAnimate } = useContext(GlobalContext);
   return (
-    <AnimatePresence exitBeforeEnter>
+    <AnimatePresence exitBeforeEnter={!shouldAnimate} custom={window.scrollY}>
       <motion.div
+        custom={window.scrollY}
         key={location.key}
+        transition={{
+          x: { type: "spring", stiffness: 300, damping: 200 },
+        }}
         className="container"
         variants={shouldAnimate && ContainerVariant}
         initial="initial"
         animate="animate"
         exit={shouldAnimate && "exit"}
       >
-        <header className="header column">
-          <div className="header-wrapper">
-            <div className="opposite-svg-header">
+          <header className="header column">
+            <div className="header-wrapper">
+              <div className="opposite-svg-header">
+                <Logo />
+              </div>
+              <NewNavbar />
+            </div>
+          </header>
+          <main
+            className="content column"
+            style={{
+              padding: `${isPortfolioDetails(location.pathname) && 0}`,
+            }}
+          >
+            <section className="main-content">{children}</section>
+          </main>
+          <footer className="footer column">
+            <div className="opposite-svg-footer">
               <Logo />
             </div>
-            <NewNavbar />
-          </div>
-        </header>
-        <main
-          className="content column"
-          style={{
-            padding: `${isPortfolioDetails(location.pathname) && 0}`,
-          }}
-        >
-          <section className="main-content">{children}</section>
-        </main>
-        <footer className="footer column">
-          <div className="opposite-svg-footer">
-            <Logo />
-          </div>
-        </footer>
-      </motion.div>
+          </footer>
+          </motion.div>
     </AnimatePresence>
   );
 };

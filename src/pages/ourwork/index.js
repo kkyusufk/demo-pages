@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { motion, AnimateSharedLayout, AnimatePresence } from "framer-motion";
 
 import "./ourwork.scss";
@@ -11,6 +11,7 @@ import { Filter } from "../../components/filter/filter";
 import { FooterLinks } from "../../components/footer/footerLinks";
 import { Div } from "../../components/Div/Div";
 import { Link } from "gatsby";
+import { GlobalContext } from "../../context/navContext";
 
 // assuming data structure will be coming in this format
 let PortfolioDetails = [
@@ -25,6 +26,7 @@ let PortfolioDetails = [
 const Ourwork = () => {
   let data = portfolioData;
   const [active, setActive] = useState([]);
+  const { shouldAnimate } = useContext(GlobalContext);
 
   const toggleActive = (filter) => {
     setActive((prevState) => {
@@ -58,6 +60,7 @@ const Ourwork = () => {
         </div>
       </Div>
       <Div type={SIZES.XL}>
+      <AnimateSharedLayout>
         <motion.div className="portfolio-grid">
           <AnimatePresence>
             {data.map((portfolio, index) => {
@@ -65,8 +68,8 @@ const Ourwork = () => {
                 <motion.div
                   layout
                   key={portfolio.id}
-                  initial={false}
-                  animate={{ opacity: 1 }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1, transition: { duration: 0.2 } }}
                   exit={{ opacity: 0, transition: { duration: 0.2 } }}
                 >
                   <Link
@@ -93,6 +96,7 @@ const Ourwork = () => {
             })}
           </AnimatePresence>
         </motion.div>
+        </AnimateSharedLayout>
       </Div>
       <Div type={SIZES.XXL}>
         <FooterLinks page={PAGES.OURWORK} to={NAVITEMS.CONTACT} />
