@@ -20,12 +20,6 @@
   font-family: 'Roobert-regular';
 }
 
-@media only screen and (min-width: 700px) {
-  .portfolioContainer:hover {
-    transform: translateY(-20px);
-  }
-}
-
 @media only screen and (max-width: 1440px) {
   .portfolioContainer {
     width: 100% !important;

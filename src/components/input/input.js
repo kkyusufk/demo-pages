@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import React, { useRef, useState } from "react";
 import "./input.css";
 
@@ -69,13 +70,19 @@ const InputEmail = () => {
         <div className="fail" id="hidden">
           That's not a legit email ID :-/
         </div>
-        <button
+        <motion.button
           id="goRightSignUp"
           onClick={confirmationMessage}
           disabled={disabled}
+          whileHover={{
+            textDecoration: 'underline',
+            textDecorationSkipInk: 'none',
+            color: 'black',
+            cursor: 'pointer'
+          }}
         >
           Sign up &#x2192;
-        </button>
+        </motion.button>
       </div>
       <div
         ref={confirmRef}

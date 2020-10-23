@@ -34,13 +34,8 @@
   outline: none;
   background: transparent;
   height: 3rem;
-  transition: transform 0.5s ease-in-out;
 }
 
-#goRightSignUp:hover {
-  cursor: pointer;
-  transform: translateX(20px);
-}
 
 .translateOut {
   transition: all 0.5s ease-in-out;
