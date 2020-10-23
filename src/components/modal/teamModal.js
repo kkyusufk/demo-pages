@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { team } from "../../data";
@@ -6,6 +6,10 @@ import { Carousel } from "../carousel/carousel";
 import "./team-modal.scss";
 
 export function Modal({ id }) {
+  const cardContainer = useRef();
+  useEffect(() => {
+    cardContainer.current.scrollIntoView();
+  })
   return (
     <>
       <motion.div
@@ -20,6 +24,7 @@ export function Modal({ id }) {
       </motion.div>
 
       <motion.div
+        ref={cardContainer}
         className="card-content-container open"
         animate={{ opacity: 1 }}
         transition={{ duration: 2 }}
@@ -74,15 +79,15 @@ export function Modal({ id }) {
                 even cheque books!
               </p>
               <div className="team-modal-social">
-                <spans>
+                <span>
                   <u>Facebook</u>
-                </spans>
-                <spans>
+                </span>
+                <span>
                   <u>Instagram</u>
-                </spans>
-                <spans>
+                </span>
+                <span>
                   <u>Linkedin</u>
-                </spans>
+                </span>
               </div>
             </div>
             <div className="content-carousel">

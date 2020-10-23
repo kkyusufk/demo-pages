@@ -39,6 +39,7 @@ const NavItems = ({ nav, isSelected, onClick }) => {
           style={{
             backgroundColor: "black",
             height: "3px",
+            marginTop: "5px"
           }}
           initial={false}
           animate={{

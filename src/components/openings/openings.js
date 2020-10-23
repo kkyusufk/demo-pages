@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Link } from "gatsby";
 
 import "./openings.scss";
@@ -10,6 +10,7 @@ import { AnimateSharedLayout, motion } from "framer-motion";
 
 const OpeningCards = () => {
   const [X, setX] = useState(0);
+  const cardContainerRef = useRef();
 
   const goRight = () => setX((X) => X - 400);
   const goLeft = () => setX((X) => X + 400);
@@ -22,16 +23,22 @@ const OpeningCards = () => {
     return 400 * (openings.length - 3);
   };
 
+  useEffect(() => {
+    cardContainerRef.current.addEventListener('scroll', () => console.log('dssds'))
+  })
+
   return (
     <AnimateSharedLayout>
       <motion.div
         className="opening-cards-container"
         drag="x"
+        ref={cardContainerRef}
         dragConstraints={{ left: -calculateDragLeft(), right: 0 }}
       >
         {openings.map((data) => {
           return (
             <div
+              id="inside-container"
               style={{
                 transition: "0.5s",
                 transform: `translateX(${X}px)`,
@@ -64,11 +71,12 @@ const OpeningCards = () => {
             </div>
           );
         })}
-        {/* <Button
-          className="shaded-right-button"
-          src={rightSVG}
-          onClick={goRight}
-          hidden={X === -800}
+      </motion.div>
+      {/* <Button
+        className="shaded-right-button"
+        src={rightSVG}
+        onClick={goRight}
+        hidden={X === -800}
         />
         <Button
           className="shaded-left-button"
@@ -76,7 +84,6 @@ const OpeningCards = () => {
           onClick={goLeft}
           hidden={X === 0}
         /> */}
-      </motion.div>
     </AnimateSharedLayout>
   );
 };

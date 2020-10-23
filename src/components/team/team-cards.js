@@ -21,7 +21,7 @@ function Card({ id, name, description }) {
           >
             <AnimatePresence exitBeforeEnter>
               <motion.span
-                key={`LOL-${id}`}
+                key={`name-${id}`}
                 className="name"
                 layoutId={`card-name-${id}`}
                 initial={{ opacity: 0 }}
