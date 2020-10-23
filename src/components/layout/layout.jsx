@@ -1,5 +1,5 @@
 /** @jsx */
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import PropTypes from "prop-types";
 
@@ -11,7 +11,7 @@ import { GlobalContext } from "../../context/navContext";
 
 const ContainerVariant = {
   initial: { y: 1000 },
-  animate: { y: 0, transition: { duration: 1 } },
+  animate: (i) => ({ y: 0, transition: { duration: 1 } }),
   exit:(i) => ({ 
     y: "-100%", 
     position: 'absolute',
