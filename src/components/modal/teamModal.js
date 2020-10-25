@@ -1,11 +1,12 @@
 import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, BrowserRouter as Router } from "react-router-dom";
+import { Link as GatsbyLink } from 'gatsby'
 import { team } from "../../data";
 import { Carousel } from "../carousel/carousel";
 import "./team-modal.scss";
 
-export function Modal({ id }) {
+export default function Modal({ cardID, pathContext }) {
   const cardContainer = useRef();
   useEffect(() => {
     cardContainer.current.scrollIntoView();
@@ -19,8 +20,13 @@ export function Modal({ id }) {
         transition={{ duration: 0.2, delay: 0.15 }}
         style={{ pointerEvents: "auto" }}
         className="overlay"
-      >
+      > 
+      {pathContext !== `undefined` && typeof pathContext.name === 'string' ? 
+        <Router>
+          <GatsbyLink to="/about" />
+        </Router> : 
         <Link to="/about" />
+      }
       </motion.div>
 
       <motion.div
@@ -31,18 +37,18 @@ export function Modal({ id }) {
       >
         <motion.div
           className="modal-card-content"
-          layoutId={`card-container-${id}`}
+          layoutId={`card-container-${cardID}`}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0, transition: { duration: 0.15 } }}
         >
           <motion.div
             className="name-container"
-            layoutId={`name-container-${id}`}
+            layoutId={`name-container-${cardID}`}
           >
             <motion.span
               className="name"
-              layoutId={`modal-name-${id}`}
+              layoutId={`modal-name-${cardID}`}
               initial={false}
               animate={{ opacity: 1, transition: { duration: 1 } }}
               exit={{ opacity: 0, transition: { duration: 1 } }}
@@ -51,7 +57,7 @@ export function Modal({ id }) {
             </motion.span>
             <motion.span
               className="description"
-              layoutId={`modal-description-${id}`}
+              layoutId={`modal-description-${cardID}`}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1, transition: { duration: 1 } }}
               exit={{ opacity: 0, transition: { duration: 0.15 } }}
