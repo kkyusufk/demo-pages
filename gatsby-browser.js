@@ -6,7 +6,7 @@ const { Provider } = require("./src/context/navContext");
 
 exports.wrapPageElement = ({ element, props }) => {
   let ignoreLayout = false;
-  if (element.key.match(/abhisek/)) ignoreLayout = true;
+  if (element.key && element.key.match(/[A-Za-z]/)) ignoreLayout = true;
   return (
     <>
       {ignoreLayout ?
