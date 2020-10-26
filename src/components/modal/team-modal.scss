@@ -21,6 +21,10 @@
   transform: translateX(-50%);
 }
 
+.position-relative {
+  padding-top: 50px;
+  position: relative !important;
+}
 
 .card-content-container {
   max-width: 1170px;

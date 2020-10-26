@@ -3,10 +3,17 @@ const React = require("react");
 const { AnimateSharedLayout } = require("framer-motion");
 const { Layout } = require("./src/components/layout/layout");
 const { Provider } = require("./src/context/navContext");
+const { team } = require("./src/data");
 
 exports.wrapPageElement = ({ element, props }) => {
   let ignoreLayout = false;
-  if (element.key && element.key.match(/[A-Za-z]/)) ignoreLayout = true;
+  const teamMembers = [];
+  team.forEach(member => teamMembers.push(`/about/${member.id}`))
+  teamMembers.forEach(member => {
+    if (element.key && element.key.match(RegExp(member))) {
+      ignoreLayout = true
+    };
+  })
   return (
     <>
       {ignoreLayout ?

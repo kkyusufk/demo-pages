@@ -1,12 +1,14 @@
 import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { Link, BrowserRouter as Router } from "react-router-dom";
-import { Link as GatsbyLink } from 'gatsby'
+import { Link as GatsbyLink } from 'gatsby';
+import classnames from 'classnames';
 import { team } from "../../data";
 import { Carousel } from "../carousel/carousel";
 import "./team-modal.scss";
+import { environmentUtil } from "../../utils/environmentUtil";
 
-export default function Modal({ cardID, pathContext }) {
+export default function Modal({ cardID, pathContext={} }) {
   const cardContainer = useRef();
   useEffect(() => {
     cardContainer.current.scrollIntoView();
@@ -22,7 +24,7 @@ export default function Modal({ cardID, pathContext }) {
         className="overlay"
       > 
       {pathContext !== `undefined` && typeof pathContext.name === 'string' ? 
-        <Router>
+        environmentUtil.isWindowDefined() && <Router>
           <GatsbyLink to="/about" />
         </Router> : 
         <Link to="/about" />
@@ -31,7 +33,9 @@ export default function Modal({ cardID, pathContext }) {
 
       <motion.div
         ref={cardContainer}
-        className="card-content-container open"
+        className={classnames("card-content-container open", {
+          "position-relative": typeof pathContext.name === 'string'
+        })}
         animate={{ opacity: 1 }}
         transition={{ duration: 2 }}
       >
