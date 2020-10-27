@@ -32,6 +32,16 @@
   margin: 0 auto;
 }
 
+
+.card-content-container:hover .details {
+  opacity: 1;
+  transform: translateY(-55px);
+}
+
+.card-content-container:hover .description {
+  transform: translateY(-50px);
+}
+
 .open .team-card-content {
   height: auto;
   pointer-events: none;
