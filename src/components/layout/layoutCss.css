@@ -72,6 +72,10 @@ footer {
     height: 45px;
   }
 
+  .main-content {
+    padding: 0% 8.3%;
+  }
+
   .column {
     --width-tablet: var(--width-mobile);
     --width: var(--width-tablet);

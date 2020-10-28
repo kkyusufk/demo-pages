@@ -37,12 +37,7 @@ const IndexPage = () => {
   return (
     <>
       <Div type={SIZES.L}>
-        <Heading
-          align={ALIGNMENT.LEFT}
-          innerHtml={HOME.headingOne}
-          width="970px"
-          justify="center"
-        />
+        <Heading innerHtml={HOME.headingOne} maxWidth="970px" />
       </Div>
       <Div type={SIZES.XL}>
         <Grid1>

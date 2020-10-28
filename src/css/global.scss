@@ -1,0 +1,74 @@
+@import './mixins.scss';
+@import './variables.scss';
+
+h1 {
+  font-family: $font-family-regular;
+  @include desktop {
+    font-size: 64px;
+    line-height: 110%;
+  }
+  
+  @include tablet {
+    font-size: 42px;
+    line-height: 110%;
+  }
+
+  @include mobile {
+    font-size: 30px;
+    line-height: 125%;
+  }
+}
+
+h2 {
+  font-family: $font-family-regular;
+  @include desktop {
+    font-size: 32px;
+    line-height: 140%;
+  }
+  
+  @include tablet {
+    font-size: 24px;
+    line-height: 140%;
+  }
+
+  @include mobile {
+    font-size: 20px;
+    line-height: 140%;
+  }
+}
+
+h3 {
+  font-family: $font-family-regular;
+  @include desktop {
+    font-size: 20px;
+    line-height: 180%;
+  }
+  
+  @include tablet {
+    font-size: 16px;
+    line-height: 110%;
+  }
+
+  @include mobile {
+    font-size: 14px;
+    line-height: 130%;
+  }
+}
+
+p {
+  font-family: $font-family-merriweather;
+  @include desktop {
+    font-size: 18px;
+    line-height: 180%;
+  }
+  
+  @include tablet {
+    font-size: 18px;
+    line-height: 180%;
+  }
+
+  @include mobile {
+    font-size: 14px;
+    line-height: 180%;
+  }
+}

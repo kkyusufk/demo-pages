@@ -9,6 +9,14 @@ import "../fonts.css";
 import "./portfolio.scss";
 import { motion } from "framer-motion";
 
+const titleHoverVariant = {
+  hover: {
+    textDecoration: "underline",
+    cursor: "pointer",
+    textDecorationSkipInk: "none",
+  },
+};
+
 const Portfolio = ({
   src,
   title,
@@ -19,20 +27,18 @@ const Portfolio = ({
   titleClass,
   subtitleClass,
 }) => {
-  const [hover, setHover] = useState(false);
   const { browserWidth } = useContext(GlobalContext);
   if (environmentUtil.isMobile(browserWidth)) {
     height = "325px";
     justify = "space-between";
   }
   return (
-    <motion.div 
-      className="portfolioContainer" 
+    <motion.div
+      className="portfolioContainer"
       style={{ width, height }}
-      whileHover={{ cursor: 'pointer' }}
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
-      >
+      whileHover="hover"
+      variants={{ hover: { cursor: "pointer" } }}
+    >
       <div className="portfolioContent" style={{ justifyContent: justify }}>
         <div>
           <img src={src} className="portfolioImage" width={width} />
@@ -41,7 +47,7 @@ const Portfolio = ({
           style={{ marginTop: !environmentUtil.isMobile(browserWidth) && 20 }}
         >
           <div className={classnames("portfolioTitle", `${titleClass}`)}>
-            <Title content={title} shouldHover={hover} />
+            <Title content={title} hover={titleHoverVariant} />
           </div>
           <div className={classnames("portfolioSubtitle", `${subtitleClass}`)}>
             <Subtitile content={subtitle} />

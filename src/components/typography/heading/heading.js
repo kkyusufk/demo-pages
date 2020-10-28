@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import React from "react";
 
-import "./heading.css";
+import "./heading.scss";
 
-const Heading = ({ innerHtml, align, justify, width = "100%", hover }) => {
+const Heading = ({ innerHtml, align, justify, maxWidth = "100%", hover }) => {
   const textArray = innerHtml.split("<br />");
   return (
     <div
@@ -11,7 +11,7 @@ const Heading = ({ innerHtml, align, justify, width = "100%", hover }) => {
       style={{
         textAlign: align,
         justifyContent: justify,
-        width,
+        maxWidth,
         display: "flex",
       }}
     >

@@ -52,10 +52,8 @@ li {
   list-style-type: none;
 }
 
-@media only screen 
-  and (min-width: 320px) 
-  and (max-width: 768px) {
-
+/* mobile breakpoints*/
+@media only screen and (max-width: 767px) {
   .nav-header {
     z-index: 3;
     position: fixed;
