@@ -111,12 +111,12 @@ const IndexPage = () => {
           }}
           className="nav-items"
         >
-            <Heading
-              align={ALIGNMENT.CENTER}
-              innerHtml={HOME.headingTwo}
-              justify="center"
-              hover={true}
-            />
+          <Heading
+            align={ALIGNMENT.CENTER}
+            innerHtml={HOME.headingTwo}
+            justify="center"
+            hover={true}
+          />
         </Link>
       </Div>
       <Div type={SIZES.XL}>
@@ -139,12 +139,12 @@ const IndexPage = () => {
           }}
           className="nav-items"
         >
-            <Heading
-              align={ALIGNMENT.CENTER}
-              innerHtml={HOME.headingFour}
-              justify="center"
-              hover={true}
-            />
+          <Heading
+            align={ALIGNMENT.CENTER}
+            innerHtml={HOME.headingFour}
+            justify="center"
+            hover={true}
+          />
         </Link>
       </Div>
       <Div type={SIZES.XXL}>

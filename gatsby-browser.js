@@ -8,26 +8,23 @@ const { team } = require("./src/data");
 exports.wrapPageElement = ({ element, props }) => {
   let ignoreLayout = false;
   const teamMembers = [];
-  team.forEach(member => teamMembers.push(`/about/${member.id}`))
-  teamMembers.forEach(member => {
+  team.forEach((member) => teamMembers.push(`/about/${member.id}`));
+  teamMembers.forEach((member) => {
     if (element.key && element.key.match(RegExp(member))) {
-      ignoreLayout = true
-    };
-  })
+      ignoreLayout = true;
+    }
+  });
   return (
     <>
-      {ignoreLayout ?
-      <div> 
-        {element}
-      </div> : 
-      <AnimateSharedLayout type="crossfade">
-        <Layout {...props}>
-          {element}
-        </Layout>
-      </AnimateSharedLayout>
-      }
+      {ignoreLayout ? (
+        <div>{element}</div>
+      ) : (
+        <AnimateSharedLayout type="crossfade">
+          <Layout {...props}>{element}</Layout>
+        </AnimateSharedLayout>
+      )}
     </>
-  )
+  );
 };
 
 exports.wrapRootElement = ({ element }) => {

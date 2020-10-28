@@ -22,12 +22,12 @@ const FooterLinks = ({ page, to = "" }) => {
         }}
         className="nav-items"
       >
-          <Heading
-            align={ALIGNMENT.CENTER}
-            innerHtml={DATA.FOOTER[page].headingTwo}
-            justify="center"
-            hover={true}
-          />
+        <Heading
+          align={ALIGNMENT.CENTER}
+          innerHtml={DATA.FOOTER[page].headingTwo}
+          justify="center"
+          hover={true}
+        />
       </Link>
     </div>
   );

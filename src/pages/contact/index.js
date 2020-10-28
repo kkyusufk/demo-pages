@@ -58,12 +58,12 @@ const Contact = () => {
             setCurrentPage(NAVITEMS.OURWORK);
           }}
         >
-            <Heading
-              align={ALIGNMENT.CENTER}
-              innerHtml={HOME.headingTwo}
-              justify="center"
-              hover={true}
-            />
+          <Heading
+            align={ALIGNMENT.CENTER}
+            innerHtml={HOME.headingTwo}
+            justify="center"
+            hover={true}
+          />
         </Link>
       </Div>
       <Div type={SIZES.XXL}>

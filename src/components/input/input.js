@@ -75,10 +75,10 @@ const InputEmail = () => {
           onClick={confirmationMessage}
           disabled={disabled}
           whileHover={{
-            textDecoration: 'underline',
-            textDecorationSkipInk: 'none',
-            color: 'black',
-            cursor: 'pointer'
+            textDecoration: "underline",
+            textDecorationSkipInk: "none",
+            color: "black",
+            cursor: "pointer",
           }}
         >
           Sign up &#x2192;

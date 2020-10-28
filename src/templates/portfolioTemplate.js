@@ -1,15 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { ContentAndImages } from "../components/contentAndImages/contentAndImages";
-import { SideBySide } from "../components/mediaComponents/sideBySide/sideBySide";
-import { SideScrollingImage } from "../components/mediaComponents/sideScrollingImage/sideScrollingImage";
+import { Heading } from "../components/typography/heading/heading";
+import { SubHeading } from "../components/typography/subHeading/subHeading";
+import { Image } from "../components/image/image";
 
 /**
  * The way this will work is this:
  * Data will come in an array like this. [ { id: 'ComponentId', ...data}, {...otherComponents} ]
  * I am adding a loop and pushing all components in an array called 'Components'.
- * Then in 'render', i am mapping over components and displaying the children.
+ * Then in 'render', I am mapping over components and displaying the children.
  * This way depending on the data which comes from backend, this page will update.
  */
 const PortfolioTemplate = ({ data = [] }) => {
@@ -19,18 +19,27 @@ const PortfolioTemplate = ({ data = [] }) => {
   const components = [];
   data.forEach((sections) => {
     switch (sections.id) {
-      case "Side-Scrolling-Image": {
-        components.push(<SideScrollingImage />);
-        break;
-      }
-      case "Side-by-Side": {
+      case "Hero-unit": {
         components.push(
-          <SideBySide source1={sections.src1} source2={sections.src2} />
+          <Heading innerHtml="Stockal" align="center" justify="center" />
+        );
+        components.push(
+          <SubHeading
+            innerHtml="Web Design for Fintech"
+            align="center"
+            justify="center"
+          />
         );
         break;
       }
-      case "Image+Content": {
-        components.push(<ContentAndImages />);
+      case "Width-defined-image": {
+        components.push(
+          <Image
+            src={sections.source}
+            width={sections.width}
+            height={sections.height}
+          />
+        );
         break;
       }
       default:
@@ -38,7 +47,13 @@ const PortfolioTemplate = ({ data = [] }) => {
     }
   });
   return (
-    <div style={{ backgroundColor: "blue" }}>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+      }}
+    >
       {/**
        *  Mapping over the array and displaying all the components
        */}

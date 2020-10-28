@@ -13,20 +13,23 @@ import { environmentUtil } from "../../utils/environmentUtil";
 const ContainerVariant = {
   initial: { y: 1000 },
   animate: (i) => ({ y: 0, transition: { duration: 1 } }),
-  exit:(i) => ({ 
-    y: "-100%", 
-    position: 'absolute',
-    transition: { 
-      duration: 1, 
-      from: -i
-    } 
+  exit: (i) => ({
+    y: "-100%",
+    position: "absolute",
+    transition: {
+      duration: 1,
+      from: -i,
+    },
   }),
 };
 
 const Layout = ({ location, children }) => {
   const { shouldAnimate } = useContext(GlobalContext);
   return (
-    <AnimatePresence exitBeforeEnter={!shouldAnimate} custom={environmentUtil.isWindowDefined() && window.scrollY}>
+    <AnimatePresence
+      exitBeforeEnter={!shouldAnimate}
+      custom={environmentUtil.isWindowDefined() && window.scrollY}
+    >
       <motion.div
         custom={environmentUtil.isWindowDefined() && window.scrollY}
         key={location.key}
@@ -39,28 +42,28 @@ const Layout = ({ location, children }) => {
         animate="animate"
         exit={shouldAnimate && "exit"}
       >
-          <header className="header column">
-            <div className="header-wrapper">
-              <div className="opposite-svg-header">
-                <Logo />
-              </div>
-              <NewNavbar />
-            </div>
-          </header>
-          <main
-            className="content column"
-            style={{
-              padding: `${isPortfolioDetails(location.pathname) && 0}`,
-            }}
-          >
-            <section className="main-content">{children}</section>
-          </main>
-          <footer className="footer column">
-            <div className="opposite-svg-footer">
+        <header className="header column">
+          <div className="header-wrapper">
+            <div className="opposite-svg-header">
               <Logo />
             </div>
-          </footer>
-          </motion.div>
+            <NewNavbar />
+          </div>
+        </header>
+        <main
+          className="content column"
+          style={{
+            padding: `${isPortfolioDetails(location.pathname) && 0}`,
+          }}
+        >
+          <section className="main-content">{children}</section>
+        </main>
+        <footer className="footer column">
+          <div className="opposite-svg-footer">
+            <Logo />
+          </div>
+        </footer>
+      </motion.div>
     </AnimatePresence>
   );
 };

@@ -1,12 +1,13 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import classnames from "classnames";
 import { Title } from "../typography/title/title";
 import { Subtitile } from "../typography/subtitle/subtitle";
 import { GlobalContext } from "../../context/navContext";
+import { environmentUtil } from "../../utils/environmentUtil";
 
 import "../fonts.css";
 import "./portfolio.scss";
-import { environmentUtil } from "../../utils/environmentUtil";
+import { motion } from "framer-motion";
 
 const Portfolio = ({
   src,
@@ -18,13 +19,20 @@ const Portfolio = ({
   titleClass,
   subtitleClass,
 }) => {
+  const [hover, setHover] = useState(false);
   const { browserWidth } = useContext(GlobalContext);
   if (environmentUtil.isMobile(browserWidth)) {
     height = "325px";
     justify = "space-between";
   }
   return (
-    <div className="portfolioContainer" style={{ width, height }}>
+    <motion.div 
+      className="portfolioContainer" 
+      style={{ width, height }}
+      whileHover={{ cursor: 'pointer' }}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+      >
       <div className="portfolioContent" style={{ justifyContent: justify }}>
         <div>
           <img src={src} className="portfolioImage" width={width} />
@@ -33,14 +41,14 @@ const Portfolio = ({
           style={{ marginTop: !environmentUtil.isMobile(browserWidth) && 20 }}
         >
           <div className={classnames("portfolioTitle", `${titleClass}`)}>
-            <Title content={title} />
+            <Title content={title} shouldHover={hover} />
           </div>
           <div className={classnames("portfolioSubtitle", `${subtitleClass}`)}>
             <Subtitile content={subtitle} />
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

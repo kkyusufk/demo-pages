@@ -5,7 +5,7 @@
  */
 
 // You can delete this file if you're not using it
-const path = require('path');
+const path = require("path");
 
 const team = [
   {
@@ -78,14 +78,14 @@ const team = [
 
 exports.onCreatePage = async ({ page, actions }) => {
   const { createPage } = actions;
-  team.map(member => {
+  team.map((member) => {
     createPage({
       path: `/about/${member.id}`,
       matchPath: `/about/${member.id}`,
       context: {
         name: member.name,
       },
-      component: path.resolve('src/components/modal/teamModal.js')
-    })
-  })
-}
+      component: path.resolve("src/components/modal/teamModal.js"),
+    });
+  });
+};

@@ -24,8 +24,10 @@ const OpeningCards = () => {
   };
 
   useEffect(() => {
-    cardContainerRef.current.addEventListener('scroll', () => console.log('dssds'))
-  })
+    cardContainerRef.current.addEventListener("scroll", () =>
+      console.log("dssds")
+    );
+  });
 
   return (
     <AnimateSharedLayout>

@@ -15,13 +15,48 @@ import { GlobalContext } from "../../context/navContext";
 
 // assuming data structure will be coming in this format
 let PortfolioDetails = [
-  { id: "Side-Scrolling-Image" },
+  { id: "Hero-unit" },
+  {
+    id: "Width-defined-image",
+    width: "1170px",
+    height: "500px",
+    source: "https://source.unsplash.com/WLUHO9A_xik/585x700",
+  },
+  { id: "Portfolio-content-paragraphs" },
+  {
+    id: "Width-defined-image",
+    width: "1320px",
+    height: "700px",
+    source: "https://source.unsplash.com/WLUHO9A_xik/585x700",
+  },
+  { id: "Portfolio-small-heading-and-content" },
+  { id: "Full-width-image" },
+  { id: "Width-defined-image", width: "1320px" },
   {
     id: "Side-by-Side",
     src1: "https://source.unsplash.com/WLUHO9A_xik/585x700",
     src2: "https://source.unsplash.com/WLUHO9A_xik/585x700",
   },
-  { id: "Image+Content" },
+  { id: "Width-defined-image", width: "1320px" },
+  { id: "Portfolio-small-heading-and-content" },
+  {
+    id: "Side-by-Side",
+    src1: "https://source.unsplash.com/WLUHO9A_xik/585x700",
+    src2: "https://source.unsplash.com/WLUHO9A_xik/585x700",
+  },
+  {
+    id: "Side-by-Side",
+    src1: "https://source.unsplash.com/WLUHO9A_xik/585x700",
+    src2: "https://source.unsplash.com/WLUHO9A_xik/585x700",
+  },
+  { id: "Width-defined-image", width: "1320px" },
+  {
+    id: "Side-by-Side",
+    src1: "https://source.unsplash.com/WLUHO9A_xik/585x700",
+    src2: "https://source.unsplash.com/WLUHO9A_xik/585x700",
+  },
+  { id: "Full-width-image" },
+  { id: "credits" },
 ];
 const Ourwork = () => {
   let data = portfolioData;
@@ -60,42 +95,42 @@ const Ourwork = () => {
         </div>
       </Div>
       <Div type={SIZES.XL}>
-      <AnimateSharedLayout>
-        <motion.div className="portfolio-grid">
-          <AnimatePresence>
-            {data.map((portfolio, index) => {
-              return (
-                <motion.div
-                  layout
-                  key={portfolio.id}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1, transition: { duration: 0.2 } }}
-                  exit={{ opacity: 0, transition: { duration: 0.2 } }}
-                >
-                  <Link
-                    to="/ourwork/portfolioDetails/"
-                    state={{ data: PortfolioDetails }}
-                    style={{
-                      color: "#333333",
-                      textDecoration: "none",
-                      textDecorationSkipInk: "none",
-                    }}
+        <AnimateSharedLayout>
+          <motion.div className="portfolio-grid">
+            <AnimatePresence>
+              {data.map((portfolio, index) => {
+                return (
+                  <motion.div
+                    layout
+                    key={portfolio.id}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1, transition: { duration: 0.2 } }}
+                    exit={{ opacity: 0, transition: { duration: 0.2 } }}
                   >
-                    <Portfolio
-                      src={portfolio.src}
-                      title={portfolio.title}
-                      subtitle={portfolio.subtitle}
-                      height="320px"
-                      justify="space-between"
-                      titleClass="portfolio-ourwork-title"
-                      subtitleClass="portfolio-ourwork-subtitle"
-                    />
-                  </Link>
-                </motion.div>
-              );
-            })}
-          </AnimatePresence>
-        </motion.div>
+                    <Link
+                      to="/ourwork/portfolioDetails/"
+                      state={{ data: PortfolioDetails }}
+                      style={{
+                        color: "#333333",
+                        textDecoration: "none",
+                        textDecorationSkipInk: "none",
+                      }}
+                    >
+                      <Portfolio
+                        src={portfolio.src}
+                        title={portfolio.title}
+                        subtitle={portfolio.subtitle}
+                        height="320px"
+                        justify="space-between"
+                        titleClass="portfolio-ourwork-title"
+                        subtitleClass="portfolio-ourwork-subtitle"
+                      />
+                    </Link>
+                  </motion.div>
+                );
+              })}
+            </AnimatePresence>
+          </motion.div>
         </AnimateSharedLayout>
       </Div>
       <Div type={SIZES.XXL}>

@@ -8,17 +8,24 @@ const Heading = ({ innerHtml, align, justify, width = "100%", hover }) => {
   return (
     <div
       className="heading"
-      style={{ textAlign: align, justifyContent: justify, width, display: 'flex' }}
+      style={{
+        textAlign: align,
+        justifyContent: justify,
+        width,
+        display: "flex",
+      }}
     >
-      <motion.h1 
-        className="heading-h1" 
+      <motion.h1
+        className="heading-h1"
         style={{ textAlign: align }}
-        whileHover={hover && { 
-          textDecoration: 'underline', 
-          cursor: 'pointer', 
-          textDecorationSkipInk: 'none' 
-         }}
-        >
+        whileHover={
+          hover && {
+            textDecoration: "underline",
+            cursor: "pointer",
+            textDecorationSkipInk: "none",
+          }
+        }
+      >
         {textArray[0]} <br /> {textArray[1]}
       </motion.h1>
     </div>
