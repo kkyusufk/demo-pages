@@ -28,7 +28,7 @@ export const portfolioData = [
   },
   {
     id: "kapiva",
-    type: "Branding",
+    type: "Brandings",
     src: portfolioImage1,
     title: "Kapiva",
     subtitle: "Brand Creation & Packaging",

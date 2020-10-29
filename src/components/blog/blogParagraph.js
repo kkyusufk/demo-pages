@@ -9,8 +9,8 @@ const style = {
   width: '770px'
 };
 
-const BlogParagraph = ({ text }) => {
-  return <p style={style}>{text}</p>;
+const BlogParagraph = ({ text, marginTop, color }) => {
+  return <p style={{ ...style, marginTop, color }}>{text}</p>;
 };
 
 export { BlogParagraph };

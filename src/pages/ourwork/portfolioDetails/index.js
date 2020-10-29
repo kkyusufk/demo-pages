@@ -3,9 +3,11 @@ import PropTypes from "prop-types";
 import { PortfolioTemplate } from "../../../templates/portfolioTemplate";
 import { Div } from "../../../components/Div/Div";
 import { Heading } from "../../../components/typography/heading/heading";
-import { SIZES } from "../../../constants";
+import { NAVITEMS, PAGES, SIZES } from "../../../constants";
 import { portfolioData } from "../../../data";
 import { Portfolio } from "../../../components/portfolio/portfolio";
+import { FooterLinks } from "../../../components/footer/footerLinks";
+import { SubHeading } from "../../../components/typography/subHeading/subHeading";
 
 const PortfolioDetails = ({ location }) => {
   const { state = {} } = location;
@@ -17,7 +19,7 @@ const PortfolioDetails = ({ location }) => {
         <Heading innerHtml="More projects like this" align="center" justify="center"/>
       </Div>
       <Div type={SIZES.L}>
-        <div className="portfolio-grid" style={{ height: '500px' }}>
+        <div className="portfolio-grid" style={{ height: '500px', padding: '0% 9.33%' }}>
           {portfolioData.filter(portfolio => portfolio.type === 'Branding').map((portfolio) => {
             return (
               <Portfolio
@@ -32,6 +34,12 @@ const PortfolioDetails = ({ location }) => {
             );
           })}
         </div>
+      </Div>
+      <Div type={SIZES.L}>
+        <SubHeading innerHtml="See More" justify="center" color="black"/>
+      </Div>
+      <Div type={SIZES.XL}>
+        <FooterLinks page={PAGES.HOME} to={NAVITEMS.CONTACT} />
       </Div>
     </>
   ) 
