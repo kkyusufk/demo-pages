@@ -39,6 +39,9 @@ h2 {
 
 h3 {
   font-family: $font-family-regular;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
   @include desktop {
     font-size: 20px;
     line-height: 180%;
@@ -52,6 +55,10 @@ h3 {
   @include mobile {
     font-size: 14px;
     line-height: 130%;
+  }
+
+  .bold {
+    font-family: $font-family-bold;
   }
 }
 

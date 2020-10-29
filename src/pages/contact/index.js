@@ -33,7 +33,7 @@ const Contact = () => {
         </div>
       </Div>
       <Div type={SIZES.XL}>
-        <div className="portfolio-grid">
+        <div className="portfolio-grid" style={{ width: "1440px" }}>
           {portfolioData.map((portfolio) => {
             return (
               <Portfolio

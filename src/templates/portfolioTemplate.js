@@ -4,6 +4,11 @@ import PropTypes from "prop-types";
 import { Heading } from "../components/typography/heading/heading";
 import { SubHeading } from "../components/typography/subHeading/subHeading";
 import { Image } from "../components/image/image";
+import { BlogParagraph } from "../components/blog/blogParagraph";
+import { SideBySide } from "../components/mediaComponents/sideBySide/sideBySide";
+import { Credits } from "../components/mediaComponents/credits/credits";
+import { Div } from "../components/Div/Div";
+import { SIZES } from "../constants";
 
 /**
  * The way this will work is this:
@@ -21,7 +26,9 @@ const PortfolioTemplate = ({ data = [] }) => {
     switch (sections.id) {
       case "Hero-unit": {
         components.push(
-          <Heading innerHtml="Stockal" align="center" justify="center" />
+          <Div type={SIZES.ML}>
+            <Heading innerHtml="Stockal" align="center" justify="center" />
+          </Div>
         );
         components.push(
           <SubHeading
@@ -41,6 +48,45 @@ const PortfolioTemplate = ({ data = [] }) => {
           />
         );
         break;
+      }
+      case "Portfolio-content-paragraphs": {
+        sections.content.forEach((content, index) => {
+          if (index === 0) {
+            components.push(
+                <BlogParagraph text={content}/>
+            )
+          } else {
+            components.push(
+              <BlogParagraph text={content}/>
+            )
+          }
+        });
+        break;
+      }
+      case "Full-width-image": {
+        components.push(
+          <Div type={SIZES.XL}>
+            <Image
+              src={sections.source}
+              width={sections.width}
+              height={sections.height}
+            />
+          </Div>
+        );
+        break;
+      }
+      case "Side-by-Side": {
+        components.push(
+          <Div type={SIZES.M}>
+            <SideBySide source1={sections.src1} source2={sections.src2} />
+          </Div>
+        )
+        break;
+      }
+      case "credits": {
+        components.push(
+            <Credits list={sections.credits} />
+        )
       }
       default:
         return null;

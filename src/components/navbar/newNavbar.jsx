@@ -1,5 +1,5 @@
 /** @jsx */
-import React, { useContext, useEffect, useRef } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 import { AnimateSharedLayout, motion, useCycle } from "framer-motion";
 import { Link } from "gatsby";
@@ -69,7 +69,7 @@ NavItems.propTypes = {
 
 /** @returns {React.FC} */
 const NewNavbar = () => {
-  const [isOpen, toggleOpen] = useCycle(false, true);
+  const [isOpen, toggleOpen] = useState(false);
   const {
     currentPage,
     setCurrentPage,
@@ -100,7 +100,7 @@ const NewNavbar = () => {
               key={nav}
               isSelected={currentPage === nav}
               onClick={() => {
-                toggleOpen();
+                toggleOpen(state => !state);
                 setShouldAnimate(false);
                 setCurrentPage(nav);
               }}
@@ -109,7 +109,7 @@ const NewNavbar = () => {
           );
         })}
       </motion.ul>
-      <Button className="hamburger" src={hamburger} onClick={toggleOpen} />
+      <Button className="hamburger" src={hamburger} onClick={() => toggleOpen(state => !state)} />
     </AnimateSharedLayout>
   );
 };
