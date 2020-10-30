@@ -18,7 +18,7 @@ const Career = () => (
     <Div type={SIZES.L}>
       <div className="careers-top-heading">
         <SemiBoldHeading innerHtml={CAREERS.headingOne} />
-        <Heading innerHtml={CAREERS.headingTwo} width="970px" />
+        <Heading innerHtml={CAREERS.headingTwo} maxWidth="970px" />
       </div>
     </Div>
     <Div type={SIZES.XL}>

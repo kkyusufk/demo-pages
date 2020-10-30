@@ -33,7 +33,7 @@ const Portfolio = ({
   return (
     <motion.div
       className="portfolioContainer"
-      style={{ width, height }}
+      style={{ maxWidth: width, height }}
       whileHover="hover"
       variants={{ hover: { cursor: "pointer" } }}
     >

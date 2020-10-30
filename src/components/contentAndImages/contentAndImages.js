@@ -25,10 +25,6 @@ const ContentAndImages = () => {
       </div>
       <Div type={SIZES.XL}>
         <div className="careers-image-with-content">
-          <img
-            src="https://source.unsplash.com/random"
-            className="careers-image-right-of-content"
-          />
           <div className="careers-content-left-of-image">
             <Heading innerHtml={CAREERS.headingSix} width="inherit" />
             <SubHeading
@@ -36,7 +32,11 @@ const ContentAndImages = () => {
               width="inherit"
               justify="center"
             />
-          </div>
+            </div>
+          <img
+            src="https://source.unsplash.com/random"
+            className="careers-image-right-of-content"
+          />
         </div>
       </Div>
       <Div type={SIZES.XL}>
