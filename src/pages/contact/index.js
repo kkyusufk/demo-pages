@@ -20,16 +20,12 @@ const Contact = () => {
       <Div type={SIZES.L}>
         <div className="about-top-heading">
           <SemiBoldHeading innerHtml={CONTACT.headingOne} />
-          <Heading
-            innerHtml={CONTACT.headingTwo}
-            width="970px"
-            align={ALIGNMENT.LEFT}
-          />
+          <Heading innerHtml={CONTACT.headingTwo} align={ALIGNMENT.LEFT} />
           <h2 className="heading-h2">
             To start a project, write to us at{" "}
             <u className="opposite-email">911@oppositehq.com</u>
           </h2>
-          <SubHeading innerHtml={CONTACT.headingThree} width="970px" />
+          <SubHeading innerHtml={CONTACT.headingThree} />
         </div>
       </Div>
       <Div type={SIZES.XL}>
@@ -41,9 +37,9 @@ const Contact = () => {
                 title={portfolio.title}
                 subtitle={portfolio.subtitle}
                 height="320px"
+                width="320px"
                 justify="space-between"
-                titleClass="portfolio-ourwork-title"
-                subtitleClass="portfolio-ourwork-subtitle"
+                heading="h3"
               />
             );
           })}

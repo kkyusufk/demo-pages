@@ -2,12 +2,12 @@
   display: grid;
   height: 100%;
   width: 100%;
-  grid-template-columns: repeat(3, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
   column-gap: 30px;
   row-gap: 30px;
 }
 
-@media only screen and (max-width: 700px) {
+/* @media only screen and (max-width: 700px) {
   .wrapper-grid {
     grid-template-columns: auto;
     row-gap: 15px;
@@ -15,4 +15,4 @@
     padding-right: 15px;
     padding-left: 15px;
   }
-}
+} */

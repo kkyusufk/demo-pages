@@ -9,7 +9,7 @@ import { SideBySide } from "../components/mediaComponents/sideBySide/sideBySide"
 import { Credits } from "../components/mediaComponents/credits/credits";
 import { Div } from "../components/Div/Div";
 import { SIZES } from "../constants";
-import './template.scss'
+import "./template.scss";
 
 /**
  * The way this will work is this:
@@ -54,23 +54,21 @@ const PortfolioTemplate = ({ data = [] }) => {
         sections.content.forEach((content, index) => {
           if (index === 0) {
             components.push(
-                <BlogParagraph text={content} marginTop="100px" color="white" />
-            )
+              <BlogParagraph text={content} marginTop="100px" color="white" />
+            );
           } else {
-            components.push(
-              <BlogParagraph text={content} color="white" />
-            )
+            components.push(<BlogParagraph text={content} color="white" />);
           }
         });
         break;
       }
       case "Full-width-image": {
         components.push(
-            <Image
-              src={sections.source}
-              width={sections.width}
-              height={sections.height}
-            />
+          <Image
+            src={sections.source}
+            width={sections.width}
+            height={sections.height}
+          />
         );
         break;
       }
@@ -79,13 +77,11 @@ const PortfolioTemplate = ({ data = [] }) => {
           <Div type={SIZES.M}>
             <SideBySide source1={sections.src1} source2={sections.src2} />
           </Div>
-        )
+        );
         break;
       }
       case "credits": {
-        components.push(
-            <Credits list={sections.credits} />
-        )
+        components.push(<Credits list={sections.credits} />);
       }
       default:
         return null;
@@ -99,7 +95,7 @@ const PortfolioTemplate = ({ data = [] }) => {
         flexDirection: "column",
         alignItems: "center",
         background: "linear-gradient(180deg, #F1F1F1 0 5%, #162B5F 5% 100%)",
-        paddingBottom: "100px"
+        paddingBottom: "100px",
       }}
     >
       {/**
@@ -109,9 +105,9 @@ const PortfolioTemplate = ({ data = [] }) => {
       {/**
        * additional stuff can be added below here which are unique to this page.
        */}
-       <div style={{ width: '770px' }}>
-        <h2 style={{ color: 'white' }}>See Website</h2>
-       </div>
+      <div style={{ width: "770px" }}>
+        <h2 style={{ color: "white" }}>See Website</h2>
+      </div>
     </div>
   );
 };

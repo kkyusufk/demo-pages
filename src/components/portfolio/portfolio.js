@@ -1,5 +1,4 @@
 import React, { useContext, useState } from "react";
-import classnames from "classnames";
 import { Title } from "../typography/title/title";
 import { Subtitile } from "../typography/subtitle/subtitle";
 import { GlobalContext } from "../../context/navContext";
@@ -24,8 +23,7 @@ const Portfolio = ({
   width,
   justify,
   height,
-  titleClass,
-  subtitleClass,
+  heading,
 }) => {
   const { browserWidth } = useContext(GlobalContext);
   if (environmentUtil.isMobile(browserWidth)) {
@@ -46,11 +44,15 @@ const Portfolio = ({
         <div
           style={{ marginTop: !environmentUtil.isMobile(browserWidth) && 20 }}
         >
-          <div className={classnames("portfolioTitle", `${titleClass}`)}>
-            <Title content={title} hover={titleHoverVariant} />
+          <div className="portfolioTitle">
+            <Title
+              content={title}
+              hover={titleHoverVariant}
+              heading={heading}
+            />
           </div>
-          <div className={classnames("portfolioSubtitle", `${subtitleClass}`)}>
-            <Subtitile content={subtitle} />
+          <div className="portfolioSubtitle">
+            <Subtitile content={subtitle} heading={heading} />
           </div>
         </div>
       </div>

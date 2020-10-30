@@ -6,7 +6,7 @@ const style = {
   fontWeight: 300,
   fontSize: "18px",
   lineHeight: "180%",
-  width: '770px'
+  width: "770px",
 };
 
 const BlogParagraph = ({ text, marginTop, color }) => {

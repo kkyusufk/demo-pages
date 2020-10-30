@@ -100,7 +100,7 @@ const NewNavbar = () => {
               key={nav}
               isSelected={currentPage === nav}
               onClick={() => {
-                toggleOpen(state => !state);
+                toggleOpen((state) => !state);
                 setShouldAnimate(false);
                 setCurrentPage(nav);
               }}
@@ -109,7 +109,11 @@ const NewNavbar = () => {
           );
         })}
       </motion.ul>
-      <Button className="hamburger" src={hamburger} onClick={() => toggleOpen(state => !state)} />
+      <Button
+        className="hamburger"
+        src={hamburger}
+        onClick={() => toggleOpen((state) => !state)}
+      />
     </AnimateSharedLayout>
   );
 };

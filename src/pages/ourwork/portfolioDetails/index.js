@@ -16,33 +16,42 @@ const PortfolioDetails = ({ location }) => {
     <>
       <PortfolioTemplate data={data} />
       <Div type={SIZES.XL}>
-        <Heading innerHtml="More projects like this" align="center" justify="center"/>
+        <Heading
+          innerHtml="More projects like this"
+          align="center"
+          justify="center"
+        />
       </Div>
       <Div type={SIZES.L}>
-        <div className="portfolio-grid" style={{ height: '500px', padding: '0% 9.33%' }}>
-          {portfolioData.filter(portfolio => portfolio.type === 'Branding').map((portfolio) => {
-            return (
-              <Portfolio
-                src={portfolio.src}
-                title={portfolio.title}
-                subtitle={portfolio.subtitle}
-                height="320px"
-                justify="space-between"
-                titleClass="portfolio-ourwork-title"
-                subtitleClass="portfolio-ourwork-subtitle"
-              />
-            );
-          })}
+        <div
+          className="portfolio-grid"
+          style={{ height: "500px", padding: "0% 9.33%" }}
+        >
+          {portfolioData
+            .filter((portfolio) => portfolio.type === "Branding")
+            .map((portfolio) => {
+              return (
+                <Portfolio
+                  src={portfolio.src}
+                  title={portfolio.title}
+                  subtitle={portfolio.subtitle}
+                  height="320px"
+                  justify="space-between"
+                  titleClass="portfolio-ourwork-title"
+                  subtitleClass="portfolio-ourwork-subtitle"
+                />
+              );
+            })}
         </div>
       </Div>
       <Div type={SIZES.L}>
-        <SubHeading innerHtml="See More" justify="center" color="black"/>
+        <SubHeading innerHtml="See More" justify="center" color="black" />
       </Div>
       <Div type={SIZES.XL}>
         <FooterLinks page={PAGES.HOME} to={NAVITEMS.CONTACT} />
       </Div>
     </>
-  ) 
+  );
 };
 
 PortfolioDetails.propTypes = {
