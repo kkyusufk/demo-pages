@@ -47,6 +47,7 @@ const Layout = ({ location, children }) => {
             <div className="opposite-svg-header">
               <Logo />
             </div>
+            <NewNavbar />
           </div>
         </header>
         <main
