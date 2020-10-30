@@ -14,6 +14,12 @@
   font-size: 32px;
 }
 
+@media only screen and (min-width: 780px) {
+  .nav-header {
+    clip-path: circle(2000px at 0px 0px) !important;
+  }
+}
+
  .nav-items {
   width: max-content;
   color: #333333;
