@@ -8,6 +8,7 @@ function Card({ id, name, description }) {
   return (
     <li className={`team-card`}>
       <motion.div
+        key={`card-content-conatainer-key-${id}`}
         className="card-content-container"
         layoutId={`card-content-container-${id}`}
       >
@@ -23,9 +24,6 @@ function Card({ id, name, description }) {
               <motion.h1
                 key={`name-${id}`}
                 layoutId={`card-name-${id}`}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0, transition: { duration: 2 } }}
               >
                 {name}
               </motion.h1>
@@ -38,11 +36,16 @@ function Card({ id, name, description }) {
               >
                 {description}
               </motion.h2>
+              <span
+                className="details"
+              >
+                <Link to={`/about/${id}`} className='card-open-link'/>
+                See details &#x2192;
+              </span>
             </AnimatePresence>
           </motion.div>
         </motion.div>
       </motion.div>
-      <Link to={`/about/${id}`} className={`card-open-link`} />
     </li>
   );
 }
