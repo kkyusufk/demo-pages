@@ -91,7 +91,6 @@ const NewNavbar = () => {
         <AnimateSharedLayout>
         <motion.ul
           className="nav-header"
-          custom={browserWidth}
           variants={sidebar}
           animate={isOpen ? "open" : "closed"}
         >

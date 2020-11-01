@@ -12,19 +12,22 @@ import { Portfolio } from "../../components/portfolio/portfolio";
 import { Footer } from "../../components/footer/footerCards";
 import { FooterLinks } from "../../components/footer/footerLinks";
 import { GlobalContext } from "../../context/navContext";
+import { environmentUtil } from "../../utils/environmentUtil";
 
 const Contact = () => {
-  const { setCurrentPage, setShouldAnimate } = useContext(GlobalContext);
+  const { setCurrentPage, setShouldAnimate, browserWidth } = useContext(GlobalContext);
   return (
     <>
       <Spacing marginTop={SIZES.L}>
         <div className="about-top-heading">
           <SemiBoldHeading innerHtml={CONTACT.headingOne} />
-          <Heading innerHtml={CONTACT.headingTwo} align={ALIGNMENT.LEFT} />
-          <h2 className="heading-h2">
+          <Heading 
+            innerHtml={ !environmentUtil.isMobile(browserWidth) ? CONTACT.headingTwo : CONTACT.headingFour} 
+            align={ALIGNMENT.LEFT} />
+          { !environmentUtil.isMobile(browserWidth) && <h2>
             To start a project, write to us at{" "}
             <u className="opposite-email">911@oppositehq.com</u>
-          </h2>
+          </h2>}
           <SubHeading innerHtml={CONTACT.headingThree} />
         </div>
       </Spacing>

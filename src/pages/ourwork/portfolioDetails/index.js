@@ -47,7 +47,7 @@ const PortfolioDetails = ({ location }) => {
       <Spacing marginTop={SIZES.L}>
         <SubHeading innerHtml="See More" justify="center" color="black" />
       </Spacing>
-      <Spacing type={SIZES.XL}>
+      <Spacing marginTop={SIZES.XL}>
         <FooterLinks page={PAGES.HOME} to={NAVITEMS.CONTACT} />
       </Spacing>
     </>

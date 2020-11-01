@@ -94,7 +94,7 @@ const PortfolioTemplate = ({ data = [] }) => {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        background: "linear-gradient(180deg, #F1F1F1 0 5%, #162B5F 5% 100%)",
+        //background: "linear-gradient(180deg, #F1F1F1 0 5%, #162B5F 5% 100%)",
         paddingBottom: "100px",
       }}
     >
@@ -105,9 +105,9 @@ const PortfolioTemplate = ({ data = [] }) => {
       {/**
        * additional stuff can be added below here which are unique to this page.
        */}
-      <div style={{ width: "770px" }}>
+      {/* <div style={{ width: "770px" }}>
         <h2 style={{ color: "white" }}>See Website</h2>
-      </div>
+      </div> */}
     </div>
   );
 };

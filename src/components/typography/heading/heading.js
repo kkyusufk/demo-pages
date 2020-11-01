@@ -26,7 +26,7 @@ const Heading = ({ innerHtml, align, justify, maxWidth = "100%", hover }) => {
           }
         }
       >
-        {textArray[0]} <br /> {textArray[1]}
+        { textArray.map( text => <> {text} <br /> </> ) }
       </motion.h1>
     </div>
   );

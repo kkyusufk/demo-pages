@@ -1,5 +1,5 @@
 /** @jsx */
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, { useContext } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import PropTypes from "prop-types";
 
@@ -12,24 +12,23 @@ import { environmentUtil } from "../../utils/environmentUtil";
 
 const ContainerVariant = {
   initial: { y: 1000 },
-  animate: (i) => ({ y: 0, transition: { duration: 1 } }),
+  animate: { y: 0 },
   exit: (i) => ({
     y: "-100%",
     position: "absolute",
     transition: {
-      duration: 1,
+      duration: 0.5,
       from: -i,
     },
   }),
 };
 
 const Layout = ({ location, children }) => {
-  const { shouldAnimate } = useContext(GlobalContext);
   return (
     <GlobalContext.Consumer>
       {(value) => (
         <AnimatePresence
-        exitBeforeEnter={!shouldAnimate}
+        exitBeforeEnter={!value.shouldAnimate}
         custom={environmentUtil.isWindowDefined() && window.scrollY}
       >
         <motion.div
@@ -39,10 +38,10 @@ const Layout = ({ location, children }) => {
             x: { type: "spring", stiffness: 300, damping: 200 },
           }}
           className="container"
-          variants={shouldAnimate && ContainerVariant}
+          variants={value.shouldAnimate && ContainerVariant}
           initial="initial"
           animate="animate"
-          exit={shouldAnimate && "exit"}
+          exit={value.shouldAnimate && "exit"}
         >
           <header className="header column">
             <div className="header-wrapper">

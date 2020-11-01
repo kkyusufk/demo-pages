@@ -8,11 +8,8 @@ import { Carousel } from "../carousel/carousel";
 import "./team-modal.scss";
 import { environmentUtil } from "../../utils/environmentUtil";
 
-export default function Modal({ cardID, pathContext = {} }) {
+export default function Modal({ cardID, pathContext = {}, location }) {
   const cardContainer = useRef();
-  useEffect(() => {
-    cardContainer.current.scrollIntoView();
-  });
   return (
     <>
       <motion.div
@@ -63,10 +60,6 @@ export default function Modal({ cardID, pathContext = {} }) {
             </motion.h1>
             <span
               className="description"
-              // layoutId={`modal-description-${cardID}`}
-              // initial={{ opacity: 0 }}
-              // animate={{ opacity: 1, transition: { duration: 1 } }}
-              // exit={{ opacity: 0, transition: { duration: 0.15 } }}
             >
               Founder & Creative Director
             </span>
