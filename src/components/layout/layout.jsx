@@ -13,32 +13,37 @@ import { environmentUtil } from "../../utils/environmentUtil";
 const ContainerVariant = {
   initial: { y: 1000 },
   animate: (i) => ({ y: 0, transition: { duration: 1 } }),
-  exit:(i) => ({ 
-    y: "-100%", 
-    position: 'absolute',
-    transition: { 
-      duration: 1, 
-      from: -i
-    } 
+  exit: (i) => ({
+    y: "-100%",
+    position: "absolute",
+    transition: {
+      duration: 1,
+      from: -i,
+    },
   }),
 };
 
 const Layout = ({ location, children }) => {
   const { shouldAnimate } = useContext(GlobalContext);
   return (
-    <AnimatePresence exitBeforeEnter={!shouldAnimate} custom={environmentUtil.isWindowDefined() && window.scrollY}>
-      <motion.div
+    <GlobalContext.Consumer>
+      {(value) => (
+        <AnimatePresence
+        exitBeforeEnter={!shouldAnimate}
         custom={environmentUtil.isWindowDefined() && window.scrollY}
-        key={location.key}
-        transition={{
-          x: { type: "spring", stiffness: 300, damping: 200 },
-        }}
-        className="container"
-        variants={shouldAnimate && ContainerVariant}
-        initial="initial"
-        animate="animate"
-        exit={shouldAnimate && "exit"}
       >
+        <motion.div
+          custom={environmentUtil.isWindowDefined() && window.scrollY}
+          key={location.key}
+          transition={{
+            x: { type: "spring", stiffness: 300, damping: 200 },
+          }}
+          className="container"
+          variants={shouldAnimate && ContainerVariant}
+          initial="initial"
+          animate="animate"
+          exit={shouldAnimate && "exit"}
+        >
           <header className="header column">
             <div className="header-wrapper">
               <div className="opposite-svg-header">
@@ -60,8 +65,10 @@ const Layout = ({ location, children }) => {
               <Logo />
             </div>
           </footer>
-          </motion.div>
-    </AnimatePresence>
+        </motion.div>
+      </AnimatePresence>
+      )}
+    </GlobalContext.Consumer>
   );
 };
 

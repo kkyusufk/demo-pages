@@ -21,7 +21,7 @@ import "./style.scss";
 import "../../components/fonts.css";
 import { Grid1 } from "../../components/grid/grid1";
 import { FooterLinks } from "../../components/footer/footerLinks";
-import { Div } from "../../components/Div/Div";
+import { Spacing } from "../../components/spacing/spacing";
 import { Carousel } from "../../components/carousel/framerCarousel/framerCarousel";
 import { environmentUtil } from "../../utils/environmentUtil";
 
@@ -36,20 +36,15 @@ const IndexPage = () => {
   }
   return (
     <>
-      <Div type={SIZES.L}>
-        <Heading
-          align={ALIGNMENT.LEFT}
-          innerHtml={HOME.headingOne}
-          width="970px"
-          justify="center"
-        />
-      </Div>
-      <Div type={SIZES.XL}>
+      <Spacing marginTop={SIZES.L}>
+        <Heading innerHtml={HOME.headingOne} maxWidth="970px" />
+      </Spacing>
+      <Spacing marginTop={SIZES.XL}>
         <Grid1>
           <Carousel />
         </Grid1>
-      </Div>
-      <Div type={SIZES["X-L"]}>
+      </Spacing>
+      <Spacing marginTop={SIZES["X-L"]}>
         <Grid2>
           <Portfolio
             width="540px"
@@ -68,8 +63,8 @@ const IndexPage = () => {
             subtitleClass="portfolio-home-subtitle"
           />
         </Grid2>
-      </Div>
-      <Div type={SIZES["X-L"]}>
+      </Spacing>
+      <Spacing marginTop={SIZES["X-L"]}>
         <Grid1>
           <Portfolio
             width="1170px"
@@ -80,8 +75,8 @@ const IndexPage = () => {
             subtitleClass="portfolio-home-subtitle"
           />
         </Grid1>
-      </Div>
-      <Div type={SIZES["X-L"]}>
+      </Spacing>
+      <Spacing marginTop={SIZES["X-L"]}>
         <Grid2>
           <Portfolio
             width="540px"
@@ -100,8 +95,8 @@ const IndexPage = () => {
             subtitleClass="portfolio-home-subtitle"
           />
         </Grid2>
-      </Div>
-      <Div type={SIZES.L}>
+      </Spacing>
+      <Spacing marginTop={SIZES.L}>
         <Link
           to="/ourwork/"
           onClick={() => {
@@ -111,20 +106,20 @@ const IndexPage = () => {
           }}
           className="nav-items"
         >
-            <Heading
-              align={ALIGNMENT.CENTER}
-              innerHtml={HOME.headingTwo}
-              justify="center"
-              hover={true}
-            />
+          <Heading
+            align={ALIGNMENT.CENTER}
+            innerHtml={HOME.headingTwo}
+            justify="center"
+            hover={true}
+          />
         </Link>
-      </Div>
-      <Div type={SIZES.XL}>
+      </Spacing>
+      <Spacing marginTop={SIZES.XL}>
         <Grid1>
           <img src={HomePageImage} />
         </Grid1>
-      </Div>
-      <Div type={SIZES.ML}>
+      </Spacing>
+      <Spacing marginTop={SIZES.ML}>
         <Heading
           align={ALIGNMENT.CENTER}
           innerHtml={HOME.headingThree}
@@ -139,20 +134,20 @@ const IndexPage = () => {
           }}
           className="nav-items"
         >
-            <Heading
-              align={ALIGNMENT.CENTER}
-              innerHtml={HOME.headingFour}
-              justify="center"
-              hover={true}
-            />
+          <Heading
+            align={ALIGNMENT.CENTER}
+            innerHtml={HOME.headingFour}
+            justify="center"
+            hover={true}
+          />
         </Link>
-      </Div>
-      <Div type={SIZES.XXL}>
+      </Spacing>
+      <Spacing marginTop={SIZES.XXL}>
         <Footer />
-      </Div>
-      <Div type={SIZES.XXL}>
+      </Spacing>
+      <Spacing marginTop={SIZES.XXL}>
         <FooterLinks page={PAGES.HOME} to={NAVITEMS.CONTACT} />
-      </Div>
+      </Spacing>
     </>
   );
 };

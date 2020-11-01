@@ -11,8 +11,7 @@ const SubHeading = ({
   const textArray = innerHtml.split("<br />");
   return (
     <h2
-      className="heading-h2"
-      style={{ width, justifyContent: justify, color }}
+      style={{ maxWidth: width, justifyContent: justify, color }}
     >
       {textArray[0]} <br /> {textArray[1]}
     </h2>

@@ -101,7 +101,7 @@ footer {
   .column {
     --width-desktop: var(--width-tablet);
     --width: var(--width-desktop);
-    padding: 0% 9.3% 0% 9.3%;
+    padding: 0% 9.3%;
   }
 }
 

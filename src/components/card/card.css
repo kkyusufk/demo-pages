@@ -5,7 +5,7 @@ h1,h2,h3,h4,h5,h6 {
 .card {
   font-family: 'Roobert-Regular';
   width: inherit;
-  height: inherit;
+  height: 100%;
   overflow: hidden;
   cursor: pointer;
   padding: 30px;
@@ -32,6 +32,7 @@ h1,h2,h3,h4,h5,h6 {
   justify-self: center;
   align-self: center;
   position: relative;
+  width: 100%;
   width: 370px;
   height: 470px;
   transition: 500ms ease-in-out;
@@ -39,14 +40,13 @@ h1,h2,h3,h4,h5,h6 {
   overflow: hidden;
 }
 
-@media only screen and (max-width: 700px) { 
+@media only screen and (max-width: 767px) { 
   .cardContainer {
-    justify-self: center;
-    width: inherit;
     height: 220px;
   }
   .card {
     padding: 20px;
+    width: 100%;
   }
   .cardContainer:hover {
     transform: translateY(0px);

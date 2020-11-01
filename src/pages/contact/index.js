@@ -5,7 +5,7 @@ import "./contact.scss";
 import { Heading } from "../../components/typography/heading/heading";
 import { SubHeading } from "../../components/typography/subHeading/subHeading";
 import { SemiBoldHeading } from "../../components/typography/semiBoldHeading/semiBoldHeading";
-import { Div } from "../../components/Div/Div";
+import { Spacing } from "../../components/spacing/spacing";
 import { CONTACT, HOME, portfolioData } from "../../data";
 import { ALIGNMENT, NAVITEMS, PAGES, SIZES } from "../../constants";
 import { Portfolio } from "../../components/portfolio/portfolio";
@@ -17,22 +17,18 @@ const Contact = () => {
   const { setCurrentPage, setShouldAnimate } = useContext(GlobalContext);
   return (
     <>
-      <Div type={SIZES.L}>
+      <Spacing marginTop={SIZES.L}>
         <div className="about-top-heading">
           <SemiBoldHeading innerHtml={CONTACT.headingOne} />
-          <Heading
-            innerHtml={CONTACT.headingTwo}
-            width="970px"
-            align={ALIGNMENT.LEFT}
-          />
+          <Heading innerHtml={CONTACT.headingTwo} align={ALIGNMENT.LEFT} />
           <h2 className="heading-h2">
             To start a project, write to us at{" "}
             <u className="opposite-email">911@oppositehq.com</u>
           </h2>
-          <SubHeading innerHtml={CONTACT.headingThree} width="970px" />
+          <SubHeading innerHtml={CONTACT.headingThree} />
         </div>
-      </Div>
-      <Div type={SIZES.XL}>
+      </Spacing>
+      <Spacing marginTop={SIZES.XL}>
         <div className="portfolio-grid">
           {portfolioData.map((portfolio) => {
             return (
@@ -41,15 +37,15 @@ const Contact = () => {
                 title={portfolio.title}
                 subtitle={portfolio.subtitle}
                 height="320px"
+                width="320px"
                 justify="space-between"
-                titleClass="portfolio-ourwork-title"
-                subtitleClass="portfolio-ourwork-subtitle"
+                heading="h3"
               />
             );
           })}
         </div>
-      </Div>
-      <Div type={SIZES.L}>
+      </Spacing>
+      <Spacing marginTop={SIZES.L}>
         <Link
           to="/ourwork/"
           className="nav-items"
@@ -58,20 +54,20 @@ const Contact = () => {
             setCurrentPage(NAVITEMS.OURWORK);
           }}
         >
-            <Heading
-              align={ALIGNMENT.CENTER}
-              innerHtml={HOME.headingTwo}
-              justify="center"
-              hover={true}
-            />
+          <Heading
+            align={ALIGNMENT.CENTER}
+            innerHtml={HOME.headingTwo}
+            justify="center"
+            hover={true}
+          />
         </Link>
-      </Div>
-      <Div type={SIZES.XXL}>
+      </Spacing>
+      <Spacing marginTop={SIZES.XXL}>
         <Footer />
-      </Div>
-      <Div type={SIZES.XXL}>
+      </Spacing>
+      <Spacing marginTop={SIZES.XXL}>
         <FooterLinks page={PAGES.CONTACT} to={NAVITEMS.ABOUT} />
-      </Div>
+      </Spacing>
     </>
   );
 };

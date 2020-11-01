@@ -20,20 +20,22 @@ function Card({ id, name, description }) {
             className="name-container"
             layoutId={`name-container-${id}`}
           >
-            <AnimatePresence>
-              <motion.span
+            <AnimatePresence exitBeforeEnter>
+              <motion.h1
                 key={`name-${id}`}
-                className="name"
                 layoutId={`card-name-${id}`}
               >
                 {name}
-              </motion.span>
-              <motion.span
-              className="description"
-              key={`description-${id}`}
+              </motion.h1>
+              <motion.h2
+                className="grey"
+                layoutId={`card-description-${id}`}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0, transition: { duration: 0.5 } }}
               >
                 {description}
-              </motion.span>
+              </motion.h2>
               <span
                 className="details"
               >

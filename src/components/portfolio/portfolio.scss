@@ -2,7 +2,6 @@
   justify-self: center;
   max-width: 1170px;
   max-height: 800px;
-  transition: transform 0.5s ease-in-out;
 }
 
 .portfolioContent {
@@ -18,19 +17,4 @@
 
 .portfolioSubtitle {
   font-family: 'Roobert-regular';
-}
-
-@media only screen and (max-width: 1440px) {
-  .portfolioContainer {
-    width: 100% !important;
-  }
-} 
-
-@media only screen and (max-width: 700px) {
-  .portfolioContainer {
-    justify-self: center;
-  }
-  .portfolioImage {
-    height: 255px;
-  }
 }

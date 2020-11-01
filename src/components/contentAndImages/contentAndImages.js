@@ -1,7 +1,7 @@
 import React from "react";
 import { SIZES } from "../../constants";
 import { CAREERS } from "../../data";
-import { Div } from "../Div/Div";
+import { Spacing } from "../spacing/spacing";
 import { Heading } from "../typography/heading/heading";
 import { SubHeading } from "../typography/subHeading/subHeading";
 import "./contentAndImages.scss";
@@ -23,12 +23,8 @@ const ContentAndImages = () => {
           className="careers-image-right-of-content"
         />
       </div>
-      <Div type={SIZES.XL}>
+      <Spacing marginTop={SIZES.XL}>
         <div className="careers-image-with-content">
-          <img
-            src="https://source.unsplash.com/random"
-            className="careers-image-right-of-content"
-          />
           <div className="careers-content-left-of-image">
             <Heading innerHtml={CAREERS.headingSix} width="inherit" />
             <SubHeading
@@ -36,10 +32,14 @@ const ContentAndImages = () => {
               width="inherit"
               justify="center"
             />
-          </div>
+            </div>
+          <img
+            src="https://source.unsplash.com/random"
+            className="careers-image-right-of-content"
+          />
         </div>
-      </Div>
-      <Div type={SIZES.XL}>
+      </Spacing>
+      <Spacing marginTop={SIZES.XL}>
         <div className="careers-image-with-content">
           <div className="careers-content-left-of-image">
             <Heading innerHtml={CAREERS.headingEight} width="inherit" />
@@ -54,7 +54,7 @@ const ContentAndImages = () => {
             className="careers-image-right-of-content"
           />
         </div>
-      </Div>
+      </Spacing>
     </>
   );
 };

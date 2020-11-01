@@ -54,8 +54,7 @@ export const SIZES = {
 };
 
 export const BREAKPOINTS = {
-  WIDESCREEN: 1200,
   DESKTOP: 992,
-  TABLET: 768,
-  MOBILE: 576,
+  TABLET: 991,
+  MOBILE: 767,
 };

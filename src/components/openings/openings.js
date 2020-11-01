@@ -24,8 +24,10 @@ const OpeningCards = () => {
   };
 
   useEffect(() => {
-    cardContainerRef.current.addEventListener('scroll', () => console.log('dssds'))
-  })
+    cardContainerRef.current.addEventListener("scroll", () =>
+      console.log("dssds")
+    );
+  });
 
   return (
     <AnimateSharedLayout>
@@ -52,11 +54,11 @@ const OpeningCards = () => {
                 state={data}
               >
                 <Card
-                  TopContent={() => <span className="name">{data.name}</span>}
+                  TopContent={() => <h1>{data.name}</h1>}
                   BottomContent={() => {
                     return (
                       <>
-                        <span className="description">{data.description}</span>
+                        <h2 className="grey">{data.description}</h2>
                         <span
                           className="details"
                           onClick={() => console.log("clicked")}

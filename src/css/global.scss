@@ -1,0 +1,94 @@
+@import './mixins.scss';
+@import './variables.scss';
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-family: $font-family-regular;
+  font-weight: 500;
+  @include desktop {
+    font-size: 64px;
+    line-height: 110%;
+  }
+  
+  @include tablet {
+    font-size: 42px;
+    line-height: 110%;
+  }
+
+  @include mobile {
+    font-size: 30px;
+    line-height: 125%;
+  }
+}
+
+h2 {
+  font-family: $font-family-regular;
+  font-weight: 400;
+  @include desktop {
+    font-size: 32px;
+    line-height: 140%;
+  }
+  
+  @include tablet {
+    font-size: 24px;
+    line-height: 140%;
+  }
+
+  @include mobile {
+    font-size: 20px;
+    line-height: 140%;
+  }
+
+  &.grey {
+    color: rgba(51, 51, 51, 0.5);
+  }
+}
+
+h3 {
+  font-family: $font-family-regular;
+  font-weight: 400;
+  @include desktop {
+    font-size: 20px;
+    line-height: 180%;
+  }
+  
+  @include tablet {
+    font-size: 16px;
+    line-height: 110%;
+  }
+
+  @include mobile {
+    font-size: 14px;
+    line-height: 130%;
+  }
+
+  &.alternative {
+    line-height: 140%;
+  }
+
+  &.bold {
+    font-family: $font-family-bold;
+  }
+}
+
+p {
+  font-family: $font-family-merriweather;
+  @include desktop {
+    font-size: 18px;
+    line-height: 180%;
+  }
+  
+  @include tablet {
+    font-size: 18px;
+    line-height: 180%;
+  }
+
+  @include mobile {
+    font-size: 14px;
+    line-height: 180%;
+  }
+}
