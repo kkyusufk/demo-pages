@@ -1,3 +1,5 @@
+@import '../../css/mixins.scss';
+
 .example-appear {
   opacity: 0.01;
   margin-top: 1000px;
@@ -42,7 +44,7 @@
   height: 570px;
   padding: 50px;
 
-  @media only screen and (max-width: 700px) {
+  @media only screen and (max-width: 767px) {
     padding: 20px;
   }
 }
@@ -57,7 +59,7 @@
   width: 100%;
 }
 
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 992px) {
   .about-content-left-of-carousel {
     width: 570px;
     position: relative;
@@ -71,6 +73,25 @@
   .about-carousel {
     height: 100%;
     width: 470px;
+  }
+}
+
+.content-carousel-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  @include mobile {
+    row-gap: 25px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .about-content-left-of-carousel {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    padding: 0px 10px 0px 0px;
   }
 }
 

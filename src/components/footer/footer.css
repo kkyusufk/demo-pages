@@ -2,6 +2,21 @@ body:hover .alwaysHover {
   transform: translateY(10px);
 }
 
+.footer-grid {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
+  column-gap: 30px;
+  row-gap: 30px;
+}
+
+@media only screen and (max-width: 767px) {
+  .footer-grid {
+    padding: 0px 15px;
+  }
+}
+
 .instagram {
   position: absolute;
   width: 100px;

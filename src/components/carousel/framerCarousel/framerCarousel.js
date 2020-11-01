@@ -53,7 +53,7 @@ const descriptionCardVariant = {
 
 const tabs = [1, 2, 3, 4];
 
-export const Carousel = ({ compact }) => {
+export const Carousel = React.memo(({ compact }) => {
   const [[page, direction], setPage] = useState([0, 0]);
   const [active, setActive] = useState(0);
 
@@ -195,7 +195,7 @@ export const Carousel = ({ compact }) => {
       </div>
     </div>
   );
-};
+});
 
 /**
  * Experimenting with distilling swipe offset and velocity into a single variable, so the

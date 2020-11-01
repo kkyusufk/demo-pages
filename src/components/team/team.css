@@ -14,6 +14,12 @@
   margin: 0;
 }
 
+@media only screen and (max-width: 767px) {
+  .card-list {
+    padding: 0px 15px;
+  }
+}
+
 .team-card {
   position: relative;
   height: 470px;

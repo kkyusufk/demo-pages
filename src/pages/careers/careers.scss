@@ -6,13 +6,6 @@
   @include top-heading;
 }
 
-.careers-top-heading {
-  @media only screen and (max-width: 767px) {
-    margin-left: 30px;
-    margin-right: 30px;
-  }
-}
-
 .careers-appear {
   opacity: 0.01;
   margin-top: 1000px;

@@ -1,6 +1,9 @@
 .semi-bold-heading-wrapper {
   width: 100%;
   display: flex;
+  @media only screen and (max-width: 767px) {
+    padding: 0px 30px;
+  }
 }
 
 .semi-bold-heading-h5 {
@@ -13,7 +16,7 @@
   letter-spacing: 0em;
   color: rgba(51, 51, 51, 0.35);
 
-  @media only screen and (max-width: 568px) {
+  @media only screen and (max-width: 767px) {
     font-size: 14px;
     line-height: 16px;
   }
