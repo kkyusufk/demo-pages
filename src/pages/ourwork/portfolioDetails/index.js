@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { PortfolioTemplate } from "../../../templates/portfolioTemplate";
-import { Div } from "../../../components/Div/Div";
+import { Spacing } from "../../../components/spacing/spacing";
 import { Heading } from "../../../components/typography/heading/heading";
 import { NAVITEMS, PAGES, SIZES } from "../../../constants";
 import { portfolioData } from "../../../data";
@@ -15,14 +15,14 @@ const PortfolioDetails = ({ location }) => {
   return (
     <>
       <PortfolioTemplate data={data} />
-      <Div type={SIZES.XL}>
+      <Spacing marginTop={SIZES.XL}>
         <Heading
           innerHtml="More projects like this"
           align="center"
           justify="center"
         />
-      </Div>
-      <Div type={SIZES.L}>
+      </Spacing>
+      <Spacing marginTop={SIZES.L}>
         <div
           className="portfolio-grid"
           style={{ height: "500px", padding: "0% 9.33%" }}
@@ -43,13 +43,13 @@ const PortfolioDetails = ({ location }) => {
               );
             })}
         </div>
-      </Div>
-      <Div type={SIZES.L}>
+      </Spacing>
+      <Spacing marginTop={SIZES.L}>
         <SubHeading innerHtml="See More" justify="center" color="black" />
-      </Div>
-      <Div type={SIZES.XL}>
+      </Spacing>
+      <Spacing type={SIZES.XL}>
         <FooterLinks page={PAGES.HOME} to={NAVITEMS.CONTACT} />
-      </Div>
+      </Spacing>
     </>
   );
 };

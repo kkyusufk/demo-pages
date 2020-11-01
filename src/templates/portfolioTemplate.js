@@ -7,7 +7,7 @@ import { Image } from "../components/image/image";
 import { BlogParagraph } from "../components/blog/blogParagraph";
 import { SideBySide } from "../components/mediaComponents/sideBySide/sideBySide";
 import { Credits } from "../components/mediaComponents/credits/credits";
-import { Div } from "../components/Div/Div";
+import { Spacing } from "../components/spacing/spacing";
 import { SIZES } from "../constants";
 import "./template.scss";
 
@@ -27,9 +27,9 @@ const PortfolioTemplate = ({ data = [] }) => {
     switch (sections.id) {
       case "Hero-unit": {
         components.push(
-          <Div type={SIZES.ML}>
+          <Spacing marginTop={SIZES.ML}>
             <Heading innerHtml="Stockal" align="center" justify="center" />
-          </Div>
+          </Spacing>
         );
         components.push(
           <SubHeading
@@ -74,9 +74,9 @@ const PortfolioTemplate = ({ data = [] }) => {
       }
       case "Side-by-Side": {
         components.push(
-          <Div type={SIZES.M}>
+          <Spacing marginTop={SIZES.M}>
             <SideBySide source1={sections.src1} source2={sections.src2} />
-          </Div>
+          </Spacing>
         );
         break;
       }

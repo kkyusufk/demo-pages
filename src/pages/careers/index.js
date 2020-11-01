@@ -10,38 +10,38 @@ import { ALIGNMENT, NAVITEMS, PAGES, SIZES } from "../../constants";
 import { OpeningCards } from "../../components/openings/openings";
 import { ContentAndImages } from "../../components/contentAndImages/contentAndImages";
 import { FooterLinks } from "../../components/footer/footerLinks";
-import { Div } from "../../components/Div/Div";
+import { Spacing } from "../../components/spacing/spacing";
 import { AnimateSharedLayout } from "framer-motion";
 
 const Career = () => (
   <Fragment>
-    <Div type={SIZES.L}>
+    <Spacing marginTop={SIZES.L}>
       <div className="careers-top-heading">
         <SemiBoldHeading innerHtml={CAREERS.headingOne} />
         <Heading innerHtml={CAREERS.headingTwo} maxWidth="970px" />
       </div>
-    </Div>
-    <Div type={SIZES.XL}>
+    </Spacing>
+    <Spacing marginTop={SIZES.XL}>
       <Grid1>
         <Carousel />
       </Grid1>
-    </Div>
-    <Div type={SIZES.XL}>
+    </Spacing>
+    <Spacing marginTop={SIZES.XL}>
       <Grid1>
         <Heading innerHtml={CAREERS.headingThree} align={ALIGNMENT.LEFT} />
       </Grid1>
-    </Div>
-    <Div type={SIZES.ML}>
+    </Spacing>
+    <Spacing marginTop={SIZES.ML}>
       <AnimateSharedLayout>
         <OpeningCards />
       </AnimateSharedLayout>
-    </Div>
-    <Div type={SIZES.XL}>
+    </Spacing>
+    <Spacing marginTop={SIZES.XL}>
       <ContentAndImages />
-    </Div>
-    <Div type={SIZES.XXL}>
+    </Spacing>
+    <Spacing marginTop={SIZES.XXL}>
       <FooterLinks page={PAGES.CAREERS} to={NAVITEMS.ABOUT} />
-    </Div>
+    </Spacing>
   </Fragment>
 );
 

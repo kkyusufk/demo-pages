@@ -11,7 +11,7 @@ import { Scrollable } from "../../components/scrollable/scrollable";
 import { Carousel } from "../../components/carousel/framerCarousel/framerCarousel";
 import { Team } from "../../components/team";
 import { ALIGNMENT, NAVITEMS, PAGES, SIZES } from "../../constants";
-import { Div } from "../../components/Div/Div";
+import { Spacing } from "../../components/spacing/spacing";
 import { Grid1 } from "../../components/grid/grid1";
 import { Grid2 } from "../../components/grid/grid2";
 import { FooterLinks } from "../../components/footer/footerLinks";
@@ -19,7 +19,7 @@ import { environmentUtil } from "../../utils/environmentUtil";
 
 const About = () => (
   <>
-    <Div type={SIZES.L}>
+    <Spacing marginTop={SIZES.L}>
       <div className="about-top-heading">
         <SemiBoldHeading innerHtml={"About Opposite"} />
         <Heading
@@ -29,21 +29,21 @@ const About = () => (
         />
         <SubHeading innerHtml={ABOUT.headingThree} width="970px" />
       </div>
-    </Div>
-    <Div type={SIZES.XL}>
+    </Spacing>
+    <Spacing marginTop={SIZES.XL}>
       <Grid1>
         <Scrollable />
       </Grid1>
-    </Div>
-    <Div type={SIZES.XXL}>
+    </Spacing>
+    <Spacing marginTop={SIZES.XXL}>
       <Heading
         innerHtml={ABOUT.headingFour}
         maxWidth="970px"
         align={ALIGNMENT.LEFT}
         justify="center"
       />
-    </Div>
-    <Div type={SIZES.L}>
+    </Spacing>
+    <Spacing marginTop={SIZES.L}>
       <div style={{
         display: 'flex',
         justifyContent: 'space-between',
@@ -57,15 +57,15 @@ const About = () => (
           <Carousel compact={true} />
         </div>
       </div>
-    </Div>
-    <Div type={SIZES.XXL}>
+    </Spacing>
+    <Spacing marginTop={SIZES.XXL}>
       <Heading
         innerHtml={ABOUT.headingSeven}
         align={ALIGNMENT.CENTER}
         justify="center"
       />
-    </Div>
-    <Div type={SIZES.L}>
+    </Spacing>
+    <Spacing marginTop={SIZES.L}>
       <Grid1>
         <div className="domain-content">
           <SubHeading
@@ -75,15 +75,15 @@ const About = () => (
           />
         </div>
       </Grid1>
-    </Div>
-    <Div type={SIZES.XL}>
+    </Spacing>
+    <Spacing marginTop={SIZES.XL}>
       <Heading
         innerHtml={ABOUT.headingNine}
         align={ALIGNMENT.CENTER}
         justify="center"
       />
-    </Div>
-    <Div type={SIZES.L}>
+    </Spacing>
+    <Spacing marginTop={SIZES.L}>
       <AnimateSharedLayout type="crossfade">
         {environmentUtil.isWindowDefined() && (
           <Router>
@@ -91,10 +91,10 @@ const About = () => (
           </Router>
         )}
       </AnimateSharedLayout>
-    </Div>
-    <Div type={SIZES.XXL}>
+    </Spacing>
+    <Spacing marginTop={SIZES.XXL}>
       <FooterLinks page={PAGES.ABOUT} to={NAVITEMS.CAREERS} />
-    </Div>
+    </Spacing>
   </>
 );
 

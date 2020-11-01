@@ -9,7 +9,7 @@ import { ALIGNMENT, NAVITEMS, PAGES, SIZES } from "../../constants";
 import { OURWORK, portfolioData } from "../../data";
 import { Filter } from "../../components/filter/filter";
 import { FooterLinks } from "../../components/footer/footerLinks";
-import { Div } from "../../components/Div/Div";
+import { Spacing } from "../../components/spacing/spacing";
 import { Link } from "gatsby";
 import { GlobalContext } from "../../context/navContext";
 
@@ -132,7 +132,7 @@ const Ourwork = () => {
 
   return (
     <>
-      <Div type={SIZES.L}>
+      <Spacing marginTop={SIZES.L}>
         <div className="about-top-heading">
           <SemiBoldHeading innerHtml={OURWORK.headingOne} />
           <Heading
@@ -144,8 +144,8 @@ const Ourwork = () => {
             <Filter active={active} toggleActive={toggleActive} />
           </div>
         </div>
-      </Div>
-      <Div type={SIZES.XL}>
+      </Spacing>
+      <Spacing marginTop={SIZES.XL}>
         <AnimateSharedLayout>
           <motion.div className="portfolio-grid">
             <AnimatePresence>
@@ -184,10 +184,10 @@ const Ourwork = () => {
             </AnimatePresence>
           </motion.div>
         </AnimateSharedLayout>
-      </Div>
-      <Div type={SIZES.XXL}>
+      </Spacing>
+      <Spacing marginTop={SIZES.XXL}>
         <FooterLinks page={PAGES.OURWORK} to={NAVITEMS.CONTACT} />
-      </Div>
+      </Spacing>
     </>
   );
 };

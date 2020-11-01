@@ -5,13 +5,13 @@ import { Blog } from "../../components/blog/blog";
 import { blogs } from "../../data";
 import { FooterLinks } from "../../components/footer/footerLinks";
 import { NAVITEMS, PAGES, SIZES } from "../../constants";
-import { Div } from "../../components/Div/Div";
+import { Spacing } from "../../components/spacing/spacing";
 import { Link } from "gatsby";
 
 const BlogPage = () => {
   return (
     <>
-      <Div type={SIZES.L}>
+      <Spacing marginTop={SIZES.L}>
         <div className="blogLayout">
           {blogs.map((blog) => {
             return (
@@ -33,10 +33,10 @@ const BlogPage = () => {
             );
           })}
         </div>
-      </Div>
-      <Div type={SIZES.XXL}>
+      </Spacing>
+      <Spacing marginTop={SIZES.XXL}>
         <FooterLinks page={PAGES.BLOG} to={NAVITEMS.ABOUT} />
-      </Div>
+      </Spacing>
     </>
   );
 };

@@ -6,30 +6,30 @@ import { GlobalContext } from "../../context/navContext";
 import { environmentUtil } from "../../utils/environmentUtil";
 
 /**
- * @TODO rename this to Spacings.js
+ * @returns {React.FC}
  */
-const Div = ({ children, type }) => {
+const Spacing = ({ children, marginTop, padding }) => {
   const spacingsDiv = useRef();
   const { browserWidth } = useContext(GlobalContext);
 
   useEffect(() => {
     const style = spacingsDiv.current.style;
     if (environmentUtil.isMobile(browserWidth)) {
-      style.setProperty('--margin-top', `${SPACING[type].Mobile}`)
+      style.setProperty('--margin-top', `${SPACING[marginTop].Mobile}`)
     }
     if (environmentUtil.isTablet(browserWidth)) {
-      style.setProperty('--margin-top', `${SPACING[type].Tablet}`)
+      style.setProperty('--margin-top', `${SPACING[marginTop].Tablet}`)
     }
     if (environmentUtil.isDesktop(browserWidth)) {
-      style.setProperty('--margin-top', `${SPACING[type].Desktop}`)
+      style.setProperty('--margin-top', `${SPACING[marginTop].Desktop}`)
     }
   }, [browserWidth]);
 
   return (
-    <div className="div-spacing" ref={spacingsDiv}>
+    <div className="div-spacing" ref={spacingsDiv} style={{ padding: `0px ${padding}` }}>
       {children}
     </div>
   );
 };
 
-export { Div };
+export { Spacing };

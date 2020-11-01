@@ -1,7 +1,7 @@
 import React from "react";
 import "./blogDetails.scss";
 import { Blog } from "../../../components/blog/blog";
-import { Div } from "../../../components/Div/Div";
+import { Spacing } from "../../../components/spacing/spacing";
 import { SIZES } from "../../../constants";
 import { BlogTemplate } from "../../../templates/blogTemplate";
 
@@ -32,9 +32,9 @@ const BlogDetails = ({ location = {} }) => {
         title={state.title}
         src={state.src}
       />
-      <Div type={SIZES.L}>
+      <Spacing marginTop={SIZES.L}>
         <BlogTemplate data={data} />
-      </Div>
+      </Spacing>
     </>
   );
 };

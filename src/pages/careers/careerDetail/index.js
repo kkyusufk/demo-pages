@@ -4,7 +4,7 @@ import "./careerDetails.scss";
 import { SemiBoldHeading } from "../../../components/typography/semiBoldHeading/semiBoldHeading";
 import { Heading } from "../../../components/typography/heading/heading";
 import { SubHeading } from "../../../components/typography/subHeading/subHeading";
-import { Div } from "../../../components/Div/Div";
+import { Spacing } from "../../../components/spacing/spacing";
 import { Grid1 } from "../../../components/grid/grid1";
 import { NAVITEMS, PAGES, SIZES } from "../../../constants";
 import { ContentAndImages } from "../../../components/contentAndImages/contentAndImages";
@@ -15,7 +15,7 @@ const CareerDetail = ({ location }) => {
   const { name = "", description = "", details = {} } = state;
   return (
     <>
-      <Div type={SIZES.ML}>
+      <Spacing marginTop={SIZES.ML}>
         <div className="career-details-heading-container">
           <div className="career-details-heading-card">
             <div className="career-details-heading">
@@ -25,8 +25,8 @@ const CareerDetail = ({ location }) => {
             <div className="career-details-downarrow">&#x2193;</div>
           </div>
         </div>
-      </Div>
-      <Div type={SIZES.L}>
+      </Spacing>
+      <Spacing marginTop={SIZES.L}>
         <div className="about-top-heading">
           <SemiBoldHeading innerHtml={details.headingOne} justify="center" />
           <div
@@ -62,8 +62,8 @@ const CareerDetail = ({ location }) => {
             <p className="crteria-heading">{details.criteriaFour}</p>
           </div>
         </div>
-      </Div>
-      <Div type={SIZES.XL}>
+      </Spacing>
+      <Spacing marginTop={SIZES.XL}>
         <img
           src="https://source.unsplash.com/random"
           style={{
@@ -71,8 +71,8 @@ const CareerDetail = ({ location }) => {
             paddingRight: "15px",
           }}
         />
-      </Div>
-      <Div type={SIZES.XL}>
+      </Spacing>
+      <Spacing marginTop={SIZES.XL}>
         <div className="about-top-heading">
           <SemiBoldHeading innerHtml={details.headingThree} justify="center" />
           <div
@@ -108,11 +108,11 @@ const CareerDetail = ({ location }) => {
             <p className="crteria-heading">{details.criteriaFour}</p>
           </div>
         </div>
-      </Div>
-      <Div type={SIZES.XXL}>
+      </Spacing>
+      <Spacing marginTop={SIZES.XXL}>
         <ContentAndImages />
-      </Div>
-      <Div type={SIZES.XXL}>
+      </Spacing>
+      <Spacing marginTop={SIZES.XXL}>
         <Grid1>
           <div className="footer-details">
             <div className="contact-us-card">
@@ -128,10 +128,10 @@ const CareerDetail = ({ location }) => {
             </div>
           </div>
         </Grid1>
-      </Div>
-      <Div type={SIZES.XL}>
+      </Spacing>
+      <Spacing marginTop={SIZES.XL}>
         <FooterLinks page={PAGES.CAREERS} to={NAVITEMS.ABOUT} />{" "}
-      </Div>
+      </Spacing>
     </>
   );
 };
