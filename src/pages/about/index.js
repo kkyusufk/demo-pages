@@ -24,7 +24,7 @@ const About = () => (
         <SemiBoldHeading innerHtml={"About Opposite"} />
         <Heading
           innerHtml={ABOUT.headingTwo}
-          width="970px"
+          maxWidth="970px"
           align={ALIGNMENT.LEFT}
         />
         <SubHeading innerHtml={ABOUT.headingThree} width="970px" />
@@ -38,13 +38,17 @@ const About = () => (
     <Div type={SIZES.XXL}>
       <Heading
         innerHtml={ABOUT.headingFour}
-        width="970px"
+        maxWidth="970px"
         align={ALIGNMENT.LEFT}
         justify="center"
       />
     </Div>
     <Div type={SIZES.L}>
-      <Grid2 columnGap="130px">
+      <div style={{
+        display: 'flex',
+        justifyContent: 'space-between',
+        flexWrap: 'wrap'
+      }}>
         <div className="about-content-left-of-carousel">
           <SubHeading innerHtml={ABOUT.headingFive} width="inherit" />
           <SubHeading innerHtml={ABOUT.headingSix} width="inherit" />
@@ -52,7 +56,7 @@ const About = () => (
         <div className="about-carousel">
           <Carousel compact={true} />
         </div>
-      </Grid2>
+      </div>
     </Div>
     <Div type={SIZES.XXL}>
       <Heading

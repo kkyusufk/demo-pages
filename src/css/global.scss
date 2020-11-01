@@ -8,6 +8,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-family: $font-family-regular;
+  font-weight: 500;
   @include desktop {
     font-size: 64px;
     line-height: 110%;
@@ -40,6 +41,10 @@ h2 {
   @include mobile {
     font-size: 20px;
     line-height: 140%;
+  }
+
+  &.grey {
+    color: rgba(51, 51, 51, 0.5);
   }
 }
 

@@ -72,10 +72,6 @@ footer {
     height: 45px;
   }
 
-  .main-content {
-    padding: 0% 8.3%;
-  }
-
   .column {
     --width-tablet: var(--width-mobile);
     --width: var(--width-tablet);
@@ -105,7 +101,7 @@ footer {
   .column {
     --width-desktop: var(--width-tablet);
     --width: var(--width-desktop);
-    padding: 0% 9.3% 0% 9.3%;
+    padding: 0% 9.3%;
   }
 }
 

@@ -1,32 +1,32 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState, useRef } from "react";
 
 import "./div-spacing.scss";
 import { SPACING } from "../../constants";
 import { GlobalContext } from "../../context/navContext";
+import { environmentUtil } from "../../utils/environmentUtil";
 
 /**
  * @TODO rename this to Spacings.js
  */
 const Div = ({ children, type }) => {
-  const [elSpacing, setElSpacing] = useState(SPACING[type].Desktop);
+  const spacingsDiv = useRef();
   const { browserWidth } = useContext(GlobalContext);
 
-  /**
-   * @Chris the other way to handle this is css media queries
-   */
   useEffect(() => {
-    const spacing = SPACING[type];
-    if (browserWidth >= 992) {
-      setElSpacing(spacing.Desktop);
-    } else if (browserWidth >= 768 && browserWidth <= 991) {
-      setElSpacing(spacing.Tablet);
-    } else if (browserWidth <= 767) {
-      setElSpacing(spacing.Mobile);
+    const style = spacingsDiv.current.style;
+    if (environmentUtil.isMobile(browserWidth)) {
+      style.setProperty('--margin-top', `${SPACING[type].Mobile}`)
+    }
+    if (environmentUtil.isTablet(browserWidth)) {
+      style.setProperty('--margin-top', `${SPACING[type].Tablet}`)
+    }
+    if (environmentUtil.isDesktop(browserWidth)) {
+      style.setProperty('--margin-top', `${SPACING[type].Desktop}`)
     }
   }, [browserWidth]);
 
   return (
-    <div className="div-spacing" style={{ marginTop: elSpacing }}>
+    <div className="div-spacing" ref={spacingsDiv}>
       {children}
     </div>
   );

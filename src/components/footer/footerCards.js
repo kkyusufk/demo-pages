@@ -8,17 +8,17 @@ import InstgramSvg from "../../Assets/icons/instagram.svg";
 import { InputEmail } from "../input/input";
 
 // TODO: Cleanup code (maybe handle things better)
-const TopContent1 = () => <span className="name">Join the team</span>;
+const TopContent1 = () => <h1>Join the team</h1>;
 const BottomContent1 = () => (
   <img src={InstgramSvg} className="instagram" alt="direction button" />
 );
 
 const TopContent2 = () => (
-  <span className="name">Quaterly updates from us via Email</span>
+  <h1>Quaterly updates from us via Email</h1>
 );
 const BottomContent2 = () => (
   <>
-    <span className="signUp hover-signUp">Sign up</span>
+    <h1 className="signUp hover-signUp">Sign up</h1>
   </>
 );
 

@@ -10,12 +10,17 @@
   padding-right: 15px;
   padding-left: 15px;
 
-  @media only screen and (min-width: 768px) {
+  @include desktop {
     position: relative;
     display: flex;
     flex-direction: row;
     column-gap: 30px;
     max-width: 1170px;
+  }
+
+  @include tablet {
+    display: flex;
+    flex-wrap: wrap;
   }
 }
 

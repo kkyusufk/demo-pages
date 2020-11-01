@@ -27,7 +27,6 @@ const Portfolio = ({
 }) => {
   const { browserWidth } = useContext(GlobalContext);
   if (environmentUtil.isMobile(browserWidth)) {
-    height = "325px";
     justify = "space-between";
   }
   return (

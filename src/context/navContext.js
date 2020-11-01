@@ -24,7 +24,7 @@ const Provider = memo(({ children }) => {
   );
 
   useEffect(() => {
-    window.addEventListener("resize", setBrowserWidth(window.innerWidth));
+    window.addEventListener("resize", () => setBrowserWidth(window.innerWidth));
   }, []);
 
   const value = useMemo(
@@ -37,7 +37,7 @@ const Provider = memo(({ children }) => {
       setCurrentPage,
       setScrollY,
     }),
-    [scrollY, currentPage]
+    [scrollY, currentPage, browserWidth]
   );
   return (
     <GlobalContext.Provider value={value}>{children}</GlobalContext.Provider>

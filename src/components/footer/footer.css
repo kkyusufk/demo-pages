@@ -42,9 +42,6 @@ body:hover .alwaysHover {
 }
 
 .signUp {
-  line-height: 1;
-  font-size: 64px;
-  font-weight: 500;
   text-decoration: underline;
   text-decoration-skip-ink: none;
   transition: all 0.3s ease-in-out;
@@ -72,12 +69,6 @@ body:hover .alwaysHover {
 
 .hoverableSignUp:hover {
   transform: translateX(10px);
-}
-
-@media only screen and (max-width: 767px) {
-  .signUp {
-    font-size: 32px;
-  }
 }
 
 @media only screen and (max-width: 700px) {

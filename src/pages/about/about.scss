@@ -52,6 +52,10 @@
   justify-content: space-between;
 }
 
+.about-carousel {
+  height: 100%;
+  width: 100%;
+}
 
 @media only screen and (min-width: 700px) {
   .about-content-left-of-carousel {
@@ -60,20 +64,16 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-self: end;
-    height: 460px;
+    align-self: center;
+    max-height: 460px;
   }
 
   .about-carousel {
-    height: 600px;
+    height: 100%;
     width: 470px;
   }
 }
 
 .about-top-heading {
   max-width: 1170px;
-}
-
-@media only screen and (max-width: 700px) {
-
 }

@@ -89,7 +89,6 @@ const NewNavbar = () => {
 
   return (
         <AnimateSharedLayout>
-        {console.log(browserWidth)}
         <motion.ul
           className="nav-header"
           custom={browserWidth}

@@ -4,12 +4,14 @@
   display: flex;
   column-gap: 130px;
   width: 100%;
+  flex-wrap: wrap;
 }
 
 .careers-content-left-of-image {
   display: flex;
   flex-direction: column;
   row-gap: 15px;
+  flex: 1;
   
   @media only screen and (min-width: 768px) {
     align-self: center;
@@ -18,15 +20,14 @@
 
 .careers-image-right-of-content {
   
+  @media only screen and (max-width: 767px) {
+    flex: 1;
+    max-width: 100%;
+    height: 100%;
+  }
+
   @media only screen and (min-width: 768px) {
     max-width: 570px;
     height: 720px;
-  }
-}
-
-/* alternate divs */
-@media only screen and (min-width: 768px) { 
-  div.div-spacing > div.careers-image-with-content:nth-of-type(even) {
-    flex-direction: row-reverse;
   }
 }

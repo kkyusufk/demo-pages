@@ -53,15 +53,14 @@ export default function Modal({ cardID, pathContext = {} }) {
             className="name-container"
             layoutId={`name-container-${cardID}`}
           >
-            <motion.span
-              className="name"
+            <motion.h1
               layoutId={`modal-name-${cardID}`}
               initial={false}
               animate={{ opacity: 1, transition: { duration: 1 } }}
               exit={{ opacity: 0, transition: { duration: 1 } }}
             >
               Abhisek Sarda
-            </motion.span>
+            </motion.h1>
             <motion.span
               className="description"
               layoutId={`modal-description-${cardID}`}

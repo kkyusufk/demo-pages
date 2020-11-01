@@ -1,4 +1,11 @@
+@import '../../css/mixins.scss';
+
+:root {
+  --margin-top: 200px;
+}
+
 .div-spacing {
   width: 100%;
   position: relative;
+  margin-top: var(--margin-top);
 }
