@@ -1,26 +1,5 @@
-.heading-h2 {
-  display: flex;
-  margin: 0; 
-  font-family: 'Roobert-Regular';
-  font-size: 32px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 45px;
-  letter-spacing: 0em;
-  text-align: left;
-}
-
-@media only screen and (max-width: 700px) {
-  .heading-h2 {
-    margin: 0;
-    width: 300px !important;
-    height: inherit;
-    font-family: 'Roobert-Regular';
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 28px;
-    letter-spacing: 0em;
-    text-align: left;
+@media only screen and (max-width: 767px) {
+  .sub-heading-container { 
+    padding: 0% 8.33%;
   }
 }

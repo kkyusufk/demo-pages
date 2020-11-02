@@ -14,6 +14,13 @@
   margin: 0;
 }
 
+@media only screen and (max-width: 767px) {
+  .card-list {
+    padding: 0% 4.1666%;
+    grid-template-columns: auto;
+  }
+}
+
 .team-card {
   position: relative;
   height: 470px;

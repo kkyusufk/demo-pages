@@ -1,16 +1,30 @@
-import React from "react";
+import React, { useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import { team } from "../../data";
 import "./team.css";
 
+const cardVariant = {
+  hover: { y: -100 },
+  initial: { y: 0 }
+}
+
+const detailsVariant = {
+  hover: { y: -70, opacity: 1 },
+  initial: { y: 0, opacity: 0 }
+}
+
 function Card({ id, name, description }) {
+  const cardRef = useRef();
   return (
     <li className={`team-card`}>
       <motion.div
+        initial="initial"
+        whileHover="hover"
         key={`card-content-conatainer-key-${id}`}
         className="card-content-container"
         layoutId={`card-content-container-${id}`}
+        ref={cardRef}
       >
         <motion.div
           className="team-card-content"
@@ -29,19 +43,24 @@ function Card({ id, name, description }) {
               </motion.h1>
               <motion.h2
                 className="grey"
+                key={`card-description-${id}`}
+                variants={cardVariant}
                 layoutId={`card-description-${id}`}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0, transition: { duration: 0.5 } }}
               >
                 {description}
               </motion.h2>
-              <span
+              <motion.span
                 className="details"
+                key={`card-details-${id}`}
+                variants={detailsVariant}
               >
-                <Link to={`/about/${id}`} className='card-open-link'/>
+                <Link 
+                  to={`/about/${id}`} 
+                  className='card-open-link'
+                  state={{ target: cardRef.current }}
+                  />
                 See details &#x2192;
-              </span>
+              </motion.span>
             </AnimatePresence>
           </motion.div>
         </motion.div>

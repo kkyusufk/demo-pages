@@ -53,7 +53,7 @@ const descriptionCardVariant = {
 
 const tabs = [1, 2, 3, 4];
 
-export const Carousel = ({ compact }) => {
+export const Carousel = React.memo(({ compact }) => {
   const [[page, direction], setPage] = useState([0, 0]);
   const [active, setActive] = useState(0);
 
@@ -138,24 +138,24 @@ export const Carousel = ({ compact }) => {
                 <AnimatePresence>
                   {index === active && (
                     <div key={index} id="contents">
-                      <motion.span
-                        className="imageTitle"
+                      <motion.h2
+                        className="line-120"
                         variants={descriptionCardVariant}
                         initial="initial"
                         animate="animate"
                         exit="exit"
                       >
                         {image.title}
-                      </motion.span>
-                      <motion.span
-                        className="imageSubTitle"
+                      </motion.h2>
+                      <motion.h2
+                        className="grey line-120"
                         variants={descriptionCardVariant}
                         initial="initial"
                         animate="animate"
                         exit="exit"
                       >
                         {image.subtitle}
-                      </motion.span>
+                      </motion.h2>
                     </div>
                   )}
                 </AnimatePresence>
@@ -195,7 +195,7 @@ export const Carousel = ({ compact }) => {
       </div>
     </div>
   );
-};
+});
 
 /**
  * Experimenting with distilling swipe offset and velocity into a single variable, so the

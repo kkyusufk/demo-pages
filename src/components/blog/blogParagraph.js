@@ -1,16 +1,9 @@
 import React from "react";
 
-const style = {
-  fontFamily: "Merriweather",
-  fontStyle: "normal",
-  fontWeight: 300,
-  fontSize: "18px",
-  lineHeight: "180%",
-  width: "770px",
-};
+import './blog.css'
 
 const BlogParagraph = ({ text, marginTop, color }) => {
-  return <p style={{ ...style, marginTop, color }}>{text}</p>;
+  return <p style={{ marginTop, color }} className="blog-paragraph">{text}</p>;
 };
 
 export { BlogParagraph };

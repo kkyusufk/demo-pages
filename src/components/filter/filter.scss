@@ -1,9 +1,15 @@
+@import '../../css/mixins.scss';
+
 .filter-container {
   max-width: 1170px;
   display: flex;
   column-gap: 10px;
   row-gap: 10px;
   flex-wrap: wrap;
+
+  @include mobile {
+    padding: 0% 8.33%;
+  }
 }
 
 .active-filter {

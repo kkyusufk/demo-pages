@@ -10,11 +10,13 @@ const SubHeading = ({
 }) => {
   const textArray = innerHtml.split("<br />");
   return (
-    <h2
-      style={{ maxWidth: width, justifyContent: justify, color }}
-    >
-      {textArray[0]} <br /> {textArray[1]}
-    </h2>
+    <div className="sub-heading-container">
+      <h2
+        style={{ display: 'flex', maxWidth: width, justifyContent: justify, color }}
+      >
+        {textArray[0]} <br /> {textArray[1]}
+      </h2>
+    </div>
   );
 };
 

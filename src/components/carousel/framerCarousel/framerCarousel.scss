@@ -1,3 +1,4 @@
+@import '../../../css/mixins.scss';
   
   .carousel-container {
     position: relative;
@@ -10,7 +11,7 @@
     padding: 0;
     display: flex;
 
-    @media only screen and (max-width: 768px) {
+    @include mobile{
       height: 330px;
     }
   }
@@ -32,7 +33,7 @@
     font-size: 18px;
     z-index: 2;
 
-    @media only screen and (max-width: 768px) {
+    @include mobile {
       visibility: hidden;
     }
   }

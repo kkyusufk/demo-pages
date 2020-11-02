@@ -2,7 +2,6 @@ import React from "react";
 
 import "./footer.css";
 import { Card } from "../card/card";
-import { Grid } from "../grid/grid";
 import { Reel } from "../reel/reel";
 import InstgramSvg from "../../Assets/icons/instagram.svg";
 import { InputEmail } from "../input/input";
@@ -43,7 +42,7 @@ export const BottomContent3 = () => (
 );
 
 const Footer = () => (
-  <Grid>
+  <div className="footer-grid">
     <Card BottomContent={BottomContent1} TopContent={TopContent1} />
     <Card BottomContent={BottomContent3} TopContent={TopContent3} />
     <Card
@@ -51,7 +50,7 @@ const Footer = () => (
       TopContent={TopContent2}
       HiddenContent={HiddenContent}
     />
-  </Grid>
+  </div>
 );
 
 export { Footer };
