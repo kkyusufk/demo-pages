@@ -13,7 +13,8 @@ body:hover .alwaysHover {
 
 @media only screen and (max-width: 767px) {
   .footer-grid {
-    padding: 0px 15px;
+    padding: 0% 4.166%;
+    grid-template-columns: auto;
   }
 }
 

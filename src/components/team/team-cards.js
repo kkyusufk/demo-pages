@@ -43,6 +43,7 @@ function Card({ id, name, description }) {
               </motion.h1>
               <motion.h2
                 className="grey"
+                key={`card-description-${id}`}
                 variants={cardVariant}
                 layoutId={`card-description-${id}`}
               >
@@ -50,6 +51,7 @@ function Card({ id, name, description }) {
               </motion.h2>
               <motion.span
                 className="details"
+                key={`card-details-${id}`}
                 variants={detailsVariant}
               >
                 <Link 

@@ -1,17 +1,10 @@
 import React from "react";
 
+import './credits.scss';
+
 const Credits = ({ list }) => {
   return (
-    <div
-      style={{
-        display: "flex",
-        flexWrap: "wrap",
-        rowGap: "50px",
-        width: "770px",
-        marginTop: "100px",
-        color: "white",
-      }}
-    >
+    <div className="credits-container">
       {list.map((section) => {
         return (
           <div

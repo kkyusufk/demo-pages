@@ -12,7 +12,7 @@ const SubHeading = ({
   return (
     <div className="sub-heading-container">
       <h2
-        style={{ maxWidth: width, justifyContent: justify, color }}
+        style={{ display: 'flex', maxWidth: width, justifyContent: justify, color }}
       >
         {textArray[0]} <br /> {textArray[1]}
       </h2>

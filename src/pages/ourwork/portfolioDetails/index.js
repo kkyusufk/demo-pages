@@ -9,6 +9,9 @@ import { Portfolio } from "../../../components/portfolio/portfolio";
 import { FooterLinks } from "../../../components/footer/footerLinks";
 import { SubHeading } from "../../../components/typography/subHeading/subHeading";
 
+import '../ourwork.scss'
+import { Link } from "gatsby";
+
 const PortfolioDetails = ({ location }) => {
   const { state = {} } = location;
   const { data = [] } = state;
@@ -23,26 +26,42 @@ const PortfolioDetails = ({ location }) => {
         />
       </Spacing>
       <Spacing marginTop={SIZES.L}>
-        <div
-          className="portfolio-grid"
-          style={{ height: "500px", padding: "0% 9.33%" }}
-        >
-          {portfolioData
-            .filter((portfolio) => portfolio.type === "Branding")
-            .map((portfolio) => {
-              return (
+        <div style={{ maxWidth: '1170px', margin: '0 auto' }}>
+      <div className="portfolio-grid">
+        {portfolioData.map((portfolio, index) => {
+          return (
+            <div
+              layout
+              style={{ justifySelf: "center" }}
+              key={portfolio.id}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1, transition: { duration: 0.2 } }}
+              exit={{ opacity: 0, transition: { duration: 0.2 } }}
+            >
+              <Link
+                to="/ourwork/portfolioDetails/"
+                state={{ data: PortfolioDetails }}
+                style={{
+                  color: "#333333",
+                  textDecoration: "none",
+                  textDecorationSkipInk: "none",
+                }}
+              >
                 <Portfolio
                   src={portfolio.src}
                   title={portfolio.title}
                   subtitle={portfolio.subtitle}
                   height="320px"
+                  width="320px"
                   justify="space-between"
-                  titleClass="portfolio-ourwork-title"
-                  subtitleClass="portfolio-ourwork-subtitle"
+                  heading="h3"
                 />
-              );
-            })}
-        </div>
+              </Link>
+            </div>
+          );
+        })}
+      </div>
+      </div>
       </Spacing>
       <Spacing marginTop={SIZES.L}>
         <SubHeading innerHtml="See More" justify="center" color="black" />

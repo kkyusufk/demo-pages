@@ -60,3 +60,13 @@
     padding-right: 30px;
   }
 }
+
+.blog-paragraph {
+  max-width: 770px;
+}
+
+@media only screen and (max-width: 768px) {
+  .blog-paragraph {
+    padding: 0% 8.33%;
+  }
+}
