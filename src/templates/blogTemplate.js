@@ -20,7 +20,7 @@ const BlogTemplate = ({ data }) => {
   data.forEach((section) => {
     switch (section.id) {
       case "Blog-Text": {
-        components.push(<BlogParagraph text={section.text} />);
+        components.push(<BlogParagraph text={section.text} center={true} />);
         break;
       }
       case "Blog-Quotes": {

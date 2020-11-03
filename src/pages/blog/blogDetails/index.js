@@ -26,12 +26,14 @@ const BlogDetails = ({ location = {} }) => {
   const { state = {} } = location;
   return (
     <>
-      <Blog
-        author={state.author}
-        date={state.date}
-        title={state.title}
-        src={state.src}
-      />
+      <Spacing marginTop={SIZES.L}>
+        <Blog
+          author={state.author}
+          date={state.date}
+          title={state.title}
+          src={state.src}
+        />
+      </Spacing>
       <Spacing marginTop={SIZES.L}>
         <BlogTemplate data={data} />
       </Spacing>
