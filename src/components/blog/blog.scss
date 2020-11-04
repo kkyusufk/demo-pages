@@ -56,3 +56,54 @@
     padding: 0% 8.33%;
   }
 }
+
+// shareIt 
+.share-it-container {
+  height: 280px;
+  max-width: 970px;
+  margin: 0 auto;
+  @include mobile {
+    height: 160px;
+    padding: 0% 4.166%;
+  }
+}
+
+.share-it-content {
+  background: #ffffff;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 20px;
+
+  @include mobile {
+    row-gap: 15px;
+  }
+}
+
+.share-it-container-toast {
+  height: 60px;
+  position: fixed;
+  bottom: 20px;
+  width: 81.5%;
+  max-width: 100%;
+  padding-left: 8.56%;
+  padding-right: 8.56%;
+
+  @include mobile {
+    height: 40px;
+    width: 100vw;
+  }
+}
+
+.share-it-content-toast {
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0px 20px;
+
+  @include mobile {
+    padding: 0px 10px;
+  }
+}

@@ -9,10 +9,18 @@ import { Grid1 } from "../../../components/grid/grid1";
 import { NAVITEMS, PAGES, SIZES } from "../../../constants";
 import { ContentAndImages } from "../../../components/contentAndImages/contentAndImages";
 import { FooterLinks } from "../../../components/footer/footerLinks";
+import { openings } from "../../../data";
 
 const CareerDetail = ({ location }) => {
-  const { state = {} } = location;
-  const { name = "", description = "", details = {} } = state;
+  console.log(location)
+  if (location.state === null) {
+    location.state = openings[1];
+  }
+  const { 
+    name, 
+    description, 
+    details 
+  } = location.state;
   return (
     <>
       <Spacing marginTop={SIZES.ML}>
