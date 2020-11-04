@@ -19,7 +19,7 @@ const CareerDetail = ({ location }) => {
   const { 
     name, 
     description, 
-    details 
+    details = {} 
   } = state;
   return (
     <>
