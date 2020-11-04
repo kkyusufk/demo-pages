@@ -12,15 +12,15 @@ import { FooterLinks } from "../../../components/footer/footerLinks";
 import { openings } from "../../../data";
 
 const CareerDetail = ({ location }) => {
-  console.log(location)
   if (location.state === null) {
     location.state = openings[1];
   }
+  const { state = {} } = location;
   const { 
     name, 
     description, 
     details 
-  } = location.state;
+  } = state;
   return (
     <>
       <Spacing marginTop={SIZES.ML}>
