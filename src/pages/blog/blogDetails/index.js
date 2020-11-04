@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./blogDetails.scss";
 import { Blog } from "../../../components/blog/blog";
 import { Spacing } from "../../../components/spacing/spacing";
 import { SIZES } from "../../../constants";
 import { BlogTemplate } from "../../../templates/blogTemplate";
+import { ShareIt } from "../../../components/blog/shareIt";
 
 const data = [
   {
@@ -23,18 +24,32 @@ const data = [
 ];
 
 const BlogDetails = ({ location = {} }) => {
+  const [showshareIt, setState] = useState(true);
+  const compactShareIt = useRef();
   const { state = {} } = location;
+
+  useEffect(() => {
+    console.log(compactShareIt)
+  })
   return (
     <>
-      <Blog
-        author={state.author}
-        date={state.date}
-        title={state.title}
-        src={state.src}
-      />
+      <Spacing marginTop={SIZES.L}>
+        <Blog
+          author={state.author}
+          date={state.date}
+          title={state.title}
+          src={state.src}
+        />
+      </Spacing>
       <Spacing marginTop={SIZES.L}>
         <BlogTemplate data={data} />
       </Spacing>
+      <Spacing marginTop={SIZES.XL}>
+        <ShareIt />
+      </Spacing>
+      <div style={{ position: 'fixed' }}>
+        {showshareIt && <ShareIt toast={true} ref={compactShareIt} />}
+      </div>
     </>
   );
 };

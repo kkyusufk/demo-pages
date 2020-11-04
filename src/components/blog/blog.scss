@@ -1,0 +1,109 @@
+@import '../../css/mixins.scss';
+
+.blog-title {
+  width: 70%;
+  @include mobile {
+    width: 100%;
+  }
+}
+
+.blog-header {
+  @include mobile {
+    padding: 0% 8.3%;
+  }
+}
+
+.blog {
+  display: flex;
+  flex-direction: column;
+  row-gap: 50px;
+
+  @include mobile {
+    row-gap: 25px;
+  }
+}
+
+:root::-webkit-scrollbar {
+  display: none;
+  font-family: 'Roobert-Regular';
+}
+
+.blogContainer {
+  margin: 0 auto;
+  max-width: 970px;
+
+  @include mobile {
+    width: 100%;
+  }
+}
+
+.imageContainer {
+  max-width: 1130px; 
+  max-height: 440px;
+  overflow: hidden;
+
+  @include mobile {
+    padding: 0% 4.166%;
+  }
+}
+
+.blog-paragraph {
+  max-width: 770px;
+}
+
+@media only screen and (max-width: 768px) {
+  .blog-paragraph {
+    padding: 0% 8.33%;
+  }
+}
+
+// shareIt 
+.share-it-container {
+  height: 280px;
+  max-width: 970px;
+  margin: 0 auto;
+  @include mobile {
+    height: 160px;
+    padding: 0% 4.166%;
+  }
+}
+
+.share-it-content {
+  background: #ffffff;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 20px;
+
+  @include mobile {
+    row-gap: 15px;
+  }
+}
+
+.share-it-container-toast {
+  height: 60px;
+  position: fixed;
+  bottom: 20px;
+  width: 81.5%;
+  max-width: 100%;
+  padding-left: 8.56%;
+  padding-right: 8.56%;
+
+  @include mobile {
+    height: 40px;
+    width: 100vw;
+  }
+}
+
+.share-it-content-toast {
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0px 20px;
+
+  @include mobile {
+    padding: 0px 10px;
+  }
+}

@@ -17,23 +17,22 @@
 .career-details-heading {
   position: relative;
   padding-top: 20px;
-  padding-left: 20px;
 
-  @media only screen and (min-width: 1100px) {
+  @media only screen and (min-width: 768px) {
     padding-top: 50px;
     padding-left: 50px;
   }
 }
 
 .careers-criteria-container {
-  width: 100vw;
   display: flex;
   flex-direction: column;
   row-gap: 30px;
   padding-left: 15px;
   padding-right: 15px;
+  margin-top: 75px;
 
-  @media only screen and (min-width: '1100px') {
+  @media only screen and (min-width: '992px') {
     max-width: 1170px;
   }
 }
@@ -43,9 +42,8 @@
   flex-direction: row;
   width: 100%;
 
-  @media only screen and (min-width: '1100px') {
-    width: 670px;
-    justify-content: space-between;
+  @media only screen and (min-width: '992px') {
+    max-width: 670px;
     align-self: center;
   }
 
@@ -58,7 +56,7 @@
   font-family: 'Roobert-Regular';
   font-size: 50px;
 
-  @media only screen and (min-width: 1100px) {
+  @media only screen and (min-width: 992px) {
     right: 50px;
     bottom: 50px;
     font-size: 70px;
@@ -69,7 +67,7 @@
   width: 25px;
   height: 25px;
 
-  @media only screem and (min-width: 1100px) {
+  @media only screem and (min-width: 992px) {
     width: 32px;
     height: 32px;
   }
@@ -78,31 +76,17 @@
 .crteria-heading {
   min-width: 290px;
   margin: 0;
-  font-family: 'Merriweather';
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 300;
-  line-height: 25px;
-  
-  @media only screen and (min-width: 1100px) {
-    font-size: 18px;
-    line-height: 32px;
+
+  @media only screen and (max-width: 767px) {
+    min-width: 100%;
   }
 }
 
 .career-details-criteria-heading {
   text-align: center;
-  font-family: 'Roobert-Regular';
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 28px;
-  letter-spacing: 0em;
 
-  @media only screen and (min-width: 1100px) {
+  @media only screen and (min-width: 992px) {
     max-width: 770px;
-    font-size: 32px;
-    line-height: 45px;
   }
 }
 

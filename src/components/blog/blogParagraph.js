@@ -1,9 +1,9 @@
 import React from "react";
 
-import './blog.css'
+import './blog.scss'
 
-const BlogParagraph = ({ text, marginTop, color }) => {
-  return <p style={{ marginTop, color }} className="blog-paragraph">{text}</p>;
+const BlogParagraph = ({ text, marginTop, color, center }) => {
+  return <p style={{ marginTop, color, margin: `${center && '0 auto'}` }} className="blog-paragraph">{text}</p>;
 };
 
 export { BlogParagraph };

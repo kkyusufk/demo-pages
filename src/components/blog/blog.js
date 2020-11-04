@@ -1,15 +1,15 @@
 import React from "react";
 
-import "./blog.css";
+import "./blog.scss";
 
 const Blog = ({ author, date, title, src }) => {
   return (
     <div className="blogContainer">
       <div className="blog">
-        <div className="blog_author">
-          <span>{author}</span> / <span>{date}</span>
+        <div className="blog-header">
+          <h2 className="grey">{author} / {date}</h2>
+          <h1 className="blog-title">{title}</h1>
         </div>
-        <div className="blog_title">{title}</div>
         <div className="imageContainer">
           <img src={src} />
         </div>
