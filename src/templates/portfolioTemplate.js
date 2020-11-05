@@ -10,6 +10,7 @@ import { Credits } from "../components/mediaComponents/credits/credits";
 import { Spacing } from "../components/spacing/spacing";
 import { SIZES } from "../constants";
 import "./template.scss";
+import { HeadingAndContent } from "../components/mediaComponents/headingAndContent/headingAndContent";
 
 /**
  * The way this will work is this:
@@ -38,6 +39,14 @@ const PortfolioTemplate = ({ data = [] }) => {
             justify="center"
           />
         );
+        break;
+      }
+      case "Portfolio-small-heading-and-content": {
+        components.push(
+          <Spacing marginTop={SIZES.XL}>
+            <HeadingAndContent heading={sections.heading} content={sections.content} color={'white'}/>
+          </Spacing>
+        )
         break;
       }
       case "Width-defined-image": {

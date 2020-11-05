@@ -112,7 +112,7 @@ let PortfolioDetails = [
 const Ourwork = () => {
   let data = portfolioData;
   const [active, setActive] = useState([]);
-  const { shouldAnimate } = useContext(GlobalContext);
+  const { shouldAnimate, setCurrentPage } = useContext(GlobalContext);
 
   const toggleActive = (filter) => {
     setActive((prevState) => {
@@ -162,6 +162,7 @@ const Ourwork = () => {
                     <Link
                       to="/ourwork/portfolioDetails/"
                       state={{ data: PortfolioDetails }}
+                      onClick={() => setCurrentPage("Our Work")}
                       style={{
                         color: "#333333",
                         textDecoration: "none",
