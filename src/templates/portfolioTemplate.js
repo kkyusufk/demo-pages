@@ -90,7 +90,11 @@ const PortfolioTemplate = ({ data = [] }) => {
       case "Side-by-Side": {
         components.push(
           <Spacing marginTop={SIZES.M}>
-            <SideBySide source1={sections.src1} source2={sections.src2} />
+            <SideBySide 
+                source1={sections.src1} 
+                source2={sections.src2} 
+                content={sections.content}
+                />
           </Spacing>
         );
         break;

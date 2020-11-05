@@ -14,10 +14,4 @@ const SideBySide = ({ source1, source2, content }) => {
   );
 };
 
-SideBySide.propTypes = {
-  source1: PropTypes.string.isRequired(),
-  source2: PropTypes.string,
-  content: PropTypes.string
-}
-
 export { SideBySide };

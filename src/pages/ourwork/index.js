@@ -58,7 +58,7 @@ let PortfolioDetails = [
   {
     id: "Side-by-Side",
     src1: "https://source.unsplash.com/WLUHO9A_xik/585x700",
-    src2: "https://source.unsplash.com/WLUHO9A_xik/585x700",
+    content: "This is just random content big enough to test that it will fit correctly to the right of the image."
   },
   {
     id: "Width-defined-image",
