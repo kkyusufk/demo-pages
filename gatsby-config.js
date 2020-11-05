@@ -7,6 +7,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-preload-fonts`,
     `gatsby-plugin-postcss`,
+    `gatsby-plugin-preact`,
     `gatsby-plugin-sass`,
     {
       resolve: `gatsby-source-filesystem`,
