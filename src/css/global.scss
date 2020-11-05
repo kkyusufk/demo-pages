@@ -85,6 +85,7 @@ h3 {
 
 p {
   font-family: $font-family-merriweather;
+  margin: 0;
   @include desktop {
     font-size: 18px;
     line-height: 180%;

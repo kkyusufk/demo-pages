@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './HeadingAndContent.scss'
+import './headingAndContent.scss'
 
 const HeadingAndContent = ({ heading, content, color }) => {
   return (

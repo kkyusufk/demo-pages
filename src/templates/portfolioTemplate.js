@@ -11,6 +11,7 @@ import { Spacing } from "../components/spacing/spacing";
 import { SIZES } from "../constants";
 import "./template.scss";
 import { HeadingAndContent } from "../components/mediaComponents/headingAndContent/headingAndContent";
+import { SideScrollingImage } from "../components/mediaComponents/sideScrollingImage/sideScrollingImage";
 
 /**
  * The way this will work is this:
@@ -39,6 +40,10 @@ const PortfolioTemplate = ({ data = [] }) => {
             justify="center"
           />
         );
+        break;
+      }
+      case "side-scrolling-image" : {
+        components.push(<SideScrollingImage />)
         break;
       }
       case "Portfolio-small-heading-and-content": {
