@@ -11,12 +11,6 @@ import { environmentUtil } from "../../utils/environmentUtil";
 import { Button } from "../button/Button/Button";
 import hamburger from "../../Assets/icons/hamburger.svg";
 
-const spring = {
-  type: "spring",
-  stiffness: 500,
-  damping: 100,
-};
-
 /**
  * Returns the nav items with the nav highlight.
  * @returns {React.FC}
@@ -44,8 +38,8 @@ const NavItems = ({ nav, isSelected, onClick }) => {
           initial={false}
           animate={{
             width: `${currentPage !== null && currentPage.clientWidth}`,
+            transition: { duration: 0.1 }
           }}
-          transition={spring}
         />
       )}
     </Link>
