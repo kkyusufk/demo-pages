@@ -16,7 +16,6 @@ const Heading = ({ innerHtml, align, justify, maxWidth = "100%", hover }) => {
       }}
     >
       <h1
-        onMouseEnter
         className={classNames({"hover-h1": hover })}
         style={{ textAlign: align }}
       >
