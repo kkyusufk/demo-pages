@@ -8,6 +8,14 @@
   > img {
     flex: 1;
   }
+
+  > h2 {
+    flex: 1;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .side-by-side-container {

@@ -10,6 +10,8 @@ import { Credits } from "../components/mediaComponents/credits/credits";
 import { Spacing } from "../components/spacing/spacing";
 import { SIZES } from "../constants";
 import "./template.scss";
+import { HeadingAndContent } from "../components/mediaComponents/headingAndContent/headingAndContent";
+import { SideScrollingImage } from "../components/mediaComponents/sideScrollingImage/sideScrollingImage";
 
 /**
  * The way this will work is this:
@@ -38,6 +40,18 @@ const PortfolioTemplate = ({ data = [] }) => {
             justify="center"
           />
         );
+        break;
+      }
+      case "side-scrolling-image" : {
+        components.push(<SideScrollingImage />)
+        break;
+      }
+      case "Portfolio-small-heading-and-content": {
+        components.push(
+          <Spacing marginTop={SIZES.XL}>
+            <HeadingAndContent heading={sections.heading} content={sections.content} color={'white'}/>
+          </Spacing>
+        )
         break;
       }
       case "Width-defined-image": {
@@ -76,7 +90,11 @@ const PortfolioTemplate = ({ data = [] }) => {
       case "Side-by-Side": {
         components.push(
           <Spacing marginTop={SIZES.M}>
-            <SideBySide source1={sections.src1} source2={sections.src2} />
+            <SideBySide 
+                source1={sections.src1} 
+                source2={sections.src2} 
+                content={sections.content}
+                />
           </Spacing>
         );
         break;

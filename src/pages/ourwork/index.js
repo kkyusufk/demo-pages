@@ -58,7 +58,7 @@ let PortfolioDetails = [
   {
     id: "Side-by-Side",
     src1: "https://source.unsplash.com/WLUHO9A_xik/585x700",
-    src2: "https://source.unsplash.com/WLUHO9A_xik/585x700",
+    content: "This is just random content big enough to test that it will fit correctly to the right of the image."
   },
   {
     id: "Width-defined-image",
@@ -112,7 +112,7 @@ let PortfolioDetails = [
 const Ourwork = () => {
   let data = portfolioData;
   const [active, setActive] = useState([]);
-  const { shouldAnimate } = useContext(GlobalContext);
+  const { shouldAnimate, setCurrentPage } = useContext(GlobalContext);
 
   const toggleActive = (filter) => {
     setActive((prevState) => {
@@ -162,6 +162,7 @@ const Ourwork = () => {
                     <Link
                       to="/ourwork/portfolioDetails/"
                       state={{ data: PortfolioDetails }}
+                      onClick={() => setCurrentPage("Our Work")}
                       style={{
                         color: "#333333",
                         textDecoration: "none",

@@ -1,4 +1,15 @@
-.scrollable-image{
-  display: flex;
-  height: 300px;
+@import '../../../css/mixins.scss';
+
+.container-1 {
+  overflow: hidden;
+  height: 500px;
+}
+
+.sliding-background {
+  @include marquee-content(marquee-scroll-image)
+}
+
+@keyframes marquee-scroll-image {
+  0% { transform: translateX(0px); }
+  100% { transform: translateX(-100px); }
 }
