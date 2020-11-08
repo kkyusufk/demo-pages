@@ -2,15 +2,16 @@ import React, { useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import { team } from "../../data";
-import "./team.css";
+import "./team.scss";
+import { springForce } from "@popmotion/popcorn";
 
 const cardVariant = {
-  hover: { y: -100 },
+  hover: { y: -100, transition: { duration: 0.1 } },
   initial: { y: 0 }
 }
 
 const detailsVariant = {
-  hover: { y: -70, opacity: 1 },
+  hover: { y: -70, opacity: 1, transition: { duration: 0.1 } },
   initial: { y: 0, opacity: 0 }
 }
 
@@ -34,7 +35,6 @@ function Card({ id, name, description }) {
             className="name-container"
             layoutId={`name-container-${id}`}
           >
-            <AnimatePresence exitBeforeEnter>
               <motion.h1
                 key={`name-${id}`}
                 layoutId={`card-name-${id}`}
@@ -61,7 +61,6 @@ function Card({ id, name, description }) {
                   />
                 See details &#x2192;
               </motion.span>
-            </AnimatePresence>
           </motion.div>
         </motion.div>
       </motion.div>

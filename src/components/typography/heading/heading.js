@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
 import React from "react";
+import classNames from 'classnames';
 
 import "./heading.scss";
 
@@ -15,19 +15,12 @@ const Heading = ({ innerHtml, align, justify, maxWidth = "100%", hover }) => {
         display: "flex",
       }}
     >
-      <motion.h1
-        className="heading-h1"
+      <h1
+        className={classNames({"hover-h1": hover })}
         style={{ textAlign: align }}
-        whileHover={
-          hover && {
-            textDecoration: "underline",
-            cursor: "pointer",
-            textDecorationSkipInk: "none",
-          }
-        }
       >
-        { textArray.map( text => <> {text} <br /> </> ) }
-      </motion.h1>
+        { textArray.map( (text, index) => <React.Fragment key={`${text} - ${index}`} > {text} <br /> </React.Fragment> ) }
+      </h1>
     </div>
   );
 };

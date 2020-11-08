@@ -65,7 +65,7 @@ export default function Modal({ cardID, pathContext = {}, location }) {
             </span>
           </motion.div>
           <motion.div className="content-container" animate>
-            <div>
+            <div className="content-paragraph-container">
               <p className="content-para">
                 Abhisek brings 12+ years of experience in design and managing
                 entrepreneurial ventures. Over this period, he has led branding

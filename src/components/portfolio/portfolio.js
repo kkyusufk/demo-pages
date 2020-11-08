@@ -6,7 +6,6 @@ import { environmentUtil } from "../../utils/environmentUtil";
 
 import "../fonts.css";
 import "./portfolio.scss";
-import { motion } from "framer-motion";
 
 const titleHoverVariant = {
   hover: {
@@ -30,11 +29,9 @@ const Portfolio = ({
     justify = "space-between";
   }
   return (
-    <motion.div
+    <div
       className="portfolioContainer"
       style={{ maxWidth: width, height }}
-      whileHover="hover"
-      variants={{ hover: { cursor: "pointer" } }}
     >
       <div className="portfolioContent" style={{ justifyContent: justify }}>
         <div>
@@ -46,7 +43,6 @@ const Portfolio = ({
           <div className="portfolioTitle">
             <Title
               content={title}
-              hover={titleHoverVariant}
               heading={heading}
             />
           </div>
@@ -55,7 +51,7 @@ const Portfolio = ({
           </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

@@ -1,15 +1,14 @@
 import React from "react";
-import { motion } from "framer-motion";
 
 const Title = ({ content, hover, heading }) => {
   if (heading === "h3") {
     return (
-      <motion.h3 className="alternative" variants={hover}>
+      <h3 id="portfolio-title" className="alternative">
         {content}
-      </motion.h3>
+      </h3>
     );
   } else {
-    return <motion.h2 variants={hover}>{content}</motion.h2>;
+    return <h2 id="portfolio-title">{content}</h2>;
   }
 };
 

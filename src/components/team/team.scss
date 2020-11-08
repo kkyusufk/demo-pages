@@ -1,3 +1,5 @@
+@import '../../css/mixins.scss';
+
 .screen {
   width: 100%;
   height: 100%;
@@ -14,7 +16,7 @@
   margin: 0;
 }
 
-@media only screen and (max-width: 767px) {
+@include tablet {
   .card-list {
     padding: 0% 4.1666%;
     grid-template-columns: auto;
@@ -28,7 +30,7 @@
   margin: 0;
 }
 
-@media only screen and (max-width: 991px) {
+@include tablet {
   .team-card {
     height: 350px;
   }
@@ -45,7 +47,7 @@
   margin: 0 auto;
 }
 
-@media only screen and (max-width: 767px) {
+@include mobile {
   .team-card {
     height: 220px;
   }
@@ -88,11 +90,11 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
 
-.open .name-container {
-  top: 30px;
-  left: 30px;
+  @include mobile {
+    padding-left: 8.33%;
+    padding-top: 30px;
+  }
 }
 
 .about {

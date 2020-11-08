@@ -16,6 +16,7 @@ const BlogPage = () => {
           {blogs.map((blog) => {
             return (
               <Link
+                key={blog.id}
                 to="/blog/blogDetails/"
                 style={{
                   textDecoration: "none",

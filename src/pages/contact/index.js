@@ -36,6 +36,7 @@ const Contact = () => {
           {portfolioData.map((portfolio) => {
             return (
               <Portfolio
+                key={portfolio.id}
                 src={portfolio.src}
                 title={portfolio.title}
                 subtitle={portfolio.subtitle}

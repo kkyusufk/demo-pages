@@ -2,6 +2,16 @@
   justify-self: center;
   max-width: 1170px;
   max-height: 800px;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:hover #portfolio-title {
+    text-decoration: underline;
+    cursor: pointer;
+    text-decoration-skip-ink: none;
+  }
 }
 
 .portfolioContent {
