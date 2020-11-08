@@ -15,10 +15,7 @@ const ContentAndImages = ({ content, src, flexDirection }) => {
           justify="center"
         />
       </div>
-      <img
-        src={src}
-        className="careers-image-right-of-content"
-      />
+      <img src={src} className="careers-image-right-of-content" />
     </div>
   );
 };

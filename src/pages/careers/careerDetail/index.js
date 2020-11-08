@@ -16,11 +16,7 @@ const CareerDetail = ({ location }) => {
     location.state = openings[1];
   }
   const { state = {} } = location;
-  const { 
-    name = "", 
-    description = "", 
-    details = {} 
-  } = state;
+  const { name = "", description = "", details = {} } = state;
   return (
     <>
       <Spacing marginTop={SIZES.ML}>
@@ -118,24 +114,24 @@ const CareerDetail = ({ location }) => {
         </div>
       </Spacing>
       <Spacing marginTop={SIZES.XL}>
-      <ContentAndImages 
-        content={CAREERS.headingFour}
-        src="https://source.unsplash.com/random"
-      />
-    </Spacing>
-    <Spacing marginTop={SIZES.XL}>
-      <ContentAndImages 
-        content={CAREERS.headingFive}
-        src="https://source.unsplash.com/random"
-        flexDirection="row-reverse"
-      />
-    </Spacing>
-    <Spacing marginTop={SIZES.XL}>
-      <ContentAndImages 
-        content={CAREERS.headingSix}
-        src="https://source.unsplash.com/random"
-      />
-    </Spacing>
+        <ContentAndImages
+          content={CAREERS.headingFour}
+          src="https://source.unsplash.com/random"
+        />
+      </Spacing>
+      <Spacing marginTop={SIZES.XL}>
+        <ContentAndImages
+          content={CAREERS.headingFive}
+          src="https://source.unsplash.com/random"
+          flexDirection="row-reverse"
+        />
+      </Spacing>
+      <Spacing marginTop={SIZES.XL}>
+        <ContentAndImages
+          content={CAREERS.headingSix}
+          src="https://source.unsplash.com/random"
+        />
+      </Spacing>
       <Spacing marginTop={SIZES.XXL}>
         <Grid1>
           <div className="footer-details">

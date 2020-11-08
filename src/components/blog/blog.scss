@@ -86,11 +86,7 @@
 .share-it-container-toast {
   height: 60px;
   position: fixed;
-  bottom: 20px;
-  width: 81.5%;
-  max-width: 100%;
-  padding-left: 8.56%;
-  padding-right: 8.56%;
+  width: 100%;
 
   @include mobile {
     height: 40px;

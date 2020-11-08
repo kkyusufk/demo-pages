@@ -13,9 +13,9 @@ export default function Modal({ cardID, pathContext = {}, location }) {
   return (
     <>
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0, transition: { duration: 0.15 } }}
+        initial={{ y: 1000 }}
+        animate={{ y: 0 }}
+        exit={{ y: 1000, transition: { duration: 0.15 } }}
         transition={{ duration: 0.2, delay: 0.15 }}
         style={{ pointerEvents: "auto" }}
         className="overlay"
@@ -58,11 +58,7 @@ export default function Modal({ cardID, pathContext = {}, location }) {
             >
               Abhisek Sarda
             </motion.h1>
-            <span
-              className="description"
-            >
-              Founder & Creative Director
-            </span>
+            <span className="description">Founder & Creative Director</span>
           </motion.div>
           <motion.div className="content-container" animate>
             <div className="content-paragraph-container">

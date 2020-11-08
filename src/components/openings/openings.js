@@ -37,10 +37,11 @@ const OpeningCards = () => {
         ref={cardContainerRef}
         dragConstraints={{ left: -calculateDragLeft(), right: 0 }}
       >
-        {openings.map((data) => {
+        {openings.map((data, index) => {
           return (
             <div
               id="inside-container"
+              key={`inside-container-${index}`}
               style={{
                 transition: "0.5s",
                 transform: `translateX(${X}px)`,

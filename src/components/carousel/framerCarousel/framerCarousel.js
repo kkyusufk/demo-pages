@@ -85,7 +85,11 @@ export const Carousel = React.memo(({ compact }) => {
       {/**
        * The carousel Images and animations
        */}
-      <AnimatePresence initial={false} custom={direction} exitBeforeEnter={false}>
+      <AnimatePresence
+        initial={false}
+        custom={direction}
+        exitBeforeEnter={false}
+      >
         <motion.img
           className="carousel-image"
           key={page}

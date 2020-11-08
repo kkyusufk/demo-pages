@@ -1,8 +1,8 @@
 /** @jsx */
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-import './headingAndContent.scss'
+import "./headingAndContent.scss";
 
 const HeadingAndContent = ({ heading, content, color }) => {
   return (
@@ -12,7 +12,7 @@ const HeadingAndContent = ({ heading, content, color }) => {
         <p>{content}</p>
       </div>
     </div>
-  )
+  );
 };
 
-export { HeadingAndContent }
+export { HeadingAndContent };

@@ -6,13 +6,13 @@ import "./team.scss";
 
 const cardVariant = {
   hover: { y: -40, transition: { duration: 0.1 } },
-  initial: { y: 0 }
-}
+  initial: { y: 0 },
+};
 
 const detailsVariant = {
   hover: { y: -50, opacity: 1, transition: { duration: 0.1 } },
-  initial: { y: 0, opacity: 0 }
-}
+  initial: { y: 0, opacity: 0 },
+};
 
 function Card({ id, name, description }) {
   const cardRef = useRef();
@@ -34,32 +34,29 @@ function Card({ id, name, description }) {
             className="name-container"
             layoutId={`name-container-${id}`}
           >
-              <motion.h1
-                key={`name-${id}`}
-                layoutId={`card-name-${id}`}
-              >
-                {name}
-              </motion.h1>
-              <motion.h2
-                className="grey"
-                key={`card-description-${id}`}
-                variants={cardVariant}
-                layoutId={`card-description-${id}`}
-              >
-                {description}
-              </motion.h2>
-              <motion.span
-                className="details"
-                key={`card-details-${id}`}
-                variants={detailsVariant}
-              >
-                <Link 
-                  to={`/about/${id}`} 
-                  className='card-open-link'
-                  state={{ target: cardRef.current }}
-                  />
-                See details &#x2192;
-              </motion.span>
+            <motion.h1 key={`name-${id}`} layoutId={`card-name-${id}`}>
+              {name}
+            </motion.h1>
+            <motion.h2
+              className="grey"
+              key={`card-description-${id}`}
+              variants={cardVariant}
+              layoutId={`card-description-${id}`}
+            >
+              {description}
+            </motion.h2>
+            <motion.span
+              className="details"
+              key={`card-details-${id}`}
+              variants={detailsVariant}
+            >
+              <Link
+                to={`/about/${id}`}
+                className="card-open-link"
+                state={{ target: cardRef.current }}
+              />
+              See details &#x2192;
+            </motion.span>
           </motion.div>
         </motion.div>
       </motion.div>

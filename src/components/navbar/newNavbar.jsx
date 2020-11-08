@@ -27,21 +27,6 @@ const NavItems = ({ nav, isSelected, onClick }) => {
       className="nav-items"
     >
       {nav}
-      {isSelected && (
-        <motion.div
-          layoutId="tab"
-          style={{
-            backgroundColor: "black",
-            height: "3px",
-            marginTop: "5px",
-          }}
-          initial={false}
-          animate={{
-            width: `${currentPage !== null && currentPage.clientWidth}`,
-            transition: { duration: 0.1 }
-          }}
-        />
-      )}
     </Link>
   );
 };
@@ -82,33 +67,33 @@ const NewNavbar = () => {
   }, [isOpen]);
 
   return (
-        <AnimateSharedLayout>
-        <motion.ul
-          className="nav-header"
-          variants={sidebar}
-          animate={isOpen ? "open" : "closed"}
-        >
-          {navItems.map((nav) => {
-            return (
-              <NavItems
-                key={nav}
-                isSelected={currentPage === nav}
-                onClick={() => {
-                  toggleOpen(false);
-                  setShouldAnimate(false);
-                  setCurrentPage(nav);
-                }}
-                nav={nav}
-              />
-            );
-          })}
-        </motion.ul>
-        <Button
-          className="hamburger"
-          src={hamburger}
-          onClick={() => toggleOpen((state) => !state)}
-        />
-      </AnimateSharedLayout>
+    <AnimateSharedLayout>
+      <motion.ul
+        className="nav-header"
+        variants={sidebar}
+        animate={isOpen ? "open" : "closed"}
+      >
+        {navItems.map((nav) => {
+          return (
+            <NavItems
+              key={nav}
+              isSelected={currentPage === nav}
+              onClick={() => {
+                toggleOpen(false);
+                setShouldAnimate(false);
+                setCurrentPage(nav);
+              }}
+              nav={nav}
+            />
+          );
+        })}
+      </motion.ul>
+      <Button
+        className="hamburger"
+        src={hamburger}
+        onClick={() => toggleOpen((state) => !state)}
+      />
+    </AnimateSharedLayout>
   );
 };
 
@@ -116,6 +101,7 @@ const sidebar = {
   open: {
     clipPath: "circle(1200px at 100% 100%)",
     transition: {
+      duration: 0.3,
       type: "spring",
       stiffness: 20,
       restDelta: 2,
@@ -124,6 +110,7 @@ const sidebar = {
   closed: {
     clipPath: "circle(0px at 89% 3%)",
     transition: {
+      duration: 0.3,
       type: "spring",
       stiffness: 400,
       damping: 40,

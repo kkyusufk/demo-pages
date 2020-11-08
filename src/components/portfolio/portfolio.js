@@ -29,10 +29,7 @@ const Portfolio = ({
     justify = "space-between";
   }
   return (
-    <div
-      className="portfolioContainer"
-      style={{ maxWidth: width, height }}
-    >
+    <div className="portfolioContainer" style={{ maxWidth: width, height }}>
       <div className="portfolioContent" style={{ justifyContent: justify }}>
         <div>
           <img src={src} className="portfolioImage" width={width} />
@@ -41,10 +38,7 @@ const Portfolio = ({
           style={{ marginTop: !environmentUtil.isMobile(browserWidth) && 20 }}
         >
           <div className="portfolioTitle">
-            <Title
-              content={title}
-              heading={heading}
-            />
+            <Title content={title} heading={heading} />
           </div>
           <div className="portfolioSubtitle">
             <Subtitile content={subtitle} heading={heading} />
