@@ -135,7 +135,7 @@ export const Carousel = React.memo(({ compact }) => {
           <div className={classNames("image-title")}>
             {images.map((image, index) => {
               return (
-                <AnimatePresence>
+                <AnimatePresence key={`animate-presence-${index}`}>
                   {index === active && (
                     <div key={index} id="contents">
                       <motion.h2
@@ -170,7 +170,7 @@ export const Carousel = React.memo(({ compact }) => {
       <div className="tabs">
         {tabs.map((tab, index) => {
           return (
-            <AnimatePresence>
+            <AnimatePresence key={`animate-presence-2-${index}`}>
               <div className="tab">
                 {index === active && (
                   <motion.div
