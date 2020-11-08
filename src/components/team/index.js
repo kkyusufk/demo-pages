@@ -4,7 +4,7 @@ import { AnimatePresence } from "framer-motion";
 import Modal from "../modal/teamModal";
 import { Cards } from "./team-cards";
 
-import "./team.css";
+import "./team.scss";
 
 export function Team({ match }) {
   const { id } = match.params;

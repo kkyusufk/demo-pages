@@ -19,7 +19,7 @@ const Heading = ({ innerHtml, align, justify, maxWidth = "100%", hover }) => {
         className={classNames({"hover-h1": hover })}
         style={{ textAlign: align }}
       >
-        { textArray.map( text => <> {text} <br /> </> ) }
+        { textArray.map( (text, index) => <React.Fragment key={`${text} - ${index}`} > {text} <br /> </React.Fragment> ) }
       </h1>
     </div>
   );

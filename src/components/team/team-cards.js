@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import { team } from "../../data";
-import "./team.css";
+import "./team.scss";
 import { springForce } from "@popmotion/popcorn";
 
 const cardVariant = {
