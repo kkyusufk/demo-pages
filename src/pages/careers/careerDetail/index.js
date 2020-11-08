@@ -9,7 +9,7 @@ import { Grid1 } from "../../../components/grid/grid1";
 import { NAVITEMS, PAGES, SIZES } from "../../../constants";
 import { ContentAndImages } from "../../../components/contentAndImages/contentAndImages";
 import { FooterLinks } from "../../../components/footer/footerLinks";
-import { openings } from "../../../data";
+import { CAREERS, openings } from "../../../data";
 
 const CareerDetail = ({ location }) => {
   if (location.state === null) {
@@ -117,9 +117,25 @@ const CareerDetail = ({ location }) => {
           </div>
         </div>
       </Spacing>
-      <Spacing marginTop={SIZES.XXL}>
-        <ContentAndImages />
-      </Spacing>
+      <Spacing marginTop={SIZES.XL}>
+      <ContentAndImages 
+        content={CAREERS.headingFour}
+        src="https://source.unsplash.com/random"
+      />
+    </Spacing>
+    <Spacing marginTop={SIZES.XL}>
+      <ContentAndImages 
+        content={CAREERS.headingFive}
+        src="https://source.unsplash.com/random"
+        flexDirection="row-reverse"
+      />
+    </Spacing>
+    <Spacing marginTop={SIZES.XL}>
+      <ContentAndImages 
+        content={CAREERS.headingSix}
+        src="https://source.unsplash.com/random"
+      />
+    </Spacing>
       <Spacing marginTop={SIZES.XXL}>
         <Grid1>
           <div className="footer-details">

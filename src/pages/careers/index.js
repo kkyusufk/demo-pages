@@ -37,7 +37,23 @@ const Career = () => (
       </AnimateSharedLayout>
     </Spacing>
     <Spacing marginTop={SIZES.XL}>
-      <ContentAndImages />
+      <ContentAndImages 
+        content={CAREERS.headingFour}
+        src="https://source.unsplash.com/random"
+      />
+    </Spacing>
+    <Spacing marginTop={SIZES.XL}>
+      <ContentAndImages 
+        content={CAREERS.headingFive}
+        src="https://source.unsplash.com/random"
+        flexDirection="row-reverse"
+      />
+    </Spacing>
+    <Spacing marginTop={SIZES.XL}>
+      <ContentAndImages 
+        content={CAREERS.headingSix}
+        src="https://source.unsplash.com/random"
+      />
     </Spacing>
     <Spacing marginTop={SIZES.XXL}>
       <FooterLinks page={PAGES.CAREERS} to={NAVITEMS.ABOUT} />
