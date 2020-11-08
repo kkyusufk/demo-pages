@@ -19,6 +19,7 @@ const NavItems = ({ nav, isSelected, onClick }) => {
   const currentPage =
     environmentUtil.isWindowDefined() &&
     document.querySelector("[aria-current]");
+    console.log(currentPage)
   const newNav = nav.split(" ").join("");
   return (
     <Link
@@ -27,6 +28,21 @@ const NavItems = ({ nav, isSelected, onClick }) => {
       className="nav-items"
     >
       {nav}
+      {isSelected && (
+        <motion.div
+          layoutId="tab"
+          style={{
+            backgroundColor: "black",
+            height: "3px",
+            marginTop: "5px",
+          }}
+          initial={false}
+          animate={{
+            width: `${currentPage !== null && currentPage.getBoundingClientRect().width}`,
+            transition: { duration: 0.1 }
+          }}
+        />
+      )}
     </Link>
   );
 };
@@ -44,6 +60,28 @@ NavItems.propTypes = {
    * The function to be called when the nav item is clicked.
    */
   onClick: PropTypes.func.isRequired,
+};
+
+const sidebar = {
+  open: {
+    clipPath: "circle(1200px at 100% 100%)",
+    display: 'flex',
+    transition: {
+      duration: 0.3,
+      type: "spring",
+      stiffness: 20,
+      restDelta: 2,
+    },
+  },
+  closed: {
+    clipPath: "circle(0px at 89% 3%)",
+    transition: {
+      duration: 0.3,
+      type: "spring",
+      stiffness: 400,
+      damping: 40,
+    },
+  },
 };
 
 /** @returns {React.FC} */
@@ -71,7 +109,7 @@ const NewNavbar = () => {
       <motion.ul
         className="nav-header"
         variants={sidebar}
-        animate={isOpen ? "open" : "closed"}
+        animate={isOpen && environmentUtil.isMobile(browserWidth) ? "open" : "closed"}
       >
         {navItems.map((nav) => {
           return (
@@ -95,27 +133,6 @@ const NewNavbar = () => {
       />
     </AnimateSharedLayout>
   );
-};
-
-const sidebar = {
-  open: {
-    clipPath: "circle(1200px at 100% 100%)",
-    transition: {
-      duration: 0.3,
-      type: "spring",
-      stiffness: 20,
-      restDelta: 2,
-    },
-  },
-  closed: {
-    clipPath: "circle(0px at 89% 3%)",
-    transition: {
-      duration: 0.3,
-      type: "spring",
-      stiffness: 400,
-      damping: 40,
-    },
-  },
 };
 
 export { NewNavbar };
