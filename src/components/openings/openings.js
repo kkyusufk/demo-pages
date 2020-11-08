@@ -58,9 +58,9 @@ const OpeningCards = () => {
                   BottomContent={() => {
                     return (
                       <>
-                        <h2 className="grey">{data.description}</h2>
+                        <h2 className="grey description">{data.description}</h2>
                         <span
-                          className="details"
+                          className="details animate-details"
                           onClick={() => console.log("clicked")}
                         >
                           See details &#x2192;

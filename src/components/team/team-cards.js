@@ -3,15 +3,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import { team } from "../../data";
 import "./team.scss";
-import { springForce } from "@popmotion/popcorn";
 
 const cardVariant = {
-  hover: { y: -100, transition: { duration: 0.1 } },
+  hover: { y: -40, transition: { duration: 0.1 } },
   initial: { y: 0 }
 }
 
 const detailsVariant = {
-  hover: { y: -70, opacity: 1, transition: { duration: 0.1 } },
+  hover: { y: -50, opacity: 1, transition: { duration: 0.1 } },
   initial: { y: 0, opacity: 0 }
 }
 
