@@ -11,16 +11,15 @@ import { GlobalContext } from "../../context/navContext";
 import { environmentUtil } from "../../utils/environmentUtil";
 
 const ContainerVariant = {
-  initial: { y: 1000 },
-  animate: { y: 0 },
-  exit: (i) => ({
+  initial: { y: 1000, position: 'absolute' },
+  animate: { y: 0, position: 'absolute', transition: { duration: 1 } },
+  exit: {
     y: "-100%",
-    position: "absolute",
     transition: {
-      duration: 0.5,
-      from: -i,
+      duration: 1,
+      from: -1000,
     },
-  }),
+  },
 };
 
 const Layout = ({ location, children }) => {

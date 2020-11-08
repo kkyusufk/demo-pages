@@ -85,7 +85,7 @@ export const Carousel = React.memo(({ compact }) => {
       {/**
        * The carousel Images and animations
        */}
-      <AnimatePresence initial={false} custom={direction}>
+      <AnimatePresence initial={false} custom={direction} exitBeforeEnter={false}>
         <motion.img
           className="carousel-image"
           key={page}
@@ -167,32 +167,6 @@ export const Carousel = React.memo(({ compact }) => {
       {/**
        * The animating tabs at the bottom
        */}
-      <div className="tabs">
-        {tabs.map((tab, index) => {
-          return (
-            <AnimatePresence key={`animate-presence-2-${index}`}>
-              <div className="tab">
-                {index === active && (
-                  <motion.div
-                    initial={{ width: "0%" }}
-                    style={{
-                      height: "5px",
-                      width: "0%",
-                    }}
-                    animate={{
-                      width: ["0%", "100%"],
-                      background: "white",
-                      transition: {
-                        duration: 3,
-                      },
-                    }}
-                  />
-                )}
-              </div>
-            </AnimatePresence>
-          );
-        })}
-      </div>
     </div>
   );
 });

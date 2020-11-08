@@ -1,3 +1,5 @@
+@import '../../css/mixins.scss';
+
 .overlay {
   z-index: 1;
   position: fixed;
@@ -24,6 +26,12 @@
 .position-relative {
   padding-top: 50px;
   position: relative !important;
+
+  @include mobile {
+    padding-top: 0px;
+    position: inherit;
+  }
+
 }
 
 .card-content-container {
@@ -32,18 +40,33 @@
   position: absolute;
   display: block;
   pointer-events: none;
+
+  @media only screen and (max-width: 1170px) {
+    width: 100vw;
+  }
 }
+
+
 .close-button {
   position: absolute;
   top: 50px;
   right: 50px;
   border: none;
   background: transparent;
+
+  @include mobile {
+    top: 20px;
+    right: 20px;
+  }
 }
 .modal-card-content {
   position: relative;
   background: white;
   padding: 3.125rem 6.25rem 6.25rem 3.125rem;
+
+  @include mobile {
+    padding: 0;
+  }
 }
 
 .team-modal-social {
@@ -65,13 +88,19 @@
   display: flex;
   justify-content: space-between;
   column-gap: 130px;
+  row-gap: 60px;
+
+  @include tablet {
+    flex-wrap: wrap;
+  }
+
+  @include mobile {
+    flex-wrap: wrap;
+  }
 }
 
 .content-para {
-  font-size: 18px;
-  line-height: 32.4px;
-  font-style: normal;
-  width: 520px;
+  max-width: 520px;
 
   &:first-child {
     margin-bottom: 50px;
@@ -82,5 +111,9 @@
   > div {
     width: 370px;
     height: 500px;
+
+    @include tablet {
+      width: 100%
+    }
   }
 }
