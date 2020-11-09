@@ -23,7 +23,7 @@ const NavItems = ({ nav, isSelected, onClick }) => {
   const newNav = nav.split(" ").join("");
   return (
     <Link
-      to={`/${newNav.toLowerCase()}/`}
+      to={ newNav === 'Home' ? '/' : `/${newNav.toLowerCase()}/`}
       onClick={onClick}
       className="nav-items"
     >
