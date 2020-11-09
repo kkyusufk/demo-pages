@@ -6,6 +6,7 @@ import { GlobalContext } from '../../context/navContext';
 import { team } from "../../data";
 import "./team.scss";
 import { environmentUtil } from "../../utils/environmentUtil";
+import { navigate } from "gatsby";
 
 const cardVariant = {
   hover: { y: -40, transition: { duration: 0.1 } },
@@ -22,6 +23,14 @@ function Card({ id, name, description }) {
   const { browserWidth } = useContext(GlobalContext)
   return (
     <li className={`team-card`}>
+      <Link to={`/about/${id}`} style={{
+        position: 'absolute',
+        zIndex: 1,
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0
+      }} />
       <motion.div
         initial="initial"
         whileHover="hover"
@@ -30,10 +39,6 @@ function Card({ id, name, description }) {
         layoutId={`card-content-container-${id}`}
         ref={cardRef}
       >
-        <Link
-        to={`/about/${id}`}
-        state={{ target: cardRef.current }}
-      />
         <motion.div
           className="team-card-content"
           layoutId={ !environmentUtil.isMobile(browserWidth) ? `card-container-${id}` : undefined}
@@ -48,7 +53,7 @@ function Card({ id, name, description }) {
             <motion.h2
               className="grey"
               key={`card-description-${id}`}
-              variants={cardVariant}
+              variants={!environmentUtil.isMobile(browserWidth) && cardVariant}
               layoutId={`card-description-${id}`}
             >
               {description}
@@ -56,7 +61,7 @@ function Card({ id, name, description }) {
             <motion.span
               className="details"
               key={`card-details-${id}`}
-              variants={detailsVariant}
+              variants={ !environmentUtil.isMobile(browserWidth) && detailsVariant}
             >
               <Link
                 to={`/about/${id}`}
