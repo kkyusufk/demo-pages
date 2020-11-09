@@ -27,7 +27,7 @@ const carouselVariants = {
     scale: 1,
     opacity: 1,
     transition: {
-      duration: 0.7,
+      duration: 0.5,
     },
   },
   exit: (direction) => ({
@@ -36,7 +36,7 @@ const carouselVariants = {
     scale: direction == -1 ? 1 : 0.9,
     opacity: 1,
     transition: {
-      duration: 0.7,
+      duration: 0.5,
     },
   }),
 };
@@ -47,13 +47,17 @@ const carouselVariants = {
  */
 const descriptionCardVariant = {
   initial: { opacity: 0 },
-  animate: { opacity: 1 },
-  exit: { opacity: 0 },
+  animate: { opacity: 1, transition: {
+    duration: 0.3,
+  }, },
+  exit: { opacity: 0, transition: {
+    duration: 0.5,
+  }, },
 };
 
 const tabs = [1, 2, 3, 4];
 
-export const Carousel = React.memo(({ compact }) => {
+export const Carousel = ({ compact }) => {
   const [[page, direction], setPage] = useState([0, 0]);
   const [active, setActive] = useState(0);
 
@@ -88,7 +92,6 @@ export const Carousel = React.memo(({ compact }) => {
       <AnimatePresence
         initial={false}
         custom={direction}
-        exitBeforeEnter={false}
       >
         <motion.img
           className="carousel-image"
@@ -135,13 +138,12 @@ export const Carousel = React.memo(({ compact }) => {
        * Image title and subtitle cards
        */}
       {compact ? null : (
-        <>
           <div className={classNames("image-title")}>
             {images.map((image, index) => {
               return (
-                <AnimatePresence key={`animate-presence-${index}`}>
+                <AnimatePresence initial={false} exitBeforeEnter={false}>
                   {index === active && (
-                    <div key={index} id="contents">
+                    <div key={`motion-div-${index}`} id="contents">
                       <motion.h2
                         className="line-120"
                         variants={descriptionCardVariant}
@@ -166,14 +168,39 @@ export const Carousel = React.memo(({ compact }) => {
               );
             })}
           </div>
-        </>
       )}
       {/**
        * The animating tabs at the bottom
        */}
+       <div className="tabs">
+        {tabs.map((tab, index) => {
+          return (
+            <AnimatePresence exitBeforeEnter>
+              <div className="tab">
+                {index === active && (
+                  <motion.div
+                    initial={{ width: "0%" }}
+                    style={{
+                      height: "5px",
+                      width: "0%",
+                    }}
+                    animate={{
+                      width: ["0%", "100%"],
+                      background: "white",
+                      transition: {
+                        duration: 3,
+                      },
+                    }}
+                  />
+                )}
+              </div>
+            </AnimatePresence>
+          );
+        })}
+      </div>
     </div>
   );
-});
+};
 
 /**
  * Experimenting with distilling swipe offset and velocity into a single variable, so the
