@@ -38,7 +38,7 @@ const NavItems = ({ nav, isSelected, onClick }) => {
           }}
           initial={false}
           animate={{
-            width: `${currentPage !== null && currentPage.getBoundingClientRect().width}`,
+            width: `${currentPage !== null && currentPage.clientWidth}`,
             transition: { duration: 0.1 }
           }}
         />
