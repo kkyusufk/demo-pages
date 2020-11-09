@@ -18,7 +18,7 @@ import hamburger from "../../Assets/icons/hamburger.svg";
 const NavItems = ({ nav, isSelected, onClick }) => {
   const { browserWidth } = useContext(GlobalContext)
   let currentPage;
-  const allNavElements = document.querySelectorAll('.nav-items');
+  const allNavElements = environmentUtil.isWindowDefined() && document.querySelectorAll('.nav-items');
   allNavElements.forEach(page => {
     if (page.text === nav) currentPage = page;
   })
