@@ -66,7 +66,7 @@ export default function Modal({ cardID, pathContext = {}, location }) {
             layoutId={`name-container-modal-${cardID}`}
           >
             <motion.h1
-              layoutId={`modal-name-${cardID}`}
+              layoutId={ !environmentUtil.isMobile(browserWidth) ? `modal-name-${cardID}` : undefined}
               initial={false}
               animate={{ opacity: 1, transition: { duration: 1 } }}
               exit={{ opacity: 0, transition: { duration: 1 } }}
