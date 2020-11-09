@@ -1,11 +1,12 @@
 import React, { useEffect, useRef } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { Link, BrowserRouter as Router } from "react-router-dom";
 import { Link as GatsbyLink } from "gatsby";
 import classnames from "classnames";
 import { team } from "../../data";
 import { Carousel } from "../carousel/carousel";
 import "./team-modal.scss";
+import "../team/team.scss"
 import { environmentUtil } from "../../utils/environmentUtil";
 
 export default function Modal({ cardID, pathContext = {}, location }) {
@@ -13,9 +14,9 @@ export default function Modal({ cardID, pathContext = {}, location }) {
   return (
     <>
       <motion.div
-        initial={{ y: 1000 }}
-        animate={{ y: 0 }}
-        exit={{ y: 1000, transition: { duration: 0.15 } }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0, transition: { duration: 0.15 } }}
         transition={{ duration: 0.2, delay: 0.15 }}
         style={{ pointerEvents: "auto" }}
         className="overlay"
@@ -30,7 +31,6 @@ export default function Modal({ cardID, pathContext = {}, location }) {
           <Link to="/about" />
         )}
       </motion.div>
-
       <motion.div
         ref={cardContainer}
         className={classnames("card-content-container open", {
@@ -47,8 +47,8 @@ export default function Modal({ cardID, pathContext = {}, location }) {
           exit={{ opacity: 0, transition: { duration: 0.15 } }}
         >
           <motion.div
-            className="name-container"
-            layoutId={`name-container-${cardID}`}
+            className="name-container team-modal"
+            layoutId={`name-container-modal-${cardID}`}
           >
             <motion.h1
               layoutId={`modal-name-${cardID}`}

@@ -31,8 +31,8 @@ function Card({ id, name, description }) {
           layoutId={`card-container-${id}`}
         >
           <motion.div
-            className="name-container"
-            layoutId={`name-container-${id}`}
+            className="name-container team-card"
+            layoutId={`name-container-card-${id}`}
           >
             <motion.h1 key={`name-${id}`} layoutId={`card-name-${id}`}>
               {name}
