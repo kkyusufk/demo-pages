@@ -1,7 +1,7 @@
 /** @jsx */
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import { AnimateSharedLayout, motion, useCycle } from "framer-motion";
+import { AnimateSharedLayout, motion } from "framer-motion";
 import { Link } from "gatsby";
 
 import { GlobalContext } from "../../context/navContext";
@@ -16,10 +16,12 @@ import hamburger from "../../Assets/icons/hamburger.svg";
  * @returns {React.FC}
  */
 const NavItems = ({ nav, isSelected, onClick }) => {
-  const currentPage =
-    environmentUtil.isWindowDefined() &&
-    document.querySelector("[aria-current]");
-    console.log(currentPage)
+  const { browserWidth } = useContext(GlobalContext)
+  let currentPage;
+  const allNavElements = document.querySelectorAll('.nav-items');
+  allNavElements.forEach(page => {
+    if (page.text === nav) currentPage = page;
+  })
   const newNav = nav.split(" ").join("");
   return (
     <Link
@@ -37,8 +39,8 @@ const NavItems = ({ nav, isSelected, onClick }) => {
             marginTop: "5px",
           }}
           initial={false}
-          animate={{
-            width: `${currentPage !== null && currentPage.clientWidth}`,
+          animate={ !environmentUtil.isMobile(browserWidth) && {
+            width: `${currentPage !== undefined && currentPage.clientWidth}`,
             transition: { duration: 0.1 }
           }}
         />

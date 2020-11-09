@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useRef, useEffect } from "react";
 import "./blogDetails.scss";
 import { Blog } from "../../../components/blog/blog";
 import { Spacing } from "../../../components/spacing/spacing";
@@ -25,7 +25,6 @@ const data = [
 ];
 
 const BlogDetails = ({ location = {} }) => {
-  const [opacity, setOpacity] = useState(1);
   const compactShareIt = useRef();
   const expndedShareIt = useRef();
   const { state = {} } = location;

@@ -5,8 +5,8 @@ import React, {
   useMemo,
   useEffect,
 } from "react";
-import { NAVITEMS } from "../constants";
 import { environmentUtil } from "../utils/environmentUtil";
+import { NAVITEMS } from "../constants";
 
 const GlobalContext = createContext();
 
