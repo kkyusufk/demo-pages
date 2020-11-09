@@ -1,8 +1,11 @@
-import React, { useRef } from "react";
+import React, { useRef, useContext } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
+
+import { GlobalContext } from '../../context/navContext';
 import { team } from "../../data";
 import "./team.scss";
+import { environmentUtil } from "../../utils/environmentUtil";
 
 const cardVariant = {
   hover: { y: -40, transition: { duration: 0.1 } },
@@ -16,6 +19,7 @@ const detailsVariant = {
 
 function Card({ id, name, description }) {
   const cardRef = useRef();
+  const { browserWidth } = useContext(GlobalContext)
   return (
     <li className={`team-card`}>
       <motion.div
@@ -26,9 +30,13 @@ function Card({ id, name, description }) {
         layoutId={`card-content-container-${id}`}
         ref={cardRef}
       >
+        <Link
+        to={`/about/${id}`}
+        state={{ target: cardRef.current }}
+      />
         <motion.div
           className="team-card-content"
-          layoutId={`card-container-${id}`}
+          layoutId={ !environmentUtil.isMobile(browserWidth) ? `card-container-${id}` : undefined}
         >
           <motion.div
             className="name-container team-card"

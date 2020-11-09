@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useContext } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Link, BrowserRouter as Router } from "react-router-dom";
 import { Link as GatsbyLink } from "gatsby";
@@ -8,9 +8,23 @@ import { Carousel } from "../carousel/carousel";
 import "./team-modal.scss";
 import "../team/team.scss"
 import { environmentUtil } from "../../utils/environmentUtil";
+import { GlobalContext } from "../../context/navContext";
+
+const DesktopModalVariant = {
+  initial: { opacity: 0 },
+  animate: { opacity: 1 },
+  exit: { opacity: 0, transition: { duration: 0.15 } }
+}
+
+const MobileModalVariant = {
+  initial: { opacity: 0, y: 1000 },
+  animate: { opacity: 1, y: 0, transition: { duration: 1 } },
+  exit: { y: 1000, transition: { duration: 1 }, transitionEnd: { opacity: 0 } }
+}
 
 export default function Modal({ cardID, pathContext = {}, location }) {
   const cardContainer = useRef();
+  const { browserWidth } = useContext(GlobalContext);
   return (
     <>
       <motion.div
@@ -37,14 +51,15 @@ export default function Modal({ cardID, pathContext = {}, location }) {
           "position-relative": typeof pathContext.name === "string",
         })}
         animate={{ opacity: 1 }}
-        transition={{ duration: 2 }}
+        transition={{ duration: 1 }}
       >
         <motion.div
           className="modal-card-content"
           layoutId={`card-container-${cardID}`}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0, transition: { duration: 0.15 } }}
+          variants={ environmentUtil.isMobile(browserWidth) ? MobileModalVariant : DesktopModalVariant }
+          initial="initial"
+          animate="animate"
+          exit="exit"
         >
           <motion.div
             className="name-container team-modal"
