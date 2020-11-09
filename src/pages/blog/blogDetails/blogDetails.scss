@@ -2,3 +2,13 @@
   max-width: 870px;
   margin: 0 auto;
 }
+
+.share-it-compact-container {
+  width: 100%;
+  left: 0;
+  bottom: 40px;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

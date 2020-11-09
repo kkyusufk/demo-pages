@@ -14,12 +14,6 @@
   font-size: 32px;
 }
 
-@media only screen and (min-width: 780px) {
-  .nav-header {
-    clip-path: circle(2000px at 0px 0px) !important;
-  }
-}
-
  .nav-items {
   width: max-content;
   color: #333333;
@@ -63,7 +57,8 @@ li {
   .nav-header {
     z-index: 3;
     position: fixed;
-    height: 100vh;  
+    height: 100vh;
+    display: none;  
     width: 100vw;
     padding: 30px 0px 0px 20px;
     align-items: flex-start;
@@ -85,10 +80,18 @@ li {
     justify-content: space-between;
     transition: all 0.5s ease-in-out;
   }
+  
 
 
   .hamburger {
     display: block;
+  }
+}
+
+
+@media only screen and (min-width: 780px) {
+  .nav-header {
+    clip-path: circle(2000px at 0px 0px) !important;
   }
 }
 

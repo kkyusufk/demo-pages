@@ -14,31 +14,31 @@ const Scrollable = () => (
     <div className="marquee">
       <ul className="marquee-content">
         <li className="marquee-content-li">
-          <div className="heading-h1">Swiggy</div>
+          <h1>Swiggy</h1>
           <img src={SwiggyImg} style={{ width: "190px", height: "100%" }} />
         </li>
         <li className="marquee-content-li">
-          <div className="heading-h1">The Ken</div>
+          <h1>The Ken</h1>
           <img src={KenImg} style={{ width: "190px", height: "100%" }} />
         </li>
         <li className="marquee-content-li">
-          <div className="heading-h1">Kapiva</div>
+          <h1>Kapiva</h1>
           <img src={KapivaImg} style={{ width: "190px", height: "100%" }} />
         </li>
         <li className="marquee-content-li">
-          <div className="heading-h1">Swiggy</div>
+          <h1>Swiggy</h1>
           <img src={SwiggyImg} style={{ width: "190px", height: "100%" }} />
         </li>
         <li className="marquee-content-li">
-          <div className="heading-h1">The Ken</div>
+          <h1>The Ken</h1>
           <img src={KenImg} style={{ width: "190px", height: "100%" }} />
         </li>
         <li className="marquee-content-li">
-          <div className="heading-h1">Kapiva</div>
+          <h1>Kapiva</h1>
           <img src={KapivaImg} style={{ width: "190px", height: "100%" }} />
         </li>
         <li className="marquee-content-li">
-          <div className="heading-h1">Swiggy</div>
+          <h1>Swiggy</h1>
           <img src={SwiggyImg} style={{ width: "190px", height: "100%" }} />
         </li>
       </ul>
@@ -47,37 +47,37 @@ const Scrollable = () => (
     <div className="marquee">
       <ul className="marquee-content-reverse">
         <li className="marquee-content-li">
-          <div className="heading-h1">Antidote</div>
+          <h1>Antidote</h1>
           <img
             src={AntidoteCoffee}
             style={{ width: "190px", height: "100%" }}
           />
         </li>
         <li className="marquee-content-li">
-          <div className="heading-h1">The Ken</div>
+          <h1>The Ken</h1>
           <img src={KenImg} style={{ width: "190px", height: "100%" }} />
         </li>
         <li className="marquee-content-li">
-          <div className="heading-h1">Kapiva</div>
+          <h1>Kapiva</h1>
           <img src={KapivaImg} style={{ width: "190px", height: "100%" }} />
         </li>
         <li className="marquee-content-li">
-          <div className="heading-h1">Antidote</div>
+          <h1>Antidote</h1>
           <img
             src={AntidoteCoffee}
             style={{ width: "190px", height: "100%" }}
           />
         </li>
         <li className="marquee-content-li">
-          <div className="heading-h1">The Ken</div>
+          <h1>The Ken</h1>
           <img src={KenImg} style={{ width: "190px", height: "100%" }} />
         </li>
         <li className="marquee-content-li">
-          <div className="heading-h1">Kapiva</div>
+          <h1>Kapiva</h1>
           <img src={KapivaImg} style={{ width: "190px", height: "100%" }} />
         </li>
         <li className="marquee-content-li">
-          <div className="heading-h1">Antidote</div>
+          <h1>Antidote</h1>
           <img
             src={AntidoteCoffee}
             style={{ width: "190px", height: "100%" }}
@@ -89,31 +89,31 @@ const Scrollable = () => (
     <div className="marquee">
       <ul className="marquee-content">
         <li className="marquee-content-li">
-          <div className="heading-h1">Bloom</div>
+          <h1>Bloom</h1>
           <img src={BloomHotels} style={{ width: "190px", height: "100%" }} />
         </li>
         <li className="marquee-content-li">
-          <div className="heading-h1">The Ken</div>
+          <h1>The Ken</h1>
           <img src={KenImg} style={{ width: "190px", height: "100%" }} />
         </li>
         <li className="marquee-content-li">
-          <div className="heading-h1">Kapiva</div>
+          <h1>Kapiva</h1>
           <img src={KapivaImg} style={{ width: "190px", height: "100%" }} />
         </li>
         <li className="marquee-content-li">
-          <div className="heading-h1">Bloom</div>
+          <h1>Bloom</h1>
           <img src={BloomHotels} style={{ width: "190px", height: "100%" }} />
         </li>
         <li className="marquee-content-li">
-          <div className="heading-h1">The Ken</div>
+          <h1>The Ken</h1>
           <img src={KenImg} style={{ width: "190px", height: "100%" }} />
         </li>
         <li className="marquee-content-li">
-          <div className="heading-h1">Kapiva</div>
+          <h1>Kapiva</h1>
           <img src={KapivaImg} style={{ width: "190px", height: "100%" }} />
         </li>
         <li className="marquee-content-li">
-          <div className="heading-h1">Bloom</div>
+          <h1>Bloom</h1>
           <img src={BloomHotels} style={{ width: "190px", height: "100%" }} />
         </li>
       </ul>

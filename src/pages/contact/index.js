@@ -15,19 +15,28 @@ import { GlobalContext } from "../../context/navContext";
 import { environmentUtil } from "../../utils/environmentUtil";
 
 const Contact = () => {
-  const { setCurrentPage, setShouldAnimate, browserWidth } = useContext(GlobalContext);
+  const { setCurrentPage, setShouldAnimate, browserWidth } = useContext(
+    GlobalContext
+  );
   return (
     <>
       <Spacing marginTop={SIZES.L}>
         <div className="about-top-heading">
           <SemiBoldHeading innerHtml={CONTACT.headingOne} />
-          <Heading 
-            innerHtml={ !environmentUtil.isMobile(browserWidth) ? CONTACT.headingTwo : CONTACT.headingFour} 
-            align={ALIGNMENT.LEFT} />
-          { !environmentUtil.isMobile(browserWidth) && <h2>
-            To start a project, write to us at{" "}
-            <u className="opposite-email">911@oppositehq.com</u>
-          </h2>}
+          <Heading
+            innerHtml={
+              !environmentUtil.isMobile(browserWidth)
+                ? CONTACT.headingTwo
+                : CONTACT.headingFour
+            }
+            align={ALIGNMENT.LEFT}
+          />
+          {!environmentUtil.isMobile(browserWidth) && (
+            <h2>
+              To start a project, write to us at{" "}
+              <u className="opposite-email">911@oppositehq.com</u>
+            </h2>
+          )}
           <SubHeading innerHtml={CONTACT.headingThree} />
         </div>
       </Spacing>

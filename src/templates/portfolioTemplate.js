@@ -42,16 +42,20 @@ const PortfolioTemplate = ({ data = [] }) => {
         );
         break;
       }
-      case "side-scrolling-image" : {
-        components.push(<SideScrollingImage />)
+      case "side-scrolling-image": {
+        components.push(<SideScrollingImage />);
         break;
       }
       case "Portfolio-small-heading-and-content": {
         components.push(
           <Spacing marginTop={SIZES.XL}>
-            <HeadingAndContent heading={sections.heading} content={sections.content} color={'white'}/>
+            <HeadingAndContent
+              heading={sections.heading}
+              content={sections.content}
+              color={"white"}
+            />
           </Spacing>
-        )
+        );
         break;
       }
       case "Width-defined-image": {
@@ -90,11 +94,11 @@ const PortfolioTemplate = ({ data = [] }) => {
       case "Side-by-Side": {
         components.push(
           <Spacing marginTop={SIZES.M}>
-            <SideBySide 
-                source1={sections.src1} 
-                source2={sections.src2} 
-                content={sections.content}
-                />
+            <SideBySide
+              source1={sections.src1}
+              source2={sections.src2}
+              content={sections.content}
+            />
           </Spacing>
         );
         break;
@@ -124,13 +128,18 @@ const PortfolioTemplate = ({ data = [] }) => {
       {/**
        * additional stuff can be added below here which are unique to this page.
        */}
-       <Spacing marginTop={SIZES.L}>
-        <div style={{ maxWidth: "770px", display: 'flex', justifyContent: 'center' }}>
+      <Spacing marginTop={SIZES.L}>
+        <div
+          style={{
+            maxWidth: "770px",
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
           <h2 style={{ color: "white" }}>See Website</h2>
         </div>
       </Spacing>
     </div>
-    
   );
 };
 

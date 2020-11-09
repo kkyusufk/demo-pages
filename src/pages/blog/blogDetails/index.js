@@ -5,6 +5,7 @@ import { Spacing } from "../../../components/spacing/spacing";
 import { SIZES } from "../../../constants";
 import { BlogTemplate } from "../../../templates/blogTemplate";
 import { ShareIt } from "../../../components/blog/shareIt";
+import { environmentUtil } from "../../../utils/environmentUtil";
 
 const data = [
   {
@@ -24,13 +25,42 @@ const data = [
 ];
 
 const BlogDetails = ({ location = {} }) => {
-  const [showshareIt, setState] = useState(true);
+  const [opacity, setOpacity] = useState(1);
   const compactShareIt = useRef();
+  const expndedShareIt = useRef();
   const { state = {} } = location;
 
   useEffect(() => {
-    console.log(compactShareIt)
-  })
+    // configure the intersection observer instance
+    const intersectionObserverOptions = {
+      root: null, // default is the viewport
+      threshold: 0.1, // percentage of the taregt visible area which will trigger "onIntersection"
+    };
+
+    const observer = new IntersectionObserver(
+      onIntersection,
+      intersectionObserverOptions
+    );
+
+    // called when target is fully visible
+    function onIntersection(entries, opts) {
+      entries.forEach((entry) => {
+        const visible = entry.intersectionRatio >= opts.thresholds[0];
+        if (visible) {
+          compactShareIt.current.style.opacity = 0
+        } else {
+          compactShareIt.current.style.opacity = 1
+        }
+      });
+    }
+
+    // provide the observer with a target
+    observer.observe(expndedShareIt.current);
+
+    return function cleanUp() {
+      observer.unobserve(expndedShareIt.current)
+    }
+  });
   return (
     <>
       <Spacing marginTop={SIZES.L}>
@@ -45,10 +75,10 @@ const BlogDetails = ({ location = {} }) => {
         <BlogTemplate data={data} />
       </Spacing>
       <Spacing marginTop={SIZES.XL}>
-        <ShareIt />
+        <ShareIt forwardRef={expndedShareIt} />
       </Spacing>
-      <div style={{ position: 'fixed' }}>
-        {showshareIt && <ShareIt toast={true} ref={compactShareIt} />}
+      <div className="share-it-compact-container">
+        <ShareIt toast={true} forwardRef={compactShareIt} />
       </div>
     </>
   );

@@ -14,6 +14,10 @@
   column-gap: 30px;
   row-gap: 30px;
   margin: 0;
+
+  @include mobile {
+    padding: 0% 4.166%;
+  }
 }
 
 @include tablet {
@@ -90,7 +94,9 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
 
+.team-modal {
   @include mobile {
     padding-left: 8.33%;
     padding-top: 30px;

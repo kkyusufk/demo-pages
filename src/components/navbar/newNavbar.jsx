@@ -19,10 +19,11 @@ const NavItems = ({ nav, isSelected, onClick }) => {
   const currentPage =
     environmentUtil.isWindowDefined() &&
     document.querySelector("[aria-current]");
+    console.log(currentPage)
   const newNav = nav.split(" ").join("");
   return (
     <Link
-      to={`/${newNav.toLowerCase()}/`}
+      to={ newNav === 'Home' ? '/' : `/${newNav.toLowerCase()}/`}
       onClick={onClick}
       className="nav-items"
     >
@@ -61,6 +62,28 @@ NavItems.propTypes = {
   onClick: PropTypes.func.isRequired,
 };
 
+const sidebar = {
+  open: {
+    clipPath: "circle(1200px at 100% 100%)",
+    display: 'flex',
+    transition: {
+      duration: 0.3,
+      type: "spring",
+      stiffness: 20,
+      restDelta: 2,
+    },
+  },
+  closed: {
+    clipPath: "circle(0px at 89% 3%)",
+    transition: {
+      duration: 0.3,
+      type: "spring",
+      stiffness: 400,
+      damping: 40,
+    },
+  },
+};
+
 /** @returns {React.FC} */
 const NewNavbar = () => {
   const [isOpen, toggleOpen] = useState(false);
@@ -82,53 +105,34 @@ const NewNavbar = () => {
   }, [isOpen]);
 
   return (
-        <AnimateSharedLayout>
-        <motion.ul
-          className="nav-header"
-          variants={sidebar}
-          animate={isOpen ? "open" : "closed"}
-        >
-          {navItems.map((nav) => {
-            return (
-              <NavItems
-                key={nav}
-                isSelected={currentPage === nav}
-                onClick={() => {
-                  toggleOpen(false);
-                  setShouldAnimate(false);
-                  setCurrentPage(nav);
-                }}
-                nav={nav}
-              />
-            );
-          })}
-        </motion.ul>
-        <Button
-          className="hamburger"
-          src={hamburger}
-          onClick={() => toggleOpen((state) => !state)}
-        />
-      </AnimateSharedLayout>
+    <AnimateSharedLayout>
+      <motion.ul
+        className="nav-header"
+        variants={sidebar}
+        animate={isOpen && environmentUtil.isMobile(browserWidth) ? "open" : "closed"}
+      >
+        {navItems.map((nav) => {
+          return (
+            <NavItems
+              key={nav}
+              isSelected={currentPage === nav}
+              onClick={() => {
+                toggleOpen(false);
+                setShouldAnimate(false);
+                setCurrentPage(nav);
+              }}
+              nav={nav}
+            />
+          );
+        })}
+      </motion.ul>
+      <Button
+        className="hamburger"
+        src={hamburger}
+        onClick={() => toggleOpen((state) => !state)}
+      />
+    </AnimateSharedLayout>
   );
-};
-
-const sidebar = {
-  open: {
-    clipPath: "circle(1200px at 100% 100%)",
-    transition: {
-      type: "spring",
-      stiffness: 20,
-      restDelta: 2,
-    },
-  },
-  closed: {
-    clipPath: "circle(0px at 89% 3%)",
-    transition: {
-      type: "spring",
-      stiffness: 400,
-      damping: 40,
-    },
-  },
 };
 
 export { NewNavbar };

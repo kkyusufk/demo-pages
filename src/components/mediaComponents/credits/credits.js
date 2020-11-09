@@ -1,6 +1,6 @@
 import React from "react";
 
-import './credits.scss';
+import "./credits.scss";
 
 const Credits = ({ list }) => {
   return (

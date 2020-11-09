@@ -1,7 +1,7 @@
 /** @jsx */
 import React from "react";
 
-import './image.scss';
+import "./image.scss";
 
 const Image = ({ src, width, height, type }) => {
   return (
@@ -10,7 +10,7 @@ const Image = ({ src, width, height, type }) => {
       src={src}
       width={width}
       height={height}
-      style={type === 'full-width' ? { padding: 0 } : {}}
+      style={type === "full-width" ? { padding: 0 } : {}}
     />
   );
 };

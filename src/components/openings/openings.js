@@ -37,16 +37,18 @@ const OpeningCards = () => {
         ref={cardContainerRef}
         dragConstraints={{ left: -calculateDragLeft(), right: 0 }}
       >
-        {openings.map((data) => {
+        {openings.map((data, index) => {
           return (
             <div
               id="inside-container"
+              key={`inside-container-${index}`}
               style={{
                 transition: "0.5s",
                 transform: `translateX(${X}px)`,
               }}
             >
               <Link
+                to='/careers/careerDetail'
                 style={{
                   textDecoration: "none",
                   color: "#000000",
@@ -58,9 +60,9 @@ const OpeningCards = () => {
                   BottomContent={() => {
                     return (
                       <>
-                        <h2 className="grey">{data.description}</h2>
+                        <h2 className="grey description">{data.description}</h2>
                         <span
-                          className="details"
+                          className="details animate-details"
                           onClick={() => console.log("clicked")}
                         >
                           See details &#x2192;

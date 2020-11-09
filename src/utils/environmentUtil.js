@@ -27,7 +27,9 @@ class EnvironmentUtil {
    * @returns {boolean}
    */
   isTablet(browserWidth) {
-    return browserWidth <= BREAKPOINTS.TABLET && browserWidth >= BREAKPOINTS.MOBILE;
+    return (
+      browserWidth <= BREAKPOINTS.TABLET && browserWidth >= BREAKPOINTS.MOBILE
+    );
   }
 
   /**
@@ -39,6 +41,25 @@ class EnvironmentUtil {
     return browserWidth >= BREAKPOINTS.DESKTOP;
   }
 
+  /**
+   * returns true if element is in viewport, else false;
+   * @param {DomElement} el
+   * @returns {boolean}
+   */
+  isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    console.log(rect);
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <=
+        (window.innerHeight ||
+          document.documentElement.clientHeight) /* or $(window).height() */ &&
+      rect.right <=
+        (window.innerWidth ||
+          document.documentElement.clientWidth) /* or $(window).width() */
+    );
+  }
 }
 
 const environmentUtil = new EnvironmentUtil();

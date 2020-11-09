@@ -305,8 +305,8 @@ export const CONTACT = {
     return "Tell us about your company and how you’d like us to help.";
   },
   get headingFour() {
-    return "To start a project, <br /> write to us at <br /> 911@oppositehq.com"
-  }
+    return "To start a project, <br /> write to us at <br /> 911@oppositehq.com";
+  },
 };
 
 export const FOOTER = {
