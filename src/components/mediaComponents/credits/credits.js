@@ -5,12 +5,13 @@ import "./credits.scss";
 const Credits = ({ list }) => {
   return (
     <div className="credits-container">
-      {list.map((section) => {
+      {list.map((section, index) => {
         return (
           <div
             style={{
               flex: "0 0 33.333333%",
             }}
+            key={`credits-${index}`}
           >
             <h3 className="bold" style={{ fontWeight: "bold" }}>
               {section.title}

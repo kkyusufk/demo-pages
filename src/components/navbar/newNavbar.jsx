@@ -19,7 +19,7 @@ const NavItems = ({ nav, isSelected, onClick }) => {
   const { browserWidth } = useContext(GlobalContext)
   let currentPage;
   const allNavElements = environmentUtil.isWindowDefined() && document.querySelectorAll('.nav-items');
-  allNavElements.forEach(page => {
+  Array.from(allNavElements).forEach(page => {
     if (page.text === nav) currentPage = page;
   })
   const newNav = nav.split(" ").join("");

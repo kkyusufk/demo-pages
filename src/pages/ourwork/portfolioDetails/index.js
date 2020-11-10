@@ -17,7 +17,7 @@ const PortfolioDetails = ({ location }) => {
   const { data = [] } = state;
   return (
     <>
-      <PortfolioTemplate data={data} />
+      <PortfolioTemplate data={data} key={`test`} />
       <Spacing marginTop={SIZES.XL}>
         <Heading
           innerHtml="More projects like this"
