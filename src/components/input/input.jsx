@@ -1,6 +1,8 @@
 /** @jsx */
 import { motion } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
+import { environmentUtil } from '../../utils/environmentUtil';
+
 import "./input.css";
 
 /**
@@ -18,7 +20,7 @@ const InputEmail = () => {
   const confirmRef = useRef();
   const [email, setEmail] = useState("");
   const [disabled, setDisabled] = useState(true);
-  const emailInput = document.getElementById("emailInput");
+  const emailInput = environmentUtil.isWindowDefined() && document.getElementById("emailInput");
 
   const disableHover = (type) => {
     const inputClass = document.getElementsByClassName("hoverableSignUp")[0];
