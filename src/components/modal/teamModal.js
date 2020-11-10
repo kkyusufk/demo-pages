@@ -35,15 +35,6 @@ export default function Modal({ cardID, pathContext = {}, location }) {
         style={{ pointerEvents: "auto" }}
         className="overlay"
       >
-        {pathContext !== `undefined` && typeof pathContext.name === "string" ? (
-          environmentUtil.isWindowDefined() && (
-            <Router>
-              <GatsbyLink to="/about" />
-            </Router>
-          )
-        ) : (
-          <Link to="/about" />
-        )}
       </motion.div>
       <motion.div
         ref={cardContainer}
@@ -53,6 +44,15 @@ export default function Modal({ cardID, pathContext = {}, location }) {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
+        {pathContext !== `undefined` && typeof pathContext.name === "string" ? (
+          environmentUtil.isWindowDefined() && (
+            <Router>
+              <GatsbyLink to="/about" style={{ position: 'fixed', right: 0, width: '20vw', height: '10vh', zIndex: 3 }} />
+            </Router>
+          )
+        ) : (
+          <Link to="/about" style={{ position: 'fixed', right: 0, width: '20vw', height: '10vh', zIndex: 3 }}/>
+        )}
         <motion.div
           className="modal-card-content"
           layoutId={`card-container-${cardID}`}

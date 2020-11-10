@@ -46,7 +46,6 @@
   height: 100%;
   position: absolute;
   display: block;
-  pointer-events: none;
 
   @media only screen and (max-width: 1170px) {
     width: 100vw;
@@ -88,7 +87,7 @@
   position: fixed;
   top: 20px;
   z-index: 1;
-  overflow: hidden;
+  overflow: scroll;
 
   @include mobile {
     top: 0px;

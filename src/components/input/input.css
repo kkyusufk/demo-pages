@@ -6,6 +6,7 @@
 
 #emailInput {
   height: 114px;
+  transition: all 0.5s ease-in-out;
 }
 
 .fail {
