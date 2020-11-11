@@ -24,9 +24,9 @@ const ContainerVariant = {
 
 const testVariant = {
   initial: { opacity: 0 },
-  animate: { opacity: 1, position: 'absolute' },
-  exit: { opacity: 0 }
-}
+  animate: { opacity: 1, position: "absolute" },
+  exit: { opacity: 0 },
+};
 
 const Layout = ({ location, children }) => {
   return (

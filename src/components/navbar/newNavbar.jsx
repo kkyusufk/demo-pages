@@ -16,16 +16,18 @@ import hamburger from "../../Assets/icons/hamburger.svg";
  * @returns {React.FC}
  */
 const NavItems = ({ nav, isSelected, onClick }) => {
-  const { browserWidth } = useContext(GlobalContext)
+  const { browserWidth } = useContext(GlobalContext);
   let currentPage;
-  const allNavElements = environmentUtil.isWindowDefined() && document.querySelectorAll('.nav-items');
-  Array.from(allNavElements).forEach(page => {
+  const allNavElements =
+    environmentUtil.isWindowDefined() &&
+    document.querySelectorAll(".nav-items");
+  Array.from(allNavElements).forEach((page) => {
     if (page.text === nav) currentPage = page;
-  })
+  });
   const newNav = nav.split(" ").join("");
   return (
     <Link
-      to={ newNav === 'Home' ? '/' : `/${newNav.toLowerCase()}/`}
+      to={newNav === "Home" ? "/" : `/${newNav.toLowerCase()}/`}
       onClick={onClick}
       className="nav-items"
     >
@@ -39,10 +41,12 @@ const NavItems = ({ nav, isSelected, onClick }) => {
             marginTop: "5px",
           }}
           initial={false}
-          animate={ !environmentUtil.isMobile(browserWidth) && {
-            width: `${currentPage !== undefined && currentPage.clientWidth}`,
-            transition: { duration: 0.1 }
-          }}
+          animate={
+            !environmentUtil.isMobile(browserWidth) && {
+              width: `${currentPage !== undefined && currentPage.clientWidth}`,
+              transition: { duration: 0.1 },
+            }
+          }
         />
       )}
     </Link>
@@ -67,7 +71,7 @@ NavItems.propTypes = {
 const sidebar = {
   open: {
     clipPath: "circle(1200px at 100% 100%)",
-    display: 'flex',
+    display: "flex",
     transition: {
       duration: 0.3,
       type: "spring",
@@ -111,7 +115,9 @@ const NewNavbar = () => {
       <motion.ul
         className="nav-header"
         variants={sidebar}
-        animate={isOpen && environmentUtil.isMobile(browserWidth) ? "open" : "closed"}
+        animate={
+          isOpen && environmentUtil.isMobile(browserWidth) ? "open" : "closed"
+        }
       >
         {navItems.map((nav) => {
           return (

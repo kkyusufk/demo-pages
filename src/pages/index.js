@@ -1,5 +1,3 @@
-
-
 import "../components/fonts.css";
 import "../components/layout.css";
 import "../css/global.scss";

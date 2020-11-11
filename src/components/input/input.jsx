@@ -1,7 +1,7 @@
 /** @jsx */
 import { motion } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
-import { environmentUtil } from '../../utils/environmentUtil';
+import { environmentUtil } from "../../utils/environmentUtil";
 
 import "./input.css";
 
@@ -10,7 +10,7 @@ import "./input.css";
  * The flow will be as follows:
  *  - Once the big `Sign Up` button is hovered (clicked in mobile), this element is translated into view.
  *  - If the input is focused, the element wont translate back. If not focused, it will translate back on mouse leave.
- *  - If the email entered does not match the regex in confirmationMessage method, there will be an error displayed 
+ *  - If the email entered does not match the regex in confirmationMessage method, there will be an error displayed
  *    after clicking `sign up ->`.
  *  - If the email matches the regex, there will be a confirmation email sent as well as a confirmation successful message.
  * @returns {React.FC}
@@ -20,7 +20,8 @@ const InputEmail = () => {
   const confirmRef = useRef();
   const [email, setEmail] = useState("");
   const [disabled, setDisabled] = useState(true);
-  const emailInput = environmentUtil.isWindowDefined() && document.getElementById("emailInput");
+  const emailInput =
+    environmentUtil.isWindowDefined() && document.getElementById("emailInput");
 
   const disableHover = (type) => {
     const inputClass = document.getElementsByClassName("hoverableSignUp")[0];
@@ -74,13 +75,13 @@ const InputEmail = () => {
       timeoutId = setTimeout(() => {
         emailInput.classList.remove("translateOut");
         confirmRef.current.classList.remove("translateUp");
-      }, 5000)
+      }, 5000);
     }
 
     return function cleanUp() {
-      clearTimeout(timeoutId)
-    }
-  }, [email])
+      clearTimeout(timeoutId);
+    };
+  }, [email]);
 
   return (
     <div className="emailFunctionality" id="mainDiv">

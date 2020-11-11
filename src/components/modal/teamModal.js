@@ -4,26 +4,26 @@ import { Link, BrowserRouter as Router } from "react-router-dom";
 import { Link as GatsbyLink } from "gatsby";
 import classnames from "classnames";
 
-import { Spacing } from '../spacing/spacing';
+import { Spacing } from "../spacing/spacing";
 import { Carousel } from "../carousel/carousel";
 import { environmentUtil } from "../../utils/environmentUtil";
 import { GlobalContext } from "../../context/navContext";
 import { SIZES } from "../../constants";
 
 import "./team-modal.scss";
-import "../team/team.scss"
+import "../team/team.scss";
 
 const DesktopModalVariant = {
   initial: { opacity: 0 },
   animate: { opacity: 1 },
-  exit: { opacity: 0, transition: { duration: 0.15 } }
-}
+  exit: { opacity: 0, transition: { duration: 0.15 } },
+};
 
 const MobileModalVariant = {
   initial: { opacity: 0, y: 1000 },
   animate: { opacity: 1, y: 0, transition: { duration: 1 } },
-  exit: { y: 1000, transition: { duration: 1 }, transitionEnd: { opacity: 0 } }
-}
+  exit: { y: 1000, transition: { duration: 1 }, transitionEnd: { opacity: 0 } },
+};
 
 export default function Modal({ cardID, pathContext = {}, location }) {
   const cardContainer = useRef();
@@ -37,8 +37,7 @@ export default function Modal({ cardID, pathContext = {}, location }) {
         transition={{ duration: 0.2, delay: 0.15 }}
         style={{ pointerEvents: "auto" }}
         className="overlay"
-      >
-      </motion.div>
+      ></motion.div>
       <motion.div
         ref={cardContainer}
         className={classnames("card-content-container open", {
@@ -50,16 +49,38 @@ export default function Modal({ cardID, pathContext = {}, location }) {
         {pathContext !== `undefined` && typeof pathContext.name === "string" ? (
           environmentUtil.isWindowDefined() && (
             <Router>
-              <GatsbyLink to="/about" style={{ position: 'fixed', right: 0, width: '20vw', height: '10vh', zIndex: 3 }} />
+              <GatsbyLink
+                to="/about"
+                style={{
+                  position: "fixed",
+                  right: 0,
+                  width: "20vw",
+                  height: "10vh",
+                  zIndex: 3,
+                }}
+              />
             </Router>
           )
         ) : (
-          <Link to="/about" style={{ position: 'fixed', right: 0, width: '20vw', height: '10vh', zIndex: 3 }}/>
+          <Link
+            to="/about"
+            style={{
+              position: "fixed",
+              right: 0,
+              width: "20vw",
+              height: "10vh",
+              zIndex: 3,
+            }}
+          />
         )}
         <motion.div
           className="modal-card-content"
           layoutId={`card-container-${cardID}`}
-          variants={ environmentUtil.isMobile(browserWidth) ? MobileModalVariant : DesktopModalVariant }
+          variants={
+            environmentUtil.isMobile(browserWidth)
+              ? MobileModalVariant
+              : DesktopModalVariant
+          }
           initial="initial"
           animate="animate"
           exit="exit"
@@ -69,7 +90,11 @@ export default function Modal({ cardID, pathContext = {}, location }) {
             layoutId={`name-container-modal-${cardID}`}
           >
             <motion.h1
-              layoutId={ !environmentUtil.isMobile(browserWidth) ? `modal-name-${cardID}` : undefined}
+              layoutId={
+                !environmentUtil.isMobile(browserWidth)
+                  ? `modal-name-${cardID}`
+                  : undefined
+              }
               initial={false}
               animate={{ opacity: 1, transition: { duration: 1 } }}
               exit={{ opacity: 0, transition: { duration: 1 } }}

@@ -47,12 +47,18 @@ const carouselVariants = {
  */
 const descriptionCardVariant = {
   initial: { opacity: 0 },
-  animate: { opacity: 1, transition: {
-    duration: 0.3,
-  }, },
-  exit: { opacity: 0, transition: {
-    duration: 0.5,
-  }, },
+  animate: {
+    opacity: 1,
+    transition: {
+      duration: 0.3,
+    },
+  },
+  exit: {
+    opacity: 0,
+    transition: {
+      duration: 0.5,
+    },
+  },
 };
 
 const tabs = [1, 2, 3, 4];
@@ -89,10 +95,7 @@ export const Carousel = ({ compact }) => {
       {/**
        * The carousel Images and animations
        */}
-      <AnimatePresence
-        initial={false}
-        custom={direction}
-      >
+      <AnimatePresence initial={false} custom={direction}>
         <motion.img
           className="carousel-image"
           key={page}
@@ -138,41 +141,41 @@ export const Carousel = ({ compact }) => {
        * Image title and subtitle cards
        */}
       {compact ? null : (
-          <div className={classNames("image-title")}>
-            {images.map((image, index) => {
-              return (
-                <AnimatePresence initial={false} exitBeforeEnter={false}>
-                  {index === active && (
-                    <div key={`motion-div-${index}`} id="contents">
-                      <motion.h2
-                        className="line-120"
-                        variants={descriptionCardVariant}
-                        initial="initial"
-                        animate="animate"
-                        exit="exit"
-                      >
-                        {image.title}
-                      </motion.h2>
-                      <motion.h2
-                        className="grey line-120"
-                        variants={descriptionCardVariant}
-                        initial="initial"
-                        animate="animate"
-                        exit="exit"
-                      >
-                        {image.subtitle}
-                      </motion.h2>
-                    </div>
-                  )}
-                </AnimatePresence>
-              );
-            })}
-          </div>
+        <div className={classNames("image-title")}>
+          {images.map((image, index) => {
+            return (
+              <AnimatePresence initial={false} exitBeforeEnter={false}>
+                {index === active && (
+                  <div key={`motion-div-${index}`} id="contents">
+                    <motion.h2
+                      className="line-120"
+                      variants={descriptionCardVariant}
+                      initial="initial"
+                      animate="animate"
+                      exit="exit"
+                    >
+                      {image.title}
+                    </motion.h2>
+                    <motion.h2
+                      className="grey line-120"
+                      variants={descriptionCardVariant}
+                      initial="initial"
+                      animate="animate"
+                      exit="exit"
+                    >
+                      {image.subtitle}
+                    </motion.h2>
+                  </div>
+                )}
+              </AnimatePresence>
+            );
+          })}
+        </div>
       )}
       {/**
        * The animating tabs at the bottom
        */}
-       <div className="tabs">
+      <div className="tabs">
         {tabs.map((tab, index) => {
           return (
             <AnimatePresence exitBeforeEnter>

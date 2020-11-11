@@ -48,7 +48,7 @@ const OpeningCards = () => {
               }}
             >
               <Link
-                to='/careers/careerDetail'
+                to="/careers/careerDetail"
                 style={{
                   textDecoration: "none",
                   color: "#000000",

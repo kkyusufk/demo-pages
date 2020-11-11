@@ -46,9 +46,9 @@ const BlogDetails = ({ location = {} }) => {
       entries.forEach((entry) => {
         const visible = entry.intersectionRatio >= opts.thresholds[0];
         if (visible) {
-          compactShareIt.current.style.opacity = 0
+          compactShareIt.current.style.opacity = 0;
         } else {
-          compactShareIt.current.style.opacity = 1
+          compactShareIt.current.style.opacity = 1;
         }
       });
     }
@@ -57,8 +57,8 @@ const BlogDetails = ({ location = {} }) => {
     observer.observe(expndedShareIt.current);
 
     return function cleanUp() {
-      observer.unobserve(expndedShareIt.current)
-    }
+      observer.unobserve(expndedShareIt.current);
+    };
   });
   return (
     <>
