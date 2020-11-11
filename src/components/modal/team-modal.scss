@@ -77,6 +77,7 @@
 
 .team-modal-social {
   max-width: 316px;
+  min-width: 239px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -92,6 +93,10 @@
   @include mobile {
     top: 0px;
   }
+}
+
+.card-content-container::-webkit-scrollbar {
+  display: none;
 }
 
 .content-container {
@@ -120,6 +125,7 @@
 }
 
 .content-carousel {
+  align-self: flex-end;
   > div {
     width: 370px;
     height: 500px;

@@ -1,14 +1,17 @@
-import React, { useEffect, useRef, useContext } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import React, { useRef, useContext } from "react";
+import { motion } from "framer-motion";
 import { Link, BrowserRouter as Router } from "react-router-dom";
 import { Link as GatsbyLink } from "gatsby";
 import classnames from "classnames";
-import { team } from "../../data";
+
+import { Spacing } from '../spacing/spacing';
 import { Carousel } from "../carousel/carousel";
-import "./team-modal.scss";
-import "../team/team.scss"
 import { environmentUtil } from "../../utils/environmentUtil";
 import { GlobalContext } from "../../context/navContext";
+import { SIZES } from "../../constants";
+
+import "./team-modal.scss";
+import "../team/team.scss"
 
 const DesktopModalVariant = {
   initial: { opacity: 0 },
@@ -94,17 +97,19 @@ export default function Modal({ cardID, pathContext = {}, location }) {
                 to make a point, not sparing any scrap of paper lying around,
                 even cheque books!
               </p>
-              <div className="team-modal-social">
-                <span>
-                  <u>Facebook</u>
-                </span>
-                <span>
-                  <u>Instagram</u>
-                </span>
-                <span>
-                  <u>Linkedin</u>
-                </span>
-              </div>
+              <Spacing marginTop={SIZES.M}>
+                <div className="team-modal-social">
+                  <h3>
+                    <u>Facebook</u>
+                  </h3>
+                  <h3>
+                    <u>Instagram</u>
+                  </h3>
+                  <h3>
+                    <u>Linkedin</u>
+                  </h3>
+                </div>
+              </Spacing>
             </div>
             <div className="content-carousel">
               <div>
