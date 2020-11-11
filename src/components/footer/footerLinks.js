@@ -17,6 +17,7 @@ const FooterLinks = ({ page, to = "" }) => {
       <Link
         to={`/${to.toLowerCase()}/`}
         onClick={() => {
+          window.scrollBy(window.scrollX, window.scrollY);
           setShouldAnimate(true);
           setCurrentPage(to);
         }}

@@ -2,7 +2,7 @@ import React, { useRef, useContext } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 
-import { GlobalContext } from '../../context/navContext';
+import { GlobalContext } from "../../context/navContext";
 import { team } from "../../data";
 import "./team.scss";
 import { environmentUtil } from "../../utils/environmentUtil";
@@ -20,17 +20,22 @@ const detailsVariant = {
 
 function Card({ id, name, description }) {
   const cardRef = useRef();
-  const { browserWidth } = useContext(GlobalContext)
+  const { browserWidth } = useContext(GlobalContext);
   return (
     <li className={`team-card`}>
-      { environmentUtil.isMobile(browserWidth) && <Link to={`/about/${id}`} style={{
-        position: 'absolute',
-        zIndex: 1,
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0
-      }} />}
+      {environmentUtil.isMobile(browserWidth) && (
+        <Link
+          to={`/about/${id}`}
+          style={{
+            position: "absolute",
+            zIndex: 1,
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+          }}
+        />
+      )}
       <motion.div
         initial="initial"
         whileHover="hover"
@@ -41,7 +46,11 @@ function Card({ id, name, description }) {
       >
         <motion.div
           className="team-card-content"
-          layoutId={ !environmentUtil.isMobile(browserWidth) ? `card-container-${id}` : undefined}
+          layoutId={
+            !environmentUtil.isMobile(browserWidth)
+              ? `card-container-${id}`
+              : undefined
+          }
         >
           <motion.div
             className="name-container team-card"
@@ -61,7 +70,9 @@ function Card({ id, name, description }) {
             <motion.span
               className="details"
               key={`card-details-${id}`}
-              variants={ !environmentUtil.isMobile(browserWidth) && detailsVariant}
+              variants={
+                !environmentUtil.isMobile(browserWidth) && detailsVariant
+              }
             >
               <Link
                 to={`/about/${id}`}

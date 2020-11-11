@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useRef, useEffect } from "react";
 import "./blogDetails.scss";
 import { Blog } from "../../../components/blog/blog";
 import { Spacing } from "../../../components/spacing/spacing";
@@ -25,7 +25,6 @@ const data = [
 ];
 
 const BlogDetails = ({ location = {} }) => {
-  const [opacity, setOpacity] = useState(1);
   const compactShareIt = useRef();
   const expndedShareIt = useRef();
   const { state = {} } = location;
@@ -47,9 +46,9 @@ const BlogDetails = ({ location = {} }) => {
       entries.forEach((entry) => {
         const visible = entry.intersectionRatio >= opts.thresholds[0];
         if (visible) {
-          compactShareIt.current.style.opacity = 0
+          compactShareIt.current.style.opacity = 0;
         } else {
-          compactShareIt.current.style.opacity = 1
+          compactShareIt.current.style.opacity = 1;
         }
       });
     }
@@ -58,8 +57,8 @@ const BlogDetails = ({ location = {} }) => {
     observer.observe(expndedShareIt.current);
 
     return function cleanUp() {
-      observer.unobserve(expndedShareIt.current)
-    }
+      observer.unobserve(expndedShareIt.current);
+    };
   });
   return (
     <>

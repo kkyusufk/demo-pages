@@ -1,12 +1,27 @@
+/** @jsx */
 import { motion } from "framer-motion";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { environmentUtil } from "../../utils/environmentUtil";
+
 import "./input.css";
 
+/**
+ * The InputEmail element with all the checkings
+ * The flow will be as follows:
+ *  - Once the big `Sign Up` button is hovered (clicked in mobile), this element is translated into view.
+ *  - If the input is focused, the element wont translate back. If not focused, it will translate back on mouse leave.
+ *  - If the email entered does not match the regex in confirmationMessage method, there will be an error displayed
+ *    after clicking `sign up ->`.
+ *  - If the email matches the regex, there will be a confirmation email sent as well as a confirmation successful message.
+ * @returns {React.FC}
+ */
 const InputEmail = () => {
   const inputRef = useRef();
   const confirmRef = useRef();
   const [email, setEmail] = useState("");
   const [disabled, setDisabled] = useState(true);
+  const emailInput =
+    environmentUtil.isWindowDefined() && document.getElementById("emailInput");
 
   const disableHover = (type) => {
     const inputClass = document.getElementsByClassName("hoverableSignUp")[0];
@@ -33,7 +48,6 @@ const InputEmail = () => {
 
   const confirmationMessage = () => {
     const { value } = inputRef.current;
-    const emailInput = document.getElementById("emailInput");
     const hidden = document.querySelector(".fail");
     // eslint-disable-next-line
     const RegEx = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -55,9 +69,24 @@ const InputEmail = () => {
     }
   };
 
+  useEffect(() => {
+    let timeoutId;
+    if (email !== "") {
+      timeoutId = setTimeout(() => {
+        emailInput.classList.remove("translateOut");
+        confirmRef.current.classList.remove("translateUp");
+      }, 5000);
+    }
+
+    return function cleanUp() {
+      clearTimeout(timeoutId);
+    };
+  }, [email]);
+
   return (
     <div className="emailFunctionality" id="mainDiv">
       <div id="emailInput">
+        {/* the email input element */}
         <input
           className="typeEmail"
           type="email"
@@ -67,6 +96,7 @@ const InputEmail = () => {
           onBlur={handleOnBlur}
           ref={inputRef}
         />
+        {/* the fail message if the email is not following the correct order */}
         <div className="fail" id="hidden">
           That's not a legit email ID :-/
         </div>

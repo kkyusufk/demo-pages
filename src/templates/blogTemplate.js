@@ -20,7 +20,9 @@ const BlogTemplate = ({ data }) => {
   data.forEach((section) => {
     switch (section.id) {
       case "Blog-Text": {
-        components.push(<BlogParagraph text={section.text} center={true} key={`blog-para`} />);
+        components.push(
+          <BlogParagraph text={section.text} center={true} key={`blog-para`} />
+        );
         break;
       }
       case "Blog-Quotes": {
@@ -43,7 +45,11 @@ const BlogTemplate = ({ data }) => {
       {components.map((children, index) => {
         // There should be no margin top for first paragraph
         if (index === 0) return children;
-        return <Spacing marginTop={SIZES.L} key={`blog-template-spacing-${index}`}>{children}</Spacing>;
+        return (
+          <Spacing marginTop={SIZES.L} key={`blog-template-spacing-${index}`}>
+            {children}
+          </Spacing>
+        );
       })}
     </div>
   );

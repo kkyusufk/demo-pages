@@ -5,8 +5,8 @@ import React, {
   useMemo,
   useEffect,
 } from "react";
-import { NAVITEMS } from "../constants";
 import { environmentUtil } from "../utils/environmentUtil";
+import { NAVITEMS } from "../constants";
 
 const GlobalContext = createContext();
 
@@ -14,7 +14,9 @@ const Provider = memo(({ children }) => {
   const page = environmentUtil.isWindowDefined()
     ? window.location.pathname.split("/")[1]
     : "home";
-  const [currentPage, setCurrentPage] = useState(page === "" ? NAVITEMS['HOME'] : NAVITEMS[page.toUpperCase()]);
+  const [currentPage, setCurrentPage] = useState(
+    page === "" ? NAVITEMS["HOME"] : NAVITEMS[page.toUpperCase()]
+  );
   const [shouldAnimate, setShouldAnimate] = useState(false);
   const [browserWidth, setBrowserWidth] = useState(
     environmentUtil.isWindowDefined() ? window.innerWidth : 1000
