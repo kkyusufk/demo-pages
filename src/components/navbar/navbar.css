@@ -1,6 +1,5 @@
 .nav-header {
   z-index: 1;
-  font-family: 'Roobert-Regular';
   position: relative;
   padding: 0;
   margin: 0;
@@ -11,7 +10,6 @@
   justify-content: space-between;
   grid-row-start: 1;
   grid-column-start: 1;
-  font-size: 32px;
 }
 
  .nav-items {
@@ -89,7 +87,7 @@ li {
 }
 
 
-@media only screen and (min-width: 780px) {
+@media only screen and (min-width: 768px) {
   .nav-header {
     clip-path: circle(2000px at 0px 0px) !important;
   }
@@ -100,13 +98,6 @@ li {
   .hamburger {
     display: none;
   }
-/* 
-  .nav-header {
-    top: 42px;
-    height: 3rem;
-    background-color: transparent;
-    flex-direction: row;
-  } */
 
   .nav-bar-underline {
     position: absolute;

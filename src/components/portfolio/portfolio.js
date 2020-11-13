@@ -6,14 +6,8 @@ import { environmentUtil } from "../../utils/environmentUtil";
 
 import "../fonts.css";
 import "./portfolio.scss";
-
-const titleHoverVariant = {
-  hover: {
-    textDecoration: "underline",
-    cursor: "pointer",
-    textDecorationSkipInk: "none",
-  },
-};
+import { Spacing } from "../spacing/spacing";
+import { SIZES } from "../../constants";
 
 const Portfolio = ({
   src,
@@ -29,21 +23,19 @@ const Portfolio = ({
     justify = "space-between";
   }
   return (
-    <div className="portfolioContainer" style={{ maxWidth: width, height }}>
-      <div className="portfolioContent" style={{ justifyContent: justify }}>
+    <div className="portfolioContainer" style={{ maxWidth: width, maxHeight: height }}>
+      <div className="portfolioContent">
         <div>
           <img src={src} className="portfolioImage" width={width} />
         </div>
-        <div
-          style={{ marginTop: !environmentUtil.isMobile(browserWidth) && 20 }}
-        >
+        <Spacing marginTop={SIZES.S}>
           <div className="portfolioTitle">
             <Title content={title} heading={heading} />
           </div>
           <div className="portfolioSubtitle">
             <Subtitile content={subtitle} heading={heading} />
           </div>
-        </div>
+        </Spacing>
       </div>
     </div>
   );

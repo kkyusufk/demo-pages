@@ -31,14 +31,13 @@ const NavItems = ({ nav, isSelected, onClick }) => {
       onClick={onClick}
       className="nav-items"
     >
-      {nav}
+      <h2 className="nav-h2">{nav}</h2>
       {isSelected && (
         <motion.div
           layoutId="tab"
           style={{
             backgroundColor: "black",
             height: "3px",
-            marginTop: "5px",
           }}
           initial={false}
           animate={

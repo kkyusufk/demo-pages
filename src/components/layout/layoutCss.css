@@ -65,7 +65,7 @@ footer {
 }
 
 @media only screen 
-  and (min-width: 320px) 
+  and (min-width: 0px) 
   and (max-width: 768px) {
   
   .header-wrapper {
@@ -82,19 +82,23 @@ footer {
     z-index: 4;
   }
 
-  .opposite-svg-footer {
-    top: -78px;
-  }
-
   .header {
     height: 45px;
   }
 
   .footer {
     margin-top: 30px;
-    height: 45px;
   }
   
+}
+
+@media only screen and (max-width: 400px) {
+  .footer {
+    height: 45px;
+  }
+  .opposite-svg-footer {
+    top: -78px;
+  }
 }
 
 @media only screen and (min-width: 768px) {

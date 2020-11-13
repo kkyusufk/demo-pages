@@ -1,43 +1,38 @@
 /** @jsx */
-import React, { useContext } from "react";
+import React from "react";
+import { useScrollRestoration } from "gatsby"
 import { AnimatePresence, motion } from "framer-motion";
 import PropTypes from "prop-types";
 
-import "./layoutCss.css";
 import { isPortfolioDetails } from "../../utils/pagesUtil";
 import { NewNavbar } from "../navbar/newNavbar";
 import { Logo } from "../logo/logo";
 import { GlobalContext } from "../../context/navContext";
-import { environmentUtil } from "../../utils/environmentUtil";
+
+import "./layoutCss.css";
 
 const ContainerVariant = {
   initial: { y: 1000, position: "absolute", transition: { duration: 1 } },
-  animate: { y: 0, position: "absolute", transition: { duration: 1 } },
-  exit: (i) => ({
+  animate: { y: 0,  position: "absolute", transition: { duration: 1 } },
+  exit: {
     y: "-100%",
     transition: {
       duration: 1,
-      from: -i,
-    },
-  }),
-};
-
-const testVariant = {
-  initial: { opacity: 0 },
-  animate: { opacity: 1, position: "absolute" },
-  exit: { opacity: 0 },
+      from: "-88%"
+    }
+  },
 };
 
 const Layout = ({ location, children }) => {
+  const ref = useScrollRestoration(`footer`);
   return (
     <GlobalContext.Consumer>
       {(value) => (
         <AnimatePresence
           exitBeforeEnter={!value.shouldAnimate}
-          custom={environmentUtil.isWindowDefined() && window.scrollY}
+          custom={window.scrollY}
         >
           <motion.div
-            custom={environmentUtil.isWindowDefined() && window.scrollY}
             key={location.key}
             transition={{
               x: { type: "spring", stiffness: 300, damping: 200 },
@@ -65,7 +60,7 @@ const Layout = ({ location, children }) => {
               <section className="main-content">{children}</section>
             </main>
             <footer className="footer column">
-              <div className="opposite-svg-footer">
+              <div className="opposite-svg-footer" ref={ref}>
                 <Logo />
               </div>
             </footer>
