@@ -13,7 +13,6 @@ import { Team } from "../../components/team";
 import { ALIGNMENT, NAVITEMS, PAGES, SIZES } from "../../constants";
 import { Spacing } from "../../components/spacing/spacing";
 import { Grid1 } from "../../components/grid/grid1";
-import { Grid2 } from "../../components/grid/grid2";
 import { FooterLinks } from "../../components/footer/footerLinks";
 import { environmentUtil } from "../../utils/environmentUtil";
 
@@ -69,6 +68,24 @@ const About = () => (
             width="640px"
             color="#333333"
           />
+          <img 
+          src="https://source.unsplash.com/random"
+          style={{
+            position: 'absolute',
+            top: '60.77%',
+            width: 100,
+            height: 100,
+            right: 30
+          }}/>
+          <img 
+          src="https://source.unsplash.com/random"
+          style={{
+            position: 'absolute',
+            bottom: 0,
+            width: 150,
+            height: 270,
+            left: '53%',
+          }}/>
         </div>
       </Grid1>
     </Spacing>

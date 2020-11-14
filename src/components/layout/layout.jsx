@@ -10,6 +10,7 @@ import { Logo } from "../logo/logo";
 import { GlobalContext } from "../../context/navContext";
 
 import "./layoutCss.css";
+import { environmentUtil } from "../../utils/environmentUtil";
 
 const ContainerVariant = {
   initial: { y: 1000, position: "absolute", transition: { duration: 1 } },
@@ -30,7 +31,7 @@ const Layout = ({ location, children }) => {
       {(value) => (
         <AnimatePresence
           exitBeforeEnter={!value.shouldAnimate}
-          custom={window.scrollY}
+          custom={environmentUtil.isWindowDefined() && window.scrollY}
         >
           <motion.div
             key={location.key}
