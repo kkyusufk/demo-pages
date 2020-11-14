@@ -163,7 +163,6 @@ const Ourwork = () => {
                     <Link
                       to="/ourwork/portfolioDetails/"
                       state={{ data: PortfolioDetails }}
-                      onClick={() => setCurrentPage("Our Work")}
                       style={{
                         color: "#333333",
                         textDecoration: "none",

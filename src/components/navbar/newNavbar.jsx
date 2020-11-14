@@ -34,18 +34,11 @@ const NavItems = ({ nav, isSelected, onClick }) => {
       <h2 className="nav-h2">{nav}</h2>
       {isSelected && (
         <motion.div
-          layoutId="tab"
+          layoutId
           style={{
             backgroundColor: "black",
             height: "3px",
           }}
-          initial={false}
-          animate={
-            !environmentUtil.isMobile(browserWidth) && {
-              width: `${currentPage !== undefined && currentPage.clientWidth}`,
-              transition: { duration: 0.1 },
-            }
-          }
         />
       )}
     </Link>

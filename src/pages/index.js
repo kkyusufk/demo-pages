@@ -30,7 +30,7 @@ import { Carousel } from "../components/carousel/framerCarousel/framerCarousel";
 import { environmentUtil } from "../utils/environmentUtil";
 
 const Index = () => {
-  const { setCurrentPage, setScrollY, setShouldAnimate } = useContext(
+  const { setCurrentPage, setShouldAnimate } = useContext(
     GlobalContext
   );
   return (
@@ -100,7 +100,6 @@ const Index = () => {
           to="/ourwork/"
           onClick={() => {
             setShouldAnimate(true);
-            setScrollY(window.scrollY);
             setCurrentPage(NAVITEMS.OURWORK);
           }}
           className="nav-items"
@@ -128,7 +127,6 @@ const Index = () => {
           to="/about/"
           onClick={() => {
             setShouldAnimate(true);
-            setScrollY(window.scrollY);
             setCurrentPage(NAVITEMS.ABOUT);
           }}
           className="nav-items"
