@@ -3,29 +3,29 @@ import classNames from "classnames";
 
 import "./heading.scss";
 
-const Heading = ({ innerHtml, align, justify, maxWidth = "100%", hover }) => {
+const Heading = ({ innerHtml, align, justify, maxWidth = "100%", hover, Tag="div" }) => {
   const textArray = innerHtml.split("<br />");
   return (
     <div
       className="heading"
       style={{
+        display: "flex",
         textAlign: align,
         justifyContent: justify,
         maxWidth,
-        display: "flex",
       }}
     >
-      <h1
-        className={classNames({ "hover-h1": hover })}
-        style={{ textAlign: align }}
-      >
+      <Tag className={classNames({ 
+        "hover-h1": hover, 
+        "heading-h1": Tag === 'div'
+        })}>
         {textArray.map((text, index) => (
           <React.Fragment key={`${text} - ${index}`}>
             {" "}
             {text} <br />{" "}
           </React.Fragment>
         ))}
-      </h1>
+      </Tag>
     </div>
   );
 };

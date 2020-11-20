@@ -140,6 +140,7 @@ const Ourwork = () => {
             innerHtml={OURWORK.headingTwo}
             width="970px"
             align={ALIGNMENT.LEFT}
+            Tag="h1"
           />
           <div style={{ marginTop: "50px" }}>
             <Filter active={active} toggleActive={toggleActive} />

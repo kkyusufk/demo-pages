@@ -36,7 +36,7 @@ const Index = () => {
   return (
     <>
       <Spacing marginTop={SIZES.L}>
-        <Heading innerHtml={HOME.headingOne} maxWidth="970px" />
+        <Heading innerHtml={HOME.headingOne} maxWidth="970px" Tag="h1" />
       </Spacing>
       <Spacing marginTop={SIZES.XL}>
         <Grid1>

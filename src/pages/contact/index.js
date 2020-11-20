@@ -30,6 +30,7 @@ const Contact = () => {
                 : CONTACT.headingFour
             }
             align={ALIGNMENT.LEFT}
+            Tag="h1"
           />
           {!environmentUtil.isMobile(browserWidth) && (
             <h2>

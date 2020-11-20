@@ -25,6 +25,7 @@ const About = () => (
           innerHtml={ABOUT.headingTwo}
           maxWidth="970px"
           align={ALIGNMENT.LEFT}
+          Tag="h1"
         />
         <SubHeading innerHtml={ABOUT.headingThree} width="970px" />
       </div>

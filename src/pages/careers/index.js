@@ -18,7 +18,7 @@ const Career = () => (
     <Spacing marginTop={SIZES.L}>
       <div className="careers-top-heading">
         <SemiBoldHeading innerHtml={CAREERS.headingOne} />
-        <Heading innerHtml={CAREERS.headingTwo} maxWidth="970px" />
+        <Heading innerHtml={CAREERS.headingTwo} maxWidth="970px" Tag="h1" />
       </div>
     </Spacing>
     <Spacing marginTop={SIZES.XL}>
