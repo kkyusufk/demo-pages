@@ -140,6 +140,7 @@ const Ourwork = () => {
             innerHtml={OURWORK.headingTwo}
             width="970px"
             align={ALIGNMENT.LEFT}
+            Tag="h1"
           />
           <div style={{ marginTop: "50px" }}>
             <Filter active={active} toggleActive={toggleActive} />
@@ -163,7 +164,6 @@ const Ourwork = () => {
                     <Link
                       to="/ourwork/portfolioDetails/"
                       state={{ data: PortfolioDetails }}
-                      onClick={() => setCurrentPage("Our Work")}
                       style={{
                         color: "#333333",
                         textDecoration: "none",

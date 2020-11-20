@@ -21,9 +21,6 @@ const Provider = memo(({ children }) => {
   const [browserWidth, setBrowserWidth] = useState(
     environmentUtil.isWindowDefined() ? window.innerWidth : 1000
   );
-  const [scrollY, setScrollY] = useState(
-    environmentUtil.isWindowDefined() ? window.scrollY : 0
-  );
 
   useEffect(() => {
     window.addEventListener("resize", () => setBrowserWidth(window.innerWidth));
@@ -35,11 +32,9 @@ const Provider = memo(({ children }) => {
       shouldAnimate,
       setShouldAnimate,
       currentPage,
-      scrollY,
       setCurrentPage,
-      setScrollY,
     }),
-    [scrollY, currentPage, browserWidth]
+    [currentPage, browserWidth]
   );
   return (
     <GlobalContext.Provider value={value}>{children}</GlobalContext.Provider>

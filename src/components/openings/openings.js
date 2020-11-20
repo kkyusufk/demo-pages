@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import { Link } from "gatsby";
 
 import "./openings.scss";
@@ -22,12 +22,6 @@ const OpeningCards = () => {
      */
     return 400 * (openings.length - 3);
   };
-
-  useEffect(() => {
-    cardContainerRef.current.addEventListener("scroll", () =>
-      console.log("dssds")
-    );
-  });
 
   return (
     <AnimateSharedLayout>
@@ -56,7 +50,7 @@ const OpeningCards = () => {
                 state={data}
               >
                 <Card
-                  TopContent={() => <h1>{data.name}</h1>}
+                  TopContent={() => <div className="heading-h1">{data.name}</div>}
                   BottomContent={() => {
                     return (
                       <>

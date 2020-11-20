@@ -10,7 +10,7 @@ const Blog = ({ author, date, title, src }) => {
           <h2 className="grey">
             {author} / {date}
           </h2>
-          <h1 className="blog-title">{title}</h1>
+          <div className="blog-title heading-h1">{title}</div>
         </div>
         <div className="imageContainer">
           <img src={src} />

@@ -7,15 +7,15 @@ import InstgramSvg from "../../Assets/icons/instagram.svg";
 import { InputEmail } from "../input/input";
 
 // TODO: Cleanup code (maybe handle things better)
-const TopContent1 = () => <h1>Join the team</h1>;
+const TopContent1 = () => <div className="heading-h1">Join the team</div>;
 const BottomContent1 = () => (
   <img src={InstgramSvg} className="instagram" alt="direction button" />
 );
 
-const TopContent2 = () => <h1>Quaterly updates from us via Email</h1>;
+const TopContent2 = () => <div className="heading-h1">Quaterly updates from us via Email</div>;
 const BottomContent2 = () => (
   <>
-    <h1 className="signUp hover-signUp">Sign up</h1>
+    <div className="signUp hover-signUp heading-h1">Sign up</div>
   </>
 );
 

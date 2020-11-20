@@ -89,7 +89,8 @@ export default function Modal({ cardID, pathContext = {}, location }) {
             className="name-container team-modal"
             layoutId={`name-container-modal-${cardID}`}
           >
-            <motion.h1
+            <motion.div
+              className="heading-h1"
               layoutId={
                 !environmentUtil.isMobile(browserWidth)
                   ? `modal-name-${cardID}`
@@ -100,7 +101,7 @@ export default function Modal({ cardID, pathContext = {}, location }) {
               exit={{ opacity: 0, transition: { duration: 1 } }}
             >
               Abhisek Sarda
-            </motion.h1>
+            </motion.div>
             <span className="description">Founder & Creative Director</span>
           </motion.div>
           <motion.div className="content-container" animate>

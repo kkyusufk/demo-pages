@@ -30,13 +30,13 @@ import { Carousel } from "../components/carousel/framerCarousel/framerCarousel";
 import { environmentUtil } from "../utils/environmentUtil";
 
 const Index = () => {
-  const { setCurrentPage, setScrollY, setShouldAnimate } = useContext(
+  const { setCurrentPage, setShouldAnimate } = useContext(
     GlobalContext
   );
   return (
     <>
       <Spacing marginTop={SIZES.L}>
-        <Heading innerHtml={HOME.headingOne} maxWidth="970px" />
+        <Heading innerHtml={HOME.headingOne} maxWidth="970px" Tag="h1" />
       </Spacing>
       <Spacing marginTop={SIZES.XL}>
         <Grid1>
@@ -100,7 +100,6 @@ const Index = () => {
           to="/ourwork/"
           onClick={() => {
             setShouldAnimate(true);
-            setScrollY(window.scrollY);
             setCurrentPage(NAVITEMS.OURWORK);
           }}
           className="nav-items"
@@ -128,7 +127,6 @@ const Index = () => {
           to="/about/"
           onClick={() => {
             setShouldAnimate(true);
-            setScrollY(window.scrollY);
             setCurrentPage(NAVITEMS.ABOUT);
           }}
           className="nav-items"

@@ -52,7 +52,7 @@ const PortfolioTemplate = ({ data = [] }) => {
             <HeadingAndContent
               heading={sections.heading}
               content={sections.content}
-              color={"white"}
+              color="white"
             />
           </Spacing>
         );
