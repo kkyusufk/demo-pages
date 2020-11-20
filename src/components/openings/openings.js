@@ -50,7 +50,7 @@ const OpeningCards = () => {
                 state={data}
               >
                 <Card
-                  TopContent={() => <h1>{data.name}</h1>}
+                  TopContent={() => <div className="heading-h1">{data.name}</div>}
                   BottomContent={() => {
                     return (
                       <>
