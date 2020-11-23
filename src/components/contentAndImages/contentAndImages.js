@@ -1,12 +1,14 @@
 import React from "react";
+import classNames from 'classnames';
+
 import { CAREERS } from "../../data";
 import { Heading } from "../typography/heading/heading";
 import { SubHeading } from "../typography/subHeading/subHeading";
 import "./contentAndImages.scss";
 
-const ContentAndImages = ({ content, src, direction }) => {
+const ContentAndImages = ({ content, src, reverse = false }) => {
   return (
-    <div className="careers-image-with-content">
+    <div className={classNames("careers-image-with-content", { "reverse": reverse })}>
       <div className="careers-content-left-of-image">
         <Heading innerHtml={content} width="inherit" />
         <SubHeading

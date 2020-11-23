@@ -1,25 +1,39 @@
 @import "../../css/mixins.scss";
 
+.reverse {
+  @include desktop {
+    grid-template-areas: 
+  "img content" !important;
+  }
+}
+
 /* content and images */
 .careers-image-with-content {
   display: grid;
-  grid-template-columns: repeat(2, 50%);
+  grid-template-areas: "content img";
   column-gap: 130px;
   row-gap: 30px;
   width: 100%;
   
   @include tablet {
     grid-template-columns: auto;
+    grid-template-areas: 
+    " content content"
+    " img img ";
   }
 
   @include mobile {
     grid-template-columns: auto;
+    grid-template-areas: 
+    " content"
+    " img ";
   }
 }
 
 .careers-content-left-of-image {
   display: grid;
   row-gap: 15px;
+  grid-area: content;
   
   @media only screen and (min-width: 768px) {
     align-self: center;
@@ -27,7 +41,8 @@
 }
 
 .careers-image-right-of-content {
-  
+  grid-area: img;
+
   @media only screen and (max-width: 767px) {
     height: 100%;
     padding: 0% 4.166%;

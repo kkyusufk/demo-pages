@@ -123,7 +123,7 @@ const CareerDetail = ({ location }) => {
         <ContentAndImages
           content={CAREERS.headingFive}
           src="https://source.unsplash.com/random"
-          flexDirection="row-reverse"
+          reverse={true}
         />
       </Spacing>
       <Spacing marginTop={SIZES.XL}>
