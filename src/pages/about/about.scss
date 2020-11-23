@@ -64,9 +64,8 @@
   .about-content-left-of-carousel {
     width: 570px;
     position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    display: grid;
+    row-gap: 30px;
     align-self: center;
     max-height: 460px;
   }

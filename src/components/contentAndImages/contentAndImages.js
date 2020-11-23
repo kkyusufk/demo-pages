@@ -4,9 +4,9 @@ import { Heading } from "../typography/heading/heading";
 import { SubHeading } from "../typography/subHeading/subHeading";
 import "./contentAndImages.scss";
 
-const ContentAndImages = ({ content, src, flexDirection }) => {
+const ContentAndImages = ({ content, src, direction }) => {
   return (
-    <div className="careers-image-with-content" style={{ flexDirection }}>
+    <div className="careers-image-with-content">
       <div className="careers-content-left-of-image">
         <Heading innerHtml={content} width="inherit" />
         <SubHeading

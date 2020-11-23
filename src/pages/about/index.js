@@ -47,7 +47,7 @@ const About = () => (
     </Spacing>
     <Spacing marginTop={SIZES.L}>
       <div className="content-carousel-container">
-        <div className="about-content-left-of-carousel">
+        <div className="about-content-left-of-carousel" style={{ alignSelf: "flex-end" }}>
           <SubHeading innerHtml={ABOUT.headingFive} width="inherit" />
           <SubHeading innerHtml={ABOUT.headingSix} width="inherit" />
         </div>
