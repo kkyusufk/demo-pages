@@ -71,7 +71,7 @@ const About = () => (
             width="640px"
             color="#333333"
           />
-          <img
+          {/* <img
             src="https://source.unsplash.com/random"
             style={{
               position: "absolute",
@@ -90,7 +90,7 @@ const About = () => (
               height: 270,
               left: "53%",
             }}
-          />
+          /> */}
         </div>
       </Grid1>
     </Spacing>
