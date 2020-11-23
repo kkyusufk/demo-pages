@@ -1,11 +1,11 @@
 import React from "react";
-import Img from 'gatsby-image';
-import { formatDate } from '../../utils/dateUtil';
+import Img from "gatsby-image";
+import { formatDate } from "../../utils/dateUtil";
 
 import "./blog.scss";
 
 const Blog = ({ author, date, title, src }) => {
-  console.log(src)
+  console.log(src);
   return (
     <div className="blogContainer">
       <div className="blog">

@@ -27,7 +27,9 @@ const About = () => (
           align={ALIGNMENT.LEFT}
           Tag="h1"
         />
-        <SubHeading innerHtml={ABOUT.headingThree} width="970px" />
+        <Spacing marginTop={SIZES.SXS}>
+          <SubHeading innerHtml={ABOUT.headingThree} width="970px" />
+        </Spacing>
       </div>
     </Spacing>
     <Spacing marginTop={SIZES.XL}>
@@ -69,24 +71,26 @@ const About = () => (
             width="640px"
             color="#333333"
           />
-          <img 
-          src="https://source.unsplash.com/random"
-          style={{
-            position: 'absolute',
-            top: '60.77%',
-            width: 100,
-            height: 100,
-            right: 30
-          }}/>
-          <img 
-          src="https://source.unsplash.com/random"
-          style={{
-            position: 'absolute',
-            bottom: 0,
-            width: 150,
-            height: 270,
-            left: '53%',
-          }}/>
+          <img
+            src="https://source.unsplash.com/random"
+            style={{
+              position: "absolute",
+              top: "60.77%",
+              width: 100,
+              height: 100,
+              right: 30,
+            }}
+          />
+          <img
+            src="https://source.unsplash.com/random"
+            style={{
+              position: "absolute",
+              bottom: 0,
+              width: 150,
+              height: 270,
+              left: "53%",
+            }}
+          />
         </div>
       </Grid1>
     </Spacing>

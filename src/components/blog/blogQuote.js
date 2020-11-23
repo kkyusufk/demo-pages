@@ -12,7 +12,11 @@ const style = {
 };
 
 const BlogQuote = ({ QuotedText }) => {
-  return <div className="heading-h1" style={{ textAlign: "center" }}>{QuotedText}</div>;
+  return (
+    <div className="heading-h1" style={{ textAlign: "center" }}>
+      {QuotedText}
+    </div>
+  );
 };
 
 export { BlogQuote };

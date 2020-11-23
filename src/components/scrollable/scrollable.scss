@@ -19,16 +19,23 @@
 }
 
 .marquee-content-li {
+  margin-right: 150px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  width: 448px;
-  height: 120px;
+  max-width: 448px;
+  max-height: 120px;
   flex-shrink: 0;
   font-size: 5rem;
   white-space: nowrap;
     div {
       font-size: 64px;
+    }
+
+    > h1 {
+      margin-right: 50px;
+      @include mobile {
+        margin-right: 40;
+      }
     }
 }
 

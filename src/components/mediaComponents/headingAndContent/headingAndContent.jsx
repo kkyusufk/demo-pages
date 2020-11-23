@@ -8,7 +8,9 @@ const HeadingAndContent = ({ heading, content, color }) => {
   return (
     <div className="heading-and-content-container">
       <div className="heading-and-content-content">
-        <h2 className="bold" style={{ color }}>{heading}</h2>
+        <h2 className="bold" style={{ color }}>
+          {heading}
+        </h2>
         <p style={{ color }}>{content}</p>
       </div>
     </div>
@@ -18,7 +20,7 @@ const HeadingAndContent = ({ heading, content, color }) => {
 HeadingAndContent.propTypes = {
   heading: PropTypes.string,
   content: PropTypes.string,
-  color: PropTypes.string
-}
+  color: PropTypes.string,
+};
 
 export { HeadingAndContent };

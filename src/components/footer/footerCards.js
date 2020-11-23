@@ -12,7 +12,9 @@ const BottomContent1 = () => (
   <img src={InstgramSvg} className="instagram" alt="direction button" />
 );
 
-const TopContent2 = () => <div className="heading-h1">Quaterly updates from us via Email</div>;
+const TopContent2 = () => (
+  <div className="heading-h1">Quaterly updates from us via Email</div>
+);
 const BottomContent2 = () => (
   <>
     <div className="signUp hover-signUp heading-h1">Sign up</div>

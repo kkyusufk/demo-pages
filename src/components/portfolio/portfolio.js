@@ -23,7 +23,10 @@ const Portfolio = ({
     justify = "space-between";
   }
   return (
-    <div className="portfolioContainer" style={{ maxWidth: width, maxHeight: height }}>
+    <div
+      className="portfolioContainer"
+      style={{ maxWidth: width, maxHeight: height }}
+    >
       <div className="portfolioContent">
         <div>
           <img src={src} className="portfolioImage" width={width} />

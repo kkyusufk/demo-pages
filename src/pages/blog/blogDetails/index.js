@@ -24,11 +24,10 @@ const data = [
   { id: "Image", src: "https://source.unsplash.com/random" },
 ];
 
-const BlogDetails = ({ location = {} }) => {
+const BlogDetails = ({ location }) => {
   const compactShareIt = useRef();
   const expndedShareIt = useRef();
-  const { state = {} } = location;
-  console.log(state)
+  console.log(location.state);
   useEffect(() => {
     // configure the intersection observer instance
     const intersectionObserverOptions = {
@@ -62,23 +61,29 @@ const BlogDetails = ({ location = {} }) => {
   });
   return (
     <>
-      <Spacing marginTop={SIZES.L}>
-        <Blog
-          author={state.author}
-          date={state.date}
-          title={state.title}
-          src={state.metadata.meta_image.childImageSharp.fixed}
-        />
-      </Spacing>
-      <Spacing marginTop={SIZES.L}>
-        <BlogTemplate data={data} />
-      </Spacing>
-      <Spacing marginTop={SIZES.XL}>
-        <ShareIt forwardRef={expndedShareIt} />
-      </Spacing>
-      <div className="share-it-compact-container">
-        <ShareIt toast={true} forwardRef={compactShareIt} />
-      </div>
+      {environmentUtil.isWindowDefined() ? (
+        <>
+          <Spacing marginTop={SIZES.L}>
+            <Blog
+              author={location.state.author}
+              date={location.state.date}
+              title={location.state.title}
+              src={location.state.metadata.meta_image.childImageSharp.fixed}
+            />
+          </Spacing>
+          <Spacing marginTop={SIZES.L}>
+            <BlogTemplate data={data} />
+          </Spacing>
+          <Spacing marginTop={SIZES.XL}>
+            <ShareIt forwardRef={expndedShareIt} />
+          </Spacing>
+          <div className="share-it-compact-container">
+            <ShareIt toast={true} forwardRef={compactShareIt} />
+          </div>
+        </>
+      ) : (
+        "null"
+      )}
     </>
   );
 };

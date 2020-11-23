@@ -3,7 +3,14 @@ import classNames from "classnames";
 
 import "./heading.scss";
 
-const Heading = ({ innerHtml, align, justify, maxWidth = "100%", hover, Tag="div" }) => {
+const Heading = ({
+  innerHtml,
+  align,
+  justify,
+  maxWidth = "100%",
+  hover,
+  Tag = "div",
+}) => {
   const textArray = innerHtml.split("<br />");
   return (
     <div
@@ -15,10 +22,12 @@ const Heading = ({ innerHtml, align, justify, maxWidth = "100%", hover, Tag="div
         maxWidth,
       }}
     >
-      <Tag className={classNames({ 
-        "hover-h1": hover, 
-        "heading-h1": Tag === 'div'
-        })}>
+      <Tag
+        className={classNames({
+          "hover-h1": hover,
+          "heading-h1": Tag === "div",
+        })}
+      >
         {textArray.map((text, index) => (
           <React.Fragment key={`${text} - ${index}`}>
             {" "}

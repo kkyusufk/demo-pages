@@ -1,11 +1,12 @@
 import React from "react";
 
-import "./scrollable.scss";
 import SwiggyImg from "../../Assets/Carousel Images/slide-3.png";
 import KapivaImg from "../../Assets/Highlight Images/Kapiva.png";
 import KenImg from "../../Assets/Highlight Images/TheKen.png";
 import AntidoteCoffee from "../../Assets/Highlight Images/AntidoteCoffee.png";
 import BloomHotels from "../../Assets/Portfolio Images/Rectangle 37-2.png";
+
+import "./scrollable.scss";
 
 // TODO: Control this from JS.
 // TODO: reduce code duplication

@@ -30,9 +30,7 @@ import { Carousel } from "../components/carousel/framerCarousel/framerCarousel";
 import { environmentUtil } from "../utils/environmentUtil";
 
 const Index = () => {
-  const { setCurrentPage, setShouldAnimate } = useContext(
-    GlobalContext
-  );
+  const { setCurrentPage, setShouldAnimate } = useContext(GlobalContext);
   return (
     <>
       <Spacing marginTop={SIZES.L}>
