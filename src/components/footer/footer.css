@@ -60,6 +60,7 @@ body:hover .alwaysHover {
 .signUp {
   text-decoration: underline;
   text-decoration-skip-ink: none;
+  text-decoration-skip: none;
   transition: all 0.3s ease-in-out;
 }
 

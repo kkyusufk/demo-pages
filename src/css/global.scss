@@ -34,6 +34,7 @@ h1, .heading-h1 {
 h2 {
   font-family: $font-family-regular;
   font-weight: 400;
+  color: #333333;
   @include desktop {
     font-size: 32px;
     line-height: 140%;
@@ -68,6 +69,7 @@ h2 {
 h3 {
   font-family: $font-family-regular;
   font-weight: 400;
+  color: #333333;
   @include desktop {
     font-size: 20px;
     line-height: 180%;
@@ -95,6 +97,7 @@ h3 {
 p {
   font-family: $font-family-merriweather;
   margin: 0;
+  color: #333333;
   @include desktop {
     font-size: 18px;
     line-height: 180%;

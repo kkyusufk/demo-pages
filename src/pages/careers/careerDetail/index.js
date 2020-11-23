@@ -40,9 +40,9 @@ const CareerDetail = ({ location }) => {
               justifyContent: "center",
             }}
           >
-            <div className="career-details-criteria-heading heading-h1">
+            <h2 className="career-details-criteria-heading">
               {details.headingTwo}
-            </div>
+            </h2>
           </div>
         </div>
         <div className="careers-criteria-container">
@@ -86,9 +86,9 @@ const CareerDetail = ({ location }) => {
               justifyContent: "center",
             }}
           >
-            <div className="career-details-criteria-heading heading-h1">
+            <h2 className="career-details-criteria-heading">
               {details.headingFour}
-            </div>
+            </h2>
           </div>
         </div>
         <div className="careers-criteria-container">

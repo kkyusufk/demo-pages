@@ -18,6 +18,7 @@
   height: 40px;
   text-decoration: none;
   text-decoration-skip-ink: none;
+  text-decoration-skip: none;
 }
 
 .nav-position {
@@ -29,6 +30,7 @@
 .nav-active {
   text-decoration: underline;
   text-decoration-skip-ink: none;
+  text-decoration-skip: none;
 }
 
 .hamburger {
