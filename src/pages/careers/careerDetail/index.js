@@ -23,7 +23,7 @@ const CareerDetail = ({ location }) => {
         <div className="career-details-heading-container">
           <div className="career-details-heading-card">
             <div className="career-details-heading">
-              <Heading innerHtml={name} />
+              <Heading innerHtml={name} Tag="h1" />
               <SubHeading innerHtml={description} />
             </div>
             <div className="career-details-downarrow">&#x2193;</div>
@@ -40,9 +40,9 @@ const CareerDetail = ({ location }) => {
               justifyContent: "center",
             }}
           >
-            <div className="career-details-criteria-heading heading-h1">
+            <h2 className="career-details-criteria-heading">
               {details.headingTwo}
-            </div>
+            </h2>
           </div>
         </div>
         <div className="careers-criteria-container">
@@ -50,17 +50,17 @@ const CareerDetail = ({ location }) => {
             <div className="criteria-icon"></div>
             <p className="crteria-heading">{details.criteriaOne}</p>
           </div>
-          <hr />
+          <hr className="break-lines" />
           <div className="careers-criteria-detail">
             <div className="criteria-icon"></div>
             <p className="crteria-heading">{details.criteriaTwo}</p>
           </div>
-          <hr />
+          <hr className="break-lines" />
           <div className="careers-criteria-detail">
             <div className="criteria-icon"></div>
             <p className="crteria-heading">{details.criteriaThree}</p>
           </div>
-          <hr />
+          <hr className="break-lines" />
           <div className="careers-criteria-detail">
             <div className="criteria-icon"></div>
             <p className="crteria-heading">{details.criteriaFour}</p>
@@ -86,9 +86,9 @@ const CareerDetail = ({ location }) => {
               justifyContent: "center",
             }}
           >
-            <div className="career-details-criteria-heading heading-h1">
+            <h2 className="career-details-criteria-heading">
               {details.headingFour}
-            </div>
+            </h2>
           </div>
         </div>
         <div className="careers-criteria-container">
@@ -96,17 +96,17 @@ const CareerDetail = ({ location }) => {
             <div className="criteria-icon"></div>
             <p className="crteria-heading">{details.criteriaOne}</p>
           </div>
-          <hr />
+          <hr className="break-lines" />
           <div className="careers-criteria-detail">
             <div className="criteria-icon"></div>
             <p className="crteria-heading">{details.criteriaTwo}</p>
           </div>
-          <hr />
+          <hr className="break-lines" />
           <div className="careers-criteria-detail">
             <div className="criteria-icon"></div>
             <p className="crteria-heading">{details.criteriaThree}</p>
           </div>
-          <hr />
+          <hr className="break-lines" />
           <div className="careers-criteria-detail">
             <div className="criteria-icon"></div>
             <p className="crteria-heading">{details.criteriaFour}</p>
@@ -123,7 +123,7 @@ const CareerDetail = ({ location }) => {
         <ContentAndImages
           content={CAREERS.headingFive}
           src="https://source.unsplash.com/random"
-          flexDirection="row-reverse"
+          reverse={true}
         />
       </Spacing>
       <Spacing marginTop={SIZES.XL}>

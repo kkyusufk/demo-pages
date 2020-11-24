@@ -1,6 +1,6 @@
 /** @jsx */
 import React from "react";
-import { useScrollRestoration } from "gatsby"
+import { useScrollRestoration } from "gatsby";
 import { AnimatePresence, motion } from "framer-motion";
 import PropTypes from "prop-types";
 
@@ -14,13 +14,13 @@ import { environmentUtil } from "../../utils/environmentUtil";
 
 const ContainerVariant = {
   initial: { y: 1000, position: "absolute", transition: { duration: 1 } },
-  animate: { y: 0,  position: "absolute", transition: { duration: 1 } },
+  animate: { y: 0, position: "absolute", transition: { duration: 1 } },
   exit: {
     y: "-100%",
     transition: {
       duration: 1,
-      from: "-88%"
-    }
+      from: "-88%",
+    },
   },
 };
 

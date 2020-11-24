@@ -1,12 +1,5 @@
 @import '../../css/mixins.scss';
 
-.blog-title {
-  width: 70%;
-  @include mobile {
-    width: 100%;
-  }
-}
-
 .blog-header {
   @include mobile {
     padding: 0% 8.3%;
@@ -14,8 +7,7 @@
 }
 
 .blog {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   row-gap: 50px;
 
   @include mobile {

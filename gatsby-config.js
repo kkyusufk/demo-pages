@@ -15,6 +15,17 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    {
+      resolve: "gatsby-source-strapi",
+      options: {
+        apiURL: "http://cms.oppositehq.com",
+        contentTypes: [
+          // List of the Content Types you want to be able to request from Gatsby.
+          "blogs",
+        ],
+        queryLimit: 1000,
+      },
+    },
     `gatsby-plugin-portal`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,

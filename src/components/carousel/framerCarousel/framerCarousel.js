@@ -130,7 +130,7 @@ export const Carousel = ({ compact }) => {
       {compact ? null : (
         <>
           <div className="next" onClick={() => paginate(1, active + 1)}>
-            {"‣"}
+            &rsaquo;
           </div>
           <div className="prev" onClick={() => paginate(-1, active - 1)}>
             {"‣"}

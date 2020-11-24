@@ -14,8 +14,11 @@
 }
 
 #confirm {
-  color: #009C06;
   transition: transform 0.5s ease-in-out;
+
+  p {
+    color: #009C06;
+  }
 }
 
 .moveUp {
@@ -44,5 +47,5 @@
 }
 
 .translateUp {
-  transform: translateY(-150px);
+  transform: translateY(-170px);
 }

@@ -44,6 +44,5 @@
 @mixin marquee-content($animation-name, $direction: normal) {
   height: 100%;
   display: flex;
-  column-gap: 150px;
   animation: $animation-name 15s linear infinite $direction;
 }

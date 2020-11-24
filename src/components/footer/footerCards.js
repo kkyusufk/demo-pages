@@ -1,10 +1,11 @@
 import React from "react";
 
-import "./footer.css";
 import { Card } from "../card/card";
 import { Reel } from "../reel/reel";
 import InstgramSvg from "../../Assets/icons/instagram.svg";
 import { InputEmail } from "../input/input";
+
+import "./footer.css";
 
 // TODO: Cleanup code (maybe handle things better)
 const TopContent1 = () => <div className="heading-h1">Join the team</div>;
@@ -12,7 +13,9 @@ const BottomContent1 = () => (
   <img src={InstgramSvg} className="instagram" alt="direction button" />
 );
 
-const TopContent2 = () => <div className="heading-h1">Quaterly updates from us via Email</div>;
+const TopContent2 = () => (
+  <div className="heading-h1" style={{ lineHeight: "100%" }}>Quaterly updates from us via Email</div>
+);
 const BottomContent2 = () => (
   <>
     <div className="signUp hover-signUp heading-h1">Sign up</div>

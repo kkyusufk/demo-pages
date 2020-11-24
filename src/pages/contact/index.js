@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { motion } from "framer-motion";
 import { Link } from "gatsby";
 
 import "./contact.scss";
@@ -32,13 +33,20 @@ const Contact = () => {
             align={ALIGNMENT.LEFT}
             Tag="h1"
           />
-          {!environmentUtil.isMobile(browserWidth) && (
-            <h2>
-              To start a project, write to us at{" "}
-              <u className="opposite-email">911@oppositehq.com</u>
-            </h2>
-          )}
-          <SubHeading innerHtml={CONTACT.headingThree} />
+          <Spacing marginTop={SIZES.SXS}>
+            {!environmentUtil.isMobile(browserWidth) && (
+              <h2 className="grey">
+                To start a project, write to us at{" "}
+                <motion.u
+                  className="opposite-email"
+                  whileHover={{ color: "#333333" }}
+                >
+                  911@oppositehq.com
+                </motion.u>
+              </h2>
+            )}
+            <SubHeading innerHtml={CONTACT.headingThree} />
+          </Spacing>
         </div>
       </Spacing>
       <Spacing marginTop={SIZES.XL}>

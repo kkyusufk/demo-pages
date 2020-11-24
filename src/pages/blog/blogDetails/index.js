@@ -24,16 +24,28 @@ const data = [
   { id: "Image", src: "https://source.unsplash.com/random" },
 ];
 
-const BlogDetails = ({ location = {} }) => {
+const BlogDetails = ({ location }) => {
   const compactShareIt = useRef();
   const expndedShareIt = useRef();
-  const { state = {} } = location;
-
   useEffect(() => {
+    let prevRatio = 0.0;
+    function buildThresholdList() {
+      let thresholds = [];
+      let numSteps = 20;
+    
+      for (let i=1.0; i<=numSteps; i++) {
+        let ratio = i/numSteps;
+        thresholds.push(ratio);
+      }
+    
+      thresholds.push(0);
+      return thresholds;
+    }
     // configure the intersection observer instance
     const intersectionObserverOptions = {
       root: null, // default is the viewport
-      threshold: 0.1, // percentage of the taregt visible area which will trigger "onIntersection"
+      rootMargin: "0px",
+      threshold: buildThresholdList(), // percentage of the taregt visible area which will trigger "onIntersection"
     };
 
     const observer = new IntersectionObserver(
@@ -43,13 +55,15 @@ const BlogDetails = ({ location = {} }) => {
 
     // called when target is fully visible
     function onIntersection(entries, opts) {
+      const { style } = compactShareIt.current;
+      console.log(entries, opts)
       entries.forEach((entry) => {
-        const visible = entry.intersectionRatio >= opts.thresholds[0];
-        if (visible) {
-          compactShareIt.current.style.opacity = 0;
+        if (entry.intersectionRatio > prevRatio) {
+          style.opacity = style.opacity - 0.30;
         } else {
-          compactShareIt.current.style.opacity = 1;
+          style.opacity = 1;
         }
+        prevRatio = entry.intersectionRatio;
       });
     }
 
@@ -62,23 +76,29 @@ const BlogDetails = ({ location = {} }) => {
   });
   return (
     <>
-      <Spacing marginTop={SIZES.L}>
-        <Blog
-          author={state.author}
-          date={state.date}
-          title={state.title}
-          src={state.src}
-        />
-      </Spacing>
-      <Spacing marginTop={SIZES.L}>
-        <BlogTemplate data={data} />
-      </Spacing>
-      <Spacing marginTop={SIZES.XL}>
-        <ShareIt forwardRef={expndedShareIt} />
-      </Spacing>
-      <div className="share-it-compact-container">
-        <ShareIt toast={true} forwardRef={compactShareIt} />
-      </div>
+      {environmentUtil.isWindowDefined() ? (
+        <>
+          <Spacing marginTop={SIZES.L}>
+            <Blog
+              author={location.state.author}
+              date={location.state.date}
+              title={location.state.title}
+              src={location.state.metadata.meta_image.childImageSharp.fixed}
+            />
+          </Spacing>
+          <Spacing marginTop={SIZES.L}>
+            <BlogTemplate data={data} />
+          </Spacing>
+          <Spacing marginTop={SIZES.XL}>
+            <ShareIt forwardRef={expndedShareIt} />
+          </Spacing>
+          <div className="share-it-compact-container">
+            <ShareIt toast={true} forwardRef={compactShareIt} />
+          </div>
+        </>
+      ) : (
+        "null"
+      )}
     </>
   );
 };

@@ -56,11 +56,11 @@ function Card({ id, name, description }) {
             className="name-container team-card"
             layoutId={`name-container-card-${id}`}
           >
-            <motion.div 
-              key={`name-${id}`} 
+            <motion.div
+              key={`name-${id}`}
               layoutId={`card-name-${id}`}
               className="heading-h1"
-              >
+            >
               {name}
             </motion.div>
             <motion.h2

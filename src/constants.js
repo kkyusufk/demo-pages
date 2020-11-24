@@ -37,6 +37,7 @@ export const SPACING = {
   ML: { Desktop: "75px", Tablet: "60px", Mobile: "50px" },
   M: { Desktop: "50px", Tablet: "40px", Mobile: "30px" },
   S: { Desktop: "30px", Tablet: "20px", Mobile: "15px" },
+  SXS: { Desktop: "20px", Tablet: "15px", Mobile: "10px" }, // not from design
   XS: { Desktop: "10px", Tablet: "10px", Mobile: "10px" },
   XXS: { Desktop: "5px", Tablet: "5px", Mobile: "5px" },
 };
@@ -50,6 +51,7 @@ export const SIZES = {
   M: "M",
   S: "S",
   XS: "XS",
+  SXS: "SXS",
   XXS: "XXS",
 };
 

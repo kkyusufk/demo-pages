@@ -1,9 +1,9 @@
 /** @jsx */
 import { motion } from "framer-motion";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { environmentUtil } from "../../utils/environmentUtil";
 
-import "./input.css";
+import "./input.scss";
 
 /**
  * The InputEmail element with all the checkings
@@ -66,22 +66,10 @@ const InputEmail = () => {
   const enableButton = () => {
     if (inputRef.current.value.length > 0) {
       setDisabled(false);
+    } else {
+      setDisabled(true)
     }
   };
-
-  useEffect(() => {
-    let timeoutId;
-    if (email !== "") {
-      timeoutId = setTimeout(() => {
-        emailInput.classList.remove("translateOut");
-        confirmRef.current.classList.remove("translateUp");
-      }, 5000);
-    }
-
-    return function cleanUp() {
-      clearTimeout(timeoutId);
-    };
-  }, [email]);
 
   return (
     <div className="emailFunctionality" id="mainDiv">
@@ -102,12 +90,13 @@ const InputEmail = () => {
         </div>
         <motion.button
           id="goRightSignUp"
+          style={ disabled ? {} : { color: '#333333' }}
           onClick={confirmationMessage}
           disabled={disabled}
-          whileHover={{
+          whileHover={!disabled && {
             textDecoration: "underline",
             textDecorationSkipInk: "none",
-            color: "black",
+            textDecorationSkip: "none",
             cursor: "pointer",
           }}
         >
