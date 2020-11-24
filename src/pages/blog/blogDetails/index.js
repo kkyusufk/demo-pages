@@ -27,12 +27,25 @@ const data = [
 const BlogDetails = ({ location }) => {
   const compactShareIt = useRef();
   const expndedShareIt = useRef();
-  console.log(location.state);
   useEffect(() => {
+    let prevRatio = 0.0;
+    function buildThresholdList() {
+      let thresholds = [];
+      let numSteps = 20;
+    
+      for (let i=1.0; i<=numSteps; i++) {
+        let ratio = i/numSteps;
+        thresholds.push(ratio);
+      }
+    
+      thresholds.push(0);
+      return thresholds;
+    }
     // configure the intersection observer instance
     const intersectionObserverOptions = {
       root: null, // default is the viewport
-      threshold: 0.1, // percentage of the taregt visible area which will trigger "onIntersection"
+      rootMargin: "0px",
+      threshold: buildThresholdList(), // percentage of the taregt visible area which will trigger "onIntersection"
     };
 
     const observer = new IntersectionObserver(
@@ -42,13 +55,15 @@ const BlogDetails = ({ location }) => {
 
     // called when target is fully visible
     function onIntersection(entries, opts) {
+      const { style } = compactShareIt.current;
+      console.log(entries, opts)
       entries.forEach((entry) => {
-        const visible = entry.intersectionRatio >= opts.thresholds[0];
-        if (visible) {
-          compactShareIt.current.style.opacity = 0;
+        if (entry.intersectionRatio > prevRatio) {
+          style.opacity = style.opacity - 0.30;
         } else {
-          compactShareIt.current.style.opacity = 1;
+          style.opacity = 1;
         }
+        prevRatio = entry.intersectionRatio;
       });
     }
 

@@ -3,14 +3,14 @@
 .reverse {
   @include desktop {
     grid-template-areas: 
-  "img content" !important;
+  "img img content" !important;
   }
 }
 
 /* content and images */
 .careers-image-with-content {
   display: grid;
-  grid-template-areas: "content img";
+  grid-template-areas: "content img img";
   column-gap: 130px;
   row-gap: 30px;
   width: 100%;
@@ -42,6 +42,7 @@
 
 .careers-image-right-of-content {
   grid-area: img;
+  object-fit: cover;
 
   @media only screen and (max-width: 767px) {
     height: 100%;
@@ -52,6 +53,5 @@
 
   @media only screen and (min-width: 768px) {
     width: 100%;
-    height: 720px;
   }
 }

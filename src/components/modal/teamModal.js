@@ -142,7 +142,7 @@ export default function Modal({ cardID, pathContext = {}, location }) {
                 <Carousel compact={true} />
               </div>
             </div>
-            <button className="close-button">X</button>
+            <button className="close-button">&#10005;</button>
           </motion.div>
         </motion.div>
       </motion.div>
