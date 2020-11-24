@@ -23,7 +23,7 @@ const CareerDetail = ({ location }) => {
         <div className="career-details-heading-container">
           <div className="career-details-heading-card">
             <div className="career-details-heading">
-              <Heading innerHtml={name} />
+              <Heading innerHtml={name} Tag="h1" />
               <SubHeading innerHtml={description} />
             </div>
             <div className="career-details-downarrow">&#x2193;</div>
@@ -50,17 +50,17 @@ const CareerDetail = ({ location }) => {
             <div className="criteria-icon"></div>
             <p className="crteria-heading">{details.criteriaOne}</p>
           </div>
-          <hr />
+          <hr className="break-lines" />
           <div className="careers-criteria-detail">
             <div className="criteria-icon"></div>
             <p className="crteria-heading">{details.criteriaTwo}</p>
           </div>
-          <hr />
+          <hr className="break-lines" />
           <div className="careers-criteria-detail">
             <div className="criteria-icon"></div>
             <p className="crteria-heading">{details.criteriaThree}</p>
           </div>
-          <hr />
+          <hr className="break-lines" />
           <div className="careers-criteria-detail">
             <div className="criteria-icon"></div>
             <p className="crteria-heading">{details.criteriaFour}</p>
@@ -96,17 +96,17 @@ const CareerDetail = ({ location }) => {
             <div className="criteria-icon"></div>
             <p className="crteria-heading">{details.criteriaOne}</p>
           </div>
-          <hr />
+          <hr className="break-lines" />
           <div className="careers-criteria-detail">
             <div className="criteria-icon"></div>
             <p className="crteria-heading">{details.criteriaTwo}</p>
           </div>
-          <hr />
+          <hr className="break-lines" />
           <div className="careers-criteria-detail">
             <div className="criteria-icon"></div>
             <p className="crteria-heading">{details.criteriaThree}</p>
           </div>
-          <hr />
+          <hr className="break-lines" />
           <div className="careers-criteria-detail">
             <div className="criteria-icon"></div>
             <p className="crteria-heading">{details.criteriaFour}</p>
